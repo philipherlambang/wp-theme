@@ -194,6 +194,14 @@ body {
   .gap-ls {
     padding: 0;
   }
+  .gap-ls .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .gap-ls [class^="col"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 .fixed-navbar-content {
   margin-top: 50px;
