@@ -190,9 +190,14 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+@media (max-width: 767px) {
+  .gap-ls {
+    padding: 0;
+  }
+}
 .fixed-navbar-content {
   margin-top: 50px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .bg-cover {
   background-color: #26497F;
