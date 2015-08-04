@@ -1,5 +1,49 @@
 /* Bootstrap Extended */
 
+/* Material Icons */
+/*
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/material-icons-regular.eot);
+  src: local('Material Icons'),
+       local('material-icons-regular'),
+       url(../fonts/material-icons-regular.woff2) format('woff2'),
+       url(../fonts/material-icons-regular.woff) format('woff'),
+       url(../fonts/material-icons-regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  vertical-align: middle;
+}
+*/
+
+/* Ionicicons */
+@import url('ionicons.min.css');
+
+.ion {
+  vertical-align: baseline;
+}
+.ion-mid {
+  vertical-align: middle;
+}
+
 /* Override Bootstrap */
 body {
   font-family: 'Helvetica Neue', 'Segoe UI', 'Open Sans', Arial, sans-serif;
@@ -129,48 +173,6 @@ body {
   background-color: #26497F;
   font-size: 32px;
   text-align: center;
-}
-
-/* Material Icons */
-/*
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/material-icons-regular.eot);
-  src: local('Material Icons'),
-       local('material-icons-regular'),
-       url(../fonts/material-icons-regular.woff2) format('woff2'),
-       url(../fonts/material-icons-regular.woff) format('woff'),
-       url(../fonts/material-icons-regular.ttf) format('truetype');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
-  vertical-align: middle;
-}
-*/
-
-/* Ionicicons */
-.ion {
-  vertical-align: baseline;
-}
-.ion-mid {
-  vertical-align: middle;
 }
 
 /* New Added */
