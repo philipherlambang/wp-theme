@@ -11,6 +11,7 @@ body {
 }
 .navbar-id .navbar-default {
   background-color: #002154;
+  border-color: #002154;
 }
 .navbar-id .navbar-fixed-top {
   border-width: 0;
