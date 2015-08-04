@@ -182,6 +182,7 @@ body {
   .table-row [class^="col-"] {
     display: table-cell;
     float: none;
+    vertical-align: middle;
   }
 }
 .section {
@@ -321,6 +322,11 @@ body {
   margin-bottom: 10px;
   background-color: #ffffff;
   height: 320px;
+}
+
+.gap-fp {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* Blue Pallete From Adobe Kuler */
