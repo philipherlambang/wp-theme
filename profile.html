@@ -22,73 +22,19 @@
 	</head>
 	<body>
 
-		<nav class="navbar-id">
-			<div class="navbar navbar-default navbar-fixed-top box-layer-dark">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-theme" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">
-							<img alt="Brand" src="images/brand.png">
-						</a>
-					</div>
-					<div id="navbar-theme" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<form class="navbar-form" role="search">
-									<div class="input-group">
-										<input type="text" class="form-control">
-										<span class="input-group-btn">
-											<button class="btn btn-default" type="button">
-												<span class="ion ion-ios-search"></span>
-											</button>
-										</span>
-									</div>
-								</form>
-							</li>
-							<li>
-								<a href="profile.html" class="user-icon">
-									<div class="block-blue">
-										<span class="ionic ion-ios-person"></span>
-									</div>
-								</a>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav">
-							<li><a href="professionals.html">Professional</a></li>
-							<li><a href="jobs.html">Job</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-
 		<main class="content-id">
 			<div class="section">
-				<div class="box-layer-dark">
-					<div class="bg-cover" style="background-image: url(images/bg/seascape-evening-b-20.jpg);">
-					</div>
+				<div class="bg-cover">
+					<!-- style="background-image: url(images/bg/seascape-evening-b-20.jpg);" -->
 				</div>
 			</div>
 			<div class="section">
 				<div class="container gap-container">
-					<!-- In Case We Need a Center Profile ID -->
-					<div class="row">
-						<div class="col-xs-1 col-sm-4"></div>
-						<div class="col-xs-10 col-sm-4">
-							<div></div>
-						</div>
-						<div class="col-xs-1 col-sm-4"></div>
-					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<div class="profile-id bump-bg">
-								<div class="card">
-									<div class="thumbnail box-layer-light">
+							<div class="profile-id">
+								<div class="card bump-bg">
+									<div class="thumbnail shade-light">
 										<img src="images/user/john_branch.jpg" alt="John Branch">
 										<div class="caption text-center">
 											<h3>John Branch</h3>
@@ -98,16 +44,32 @@
 									</div>
 								</div>
 							</div>
-							<div class="profile-ls">
-								<div class="ls-item" id="summary">
+							<div class="profile-if">
+								<div class="if-item" id="summary">
 									<h4>Summary</h4>
 									<div class="card">
 										<div class="single">
 											<p>I am a serious person and reliable.</p>
 										</div>
 									</div>
+									<div class="card">
+										<form>
+											<div class="form-group">
+												<label for="text" class="sr-only">Summary</label>
+												<input type="text" class="form-control" id="text" placeholder="Summary" value="I am a serious person and reliable.">
+											</div>
+										</form>
+									</div>
+									<div class="card">
+										<form>
+											<div class="form-group">
+												<label for="text" class="sr-only">Summary</label>
+												<textarea class="form-control" id="text" placeholder="Summary">I am a serious person and reliable.</textarea>
+											</div>
+										</form>
+									</div>
 								</div>
-								<div class="ls-item" id="personal-details">
+								<div class="if-item" id="personal-details">
 									<h4>Personal Details</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -133,7 +95,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="contact-info">
+								<div class="if-item" id="contact-info">
 									<h4>Contact Info</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -186,27 +148,27 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="links">
+								<div class="if-item" id="links">
 									<h4>Links</h4>
 									<ul class="list-unstyled">
 										<li>
 											<div class="card">
 												<div class="single">
-													<p><span class="ion-mid ion-social-googleplus-outline"></span> <a href="">plus.google.com/johnbranch</a></p>
+													<p><span class="icon-mid ion-social-googleplus-outline"></span> <a href="">plus.google.com/johnbranch</a></p>
 												</div>
 											</div>
 										</li>
 										<li>
 											<div class="card">
 												<div class="single">
-													<p><span class="ion-mid ion-social-facebook"></span> <a href="">facebook.com/johnbranch</a></p>
+													<p><span class="icon-mid ion-social-facebook"></span> <a href="">facebook.com/johnbranch</a></p>
 												</div>
 											</div>
 										</li>
 										<li>
 											<div class="card">
 												<div class="single">
-													<p><span class="ion-mid ion-social-twitter"></span><a href="">twitter.com/johnbranch</a></p>
+													<p><span class="icon-mid ion-social-twitter"></span><a href="">twitter.com/johnbranch</a></p>
 												</div>
 											</div>
 										</li>
@@ -215,8 +177,8 @@
 							</div>
 						</div>
 						<div class="col-sm-8">
-							<div class="profile-ls">
-								<div class="ls-item" id="profession-category">
+							<div class="profile-if">
+								<div class="if-item" id="profession-category">
 									<h4>Profession Category</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -228,7 +190,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="industry">
+								<div class="if-item" id="industry">
 									<h4>Industry</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -240,7 +202,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="work-experience">
+								<div class="if-item" id="work-experience">
 									<h4>Work Experience</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -289,7 +251,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="project-experience">
+								<div class="if-item" id="project-experience">
 									<h4>Project Experience</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -304,7 +266,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="education">
+								<div class="if-item" id="education">
 									<h4>Education</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -319,7 +281,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="certifications">
+								<div class="if-item" id="certifications">
 									<h4>Certifications</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -354,7 +316,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="language">
+								<div class="if-item" id="language">
 									<h4>Language</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -373,7 +335,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="skills">
+								<div class="if-item" id="skills">
 									<h4>Skills</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -392,7 +354,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="ls-item" id="portfolio">
+								<div class="if-item" id="portfolio">
 									<h4>Portfolio</h4>
 									<ul class="list-unstyled">
 										<li>

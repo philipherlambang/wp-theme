@@ -37,16 +37,16 @@
 /* Ionicicons */
 @import url('ionicons.min.css');
 
-.ion {
+.icon {
   vertical-align: baseline;
 }
-.ion-mid {
+.icon-mid {
   vertical-align: middle;
 }
 
 /* Override Bootstrap */
 body {
-  font-family: 'Helvetica Neue', 'Segoe UI', 'Open Sans', Arial, sans-serif;
+  font-family: 'Helvetica Neue', 'Segoe UI', 'Open Sans', 'Roboto', Arial, sans-serif;
   background-color: #eeeeee;
 }
 
@@ -176,16 +176,9 @@ body {
 }
 
 /* New Added */
-@media (min-width: 768px) {
-  .table-row {
-    display: table;
-    table-layout: fixed;
-  }
-  .table-row [class^="col-"] {
-    display: table-cell;
-    float: none;
-    vertical-align: middle;
-  }
+.fixed-navbar-content {
+  margin-top: 50px;
+  /* margin-bottom: 30px; */
 }
 .section {
   display: block;
@@ -207,12 +200,19 @@ body {
     padding-left: 0;
   }
 }
-.fixed-navbar-content {
-  margin-top: 50px;
-  /* margin-bottom: 30px; */
+@media (min-width: 768px) {
+  .table-row {
+    display: table;
+    table-layout: fixed;
+  }
+  .table-row [class^="col-"] {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+  }
 }
 .bg-cover {
-  background-color: #26497F;
+  background-color: #9e9e9e;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -222,7 +222,7 @@ body {
   min-height: 320px;
 }
 .bump-bg {
-  margin-top: -280px;
+  margin-top: -240px;
 }
 @media (min-width: 768px) {
   .bump-bg {
@@ -237,34 +237,29 @@ body {
     margin-top: -240px;
   }
 }
-.box-layer-light {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.27);
+.shade-light {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
 }
-.box-layer-dark {
+.shade-dark {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87);
 }
 .card {
   position: relative;
-  background-color: #ffffff;
-}
-.transparent-card {
-  background-color: transparent;
 }
 .card > .thumbnail {
   border-radius: 0;
-}
-.transparent-card > .thumbnail {
-  background-color: transparent;
-  border-color: transparent;
-}
-.transparent-card > .thumbnail .caption {
-  color: #ffffff;
+  border-color: #e0e0e0;
 }
 .card > .single,
 .card > .multi {
   margin: 0;
-  padding: 10px 20px;
-  border-bottom: 1px solid #dddddd;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+.card > .multi {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .card > .single p,
 .card > .multi p:last-child {
@@ -276,13 +271,19 @@ body {
 
 /* Specific Needs */
 .profile-id {
-  margin-bottom: 40px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 320px;
+  margin-bottom: 40px;
+  max-width: 280px;
+}
+@media (min-width: 768px) {
+  .profile-id {
+    max-width: 320px;
+  }
 }
 .profile-id h3 {
   margin-top: 10px;
+  line-height: 1.2;
 }
 .profile-id .sub {
   margin-bottom: 10px;
@@ -290,17 +291,35 @@ body {
   font-weight: 500;
 }
 
-.profile-ls > .ls-item {
+.profile-if > .if-item {
   margin-bottom: 30px;
 }
-.profile-ls > .ls-item h4 {
+.profile-if > .if-item h4 {
   margin-bottom: 15px;
 }
-.profile-ls > .ls-item .ion-mid {
+.profile-if > .if-item h5 {
+  margin-top: 12px;
+}
+.profile-if > .if-item .icon-mid {
   font-size: 18px;
   float: left;
   display: block;
   width: 28px;
+}
+.profile-if > .if-item .form-group {
+  margin-bottom: 0;
+}
+.profile-if > .if-item .form-control {
+  height: auto;
+  padding: 10px 15px;
+  color: #333333;
+  border-width: 0;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.profile-if > .if-item textarea {
+  resize: vertical;
 }
 
 .ls-card a {
