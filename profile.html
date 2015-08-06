@@ -22,45 +22,35 @@
 	</head>
 	<body>
 
-		<main class="content-id">
+		<main role="main">
 			<div class="section">
 				<div class="bg-cover">
 					<!-- style="background-image: url(images/bg/seascape-evening-b-20.jpg);" -->
 				</div>
 			</div>
 			<div class="section">
-				<div class="container gap-container">
+				<div class="container container-gap">
 					<div class="row">
-						<div class="col-sm-4">
-							<div class="profile-id">
-								<div class="card bump-bg">
-									<div class="thumbnail shade-light">
+						<div class="col-sm-5 col-md-4">
+							<div>
+								<div class="card card-potrait card-bump-bg">
+									<div class="card-img">
 										<img src="images/user/john_branch.jpg" alt="John Branch">
-										<div class="caption text-center">
-											<h3>John Branch</h3>
-											<p class="sub">Worked Profile</p>
-											<p>Sales Manager</p>
-										</div>
+									</div>
+									<div class="card-caption">
+										<h3>John Branch</h3>
+										<p class="sub">Apple Inc</p>
+										<p>Web Engineer</p>
 									</div>
 								</div>
 							</div>
-							<div class="profile-if">
-								<div class="if-item" id="summary">
+							<div>
+								<div class="group-card">
 									<h4>Summary</h4>
-									<div class="card">
-										<div class="single">
-											<p>I am a serious person and reliable.</p>
-										</div>
+									<div class="item">
+										<p>I am a serious person and reliable.</p>
 									</div>
-									<div class="card">
-										<form>
-											<div class="form-group">
-												<label for="text" class="sr-only">Summary</label>
-												<input type="text" class="form-control" id="text" placeholder="Summary" value="I am a serious person and reliable.">
-											</div>
-										</form>
-									</div>
-									<div class="card">
+									<div class="item">
 										<form>
 											<div class="form-group">
 												<label for="text" class="sr-only">Summary</label>
@@ -68,87 +58,174 @@
 											</div>
 										</form>
 									</div>
+									<div class="item">
+										<form>
+											<div class="form-group">
+												<label for="text" class="sr-only">Summary</label>
+												<input type="text" class="form-control" id="text" placeholder="Summary" value="I am a serious person and reliable.">
+											</div>
+										</form>
+									</div>
 								</div>
-								<div class="if-item" id="personal-details">
+								<div class="group-card">
 									<h4>Personal Details</h4>
 									<ul class="list-unstyled">
-										<li>
-											<div class="card">
-												<div class="single">
-													<p>Birth Date <span class="sub pull-right">22 December 1987</span></p>
-												</div>
-											</div>
+										<li class="item">
+											<p><b>Birth Date</b> <span class="sub pull-right">22 December 1987</span></p>
 										</li>
-										<li>
-											<div class="card">
-												<div class="single">
-													<p>Marital Status <span class="sub pull-right">Single</span></p>
+										<li class="item">
+											<form class="form-horizontal">
+												<div class="form-group">
+													<label for="text" class="col-xs-5">Birth Date</label>
+													<div class="col-xs-7">
+														<input type="text" class="form-control text-right" id="text" placeholder="Birth Date" value="22 December 1987">
+													</div>
 												</div>
-											</div>
+											</form>
 										</li>
-										<li>
-											<div class="card">
-												<div class="single">
-													<p>Gender <span class="sub pull-right">Male</span></p>
+										<li class="item">
+											<p><b>Marital Status</b> <span class="sub pull-right">Single</span></p>
+										</li>
+										<li class="item">
+											<form class="form-horizontal">
+												<div class="form-group">
+													<label for="text" class="col-xs-6">Marital Status</label>
+													<div class="col-xs-6">
+														<select class="form-control">
+															<option>Single</option>
+															<option>Married</option>
+														</select>
+													</div>
 												</div>
-											</div>
+											</form>
+										</li>
+										<li class="item">
+											<p><b>Gender</b> <span class="sub pull-right">Male</span></p>
+										</li>
+										<li class="item">
+											<form class="form-horizontal">
+												<div class="form-group">
+													<label for="text" class="col-xs-6">Gender</label>
+													<div class="col-xs-6">
+														<select class="form-control">
+															<option>Male</option>
+															<option>Female</option>
+														</select>
+													</div>
+												</div>
+											</form>
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="contact-info">
+								<div class="group-card">
 									<h4>Contact Info</h4>
 									<ul class="list-unstyled">
 										<li>
 											<h5>Email</h5>
 											<ul class="list-unstyled">
-												<li>
-													<div class="card">
-														<div class="single">
-															<p>johnbranch@gmail.com <span class="sub">(Personal)</span></p>
+												<li class="item">
+													<p>johnbranch@gmail.com <span class="sub pull-right">(Personal)</span></p>
+												</li>
+												<li class="item">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label for="text" class="sr-only">Email</label>
+															<div class="col-xs-7">
+																<input type="text" class="form-control" placeholder="Email" value="johnbranch@gmail.com">
+															</div>
+															<div class="col-xs-5">
+																<select class="form-control">
+																	<option>Personal</option>
+																	<option>Office</option>
+																</select>
+															</div>
 														</div>
-													</div>
+													</form>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<h5>Messenger</h5>
 											<ul class="list-unstyled">
-												<li>
-													<div class="card">
-														<div class="single">
-															<p>johnbranch@yahoo.com <span class="sub">(YM)</span></p>
+												<li class="item">
+													<p>johnbranch@yahoo.com <span class="sub pull-right">(YM)</span></p>
+												</li>
+												<li class="item">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label for="text" class="sr-only">Messenger</label>
+															<div class="col-xs-7">
+																<input type="text" class="form-control" placeholder="Messenger" value="johnbranch@yahoo.com">
+															</div>
+															<div class="col-xs-5">
+																<select class="form-control">
+																	<option>YM</option>
+																	<option>Whatsapp</option>
+																	<option>BBM</option>
+																	<option>Skype</option>
+																	<option>Messages</option>
+																	<option>Telegram</option>
+																</select>
+															</div>
 														</div>
-													</div>
+													</form>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<h5>Phone</h5>
 											<ul class="list-unstyled">
-												<li>
-													<div class="card">
-														<div class="single">
-															<p>08111336030 <span class="sub">(Mobile)</span></p>
+												<li class="item">
+													<p>08111336030 <span class="sub pull-right">(Mobile)</span></p>
+												</li>
+												<li class="item">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label for="text" class="sr-only">Phone</label>
+															<div class="col-xs-7">
+																<input type="text" class="form-control" placeholder="Phone" value="08111336030">
+															</div>
+															<div class="col-xs-5">
+																<select class="form-control">
+																	<option>Mobile</option>
+																	<option>Office</option>
+																	<option>Home</option>
+																</select>
+															</div>
 														</div>
-													</div>
+													</form>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<h5>Address</h5>
 											<ul class="list-unstyled">
-												<li>
-													<div class="card">
-														<div class="single">
-															<p>Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto <span class="sub">(Office)</span></p>
+												<li class="item">
+													<p>Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto <span class="sub pull-right">(Office)</span></p>
+												</li>
+												<li class="item">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label for="text" class="sr-only">Address</label>
+															<div class="col-xs-7">
+																<textarea class="form-control" id="text" placeholder="Address">Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto</textarea>
+															</div>
+															<div class="col-xs-5">
+																<select class="form-control">
+																	<option>Office</option>
+																	<option>Personal</option>
+																</select>
+															</div>
 														</div>
-													</div>
+													</form>
 												</li>
 											</ul>
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="links">
+							</div>
+							<div class="profile-info">
+								<div class="info-item" id="links">
 									<h4>Links</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -176,9 +253,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-8">
-							<div class="profile-if">
-								<div class="if-item" id="profession-category">
+						<div class="col-sm-7 col-md-8">
+							<div class="profile-info">
+								<div class="info-item" id="profession-category">
 									<h4>Profession Category</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -190,7 +267,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="industry">
+								<div class="info-item" id="industry">
 									<h4>Industry</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -202,7 +279,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="work-experience">
+								<div class="info-item" id="work-experience">
 									<h4>Work Experience</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -251,7 +328,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="project-experience">
+								<div class="info-item" id="project-experience">
 									<h4>Project Experience</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -266,7 +343,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="education">
+								<div class="info-item" id="education">
 									<h4>Education</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -281,7 +358,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="certifications">
+								<div class="info-item" id="certifications">
 									<h4>Certifications</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -316,7 +393,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="language">
+								<div class="info-item" id="language">
 									<h4>Language</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -335,7 +412,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="skills">
+								<div class="info-item" id="skills">
 									<h4>Skills</h4>
 									<ul class="list-unstyled">
 										<li>
@@ -354,7 +431,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="if-item" id="portfolio">
+								<div class="info-item" id="portfolio">
 									<h4>Portfolio</h4>
 									<ul class="list-unstyled">
 										<li>
