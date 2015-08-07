@@ -1,6 +1,8 @@
 /* Bootstrap Extended */
 
 /* Ionicicons */
+/* Photoswipe */
+@import url('photoswipe.css');
 @import url('ionicons.min.css');
 
 .icon {
@@ -9,6 +11,7 @@
 .icon-mid {
   vertical-align: middle;
 }
+
 
 /* Override Bootstrap */
 body {
@@ -140,8 +143,56 @@ body {
   border-radius: 0;
   box-shadow: none;
 }
+.group-card .item .icon-mid {
+  font-size: 18px;
+  float: left;
+  display: block;
+  width: 28px;
+}
 
-
+.group-card .item .imgs-show {
+  margin: -10px -5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: auto;
+  overflow-y: hidden;
+}
+.group-card .item .imgs-show ul {
+  display: table;
+  white-space: nowrap;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.group-card .item .imgs-show ul > li {
+  display: table-cell;
+  text-align: center;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+.group-card .item .imgs-show ul > li:first-child {
+  padding-left: 0;
+}
+.group-card .item .imgs-show ul > li:last-child {
+  padding-right: 0;
+}
+.group-card .item .imgs-show ul > li > a {
+  margin: 0;
+  display: block;
+}
+.group-card .item .imgs-show ul > li > a img {
+  width: 80px;
+}
+.group-card .item .imgs-show .cover {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.group-card .item.edit-mode {
+  display: none;
+}
 
 .card > .single,
 .card > .multi {
