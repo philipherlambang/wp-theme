@@ -23,7 +23,7 @@
 	<body>
 
 		<nav class="navbar-id">
-			<div class="navbar navbar-default navbar-fixed-top shade-dark">
+			<div class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-theme" aria-expanded="false" aria-controls="navbar">
@@ -53,7 +53,7 @@
 							<li>
 								<a href="profile.html" class="user-icon">
 									<div class="block-blue">
-										<span class="ionic ion-ios-person"></span>
+										<span class="icon ion-ios-person"></span>
 									</div>
 								</a>
 							</li>
@@ -69,15 +69,14 @@
 
 		<main role="main">
 			<div class="section">
-				<div class="bg-cover shade-dark" style="background-image: url(images/bg/bg-csr.jpg);">
-				</div>
+				<div class="bg-cover" style="background-image: url(images/bg/bg-blur-2.jpg);"></div>
 			</div>
 			<div class="section">
-				<div class="container container-gap">
+				<div class="container">
 					<div class="row">
 						<div class="col-sm-5 col-md-4">
 							<div>
-								<div class="card card-potrait card-bump-bg shade-light">
+								<div class="card card-potrait card-bump-bg">
 									<div class="card-img">
 										<img src="images/user/john_branch.jpg" alt="John Branch">
 									</div>
@@ -85,6 +84,20 @@
 										<h3>John Branch</h3>
 										<p class="sub">Worked Profile</p>
 										<p>Sales Marketing</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-7 col-md-8">
+							<div>
+								<div class="group-btn">
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="profile_edit.html" type="button" class="btn btn-default btn-lg btn-block"><span class="icon ion-ios-compose-outline"></span>Edit</a>
+										</div>
+										<div class="col-xs-6">
+											<a type="button" class="btn btn-default btn-lg btn-block"><span class="icon ion-ios-settings"></span>Settings</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -159,68 +172,28 @@
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-5 col-md-4">
 							<div>
 								<div class="group-card">
 									<h4>Summary</h4>
 									<div class="item">
 										<p>I am a serious person and reliable.</p>
 									</div>
-									<div class="item edit-mode">
-										<form>
-											<div class="form-group">
-												<label for="text" class="sr-only">Summary</label>
-												<textarea class="form-control" id="text" placeholder="Summary">I am a serious person and reliable.</textarea>
-											</div>
-										</form>
-									</div>
 								</div>
 								<div class="group-card">
 									<h4>Personal Details</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p><b>Birth Date</b> <span class="sub pull-right">22 December 1987</span></p>
-										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="col-xs-5">Birth Date</label>
-													<div class="col-xs-7">
-														<input type="text" class="form-control text-right" id="text" placeholder="Birth Date" value="22 December 1987">
-													</div>
-												</div>
-											</form>
+											<p><b>Birth Date</b> <span class="pull-right">22 December 1987</span></p>
 										</li>
 										<li class="item">
-											<p><b>Marital Status</b> <span class="sub pull-right">Single</span></p>
-										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="col-xs-6">Marital Status</label>
-													<div class="col-xs-6">
-														<select class="form-control">
-															<option>Single</option>
-															<option>Married</option>
-														</select>
-													</div>
-												</div>
-											</form>
+											<p><b>Marital Status</b> <span class="pull-right">Single</span></p>
 										</li>
 										<li class="item">
-											<p><b>Gender</b> <span class="sub pull-right">Male</span></p>
-										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="col-xs-6">Gender</label>
-													<div class="col-xs-6">
-														<select class="form-control">
-															<option>Male</option>
-															<option>Female</option>
-														</select>
-													</div>
-												</div>
-											</form>
+											<p><b>Gender</b> <span class="pull-right">Male</span></p>
 										</li>
 									</ul>
 								</div>
@@ -231,23 +204,7 @@
 											<h5>Email</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>johnbranch@gmail.com <span class="sub">(Personal)</span></p>
-												</li>
-												<li class="item  edit-mode">
-													<form class="form-horizontal">
-														<div class="form-group">
-															<label for="text" class="sr-only">Email</label>
-															<div class="col-xs-7">
-																<input type="text" class="form-control" placeholder="Email" value="johnbranch@gmail.com">
-															</div>
-															<div class="col-xs-5">
-																<select class="form-control">
-																	<option>Personal</option>
-																	<option>Office</option>
-																</select>
-															</div>
-														</div>
-													</form>
+													<p>johnbranch@gmail.com <span class="auxy">(Personal)</span></p>
 												</li>
 											</ul>
 										</li>
@@ -255,27 +212,7 @@
 											<h5>Messenger</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>johnbranch@yahoo.com <span class="sub">(YM)</span></p>
-												</li>
-												<li class="item edit-mode">
-													<form class="form-horizontal">
-														<div class="form-group">
-															<label for="text" class="sr-only">Messenger</label>
-															<div class="col-xs-7">
-																<input type="text" class="form-control" placeholder="Messenger" value="johnbranch@yahoo.com">
-															</div>
-															<div class="col-xs-5">
-																<select class="form-control">
-																	<option>YM</option>
-																	<option>Whatsapp</option>
-																	<option>BBM</option>
-																	<option>Skype</option>
-																	<option>Messages</option>
-																	<option>Telegram</option>
-																</select>
-															</div>
-														</div>
-													</form>
+													<p>johnbranch@yahoo.com <span class="auxy">(YM)</span></p>
 												</li>
 											</ul>
 										</li>
@@ -283,24 +220,7 @@
 											<h5>Phone</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>08111336030 <span class="sub">(Mobile)</span></p>
-												</li>
-												<li class="item edit-mode">
-													<form class="form-horizontal">
-														<div class="form-group">
-															<label for="text" class="sr-only">Phone</label>
-															<div class="col-xs-7">
-																<input type="text" class="form-control" placeholder="Phone" value="08111336030">
-															</div>
-															<div class="col-xs-5">
-																<select class="form-control">
-																	<option>Mobile</option>
-																	<option>Office</option>
-																	<option>Home</option>
-																</select>
-															</div>
-														</div>
-													</form>
+													<p>08111336030 <span class="auxy">(Mobile)</span></p>
 												</li>
 											</ul>
 										</li>
@@ -308,23 +228,7 @@
 											<h5>Address</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto <span class="sub">(Office)</span></p>
-												</li>
-												<li class="item edit-mode">
-													<form class="form-horizontal">
-														<div class="form-group">
-															<label for="text" class="sr-only">Address</label>
-															<div class="col-xs-7">
-																<textarea class="form-control" id="text" placeholder="Address">Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto</textarea>
-															</div>
-															<div class="col-xs-5">
-																<select class="form-control">
-																	<option>Office</option>
-																	<option>Personal</option>
-																</select>
-															</div>
-														</div>
-													</form>
+													<p>Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto <span class="auxy">(Office)</span></p>
 												</li>
 											</ul>
 										</li>
@@ -336,89 +240,11 @@
 										<li class="item">
 											<p><span class="icon-mid ion-social-googleplus-outline"></span> <a href="">plus.google.com/johnbranch</a></p>
 										</li>
-										<li class="item  edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="sr-only">Links</label>
-													<div class="col-xs-7">
-														<input type="text" class="form-control" placeholder="Links" value="plus.google.com/johnbranch">
-													</div>
-													<div class="col-xs-5">
-														<select class="form-control">
-															<option>Google Plus</option>
-															<option>Facebook</option>
-															<option>Twitter</option>
-															<option>Instagram</option>
-															<option>Website</option>
-															<option>Yahoo</option>
-															<option>Blog</option>
-															<option>Youtube</option>
-															<option>LinkedIn</option>
-															<option>Deviantart</option>
-															<option>Dribbble</option>
-															<option>Behance</option>
-														</select>
-													</div>
-												</div>
-											</form>
-										</li>
 										<li class="item">
 											<p><span class="icon-mid ion-social-facebook"></span> <a href="">facebook.com/johnbranch</a></p>
 										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="sr-only">Links</label>
-													<div class="col-xs-7">
-														<input type="text" class="form-control" placeholder="Links" value="facebook.com/johnbranch">
-													</div>
-													<div class="col-xs-5">
-														<select class="form-control">
-															<option>Facebook</option>
-															<option>Google Plus</option>
-															<option>Twitter</option>
-															<option>Instagram</option>
-															<option>Website</option>
-															<option>Yahoo</option>
-															<option>Blog</option>
-															<option>Youtube</option>
-															<option>LinkedIn</option>
-															<option>Deviantart</option>
-															<option>Dribbble</option>
-															<option>Behance</option>
-														</select>
-													</div>
-												</div>
-											</form>
-										</li>
 										<li class="item">
 											<p><span class="icon-mid ion-social-twitter"></span><a href="">twitter.com/johnbranch</a></p>
-										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="sr-only">Links</label>
-													<div class="col-xs-7">
-														<input type="text" class="form-control" placeholder="Links" value="twitter.com/johnbranch">
-													</div>
-													<div class="col-xs-5">
-														<select class="form-control">
-															<option>Twitter</option>
-															<option>Google Plus</option>
-															<option>Facebook</option>
-															<option>Instagram</option>
-															<option>Website</option>
-															<option>Yahoo</option>
-															<option>Blog</option>
-															<option>Youtube</option>
-															<option>LinkedIn</option>
-															<option>Deviantart</option>
-															<option>Dribbble</option>
-															<option>Behance</option>
-														</select>
-													</div>
-												</div>
-											</form>
 										</li>
 									</ul>
 								</div>
@@ -432,55 +258,6 @@
 										<li class="item">
 											<p>Channel Relation / Partnership</p>
 										</li>
-										<li class="item edit-mode">
-											<form>
-												<div class="form-group">
-													<select class="form-control">
-														<option>Channel Relation / Partnership</option>
-														<option>Administrasi</option>
-														<option>Aktris/Aktor</option>
-														<option>Akuntan</option>
-														<option>Apoteker</option>
-														<option>Arsitek</option>
-														<option>Atlet</option>
-														<option>Business Analyst</option>
-														<option>Design Grafis</option>
-														<option>Designer</option>
-														<option>Engineer</option>
-														<option>Entrepreneur</option>
-														<option>Financial Consultant</option>
-														<option>Juru Masak</option>
-														<option>Marketing Communication</option>
-														<option>Model</option>
-														<option>Musisi</option>
-														<option>Notaris</option>
-														<option>Pelukis</option>
-														<option>Pembawa Acara /Presenter</option>
-														<option>Penari</option>
-														<option>Penata Rias</option>
-														<option>Pengacara</option>
-														<option>Penulis</option>
-														<option>Penyiar Radio</option>
-														<option>Perancang Busana</option>
-														<option>Photographer</option>
-														<option>Pilot</option>
-														<option>Pramugari/a</option>
-														<option>Programmer</option>
-														<option>Psikiater</option>
-														<option>Psikolog</option>
-														<option>Public Relation</option>
-														<option>Sales</option>
-														<option>Sekretaris</option>
-														<option>Trainer Olahraga</option>
-														<option>Translator</option>
-														<option>Video Editor</option>
-														<option>Wartawan</option>
-														<option>Web Designer</option>
-														<option>Other Professional Category</option>
-													</select>
-												</div>
-											</form>
-										</li>
 									</ul>
 								</div>
 								<div class="group-card">
@@ -489,44 +266,36 @@
 										<li class="item">
 											<p>Sales</p>
 										</li>
-										<li class="item edit-mode">
-											<form>
-												<div class="form-group">
-													<label for="text" class="sr-only">Industry</label>
-													<input type="text" class="form-control" id="text" placeholder="Industry" value="Sales">
-												</div>
-											</form>
-										</li>
 									</ul>
 								</div>
 								<div class="group-card">
 									<h4>Work Experience</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p>Worked Profile</p>
-											<p>Sales Manager</p>
+											<p class="arch">Worked Profile</p>
+											<p><b>Sales Manager</b></p>
 											<p>13 November 2013</p>
 											<p>Jakarta</p>
 											<p>Creating the productive network platform</p>
 										</li>
 										<li class="item">
-											<p>PT Infinys System Indonesia</p>
-											<p>Sales Manager</p>
-											<p>01 March 2008 - 01 November 2013</p>
+											<p class="arch">PT Infinys System Indonesia</p>
+											<p><b>Sales Manager</b></p>
+											<p>1 March 2008 - 1 November 2013</p>
 											<p>Jakarta</p>
 											<p>Creating the productive network platform</p>
 										</li>
 										<li class="item">
-											<p>PT Generasi Indonesia Digital</p>
-											<p>Sales Manager</p>
-											<p>01 August 2002 - 01 March 2008</p>
+											<p class="arch">PT Generasi Indonesia Digital</p>
+											<p><b>Sales Manager</b></p>
+											<p>1 August 2002 - 1 March 2008</p>
 											<p>Jakarta</p>
 											<p>Creating the productive network platform</p>
 										</li>
 										<li class="item">
-											<p>Indonesian Internet Service Provider Association (APJII)</p>
-											<p>Sales Manager</p>
-											<p>01 August 2001 - 01 July 2002</p>
+											<p class="arch">Indonesian Internet Service Provider Association (APJII)</p>
+											<p><b>Sales Manager</b></p>
+											<p>1 August 201 - 1 July 2002</p>
 											<p>Jakarta</p>
 											<p>Creating the productive network platform</p>
 										</li>
@@ -536,9 +305,9 @@
 									<h4>Project Experience</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p>Parcel Lebaran 2014</p>
-											<p>Sales Leader</p>
-											<p>01 July 2014 - 01 August 2014</p>
+											<p class="arch">Parcel Lebaran 2014</p>
+											<p><b>Sales Leader</b></p>
+											<p>1 July 2014 - 1 August 2014</p>
 											<p>Jakarta</p>
 										</li>
 									</ul>
@@ -547,9 +316,9 @@
 									<h4>Education</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p>Institute Bisnis Nusantara (IBN)</p>
-											<p>Bisnis</p>
-											<p>01 September 2001 - 01 July 2005</p>
+											<p class="arch">Institute Bisnis Nusantara (IBN)</p>
+											<p><b>Bisnis</b></p>
+											<p>1 September 201 - 1 July 2005</p>
 											<p>Jakarta</p>
 										</li>
 									</ul>
@@ -558,20 +327,20 @@
 									<h4>Certifications</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p>Sertifikat Workshop Marketing</p>
-											<p>18723681726234</p>
+											<p class="arch">Sertifikat Workshop Marketing</p>
+											<p><b>18723681726234</b></p>
 											<p>12 December 2005</p>
 											<p>Aldena Maudi</p>
 										</li>
 										<li class="item">
-											<p>Sertifikat TOEFL</p>
-											<p>18734532342234</p>
+											<p class="arch">Sertifikat TOEFL</p>
+											<p><b>18734532342234</b></p>
 											<p>12 December 2005</p>
 											<p>Natasha Raya</p>
 										</li>
 										<li class="item">
-											<p>Sertifikat Workshop Marketing Online</p>
-											<p>187236817263123</p>
+											<p class="arch">Sertifikat Workshop Marketing Online</p>
+											<p><b>187236817263123</b></p>
 											<p>12 December 2005</p>
 											<p>Ayu Maudi</p>
 										</li>
@@ -581,48 +350,10 @@
 									<h4>Language</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p>Bahasa Indonesia <span class="sub">(Active)</span></p>
-										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="sr-only">Language</label>
-													<div class="col-xs-7">
-														<input type="text" class="form-control" placeholder="Language" value="Bahasa Indonesia">
-													</div>
-													<div class="col-xs-5">
-														<select class="form-control">
-															<option>Active</option>
-															<option>Beginner</option>
-															<option>Passive</option>
-															<option>Professional</option>
-															<option>Native</option>
-														</select>
-													</div>
-												</div>
-											</form>
+											<p>Bahasa Indonesia <span class="auxy">(Active)</span></p>
 										</li>
 										<li class="item">
-											<p>Inggris <span class="sub">(Passive)</span></p>
-										</li>
-										<li class="item edit-mode">
-											<form class="form-horizontal">
-												<div class="form-group">
-													<label for="text" class="sr-only">Language</label>
-													<div class="col-xs-7">
-														<input type="text" class="form-control" placeholder="Language" value="Inggris">
-													</div>
-													<div class="col-xs-5">
-														<select class="form-control">
-															<option>Passive</option>
-															<option>Beginner</option>
-															<option>Active</option>
-															<option>Professional</option>
-															<option>Native</option>
-														</select>
-													</div>
-												</div>
-											</form>
+											<p>Inggris <span class="auxy">(Passive)</span></p>
 										</li>
 									</ul>
 								</div>
@@ -632,24 +363,8 @@
 										<li class="item">
 											<p>Management</p>
 										</li>
-										<li class="item edit-mode">
-											<form>
-												<div class="form-group">
-													<label for="text" class="sr-only">Skills</label>
-													<input type="text" class="form-control" id="text" placeholder="Skills" value="Management">
-												</div>
-											</form>
-										</li>
 										<li class="item">
 											<p>Speaking</p>
-										</li>
-										<li class="item edit-mode">
-											<form>
-												<div class="form-group">
-													<label for="text" class="sr-only">Skills</label>
-													<input type="text" class="form-control" id="text" placeholder="Skills" value="Speaking">
-												</div>
-											</form>
 										</li>
 									</ul>
 								</div>
