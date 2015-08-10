@@ -309,6 +309,7 @@ body {
   text-align: center;
   padding-right: 4px;
   padding-left: 4px;
+  position: relative;
 }
 .group-card .item .imgs-show ul > li:first-child {
   padding-left: 0;
@@ -329,10 +330,20 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-} /*
-.group-card .item.edit-mode {
-  display: none;
-} */
+}
+.group-card .imgs-show form {
+  margin: 0;
+}
+.group-card .imgs-show form .btn-close {
+  padding: 0 10px;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
 
 .group-btn {
   margin-bottom: 40px;
@@ -353,7 +364,6 @@ body {
 }
 .group-btn .btn-lg {
   font-size: 20px;
-
 }
 .group-btn .btn .icon {
   margin-right: 8px;
