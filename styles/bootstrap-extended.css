@@ -186,6 +186,7 @@ body {
 .card .card-img > img,
 .card a .card-img > img {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
   margin-left: auto;
