@@ -396,6 +396,10 @@ body {
   max-width: 60px;
   max-height: 60px;
 }
+.group-media .media-heading {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
 .group-media .media-body p {
   margin-bottom: 2px;
 }
