@@ -1,15 +1,11 @@
 /* Bootstrap Extended */
 
 /* Ionicicons */
-/* Photoswipe */
 @import url('photoswipe.css');
+
+/* Photoswipe */
 @import url('ionicons.min.css');
-.icon {
-  vertical-align: baseline;
-}
-.icon-mid {
-  vertical-align: middle;
-}
+
 
 /* Override Bootstrap By Parents */
 .navbar-id .navbar {
@@ -176,6 +172,12 @@ body {
 }
 .bg-cover-bump {
   margin-bottom: -200px;
+}
+.icon {
+  vertical-align: baseline;
+}
+.icon-mid {
+  vertical-align: middle;
 }
 .card {
   display: block;
@@ -382,7 +384,7 @@ body {
   color: #333333;
   text-decoration: none;
   display: block;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #e0e0e0;
 }
 .media-left, .media > .pull-left {
   padding-right: 15px;
@@ -428,6 +430,7 @@ body {
   margin-bottom: 30px;
   background-color: #ffffff;
   height: 320px;
+  border: 1px solid #e0e0e0;
 }
 
 .gap-fp {
