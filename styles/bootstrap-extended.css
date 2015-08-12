@@ -198,6 +198,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.card .card-img-s > img,
+.card a .card-img-s > img {
+  width: auto;
+  max-width: 100px;
+}
 .card .card-img {
   padding: 4px;
 }
@@ -220,7 +225,7 @@ body {
   text-align: center;
 }
 .card-potrait .card-caption h3 {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .card-potrait .card-caption .sub {
   font-size: 16px;
@@ -228,6 +233,22 @@ body {
 }
 .card-bump-bg {
   margin-top: -200px;
+}
+.card-bump-bg-full {
+  margin-top: -240px;
+}
+
+.card-transparent {
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.card-transparent .card-img-s > img,
+.card-transparent a .card-img-s > img {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
 }
 
 .group-card {
