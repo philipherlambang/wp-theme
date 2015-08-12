@@ -29,7 +29,7 @@
   color: #ffffff;
 }
 .navbar-id .navbar-brand > img {
-  max-width: 36px;
+  max-height: 36px;
   border-radius: 8px;
 }
 .navbar-id .navbar-default .navbar-text {
@@ -273,7 +273,8 @@ body {
 .group-card .item p {
   margin-bottom: 0;
 }
-.group-card .item b {
+.group-card .item b,
+.group-card .item .b {
   font-weight: 500;
 }
 .group-card .item .arch {
@@ -293,30 +294,71 @@ body {
 .group-card form {
   margin: -10px -15px;
 }
-.group-card .form-group {
+.form-invisible .form-group {
   margin-right: 0;
   margin-left: 0;
   margin-bottom: 0;
 }
-.group-card .form-group [class^="col"] {
+.form-invisible [class^="col"] {
   padding-right: 0;
   padding-left: 0;
 }
-.group-card .form-group label {
-  margin-bottom: 0;
-  padding: 10px 15px !important;
-  font-weight: 500;
-}
-.group-card .form-group textarea {
-  resize: vertical;
-}
-.group-card .form-control {
+.form-invisible .form-control {
   height: auto;
   padding: 10px 15px;
   color: #616161;
   border-width: 0;
   border-radius: 0;
   box-shadow: none;
+}
+.form-invisible label,
+.form-invisible label[class^="col"] {
+  margin-bottom: 0;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+.form-invisible textarea {
+  resize: none;
+}
+.form-invisible .radio,
+.form-invisible .checkbox,
+.form-invisible .radio-inline,
+.form-invisible .checkbox-inline {
+  padding-top: 0;
+}
+.form-invisible input[type="radio"],
+.form-invisible input[type="checkbox"] {
+  margin: 0;
+}
+.form-invisible .radio input[type="radio"],
+.form-invisible .radio-inline input[type="radio"],
+.form-invisible .checkbox input[type="checkbox"],
+.form-invisible .checkbox-inline input[type="checkbox"] {
+  position: static;
+}
+.form-invisible .radio,
+.form-invisible .checkbox,
+.form-invisible .radio label,
+.form-invisible .checkbox label {
+  min-height: auto;
+}
+.form-vary {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.form-vary .form-control {
+  height: auto;
+  padding: 0 15px;
+}
+.form-vary label,
+.form-vary label[class^="col"] {
+  margin-bottom: 0;
+  padding: 0 15px;
+}
+.form-vary .radio,
+.form-vary .checkbox {
+  margin-top: 2px;
+  margin-bottom: -2px;
 }
 
 .group-card .item .imgs-show {
@@ -375,7 +417,7 @@ body {
 }
 
 .group-btn {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-top: 4px;
 }
 .group-btn .row {
