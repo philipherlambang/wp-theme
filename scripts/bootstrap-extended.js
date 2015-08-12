@@ -174,8 +174,10 @@
 
 			options.showAnimationDuration = 0;
 			options.hideAnimationDuration = 0;
-			options.fullscreenEl = false,
-			options.shareEl = false,
+			options.bgOpacity = 0.7;
+			options.fullscreenEl = false;
+			options.shareEl = false;
+			options.modal = false;
 
 			// Pass data to PhotoSwipe and initialize it
 			gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
