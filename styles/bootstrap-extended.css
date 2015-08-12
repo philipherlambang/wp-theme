@@ -244,6 +244,7 @@ body {
   color: #ffffff;
   box-shadow: none;
   -webkit-box-shadow: none;
+  margin-bottom: 30px;
 }
 .card-transparent .card-img-s > img,
 .card-transparent a .card-img-s > img {
