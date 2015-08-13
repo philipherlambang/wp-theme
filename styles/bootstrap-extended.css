@@ -1,12 +1,5 @@
 /* Bootstrap Extended */
 
-/* Ionicicons */
-@import url('photoswipe.css');
-
-/* Photoswipe */
-@import url('ionicons.min.css');
-
-
 /* Override Bootstrap By Parents */
 .navbar-id .navbar {
   margin-bottom: 0;
