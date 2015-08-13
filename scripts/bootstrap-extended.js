@@ -202,4 +202,7 @@
 	// execute above function
 	initPhotoSwipeFromDOM('.pswp-gallery');
 
+	// Textarea Autosize
+	autosize(document.querySelectorAll('textarea'));
+
 })();
