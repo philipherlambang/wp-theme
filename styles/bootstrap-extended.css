@@ -247,10 +247,10 @@ body {
 
 .group-card {
   margin-bottom: 30px;
-}
+} /*
 .group-card:last-child {
   margin-bottom: 20px;
-}
+} */
 .group-card h4 {
   margin-bottom: 15px;
 }
@@ -312,6 +312,7 @@ body {
 }
 .form-invisible textarea {
   resize: none;
+  max-height: 360px;
 }
 .form-invisible .radio,
 .form-invisible .checkbox,
@@ -352,6 +353,11 @@ body {
 .form-vary .checkbox {
   margin-top: 2px;
   margin-bottom: -2px;
+}
+@media (max-width: 767px) {
+  .form-vary label.ex {
+    padding-right: 5px;
+  }
 }
 
 .group-card .item .imgs-show {
