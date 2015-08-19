@@ -350,6 +350,9 @@ body {
 .form-invisible .select select:focus {
   box-shadow: none;
 }
+.form-invisible .select select:active {
+  color: inherit;
+}
 .form-invisible .control.checkbox {
   margin-top: 0;
   padding: 10px 15px;
@@ -360,6 +363,9 @@ body {
   top: inherit;
   width: 20px;
   height: 20px;
+}
+.form-invisible .datepicker[readonly] {
+  background-color: inherit;
 }
 .form-vary {
   padding-top: 10px;
@@ -573,3 +579,42 @@ body {
 /* http://tealtribe.s3.amazonaws.com/203585ebdddf216b75729f3fb5b66eda75870707151c.jpg */
 /* http://edition.cnn.com/specials/profiles */
 /* #007AFF */
+
+.picker__holder {
+  transition: none;
+  overflow-y: hidden;
+}
+.picker--opened .picker__holder {
+  webkit-transform: none;
+     -ms-transform: none;
+         transform: none;
+  transition: none;
+}
+.picker__frame {
+  transition: none;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+.picker--opened .picker__frame {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+.picker__box {
+  border-radius: 0;
+}
+.picker__select--month, .picker__select--year {
+  margin-top: -4px;
+  height: auto;
+  font-size: 14px;
+}
+.picker__select--year {
+  width: 25%;
+}
+.picker__select--month {
+  width: 40%;
+}
+.picker__weekday {
+  display: none;
+}

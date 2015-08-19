@@ -205,4 +205,15 @@
 	// Textarea Autosize
 	autosize(document.querySelectorAll('textarea'));
 
+	// The date picker
+	$('.datepicker').pickadate({
+		format: 'd mmmm yyyy',
+		formatSubmit: 'yyyy-mm-dd',
+		today: '',
+		selectYears: 70,
+		selectMonths: true,
+		min: [1900,1,1],
+		max: true
+	});
+
 })();
