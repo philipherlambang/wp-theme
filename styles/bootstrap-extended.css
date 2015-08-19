@@ -336,6 +336,31 @@ body {
 .form-invisible .checkbox label {
   min-height: auto;
 }
+.form-invisible .select {
+  padding: 2px;
+}
+.form-invisible .select select {
+  padding: 7px 24px 7px 12px;
+  border-radius: 0;
+  line-height: inherit;
+  font-weight: 400;
+  background-color: transparent;
+}
+.form-invisible .control input:focus~.control-indicator,
+.form-invisible .select select:focus {
+  box-shadow: none;
+}
+.form-invisible .control.checkbox {
+  margin-top: 0;
+  padding: 10px 15px;
+}
+.form-invisible .control.checkbox .control-indicator {
+  position: inherit;
+  float: left;
+  top: inherit;
+  width: 20px;
+  height: 20px;
+}
 .form-vary {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -358,6 +383,21 @@ body {
   .form-vary label.ex {
     padding-right: 5px;
   }
+}
+.form-vary .select {
+  padding: 0;
+}
+.form-vary .select select {
+  padding: 0 24px 0 12px;
+}
+.form-vary .control.checkbox {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.form-vary .control.checkbox .control-indicator {
+  margin: 2px 0;
+  width: 16px;
+  height: 16px;
 }
 
 .group-card .item .imgs-show {
