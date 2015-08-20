@@ -3,7 +3,7 @@
 (function() {
 
 	/* Photoswipe */
-	var initPhotoSwipeFromDOM = function(gallerySelector) {
+	var initPswp = function(gallerySelector) {
 
 		// parse slide data (url, title, size ...) from DOM elements
 		// (children of gallerySelector)
@@ -199,21 +199,64 @@
 		}
 	};
 
-	// execute above function
-	initPhotoSwipeFromDOM('.pswp-gallery');
+	initPswp('.pswp-gallery');
 
 	// Textarea Autosize
 	autosize(document.querySelectorAll('textarea'));
 
-	// The date picker
-	$('.datepicker').pickadate({
+	// The Date Pickers
+	$('.date-picker, .date-from, .date-thru').pickadate({
 		format: 'd mmmm yyyy',
 		formatSubmit: 'yyyy-mm-dd',
 		today: '',
+		hiddenName: true,
 		selectYears: 70,
 		selectMonths: true,
-		min: [1900,1,1],
-		max: true
+		min: [1945,7,17],
+		max: true,
+		onRender: function() {
+			var hld = $(this.$holder),
+			    hdr = hld[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0],
+			    slc = $([hdr.childNodes[0], hdr.childNodes[1]]);
+			slc.wrap('<label class="select"></label>');
+		}
 	});
+
+	$.each(document.getElementsByClassName('date-from'), function() {
+		var dateFrom = $(this), dateThru = $(this).parents('form').find('.date-thru');
+		if (dateThru.length) {
+			dateFromThru(dateFrom, dateThru);
+		}
+	});
+
+	function dateFromThru(dateFrom, dateThru) {
+		var fromPkdt = dateFrom.pickadate(),
+		    fromPckr = fromPkdt.pickadate('picker');
+
+		var thruPkdt = dateThru.pickadate(),
+		    thruPckr = thruPkdt.pickadate('picker');
+
+		if ( fromPckr.get('value') ) {
+			thruPckr.set('min', fromPckr.get('select'));
+		}
+		if ( thruPckr.get('value') ) {
+			fromPckr.set('max', thruPckr.get('select'));
+		}
+
+		fromPckr.on('set', function(e) {
+			if ( e.select ) {
+				thruPckr.set('min', fromPckr.get('select'));
+			} else if ( 'clear' in e ) {
+				thruPckr.set('min', false);
+			}
+		});
+		thruPckr.on('set', function(e) {
+			if ( e.select ) {
+				fromPckr.set('max', thruPckr.get('select'));
+			} else if ( 'clear' in e ) {
+				fromPckr.set('max', false);
+			}
+		});
+	}
 
 })();

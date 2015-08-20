@@ -364,7 +364,9 @@ body {
   width: 20px;
   height: 20px;
 }
-.form-invisible .datepicker[readonly] {
+.form-invisible .date-picker[readonly],
+.form-invisible .date-from[readonly],
+.form-invisible .date-thru[readonly] {
   background-color: inherit;
 }
 .form-vary {
@@ -580,9 +582,18 @@ body {
 /* http://edition.cnn.com/specials/profiles */
 /* #007AFF */
 
+.pswp {
+  z-index: 999;
+}
+.picker {
+  line-height: inherit;
+  color: #424242;
+}
+.picker__box {
+  font-size: 18px;
+}
 .picker__holder {
   transition: none;
-  overflow-y: hidden;
 }
 .picker--opened .picker__holder {
   webkit-transform: none;
@@ -604,17 +615,20 @@ body {
 .picker__box {
   border-radius: 0;
 }
-.picker__select--month, .picker__select--year {
-  margin-top: -4px;
-  height: auto;
-  font-size: 14px;
-}
+.picker__select--month,
 .picker__select--year {
-  width: 25%;
-}
-.picker__select--month {
-  width: 40%;
+  height: auto;
 }
 .picker__weekday {
   display: none;
+}
+.picker__nav--next:before {
+  border-left: .75em solid #212121;
+}
+.picker__nav--prev:before {
+  border-right: .75em solid #212121;
+}
+.picker__header .select {
+  margin-top: -9px;
+  font-size: 18px;
 }
