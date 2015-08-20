@@ -178,6 +178,7 @@
 			options.fullscreenEl = false;
 			options.shareEl = false;
 			options.modal = false;
+			options.history = false;
 
 			// Pass data to PhotoSwipe and initialize it
 			gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
@@ -202,7 +203,7 @@
 	initPswp('.pswp-gallery');
 
 	// Textarea Autosize
-	autosize(document.querySelectorAll('textarea'));
+	autosize(document.getElementsByClassName('auto-size'));
 
 	// The Date Pickers
 	$('.date-picker, .date-from, .date-thru').pickadate({
