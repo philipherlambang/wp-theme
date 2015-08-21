@@ -267,6 +267,9 @@
 		}
 	}
 
+
+
+	/*! Form Edit DOM Manipulations */
 	$('.acts-mode').on('click', 'a', function() {
 		var that = $(this),
 		    actsMode = that.closest('.acts-mode'),
@@ -291,7 +294,6 @@
 			actsMode.find('a').removeAttr('style');
 			editMode.find('.form-delete').removeAttr('style');
 		}
-
 	});
 
 	$('.group-card').on('click', '.edit-mode .minus', function() {
@@ -299,12 +301,20 @@
 	});
 
 	$('.group-card').on('click', '.edit-mode .current, .edit-mode .expire', function() {
-		var thruDate = $(this).closest('.edit-mode').find('.date-thru').closest('.form-group');
-		if (this.checked) {
+		currentDisplay(this);
+	});
+
+	$.each($('.edit-mode .current, .edit-mode .expire'), function() {
+		currentDisplay(this);
+	});
+
+	function currentDisplay(selector) {
+		var thruDate = $(selector).closest('.edit-mode').find('.date-thru').closest('.form-group');
+		if (selector.checked) {
 			thruDate.css('display', 'none');
 		} else {
 			thruDate.css('display', 'block');
 		}
-	});
+	}
 
 })();
