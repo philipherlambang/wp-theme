@@ -1479,6 +1479,381 @@
 
 .ion-xbox:before { content: "\f30c"; }
 
+/*!
+ * WTF, forms?
+ * Released under MIT and copyright 2014 Mark Otto.
+ * http://wtfforms.com
+ *
+ * Embedded icons from Open Iconic.
+ * Released under MIT and copyright 2014 Waybury.
+ * http://useiconic.com/open
+ */
+
+
+
+/*
+ * Checkboxes and radios
+ */
+
+.control {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+.control input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+.control-indicator {
+  position: absolute;
+  top: .25rem;
+  left: 0;
+  display: block;
+  width:  1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 65%;
+  color: #eee;
+  text-align: center;
+  background-color: #eee;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* Hover state */
+/* Uncomment if you need it, but be aware of the sticky iOS states.
+.control:hover .control-indicator {
+  color: #fff;
+  background-color: #ccc;
+}
+*/
+
+/* Focus */
+.control input:focus ~ .control-indicator {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}
+
+/* Checked state */
+.control input:checked ~ .control-indicator {
+  color: #fff;
+  background-color: #0074d9;
+}
+
+/* Active */
+.control input:active ~ .control-indicator {
+  color: #fff;
+  background-color: #84c6ff;
+}
+
+/* Checkbox modifiers */
+.checkbox .control-indicator {
+  border-radius: .25rem;
+}
+.checkbox input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+/* Radio modifiers */
+.radio .control-indicator {
+  border-radius: 50%;
+}
+.radio input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+/* Alternately, use another character */
+.control-x input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xLjQsMEwwLDEuNGwwLjcsMC43bDEuOCwxLjhMMC43LDUuN0wwLDYuNGwxLjQsMS40bDAuNy0wLjdsMS44LTEuOGwxLjgsMS44bDAuNywwLjdsMS40LTEuNEw3LjEsNS43DQoJTDUuMywzLjlsMS44LTEuOGwwLjctMC43TDYuNCwwTDUuNywwLjdMMy45LDIuNUwyLjEsMC43QzIuMSwwLjcsMS40LDAsMS40LDB6Ii8+DQo8L3N2Zz4NCg==);
+}
+.control-dash input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K)
+}
+
+
+
+/*
+ * Select
+ */
+
+.select {
+  position: relative;
+  display: inline-block;
+  color: #555;
+}
+.select select {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: .5rem 2.25rem .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #eee;
+  border: 0;
+  border-radius: .25rem;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+/* Undo the Firefox inner focus ring */
+.select select:focus:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+/* Dropdown arrow */
+.select:after {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -.15rem;
+  pointer-events: none;
+  border-top: .35rem solid;
+  border-right: .35rem solid transparent;
+  border-bottom: .35rem solid transparent;
+  border-left: .35rem solid transparent;
+}
+
+/* Hover state */
+/* Uncomment if you need it, but be aware of the sticky iOS states.
+.select select:hover {
+  background-color: #ddd;
+}
+*/
+
+/* Focus */
+.select select:focus {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}
+
+/* Active/open */
+.select select:active {
+  color: #fff;
+  background-color: #0074d9;
+}
+
+/* Hide the arrow in IE10 and up */
+.select select::-ms-expand {
+  display: none;
+}
+
+/* Media query to target Firefox only */
+@-moz-document url-prefix() {
+  /* Firefox hack to hide the arrow */
+  .select select {
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 1rem;
+  }
+
+  /* <option> elements inherit styles from <select>, so reset them. */
+  .select option {
+    background-color: #fff;
+  }
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+  .select select {
+    z-index: 1;
+    padding: .5rem 1.5rem .5rem 1rem;
+  }
+  .select:after {
+    z-index: 5;
+  }
+  .select:before {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    bottom: 0;
+    z-index: 2;
+    content: "";
+    display: block;
+    width: 1.5rem;
+    background-color: #eee;
+  }
+  .select select:hover,
+  .select select:focus,
+  .select select:active {
+    color: #555;
+    background-color: #eee;
+  }
+}
+
+
+
+/*
+ * File
+ */
+
+.file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+}
+.file input {
+  min-width: 14rem;
+  margin: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.file-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 2.5rem;
+  padding: .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: .075rem solid #ddd;
+  border-radius: .25rem;
+  box-shadow: inset 0 .2rem .4rem rgba(0,0,0,.05);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.file-custom:after {
+  content: "Choose file...";
+}
+.file-custom:before {
+  position: absolute;
+  top: -.075rem;
+  right: -.075rem;
+  bottom: -.075rem;
+  z-index: 6;
+  display: block;
+  content: "Browse";
+  height: 2.5rem;
+  padding: .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #eee;
+  border: .075rem solid #ddd;
+  border-radius: 0 .25rem .25rem 0;
+}
+
+/* Focus */
+.file input:focus ~ .file-custom {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}
+
+
+
+/*
+ * Progress
+ */
+
+.progress {
+  display: inline-block;
+  height: 1rem;
+}
+.progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /* Remove Firefox and Opera border */
+  border: 0;
+  /* IE10 uses `color` to set the bar background-color */
+  color: #0074d9;
+}
+.progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: .2rem;
+}
+.progress[value]::-webkit-progress-value {
+  background-color: #0074d9;
+  border-top-left-radius: .2rem;
+  border-bottom-left-radius: .2rem;
+}
+.progress[value="100"]::-webkit-progress-value {
+  border-top-right-radius: .2rem;
+  border-bottom-right-radius: .2rem;
+}
+
+/* Firefox styles must be entirely separate or it busts Webkit styles. */
+@-moz-document url-prefix() {
+  .progress[value] {
+    background-color: #eee;
+    border-radius: .2rem;
+  }
+  .progress[value]::-moz-progress-bar {
+    background-color: #0074d9;
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem;
+  }
+  .progress[value="100"]::-moz-progress-bar {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+  }
+}
+
+/* IE9 hacks to accompany custom markup. We don't need to scope this via media queries, but I feel better doing it anyway. */
+@media screen and (min-width:0\0) {
+  .progress {
+    background-color: #eee;
+    border-radius: .2rem;
+  }
+  .progress-bar {
+    display: inline-block;
+    height: 1rem;
+    text-indent: -999rem; /* Simulate hiding of value as in native `<progress>` */
+    background-color: #0074d9;
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem;
+  }
+  .progress[width="100%"] {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+  }
+}
+
+
+/*
+ * Control layouts
+ */
+
+.controls-stacked {
+  margin: 1rem 0;
+}
+.controls-stacked .control,
+.controls-stacked .progress {
+  display: block;
+}
+.controls-stacked .control + .control,
+.controls-stacked .progress + .progress {
+  margin-top: .5rem;
+}
+
+.controls-inline {
+  margin: 1rem 0;
+}
+.controls-inline .control {
+  display: inline-block;
+  height: 1rem;
+}
+.controls-inline .control + .control {
+  margin-left: 1rem;
+}
+
+
 
 /*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
 /*
@@ -2144,3 +2519,601 @@ a.pswp__share--download:hover {
 
 .pswp--minimal--dark .pswp__top-bar {
   background: none; }
+
+/* ==========================================================================
+   $BASE-PICKER
+   ========================================================================== */
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+.picker {
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.2;
+  color: #000000;
+  position: absolute;
+  z-index: 10000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/**
+ * The picker input element.
+ */
+.picker__input {
+  cursor: default;
+}
+/**
+ * When the picker is opened, the input element is “activated”.
+ */
+.picker__input.picker__input--active {
+  border-color: #0089ec;
+}
+/**
+ * The holder is the only “scrollable” top-level container element.
+ */
+.picker__holder {
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*!
+ * Default mobile-first, responsive styling for pickadate.js
+ * Demo: http://amsul.github.io/pickadate.js
+ */
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+/**
+ * Make the holder and frame fullscreen.
+ */
+.picker__holder,
+.picker__frame {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+}
+/**
+ * The holder should overlay the entire screen.
+ */
+.picker__holder {
+  position: fixed;
+  transition: background 0.15s ease-out, -webkit-transform 0s 0.15s;
+  transition: background 0.15s ease-out, transform 0s 0.15s;
+  -webkit-backface-visibility: hidden;
+}
+/**
+ * The frame that bounds the box contents of the picker.
+ */
+.picker__frame {
+  position: absolute;
+  margin: 0 auto;
+  min-width: 256px;
+  max-width: 666px;
+  width: 100%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+@media (min-height: 33.875em) {
+  .picker__frame {
+    overflow: visible;
+    top: auto;
+    bottom: -100%;
+    max-height: 80%;
+  }
+}
+@media (min-height: 40.125em) {
+  .picker__frame {
+    margin-bottom: 7.5%;
+  }
+}
+/**
+ * The wrapper sets the stage to vertically align the box contents.
+ */
+.picker__wrap {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+@media (min-height: 33.875em) {
+  .picker__wrap {
+    display: block;
+  }
+}
+/**
+ * The box contains all the picker contents.
+ */
+.picker__box {
+  background: #ffffff;
+  display: table-cell;
+  vertical-align: middle;
+}
+@media (min-height: 26.5em) {
+  .picker__box {
+    font-size: 1.25em;
+  }
+}
+@media (min-height: 33.875em) {
+  .picker__box {
+    display: block;
+    font-size: 1.33em;
+    border: 1px solid #777777;
+    border-top-color: #898989;
+    border-bottom-width: 0;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+  }
+}
+@media (min-height: 40.125em) {
+  .picker__box {
+    font-size: 1.5em;
+    border-bottom-width: 1px;
+    border-radius: 5px;
+  }
+}
+/**
+ * When the picker opens...
+ */
+.picker--opened .picker__holder {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+  zoom: 1;
+  background: rgba(0, 0, 0, 0.32);
+  transition: background 0.15s ease-out;
+}
+.picker--opened .picker__frame {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+@media (min-height: 33.875em) {
+  .picker--opened .picker__frame {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   $BASE-DATE-PICKER
+   ========================================================================== */
+/**
+ * The picker box.
+ */
+.picker__box {
+  padding: 0 1em;
+}
+/**
+ * The header containing the month and year stuff.
+ */
+.picker__header {
+  text-align: center;
+  position: relative;
+  margin-top: .75em;
+}
+/**
+ * The month and year labels.
+ */
+.picker__month,
+.picker__year {
+  font-weight: 500;
+  display: inline-block;
+  margin-left: .25em;
+  margin-right: .25em;
+}
+.picker__year {
+  color: #999999;
+  font-size: .8em;
+  font-style: italic;
+}
+/**
+ * The month and year selectors.
+ */
+.picker__select--month,
+.picker__select--year {
+  border: 1px solid #b7b7b7;
+  height: 2em;
+  padding: .5em;
+  margin-left: .25em;
+  margin-right: .25em;
+}
+@media (min-width: 24.5em) {
+  .picker__select--month,
+  .picker__select--year {
+    margin-top: -0.5em;
+  }
+}
+.picker__select--month {
+  width: 35%;
+}
+.picker__select--year {
+  width: 22.5%;
+}
+.picker__select--month:focus,
+.picker__select--year:focus {
+  border-color: #0089ec;
+}
+/**
+ * The month navigation buttons.
+ */
+.picker__nav--prev,
+.picker__nav--next {
+  position: absolute;
+  padding: .5em 1.25em;
+  width: 1em;
+  height: 1em;
+  box-sizing: content-box;
+  top: -0.25em;
+}
+@media (min-width: 24.5em) {
+  .picker__nav--prev,
+  .picker__nav--next {
+    top: -0.33em;
+  }
+}
+.picker__nav--prev {
+  left: -1em;
+  padding-right: 1.25em;
+}
+@media (min-width: 24.5em) {
+  .picker__nav--prev {
+    padding-right: 1.5em;
+  }
+}
+.picker__nav--next {
+  right: -1em;
+  padding-left: 1.25em;
+}
+@media (min-width: 24.5em) {
+  .picker__nav--next {
+    padding-left: 1.5em;
+  }
+}
+.picker__nav--prev:before,
+.picker__nav--next:before {
+  content: " ";
+  border-top: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  border-right: 0.75em solid #000000;
+  width: 0;
+  height: 0;
+  display: block;
+  margin: 0 auto;
+}
+.picker__nav--next:before {
+  border-right: 0;
+  border-left: 0.75em solid #000000;
+}
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+.picker__nav--disabled,
+.picker__nav--disabled:hover,
+.picker__nav--disabled:before,
+.picker__nav--disabled:before:hover {
+  cursor: default;
+  background: none;
+  border-right-color: #f5f5f5;
+  border-left-color: #f5f5f5;
+}
+/**
+ * The calendar table of dates
+ */
+.picker__table {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: inherit;
+  width: 100%;
+  margin-top: .75em;
+  margin-bottom: .5em;
+}
+@media (min-height: 33.875em) {
+  .picker__table {
+    margin-bottom: .75em;
+  }
+}
+.picker__table td {
+  margin: 0;
+  padding: 0;
+}
+/**
+ * The weekday labels
+ */
+.picker__weekday {
+  width: 14.285714286%;
+  font-size: .75em;
+  padding-bottom: .25em;
+  color: #999999;
+  font-weight: 500;
+  /* Increase the spacing a tad */
+}
+@media (min-height: 33.875em) {
+  .picker__weekday {
+    padding-bottom: .5em;
+  }
+}
+/**
+ * The days on the calendar
+ */
+.picker__day {
+  padding: .3125em 0;
+  font-weight: 200;
+  border: 1px solid transparent;
+}
+.picker__day--today {
+  position: relative;
+}
+.picker__day--today:before {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 0;
+  height: 0;
+  border-top: 0.5em solid #0059bc;
+  border-left: .5em solid transparent;
+}
+.picker__day--disabled:before {
+  border-top-color: #aaaaaa;
+}
+.picker__day--outfocus {
+  color: #dddddd;
+}
+.picker__day--infocus:hover,
+.picker__day--outfocus:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+.picker__day--highlighted {
+  border-color: #0089ec;
+}
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  background: #0089ec;
+  color: #ffffff;
+}
+.picker__day--disabled,
+.picker__day--disabled:hover,
+.picker--focused .picker__day--disabled {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #dddddd;
+  cursor: default;
+}
+.picker__day--highlighted.picker__day--disabled,
+.picker__day--highlighted.picker__day--disabled:hover {
+  background: #bbbbbb;
+}
+/**
+ * The footer containing the "today", "clear", and "close" buttons.
+ */
+.picker__footer {
+  text-align: center;
+}
+.picker__button--today,
+.picker__button--clear,
+.picker__button--close {
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  font-size: .8em;
+  padding: .66em 0;
+  font-weight: bold;
+  width: 33%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.picker__button--today:hover,
+.picker__button--clear:hover,
+.picker__button--close:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+  border-bottom-color: #b1dcfb;
+}
+.picker__button--today:focus,
+.picker__button--clear:focus,
+.picker__button--close:focus {
+  background: #b1dcfb;
+  border-color: #0089ec;
+  outline: none;
+}
+.picker__button--today:before,
+.picker__button--clear:before,
+.picker__button--close:before {
+  position: relative;
+  display: inline-block;
+  height: 0;
+}
+.picker__button--today:before,
+.picker__button--clear:before {
+  content: " ";
+  margin-right: .45em;
+}
+.picker__button--today:before {
+  top: -0.05em;
+  width: 0;
+  border-top: 0.66em solid #0059bc;
+  border-left: .66em solid transparent;
+}
+.picker__button--clear:before {
+  top: -0.25em;
+  width: .66em;
+  border-top: 3px solid #ee2200;
+}
+.picker__button--close:before {
+  content: "\D7";
+  top: -0.1em;
+  vertical-align: top;
+  font-size: 1.1em;
+  margin-right: .35em;
+  color: #777777;
+}
+.picker__button--today[disabled],
+.picker__button--today[disabled]:hover {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #dddddd;
+  cursor: default;
+}
+.picker__button--today[disabled]:before {
+  border-top-color: #aaaaaa;
+}
+
+/* ==========================================================================
+   $DEFAULT-DATE-PICKER
+   ========================================================================== */
+
+/* ==========================================================================
+   $BASE-TIME-PICKER
+   ========================================================================== */
+/**
+ * The list of times.
+ */
+.picker__list {
+  list-style: none;
+  padding: 0.75em 0 4.2em;
+  margin: 0;
+}
+/**
+ * The times on the clock.
+ */
+.picker__list-item {
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+  margin-bottom: -1px;
+  position: relative;
+  background: #ffffff;
+  padding: .75em 1.25em;
+}
+@media (min-height: 46.75em) {
+  .picker__list-item {
+    padding: .5em 1em;
+  }
+}
+/* Hovered time */
+.picker__list-item:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+  border-color: #0089ec;
+  z-index: 10;
+}
+/* Highlighted and hovered/focused time */
+.picker__list-item--highlighted {
+  border-color: #0089ec;
+  z-index: 10;
+}
+.picker__list-item--highlighted:hover,
+.picker--focused .picker__list-item--highlighted {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+/* Selected and hovered/focused time */
+.picker__list-item--selected,
+.picker__list-item--selected:hover,
+.picker--focused .picker__list-item--selected {
+  background: #0089ec;
+  color: #ffffff;
+  z-index: 10;
+}
+/* Disabled time */
+.picker__list-item--disabled,
+.picker__list-item--disabled:hover,
+.picker--focused .picker__list-item--disabled {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #dddddd;
+  cursor: default;
+  border-color: #dddddd;
+  z-index: auto;
+}
+/**
+ * The clear button
+ */
+.picker--time .picker__button--clear {
+  display: block;
+  width: 80%;
+  margin: 1em auto 0;
+  padding: 1em 1.25em;
+  background: none;
+  border: 0;
+  font-weight: 500;
+  font-size: .67em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #666;
+}
+.picker--time .picker__button--clear:hover,
+.picker--time .picker__button--clear:focus {
+  color: #000000;
+  background: #b1dcfb;
+  background: #ee2200;
+  border-color: #ee2200;
+  cursor: pointer;
+  color: #ffffff;
+  outline: none;
+}
+.picker--time .picker__button--clear:before {
+  top: -0.25em;
+  color: #666;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.picker--time .picker__button--clear:hover:before,
+.picker--time .picker__button--clear:focus:before {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   $DEFAULT-TIME-PICKER
+   ========================================================================== */
+/**
+ * The frame the bounds the time picker.
+ */
+.picker--time .picker__frame {
+  min-width: 256px;
+  max-width: 320px;
+}
+/**
+ * The picker box.
+ */
+.picker--time .picker__box {
+  font-size: 1em;
+  background: #f2f2f2;
+  padding: 0;
+}
+@media (min-height: 40.125em) {
+  .picker--time .picker__box {
+    margin-bottom: 5em;
+  }
+}

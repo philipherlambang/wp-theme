@@ -336,6 +336,39 @@ body {
 .form-invisible .checkbox label {
   min-height: auto;
 }
+.form-invisible .select {
+  padding: 2px;
+}
+.form-invisible .select select {
+  padding: 7px 24px 7px 12px;
+  border-radius: 0;
+  line-height: inherit;
+  font-weight: 400;
+  background-color: transparent;
+}
+.form-invisible .control input:focus~.control-indicator,
+.form-invisible .select select:focus {
+  box-shadow: none;
+}
+.form-invisible .select select:active {
+  color: inherit;
+}
+.form-invisible .control.checkbox {
+  margin-top: 0;
+  padding: 10px 15px;
+}
+.form-invisible .control.checkbox .control-indicator {
+  position: inherit;
+  float: left;
+  top: inherit;
+  width: 20px;
+  height: 20px;
+}
+.form-invisible .date-picker[readonly],
+.form-invisible .date-from[readonly],
+.form-invisible .date-thru[readonly] {
+  background-color: inherit;
+}
 .form-vary {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -358,6 +391,21 @@ body {
   .form-vary label.ex {
     padding-right: 5px;
   }
+}
+.form-vary .select {
+  padding: 0;
+}
+.form-vary .select select {
+  padding: 0 24px 0 12px;
+}
+.form-vary .control.checkbox {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.form-vary .control.checkbox .control-indicator {
+  margin: 2px 0;
+  width: 16px;
+  height: 16px;
 }
 
 .group-card .item .imgs-show {
@@ -509,6 +557,50 @@ body {
   margin-bottom: 20px;
 }
 
+.group-card .base-mode {
+  display: none;
+}
+
+.group-card .acts-mode {
+  display: none;
+  padding: inherit;
+  border-bottom: inherit;
+  background-color: inherit;
+  position: relative;
+}
+.group-card .acts-wrapper {
+  position: absolute;
+  top: -41px;
+  right: 0;
+}
+.group-card .acts-mode a {
+  display: block;
+  float: left;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 0 3px;
+  margin: 0 3px;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.group-card .acts-mode .plus {
+  color: #1e88e5;
+}
+.group-card .acts-mode .minus {
+  color: #e53935;
+}
+.group-card .acts-mode .check {
+  color: #009688;
+  display: none;
+}
+.group-card .acts-mode span {
+  font-size: 32px;
+  line-height: 0;
+  vertical-align: middle;
+}
+
 /* Blue Pallete From Adobe Kuler */
 /* 0D47A1 */
 
@@ -533,3 +625,48 @@ body {
 /* http://tealtribe.s3.amazonaws.com/203585ebdddf216b75729f3fb5b66eda75870707151c.jpg */
 /* http://edition.cnn.com/specials/profiles */
 /* #007AFF */
+
+.pswp {
+  z-index: 999;
+}
+.picker {
+  line-height: inherit;
+  color: #424242;
+}
+.picker__box {
+  font-size: 18px;
+}
+.picker__holder {
+  transition: none;
+}
+.picker--opened .picker__holder {
+  webkit-transform: none;
+     -ms-transform: none;
+         transform: none;
+  transition: none;
+}
+.picker__frame {
+  transition: none;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+.picker--opened .picker__frame {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+.picker__box {
+  border-radius: 0;
+}
+.picker__select--month,
+.picker__select--year {
+  height: auto;
+}
+.picker__weekday {
+  display: none;
+}
+.picker__header .select {
+  margin-top: -9px;
+  font-size: 18px;
+}
