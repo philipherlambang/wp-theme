@@ -261,12 +261,12 @@
 										<li>
 											<h5>Email</h5>
 											<ul class="list-unstyled">
-												<li class="item  edit-mode">
+												<li class="item base-mode">
 													<form class="form-horizontal form-invisible">
 														<div class="form-group">
 															<label for="email" class="sr-only">Email</label>
 															<div class="col-xs-7">
-																<input type="text" class="form-control" id="email" placeholder="Email" value="johnbranch@gmail.com">
+																<input type="text" class="form-control" id="email" placeholder="Email">
 															</div>
 															<div class="col-xs-5">
 																<label for="email-type" class="sr-only">Email Type</label>
@@ -280,11 +280,53 @@
 														</div>
 													</form>
 												</li>
+												<li class="item edit-mode">
+													<form class="form-horizontal form-invisible">
+														<div class="form-group">
+															<label for="email" class="sr-only">Email</label>
+															<div class="col-xs-7">
+																<input type="text" class="form-control" id="email" placeholder="Email" value="johnbranch@gmail.com">
+															</div>
+															<div class="col-xs-5">
+																<label for="email-type" class="sr-only">Email Type</label>
+																<label class="form-control select">
+																	<select class="auxy" id="email-type">
+																		<option selected="selected">Personal</option>
+																		<option>Office</option>
+																	</select>
+																</label>
+															</div>
+														</div>
+													</form>
+												</li>
 											</ul>
 										</li>
 										<li>
 											<h5>Messenger</h5>
 											<ul class="list-unstyled">
+												<li class="item base-mode">
+													<form class="form-horizontal form-invisible">
+														<div class="form-group">
+															<label for="messenger" class="sr-only">Messenger</label>
+															<div class="col-xs-7">
+																<input type="text" class="form-control" id="messenger" placeholder="Messenger">
+															</div>
+															<div class="col-xs-5">
+																<label for="messenger-type" class="sr-only">Messenger Type</label>
+																<label class="form-control select">
+																	<select class="auxy" id="messenger-type">
+																		<option>Whatsapp</option>
+																		<option>BBM</option>
+																		<option>Skype</option>
+																		<option>YM</option>
+																		<option>Messages</option>
+																		<option>Telegram</option>
+																	</select>
+																</label>
+															</div>
+														</div>
+													</form>
+												</li>
 												<li class="item edit-mode">
 													<form class="form-horizontal form-invisible">
 														<div class="form-group">
@@ -296,10 +338,10 @@
 																<label for="messenger-type" class="sr-only">Messenger Type</label>
 																<label class="form-control select">
 																	<select class="auxy" id="messenger-type">
-																		<option>YM</option>
 																		<option>Whatsapp</option>
 																		<option>BBM</option>
 																		<option>Skype</option>
+																		<option selected="selected">YM</option>
 																		<option>Messages</option>
 																		<option>Telegram</option>
 																	</select>
@@ -313,12 +355,12 @@
 										<li>
 											<h5>Phone</h5>
 											<ul class="list-unstyled">
-												<li class="item edit-mode">
+												<li class="item base-mode">
 													<form class="form-horizontal form-invisible">
 														<div class="form-group">
 															<label for="phone" class="sr-only">Phone</label>
 															<div class="col-xs-7">
-																<input type="text" class="form-control" id="phone" placeholder="Phone" value="08111336030">
+																<input type="text" class="form-control" id="phone" placeholder="Phone">
 															</div>
 															<div class="col-xs-5">
 																<label for="phone-type" class="sr-only">Phone Type</label>
@@ -333,11 +375,50 @@
 														</div>
 													</form>
 												</li>
+												<li class="item edit-mode">
+													<form class="form-horizontal form-invisible">
+														<div class="form-group">
+															<label for="phone" class="sr-only">Phone</label>
+															<div class="col-xs-7">
+																<input type="text" class="form-control" id="phone" placeholder="Phone" value="08111336030">
+															</div>
+															<div class="col-xs-5">
+																<label for="phone-type" class="sr-only">Phone Type</label>
+																<label class="form-control select">
+																	<select class="auxy" id="phone-type">
+																		<option selected="selected">Mobile</option>
+																		<option>Office</option>
+																		<option>Home</option>
+																	</select>
+																</label>
+															</div>
+														</div>
+													</form>
+												</li>
 											</ul>
 										</li>
 										<li>
 											<h5>Address</h5>
 											<ul class="list-unstyled">
+												<li class="item base-mode">
+													<form class="form-horizontal form-invisible">
+														<div class="form-group">
+															<label for="address" class="sr-only">Address</label>
+															<div class="col-xs-12">
+																<textarea class="form-control auto-size" id="address" placeholder="Address"></textarea>
+															</div>
+															<div class="col-xs-12">
+																<label for="address-type" class="sr-only">Address Type</label>
+																<label class="form-control select">
+																	<select class="auxy" id="address-type">
+																		<option>Personal</option>
+																		<option>Office</option>
+																	</select>
+																</label>
+															</div>
+														</div>
+													</form>
+												</li>
 												<li class="item edit-mode">
 													<form class="form-horizontal form-invisible">
 														<div class="form-group">
@@ -349,8 +430,8 @@
 																<label for="address-type" class="sr-only">Address Type</label>
 																<label class="form-control select">
 																	<select class="auxy" id="address-type">
-																		<option>Office</option>
 																		<option>Personal</option>
+																		<option selected="selected">Office</option>
 																	</select>
 																</label>
 															</div>
@@ -364,6 +445,42 @@
 								<div class="group-card">
 									<h4>Links</h4>
 									<ul class="list-unstyled">
+										<li class="item acts-mode">
+											<div class="acts-wrapper">
+												<a class="plus"><span class="icon ion-ios-plus-outline"></span></a>
+												<a class="minus"><span class="icon ion-ios-minus-outline"></span></a>
+												<a class="check"><span class="icon ion-ios-checkmark-outline"></span></a>
+											</div>
+										</li>
+										<li class="item base-mode">
+											<form class="form-horizontal form-invisible">
+												<div class="form-group">
+													<div class="col-xs-7">
+														<label for="link" class="sr-only">Link</label>
+														<input type="text" class="form-control" id="link" placeholder="Link">
+													</div>
+													<div class="col-xs-5">
+														<label for="link-type" class="sr-only">Link Type</label>
+														<label class="form-control select">
+															<select class="auxy" id="link-type">
+																<option>Google Plus</option>
+																<option>Facebook</option>
+																<option>Twitter</option>
+																<option>Instagram</option>
+																<option>Website</option>
+																<option>Yahoo</option>
+																<option>Blog</option>
+																<option>Youtube</option>
+																<option>LinkedIn</option>
+																<option>Deviantart</option>
+																<option>Dribbble</option>
+																<option>Behance</option>
+															</select>
+														</label>
+													</div>
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
@@ -375,7 +492,7 @@
 														<label for="link-type" class="sr-only">Link Type</label>
 														<label class="form-control select">
 															<select class="auxy" id="link-type">
-																<option>Google Plus</option>
+																<option selected="selected">Google Plus</option>
 																<option>Facebook</option>
 																<option>Twitter</option>
 																<option>Instagram</option>
@@ -405,7 +522,7 @@
 														<label class="form-control select">
 															<select class="auxy" id="link-type">
 																<option>Google Plus</option>
-																<option>Facebook</option>
+																<option selected="selected">Facebook</option>
 																<option>Twitter</option>
 																<option>Instagram</option>
 																<option>Website</option>
@@ -435,7 +552,7 @@
 															<select class="auxy" id="link-type">
 																<option>Google Plus</option>
 																<option>Facebook</option>
-																<option>Twitter</option>
+																<option selected="selected">Twitter</option>
 																<option>Instagram</option>
 																<option>Website</option>
 																<option>Yahoo</option>
@@ -460,13 +577,12 @@
 								<div class="group-card">
 									<h4>Profession Category</h4>
 									<ul class="list-unstyled">
-										<li class="item edit-mode">
+										<li class="item base-mode">
 											<form class="form-invisible">
 												<div class="form-group">
 													<label for="profession-category" class="sr-only">Profession Category</label>
 													<label class="form-control select">
 														<select id="profession-category">
-															<option>Channel Relation / Partnership</option>
 															<option>Administrasi</option>
 															<option>Aktris/Aktor</option>
 															<option>Akuntan</option>
@@ -474,6 +590,59 @@
 															<option>Arsitek</option>
 															<option>Atlet</option>
 															<option>Business Analyst</option>
+															<option>Channel Relation / Partnership</option>
+															<option>Design Grafis</option>
+															<option>Designer</option>
+															<option>Engineer</option>
+															<option>Entrepreneur</option>
+															<option>Financial Consultant</option>
+															<option>Juru Masak</option>
+															<option>Marketing Communication</option>
+															<option>Model</option>
+															<option>Musisi</option>
+															<option>Notaris</option>
+															<option>Pelukis</option>
+															<option>Pembawa Acara /Presenter</option>
+															<option>Penari</option>
+															<option>Penata Rias</option>
+															<option>Pengacara</option>
+															<option>Penulis</option>
+															<option>Penyiar Radio</option>
+															<option>Perancang Busana</option>
+															<option>Photographer</option>
+															<option>Pilot</option>
+															<option>Pramugari/a</option>
+															<option>Programmer</option>
+															<option>Psikiater</option>
+															<option>Psikolog</option>
+															<option>Public Relation</option>
+															<option>Sales</option>
+															<option>Sekretaris</option>
+															<option>Trainer Olahraga</option>
+															<option>Translator</option>
+															<option>Video Editor</option>
+															<option>Wartawan</option>
+															<option>Web Designer</option>
+															<option>Other Professional Category</option>
+														</select>
+													</label>
+												</div>
+											</form>
+										</li>
+										<li class="item edit-mode">
+											<form class="form-invisible">
+												<div class="form-group">
+													<label for="profession-category" class="sr-only">Profession Category</label>
+													<label class="form-control select">
+														<select id="profession-category">
+															<option>Administrasi</option>
+															<option>Aktris/Aktor</option>
+															<option>Akuntan</option>
+															<option>Apoteker</option>
+															<option>Arsitek</option>
+															<option>Atlet</option>
+															<option>Business Analyst</option>
+															<option selected="selected">Channel Relation / Partnership</option>
 															<option>Design Grafis</option>
 															<option>Designer</option>
 															<option>Engineer</option>
@@ -517,6 +686,14 @@
 								<div class="group-card">
 									<h4>Industry</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-invisible">
+												<div class="form-group">
+													<label for="industry" class="sr-only">Industry</label>
+													<input type="text" class="form-control" id="industry" placeholder="Industry">
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-invisible">
 												<div class="form-group">
@@ -530,6 +707,47 @@
 								<div class="group-card">
 									<h4>Work Experience</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-horizontal form-invisible form-vary">
+												<div class="form-group">
+													<label for="company" class="sr-only">Company</label>
+													<input type="text" class="form-control arch" id="company" placeholder="Company">
+												</div>
+												<div class="form-group">
+													<label for="position" class="sr-only">Position</label>
+													<input type="text" class="form-control b" id="position" placeholder="Position">
+												</div>
+												<div class="form-group">
+													<label for="current" class="col-xs-4">Current</label>
+													<div class="col-xs-8">
+														<label class="control checkbox">
+															<input type="checkbox" id="current">
+															<span class="control-indicator"></span>
+														</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="from-date" class="col-xs-4">From Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="thru-date" class="col-xs-4">Thru Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="location" class="sr-only">Location</label>
+													<input type="text" class="form-control" id="location" placeholder="Location">
+												</div>
+												<div class="form-group">
+													<label for="description" class="sr-only">Description</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
 												<div class="form-group">
@@ -699,6 +917,47 @@
 								<div class="group-card">
 									<h4>Project Experience</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-horizontal form-invisible form-vary">
+												<div class="form-group">
+													<label for="project" class="sr-only">Project</label>
+													<input type="text" class="form-control arch" id="project" placeholder="Project">
+												</div>
+												<div class="form-group">
+													<label for="position" class="sr-only">Position</label>
+													<input type="text" class="form-control b" id="position" placeholder="Position">
+												</div>
+												<div class="form-group">
+													<label for="current" class="col-xs-4">Current</label>
+													<div class="col-xs-8">
+														<label class="control checkbox">
+															<input type="checkbox" id="current">
+															<span class="control-indicator"></span>
+														</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="from-date" class="col-xs-4">From Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="thru-date" class="col-xs-4">Thru Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="location" class="sr-only">Location</label>
+													<input type="text" class="form-control" id="location" placeholder="Location">
+												</div>
+												<div class="form-group">
+													<label for="description" class="sr-only">Description</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
 												<div class="form-group">
@@ -745,6 +1004,47 @@
 								<div class="group-card">
 									<h4>Education</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-horizontal form-invisible form-vary">
+												<div class="form-group">
+													<label for="institute" class="sr-only">Institute</label>
+													<input type="text" class="form-control arch" id="institute" placeholder="Institute">
+												</div>
+												<div class="form-group">
+													<label for="field-of-study" class="sr-only">Field of Study</label>
+													<input type="text" class="form-control b" id="field-of-study" placeholder="Field of Study">
+												</div>
+												<div class="form-group">
+													<label for="current" class="col-xs-4">Current</label>
+													<div class="col-xs-8">
+														<label class="control checkbox">
+															<input type="checkbox" id="current">
+															<span class="control-indicator"></span>
+														</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="from-date" class="col-xs-4">From Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="thru-date" class="col-xs-4">Thru Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="location" class="sr-only">Location</label>
+													<input type="text" class="form-control" id="location" placeholder="Location">
+												</div>
+												<div class="form-group">
+													<label for="description" class="sr-only">Description</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
 												<div class="form-group">
@@ -791,6 +1091,55 @@
 								<div class="group-card">
 									<h4>Certifications</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-horizontal form-invisible form-vary">
+												<div class="form-group">
+													<label for="certificate" class="sr-only">Certificate</label>
+													<input type="text" class="form-control arch" id="certificate" placeholder="Certificate">
+												</div>
+												<div class="form-group">
+													<label for="number" class="sr-only">Number</label>
+													<input type="text" class="form-control b" id="number" placeholder="Number">
+												</div>
+												<div class="form-group">
+													<label for="author" class="sr-only">Author</label>
+													<input type="text" class="form-control b" id="author" placeholder="Author">
+												</div>
+												<div class="form-group">
+													<label for="type-certificate" class="col-xs-4">Type</label>
+													<div class="col-xs-8">
+														<label class="select">
+															<select class="auxy" id="type-certificate">
+																<option>Education</option>
+																<option>Vendor</option>
+																<option>Standard</option>
+															</select>
+														</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="expire" class="col-xs-5 ex">Doesn't Expire</label>
+													<div class="col-xs-7">
+														<label class="control checkbox">
+															<input type="checkbox" id="expire">
+															<span class="control-indicator"></span>
+														</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="from-date" class="col-xs-4">From Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="thru-date" class="col-xs-4">Thru Date</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													</div>
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
 												<div class="form-group">
@@ -810,7 +1159,7 @@
 													<div class="col-xs-8">
 														<label class="select">
 															<select class="auxy" id="type-certificate">
-																<option>Education</option>
+																<option selected="selected">Education</option>
 																<option>Vendor</option>
 																<option>Standard</option>
 															</select>
@@ -860,7 +1209,7 @@
 														<label class="select">
 															<select class="auxy" id="type-certificate">
 																<option>Education</option>
-																<option>Vendor</option>
+																<option selected="selected">Vendor</option>
 																<option>Standard</option>
 															</select>
 														</label>
@@ -910,7 +1259,7 @@
 															<select class="auxy" id="type-certificate">
 																<option>Education</option>
 																<option>Vendor</option>
-																<option>Standard</option>
+																<option selected="selected">Standard</option>
 															</select>
 														</label>
 													</div>
@@ -943,6 +1292,28 @@
 								<div class="group-card">
 									<h4>Language</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-horizontal form-invisible">
+												<div class="form-group">
+													<div class="col-xs-7">
+														<label for="language" class="sr-only">Language</label>
+														<input type="text" class="form-control" id="language" placeholder="Language">
+													</div>
+													<div class="col-xs-5">
+														<label for="language-type" class="sr-only">Language Type</label>
+														<label class="form-control select">
+															<select class="auxy" id="language-type">
+																<option>Beginner</option>
+																<option>Passive</option>
+																<option>Active</option>
+																<option>Professional</option>
+																<option>Native</option>
+															</select>
+														</label>
+													</div>
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
@@ -954,9 +1325,9 @@
 														<label for="language-type" class="sr-only">Language Type</label>
 														<label class="form-control select">
 															<select class="auxy" id="language-type">
-																<option>Active</option>
 																<option>Beginner</option>
 																<option>Passive</option>
+																<option selected="selected">Active</option>
 																<option>Professional</option>
 																<option>Native</option>
 															</select>
@@ -976,9 +1347,9 @@
 														<label for="language-type" class="sr-only">Language Type</label>
 														<label class="form-control select">
 															<select class="auxy" id="language-type">
-																<option>Active</option>
 																<option>Beginner</option>
 																<option>Passive</option>
+																<option selected="selected">Active</option>
 																<option>Professional</option>
 																<option>Native</option>
 															</select>
@@ -992,6 +1363,14 @@
 								<div class="group-card">
 									<h4>Skills</h4>
 									<ul class="list-unstyled">
+										<li class="item base-mode">
+											<form class="form-invisible">
+												<div class="form-group">
+													<label for="skill" class="sr-only">Skill</label>
+													<input type="text" class="form-control" id="skill" placeholder="Skill">
+												</div>
+											</form>
+										</li>
 										<li class="item edit-mode">
 											<form class="form-invisible">
 												<div class="form-group">

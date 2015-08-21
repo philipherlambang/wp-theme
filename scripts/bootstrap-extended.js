@@ -267,4 +267,10 @@
 		}
 	}
 
+	$('.acts-mode').on('click', '.plus', function() {
+		var actsMode = $(this).parents('.acts-mode');
+		    baseMode = actsMode.next();
+		baseMode.after(baseMode.clone().removeClass('base-mode').addClass('edit-mode'));
+	});
+
 })();
