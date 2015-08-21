@@ -269,7 +269,7 @@
 
 	$('.acts-mode').on('click', 'a', function() {
 		var that = $(this),
-		    actsMode = that.parents('.acts-mode'),
+		    actsMode = that.closest('.acts-mode'),
 		    baseMode = actsMode.next(),
 		    editMode = actsMode.parent().find('.edit-mode');
 
@@ -294,8 +294,17 @@
 
 	});
 
-	$('.group-card').on('click', '.edit-mode .form-delete .minus', function() {
-		$(this).parents('.edit-mode').remove();
+	$('.group-card').on('click', '.edit-mode .minus', function() {
+		$(this).closest('.edit-mode').remove();
+	});
+
+	$('.group-card').on('click', '.edit-mode .current, .edit-mode .expire', function() {
+		var thruDate = $(this).closest('.edit-mode').find('.date-thru').closest('.form-group');
+		if (this.checked) {
+			thruDate.css('display', 'none');
+		} else {
+			thruDate.css('display', 'block');
+		}
 	});
 
 })();
