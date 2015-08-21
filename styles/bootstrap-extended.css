@@ -622,12 +622,6 @@ body {
 .picker__weekday {
   display: none;
 }
-.picker__nav--next:before {
-  border-left: .75em solid #212121;
-}
-.picker__nav--prev:before {
-  border-right: .75em solid #212121;
-}
 .picker__header .select {
   margin-top: -9px;
   font-size: 18px;
