@@ -20,7 +20,6 @@
 	// Photoswipe
 	pswpInit('.pswp-gallery');
 
-
 	/*! Functions */
 	function datePicker(selector) {
 		$(selector).pickadate({
@@ -271,6 +270,7 @@
 
 	/*! Form Edit DOM Manipulations */
 	$('.acts-mode').on('click', 'a', function() {
+
 		var that = $(this),
 		    actsMode = that.closest('.acts-mode'),
 		    baseMode = actsMode.next(),
@@ -278,21 +278,21 @@
 
 		if (that.hasClass('plus')) {
 
-			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
-
 			var itemCloned = baseMode.after(baseMode.clone());
 			itemCloned.removeClass('base-mode').addClass('edit-mode');
 			itemCloned.find('input[type=text], textarea, select').filter(':visible:first').focus();
+			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
 
 		} else if (that.hasClass('minus')) {
 
+			editMode.find('.form-delete').css('display', 'block');
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
 
-			editMode.find('.form-delete').css('display', 'block');
-
 		} else {
+
 			actsMode.find('a').removeAttr('style');
 			editMode.find('.form-delete').removeAttr('style');
+
 		}
 	});
 
