@@ -579,25 +579,19 @@ body {
   display: none;
 }
 .group-card .acts-mode {
-  padding: inherit;
-  border-bottom: inherit;
-  background-color: inherit;
-  position: relative;
+  display: block;
 }
 .group-card .acts-mode .acts-wrapper {
-  position: absolute;
-  right: 0;
+  display: block;
 }
 .group-card .acts-mode .wrapper-h4 {
-  top: -41px;
+  display: block;
 }
 .group-card .acts-mode .wrapper-h5 {
-  top: -29px;
+  display: block;
 }
 .group-card .act {
-  display: block;
-  float: left;
-  margin: 0 3px;
+  display: inline-block;
   padding: 0 3px;
   background-color: #ffffff;
   text-align: center;

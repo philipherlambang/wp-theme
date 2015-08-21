@@ -270,14 +270,15 @@
 	$('.acts-mode').on('click', 'a', function() {
 
 		var that      = $(this),
-		    actsMode  = that.closest('.acts-mode'),
-		    baseMode  = actsMode.next(),
-		    editModes = actsMode.parent().find('.edit-mode');
+				modes     = that.closest('ul'),
+		    actsMode  = modes.find('.acts-mode'),
+		    baseMode  = modes.find('.base-mode'),
+		    editModes = modes.find('.edit-mode');
 
 		if (that.hasClass('plus')) {
 
-			var clonedItem = baseMode.clone().insertAfter(baseMode);
-			clonedItem.removeClass('base-mode').addClass('edit-mode');
+			var clonedItem = baseMode.clone().insertBefore(baseMode);
+			clonedItem.removeClass('base-mode').addClass('edit-mode').animateCss('slideInDown');
 			clonedItem.find('input[type=text], textarea, select').filter(':visible:first').focus();
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
 
@@ -316,9 +317,8 @@
 	}
 
 	$.fn.animateCss = function(type) {
-		var that = this;
-		that.addClass('animated ' + type).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-			that.removeClass('animated ' + type);
+		$(this).addClass('animated ' + type).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+			$(this).removeClass('animated ' + type);
 		});
 	};
 
