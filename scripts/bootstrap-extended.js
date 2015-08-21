@@ -7,7 +7,6 @@
 
 	// Date Pickers
 	datePicker('.date-picker');
-
 	$.each(document.getElementsByClassName('form-vary'), function() {
 		var that = $(this), dateFrom = that.find('.date-from'), dateThru = that.find('.date-thru');
 		if (dateFrom.length && dateThru.length) {
@@ -278,9 +277,9 @@
 
 		if (that.hasClass('plus')) {
 
-			var itemCloned = baseMode.after(baseMode.clone());
-			itemCloned.removeClass('base-mode').addClass('edit-mode');
-			itemCloned.find('input[type=text], textarea, select').filter(':visible:first').focus();
+			var clonedItem = baseMode.after(baseMode.clone());
+			clonedItem.removeClass('base-mode').addClass('edit-mode');
+			clonedItem.find('input[type=text], textarea, select').filter(':visible:first').focus();
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
 
 		} else if (that.hasClass('minus')) {
