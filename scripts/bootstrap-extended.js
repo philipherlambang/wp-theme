@@ -267,10 +267,35 @@
 		}
 	}
 
-	$('.acts-mode').on('click', '.plus', function() {
-		var actsMode = $(this).parents('.acts-mode');
-		    baseMode = actsMode.next();
-		baseMode.after(baseMode.clone().removeClass('base-mode').addClass('edit-mode'));
+	$('.acts-mode').on('click', 'a', function() {
+		var that = $(this),
+		    actsMode = that.parents('.acts-mode'),
+		    baseMode = actsMode.next(),
+		    editMode = actsMode.parent().find('.edit-mode');
+
+		if (that.hasClass('plus')) {
+
+			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
+
+			var itemCloned = baseMode.after(baseMode.clone());
+			itemCloned.removeClass('base-mode').addClass('edit-mode');
+			itemCloned.find('input[type=text], textarea, select').filter(':visible:first').focus();
+
+		} else if (that.hasClass('minus')) {
+
+			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
+
+			editMode.find('.form-delete').css('display', 'block');
+
+		} else {
+			actsMode.find('a').removeAttr('style');
+			editMode.find('.form-delete').removeAttr('style');
+		}
+
+	});
+
+	$('.group-card').on('click', '.edit-mode .form-delete .minus', function() {
+		$(this).parents('.edit-mode').remove();
 	});
 
 })();

@@ -287,6 +287,9 @@ body {
 .group-card form {
   margin: -10px -15px;
 }
+.form-invisible {
+  position: relative;
+}
 .form-invisible .form-group {
   margin-right: 0;
   margin-left: 0;
@@ -562,43 +565,58 @@ body {
 }
 
 .group-card .acts-mode {
-  display: none;
   padding: inherit;
   border-bottom: inherit;
   background-color: inherit;
   position: relative;
 }
-.group-card .acts-wrapper {
+.group-card .acts-mode .acts-wrapper {
   position: absolute;
   top: -41px;
   right: 0;
 }
-.group-card .acts-mode a {
+.group-card .a-round {
   display: block;
   float: left;
+  margin: 0 3px;
+  padding: 0 3px;
   border-radius: 50%;
   background-color: #ffffff;
-  padding: 0 3px;
-  margin: 0 3px;
+  text-align: center;
   width: 32px;
   height: 32px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
 }
-.group-card .acts-mode .plus {
+.group-card .a-round .icon {
+  font-size: 32px;
+  line-height: 0px;
+  vertical-align: middle;
+}
+.group-card .plus {
   color: #1e88e5;
 }
-.group-card .acts-mode .minus {
+.group-card .minus {
   color: #e53935;
 }
-.group-card .acts-mode .check {
+.group-card .check {
   color: #009688;
   display: none;
 }
-.group-card .acts-mode span {
-  font-size: 32px;
-  line-height: 0;
-  vertical-align: middle;
+
+.group-card .form-delete {
+  display: none;
+}
+.group-card .form-delete .a-round {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  position: absolute;
+  left: -19px;
+  z-index: 1;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* Blue Pallete From Adobe Kuler */
