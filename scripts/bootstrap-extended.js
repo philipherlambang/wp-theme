@@ -266,31 +266,30 @@
 	}
 
 
-
 	/*! Form Edit DOM Manipulations */
 	$('.acts-mode').on('click', 'a', function() {
 
-		var that = $(this),
-		    actsMode = that.closest('.acts-mode'),
-		    baseMode = actsMode.next(),
-		    editMode = actsMode.parent().find('.edit-mode');
+		var that      = $(this),
+		    actsMode  = that.closest('.acts-mode'),
+		    baseMode  = actsMode.next(),
+		    editModes = actsMode.parent().find('.edit-mode');
 
 		if (that.hasClass('plus')) {
 
-			var clonedItem = baseMode.after(baseMode.clone());
+			var clonedItem = baseMode.clone().insertAfter(baseMode);
 			clonedItem.removeClass('base-mode').addClass('edit-mode');
 			clonedItem.find('input[type=text], textarea, select').filter(':visible:first').focus();
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
 
 		} else if (that.hasClass('minus')) {
 
-			editMode.find('.form-delete').css('display', 'block');
+			editModes.find('.form-delete').css('display', 'block');
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'block');
 
 		} else {
 
 			actsMode.find('a').removeAttr('style');
-			editMode.find('.form-delete').removeAttr('style');
+			editModes.find('.form-delete').removeAttr('style');
 
 		}
 	});
@@ -315,5 +314,12 @@
 			thruDate.css('display', 'block');
 		}
 	}
+
+	$.fn.animateCss = function(type) {
+		var that = this;
+		that.addClass('animated ' + type).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+			that.removeClass('animated ' + type);
+		});
+	};
 
 })();
