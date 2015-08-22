@@ -266,6 +266,7 @@
 	}
 
 
+
 	/*! Form Edit DOM Manipulations */
 	$('.acts-mode').on('click', 'a', function() {
 
@@ -275,22 +276,22 @@
 		    baseMode  = modes.find('.base-mode'),
 		    editModes = modes.find('.edit-mode');
 
+		$.each(document.getElementsByClassName('check'), function() { if (this.hasAttribute('style')) { this.click(); } });
+
 		if (that.hasClass('plus')) {
 
-			var clonedItem = baseMode.clone().insertBefore(baseMode);
-			clonedItem.removeClass('base-mode').addClass('edit-mode');
-			clonedItem.find('input[type=text], textarea, select').filter(':visible:first').focus();
+			baseMode.clone().insertBefore(baseMode).removeClass('base-mode').addClass('edit-mode').find('input[type=text], textarea, select').filter(':visible:first').focus();
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'inline-block');
 
 		} else if (that.hasClass('minus')) {
 
-			editModes.find('.form-delete').css('display', 'block');
+			editModes.find('.form-delete a').css('display', 'block');
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'inline-block');
 
 		} else {
 
+			editModes.find('.form-delete a').removeAttr('style');
 			actsMode.find('a').removeAttr('style');
-			editModes.find('.form-delete').removeAttr('style');
 
 		}
 	});
@@ -315,11 +316,5 @@
 			thruDate.css('display', 'block');
 		}
 	}
-
-	$.fn.animateCss = function(type) {
-		$(this).addClass('animated ' + type).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-			$(this).removeClass('animated ' + type);
-		});
-	};
 
 })();

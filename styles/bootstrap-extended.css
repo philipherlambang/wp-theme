@@ -634,10 +634,8 @@ body {
   color: #009688;
   display: none;
 }
-.group-card .form-delete {
-  display: none;
-}
 .group-card .form-delete .act {
+  display: none;
   position: absolute;
   left: -14px;
   z-index: 1;
