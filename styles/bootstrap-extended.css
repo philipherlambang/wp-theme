@@ -693,7 +693,7 @@ body {
 /* #007AFF */
 
 .pswp {
-  z-index: 999;
+  z-index: 99;
 }
 .picker {
   line-height: inherit;
