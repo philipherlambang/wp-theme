@@ -278,7 +278,7 @@
 		if (that.hasClass('plus')) {
 
 			var clonedItem = baseMode.clone().insertBefore(baseMode);
-			clonedItem.removeClass('base-mode').addClass('edit-mode').animateCss('slideInDown');
+			clonedItem.removeClass('base-mode').addClass('edit-mode');
 			clonedItem.find('input[type=text], textarea, select').filter(':visible:first').focus();
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'inline-block');
 
