@@ -308,6 +308,11 @@
 		currentDisplay(this);
 	});
 
+	$('.group-card').on('click', '.imgs-show .btn-minus', function(e) {
+		e.preventDefault();
+		e.stopImmediatePropagation();
+	});
+
 	function currentDisplay(selector) {
 		var thruDate = $(selector).closest('.edit-mode').find('.date-thru').closest('.form-group');
 		if (selector.checked) {

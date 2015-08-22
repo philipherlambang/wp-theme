@@ -477,15 +477,17 @@ body {
 .group-card .imgs-show form {
   margin: 0;
 }
-.group-card .imgs-show form .btn-close {
-  padding: 0 10px;
+.group-card .imgs-show form .btn-minus {
+  padding: 0 11px;
   border-width: 0;
   border-radius: 0;
+  border-bottom-left-radius: 50%;
   font-size: 24px;
   background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
   top: 0;
   right: 4px;
+  display: none;
 }
 
 .group-btn {
@@ -580,7 +582,7 @@ body {
 }
 .group-card .acts-mode {
   background-color: rgba(255, 255, 255, 0.5);
-  border-bottom: 0;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
 }
 .group-card .acts-mode .acts-wrapper {
   float: right;
@@ -651,6 +653,51 @@ body {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   background-color: #eeeeee;
+}
+
+.change-img {
+  padding: 8px 8.63px;
+  font-size: 28px;
+  line-height: 0;
+  color: #1e88e5;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-width: 44px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+}
+.change-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 50%;
+}
+.change-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 50%;
+}
+
+.bg-cover .change-img {
+  top: 51px;
+}
+
+.card-caption .form-invisible .form-control {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0;
+}
+.card-caption .form-invisible .h3 {
+  margin-top: 2px;
+  margin-bottom: 7px;
+  font-size: 24px;
+  line-height: 1.1;
+}
+.card-caption .form-invisible .sub {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .fixed-navbar-content {
