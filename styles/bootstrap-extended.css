@@ -584,6 +584,7 @@ body {
 }
 .group-card .acts-mode .acts-wrapper {
   float: right;
+  margin-right: -2px;
 }
 .group-card .acts-mode .wrapper-h4 {
   margin-top: -5px;
@@ -593,6 +594,7 @@ body {
 }
 .group-card .act {
   display: inline-block;
+  margin: 0 2px;
   padding: 0 2px;
   background-color: #ffffff;
   text-align: center;
@@ -648,6 +650,7 @@ body {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
+  background-color: #eeeeee;
 }
 
 .fixed-navbar-content {
