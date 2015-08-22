@@ -579,26 +579,28 @@ body {
   display: none;
 }
 .group-card .acts-mode {
-  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 0;
 }
 .group-card .acts-mode .acts-wrapper {
-  display: block;
+  float: right;
 }
 .group-card .acts-mode .wrapper-h4 {
-  display: block;
+  margin-top: -6px;
 }
 .group-card .acts-mode .wrapper-h5 {
-  display: block;
+  margin-top: -3px;
 }
 .group-card .act {
   display: inline-block;
-  padding: 0 3px;
+  padding: 0 2px;
   background-color: #ffffff;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
   -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
   -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  cursor: pointer;
 }
 .group-card .act .icon {
   display: block;
@@ -607,15 +609,14 @@ body {
 }
 .group-card .act-round {
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 .group-card .act-round .icon {
-  font-size: 32px;
+  font-size: 28px;
 }
 .group-card .wrapper-h5 .act-round,
 .group-card .act-round-sm {
-  padding: 0 2px;
   width: 24px;
   height: 24px;
 }
