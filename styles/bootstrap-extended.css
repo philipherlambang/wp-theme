@@ -700,6 +700,115 @@ body {
   font-weight: 500;
 }
 
+.form-simple {
+  display: block;
+}
+.form-simple .form-control {
+  height: auto;
+  padding: 10px 15px;
+  color: #616161;
+  border-width: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #E0E0E0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+}
+.form-simple .form-group {
+  margin-bottom: 0;
+}
+.form-simple .control.checkbox {
+  padding-left: 0;
+  font-weight: 400;
+}
+.form-simple .control.checkbox .control-indicator {
+  margin-right: 10px;
+  position: inherit;
+  float: left;
+  top: inherit;
+  width: 20px;
+  height: 20px;
+}
+.form-simple .btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-color: #E0E0E0;
+  border-radius: 0;
+  font-weight: 300;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+}
+
+.operate {
+  background-color: rgba(255, 255, 255, 0.75);
+  /* border-bottom: 1px solid #eeeeee; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  max-height: 48px;
+}
+.operate-fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.operate [class^="col"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.operate a {
+  display: block;
+  color: inherit;
+  text-align: center;
+  max-width: 48px;
+}
+.operate a .icon {
+  line-height: 48px;
+  font-size: 28px;
+}
+.operate .title {
+  margin: 0;
+  font-weight: 300;
+  text-align: center;
+  line-height: 48px;
+}
+.img-stand {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.img-stand .img-responsive {
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+}
+
+.content-main {
+  display: block;
+  position: relative;
+}
+.content-main .btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-color: #E0E0E0;
+  border-radius: 0;
+  font-weight: 300;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+}
+
+.text-light {
+  font-weight: 300;
+}
+
 .fixed-navbar-content {
   margin-top: 50px;
 }
@@ -738,6 +847,9 @@ body {
 /* http://tealtribe.s3.amazonaws.com/203585ebdddf216b75729f3fb5b66eda75870707151c.jpg */
 /* http://edition.cnn.com/specials/profiles */
 /* #007AFF */
+/* background: rgba(0, 0, 0, 0.45); */
+/*     background: #AA81F3;
+    background: radial-gradient(circle at bottom right,#33b1f8 0,#aa81f3 100%);*/
 
 .pswp {
   z-index: 99;
