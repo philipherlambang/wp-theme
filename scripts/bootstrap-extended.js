@@ -3,7 +3,7 @@
 (function() {
 
 	// Autosize Texarea
-	autosize(document.getElementsByClassName('auto-size'));
+	$('.auto-size').textareaAutoSize();
 
 	// Date Pickers
 	datePicker('.date-picker');
@@ -280,7 +280,9 @@
 
 		if (that.hasClass('plus')) {
 
-			baseMode.clone().insertBefore(baseMode).removeClass('base-mode').addClass('edit-mode').find('input[type=text], textarea, select').filter(':visible:first').focus();
+			var clonedItem = baseMode.clone().insertBefore(baseMode);
+			clonedItem.removeClass('base-mode').addClass('edit-mode').find('input[type=text], textarea, select').filter(':visible:first').focus();
+			reinitItem(clonedItem);
 			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'inline-block');
 
 		} else if (that.hasClass('minus')) {
@@ -320,6 +322,24 @@
 		} else {
 			thruDate.css('display', 'block');
 		}
+	}
+
+	function reinitItem(selector) {
+		var slctr = $(selector),
+		    ta = slctr.find('.auto-size'),
+		    df = slctr.find('.date-from'),
+		    dt = slctr.find('.date-thru');
+
+		if (ta.length) {
+			$(ta).textareaAutoSize();
+		}
+
+		if (df.length && dt.length) {
+			datePicker(df);
+			datePicker(dt);
+			dateFromThru(df, dt);
+		}
+
 	}
 
 })();
