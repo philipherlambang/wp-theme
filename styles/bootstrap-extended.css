@@ -1,6 +1,9 @@
 /* Bootstrap Extended */
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 
+html {
+  height: 100%;
+}
 body {
   font-family: 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Lucida Grande', Arial, sans-serif;
   background-color: #eeeeee;
@@ -12,6 +15,11 @@ b, strong {
 
 .section {
   display: block;
+}
+.main-cover {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 .fixed-nav-content {
   margin-top: 50px;
@@ -33,7 +41,7 @@ b, strong {
   -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
 }
 .gloom-dark {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87);
   -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87);
   -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87);
@@ -45,6 +53,7 @@ b, strong {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
+  min-height: 100%;
 }
 .bg-cover-md {
   background-color: #9e9e9e;
@@ -67,6 +76,23 @@ b, strong {
 }
 .btn-gloom .icon {
   margin-right: 8px;
+}
+.btn-ghost {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  background-color: transparent;
+  color: #ffffff;
+}
+.btn-ghost.active,
+.btn-ghost:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-ghost.focus,
+.btn-ghost:focus,
+.btn-ghost:hover {
+  color: rgba(255, 255, 255, 0.5)
 }
 .card {
   display: block;
@@ -575,6 +601,7 @@ b, strong {
 
 .form-simple {
   display: block;
+  margin-top: 60px;
 }
 .form-simple .form-control {
   height: auto;
@@ -614,23 +641,41 @@ b, strong {
 .content-main {
   display: block;
   position: relative;
+  text-align: center;
+}
+.content-main .title {
+  font-weight: 300;
+  margin-bottom: 40px;
+  max-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .content-main .btn {
   margin-top: 20px;
   margin-bottom: 20px;
+  max-width: 280px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.content-main .btn:last-child {
+  margin-bottom: 40px;
+}
+.content-main a p {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .img-stand {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.img-stand .img-responsive {
-  display: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+.img-stand img {
+  max-width: 60px;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.87);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.87);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.87);
 }
 
 .unfilled-content {
