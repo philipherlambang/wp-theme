@@ -3,11 +3,10 @@
 (function() {
 
 	// Autosize Texarea
-	autosize(document.getElementsByClassName('auto-size'));
+	$('.auto-size').textareaAutoSize();
 
 	// Date Pickers
 	datePicker('.date-picker');
-
 	$.each(document.getElementsByClassName('form-vary'), function() {
 		var that = $(this), dateFrom = that.find('.date-from'), dateThru = that.find('.date-thru');
 		if (dateFrom.length && dateThru.length) {
@@ -19,7 +18,6 @@
 
 	// Photoswipe
 	pswpInit('.pswp-gallery');
-
 
 	/*! Functions */
 	function datePicker(selector) {
@@ -267,10 +265,81 @@
 		}
 	}
 
-	$('.acts-mode').on('click', '.plus', function() {
-		var actsMode = $(this).parents('.acts-mode');
-		    baseMode = actsMode.next();
-		baseMode.after(baseMode.clone().removeClass('base-mode').addClass('edit-mode'));
+
+
+	/*! Form Edit DOM Manipulations */
+	$('.acts-mode').on('click', 'a', function() {
+
+		var that      = $(this),
+				modes     = that.closest('ul'),
+		    actsMode  = modes.find('.acts-mode'),
+		    baseMode  = modes.find('.base-mode'),
+		    editModes = modes.find('.edit-mode');
+
+		$.each(document.getElementsByClassName('check'), function() { if (this.hasAttribute('style')) { this.click(); } });
+
+		if (that.hasClass('plus')) {
+
+			var clonedItem = baseMode.clone().insertBefore(baseMode);
+			clonedItem.removeClass('base-mode').addClass('edit-mode').find('input[type=text], textarea, select').filter(':visible:first').focus();
+			reinitItem(clonedItem);
+			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'inline-block');
+
+		} else if (that.hasClass('minus')) {
+
+			editModes.find('.form-delete a').css('display', 'block');
+			actsMode.find('a').css('display', 'none').end().find('a:last-child').css('display', 'inline-block');
+
+		} else {
+
+			editModes.find('.form-delete a').removeAttr('style');
+			actsMode.find('a').removeAttr('style');
+
+		}
 	});
+
+	$('.group-card').on('click', '.edit-mode .minus', function() {
+		$(this).closest('.edit-mode').remove();
+	});
+
+	$('.group-card').on('click', '.edit-mode .current, .edit-mode .expire', function() {
+		currentDisplay(this);
+	});
+
+	$.each($('.edit-mode .current, .edit-mode .expire'), function() {
+		currentDisplay(this);
+	});
+
+	$('.group-card').on('click', '.imgs-show .btn-minus', function(e) {
+		e.preventDefault();
+		e.stopImmediatePropagation();
+	});
+
+	function currentDisplay(selector) {
+		var thruDate = $(selector).closest('.edit-mode').find('.date-thru').closest('.form-group');
+		if (selector.checked) {
+			thruDate.css('display', 'none');
+		} else {
+			thruDate.css('display', 'block');
+		}
+	}
+
+	function reinitItem(selector) {
+		var slctr = $(selector),
+		    ta = slctr.find('.auto-size'),
+		    df = slctr.find('.date-from'),
+		    dt = slctr.find('.date-thru');
+
+		if (ta.length) {
+			$(ta).textareaAutoSize();
+		}
+
+		if (df.length && dt.length) {
+			datePicker(df);
+			datePicker(dt);
+			dateFromThru(df, dt);
+		}
+
+	}
 
 })();
