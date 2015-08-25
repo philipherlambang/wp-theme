@@ -709,56 +709,6 @@ b, strong {
 /* http://edition.cnn.com/specials/profiles */
 
 
-/* Should Be Directly Rewrite Plugin Styles */
-.pswp {
-  z-index: 99;
-}
-.picker {
-  line-height: inherit;
-  color: #424242;
-}
-.picker__box {
-  font-size: 18px;
-}
-.picker__holder {
-  transition: none;
-}
-.picker--opened .picker__holder {
-  transform: none;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  transition: none;
-}
-.picker__frame {
-  transform: none;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  transition: none;
-}
-.picker--opened .picker__frame {
-  transform: none;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-}
-.picker__box {
-  border-radius: 0;
-}
-.picker__select--month,
-.picker__select--year {
-  height: auto;
-}
-.picker__weekday {
-  display: none;
-}
-.picker__header .select {
-  margin-top: -9px;
-  font-size: 18px;
-}
-
-
 
 /* Will Be Changed */
 .navbar-id .navbar {
@@ -890,4 +840,54 @@ b, strong {
   background-color: #26497F;
   font-size: 32px;
   text-align: center;
+}
+
+
+/* Should Be Directly Rewrite Plugin Styles */
+.pswp {
+  z-index: 99;
+}
+.picker {
+  line-height: inherit;
+  color: #424242;
+}
+.picker__box {
+  font-size: 18px;
+}
+.picker__holder {
+  transition: none;
+}
+.picker--opened .picker__holder {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  transition: none;
+}
+.picker__frame {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  transition: none;
+}
+.picker--opened .picker__frame {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+}
+.picker__box {
+  border-radius: 0;
+}
+.picker__select--month,
+.picker__select--year {
+  height: auto;
+}
+.picker__weekday {
+  display: none;
+}
+.picker__header .select {
+  margin-top: -9px;
+  font-size: 18px;
 }
