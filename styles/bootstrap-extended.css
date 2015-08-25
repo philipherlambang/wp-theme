@@ -496,6 +496,9 @@ b, strong {
 .group-btn {
   margin-bottom: 30px;
 }
+.group-btn-last {
+  margin-bottom: 0;
+}
 .group-btn .row {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -761,7 +764,8 @@ b, strong {
   color: rgba(255, 255, 255, 0.57);
 }
 .navbar-id .navbar-toggle {
-  border: 0;
+  border-width: 0;
+  border-radius: 0;
 }
 .navbar-id .navbar-default .navbar-toggle:hover,
 .navbar-id .navbar-default .navbar-toggle:focus {
@@ -781,6 +785,7 @@ b, strong {
 .navbar-id .navbar-form .btn {
   background-color: #26497F;
   border-color: #26497F;
+  border-radius: 0;
   color: #ffffff;
 }
 .navbar-id .navbar-form .form-control:focus {
@@ -810,6 +815,10 @@ b, strong {
 .navbar-id .navbar-default .navbar-form {
   border-color: #002154;
 }
+.navbar-id .navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 /*
 .navbar-id .navbar-right {
   display: none;
@@ -832,6 +841,12 @@ b, strong {
 @media (min-width: 768px) {
   .navbar-id .user-icon {
     padding: 8px 7px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-id .navbar-form {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 .navbar-id .user-icon .block-blue {
