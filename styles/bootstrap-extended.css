@@ -591,23 +591,35 @@ b, strong {
 
 
 
-.operate {
-  background-color: rgba(255, 255, 255, 0.75);
-  border-bottom: 1px solid rgba(204, 204, 204, 0.75);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  max-height: 48px;
-  overflow: hidden;
-}
-.operate-fixed {
+.gap-operate {
   padding-bottom: 48px;
 }
-.operate-fixed .operate {
+
+.operate {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  transition: top 0.2s ease-in-out;
+  -webkit-transition: top 0.2s ease-in-out;
+  -moz-transition: top 0.2s ease-in-out;
+  -ms-transition: top 0.2s ease-in-out;
+  max-height: 48px;
+  z-index: 1030;
+  overflow: hidden;
+  text-align: center;
+}
+.operate-fixed {
   position: fixed;
   width: 100%;
-  z-index: 100;
+}
+.operate-fixed-down {
+  top: 0;
+}
+.operate-fixed-up {
+  top: -48px;
 }
 .operate [class^="col"] {
   padding-right: 0;
@@ -615,20 +627,19 @@ b, strong {
 }
 .operate a {
   display: block;
-  color: inherit;
-  text-align: center;
-  max-width: 48px;
+  color: #000;
   cursor: pointer;
+  max-width: 48px;
 }
 .operate a .icon {
+  font-size: 24px;
   line-height: 48px;
-  font-size: 28px;
 }
 .operate .title {
   margin: 0;
-  font-weight: 300;
-  text-align: center;
-  line-height: 46px;
+  color: #000;
+  font-weight: 500;
+  line-height: 48px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
