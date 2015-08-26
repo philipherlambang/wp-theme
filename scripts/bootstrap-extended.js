@@ -3,10 +3,14 @@
 (function() {
 
 	// Autosize Texarea
-	$('.auto-size').textareaAutoSize();
+	if (document.getElementsByClassName('auto-size').length) {
+		$('.auto-size').textareaAutoSize();
+	}
 
 	// Date Pickers
-	datePicker('.date-picker');
+	if (document.getElementsByClassName('date-picker').length) {
+		datePicker('.date-picker');
+	}
 	$.each(document.getElementsByClassName('form-vary'), function() {
 		var that = $(this), dateFrom = that.find('.date-from'), dateThru = that.find('.date-thru');
 		if (dateFrom.length && dateThru.length) {
@@ -241,7 +245,9 @@
 			options.hideAnimationDuration = 0;
 			options.bgOpacity = 0.7;
 			options.fullscreenEl = false;
+			options.zoomEl = false;
 			options.shareEl = false;
+			options.arrowEl = false;
 			options.modal = false;
 			options.history = false;
 
@@ -313,6 +319,11 @@
 	$('.group-card').on('click', '.imgs-show .btn-minus', function(e) {
 		e.preventDefault();
 		e.stopImmediatePropagation();
+	});
+
+	$('.group-btn').on('click', '.btn-apply', function(e) {
+		e.preventDefault();
+		$('.btn-apply').attr('disabled', 'disabled').text('Applied').prepend('<span class="icon ion-ios-checkmark-empty"></span>');
 	});
 
 	function currentDisplay(selector) {
