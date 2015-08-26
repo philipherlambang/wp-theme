@@ -627,7 +627,7 @@ b, strong {
 }
 .operate a {
   display: block;
-  color: #000;
+  color: #002154;
   cursor: pointer;
   max-width: 48px;
 }
@@ -637,7 +637,7 @@ b, strong {
 }
 .operate .title {
   margin: 0;
-  color: #000;
+  color: #002154;
   font-weight: 500;
   line-height: 48px;
   white-space: nowrap;
