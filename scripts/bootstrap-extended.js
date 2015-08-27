@@ -271,6 +271,73 @@
 		}
 	}
 
+	var validatorSignIn = new FormValidator('sign-in', [{
+		name: 'email',
+		display: 'Email',
+		rules: 'required|valid_email'
+	}, {
+		name: 'password',
+		display: 'Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	var validatorSignUp = new FormValidator('sign-up', [{
+		name: 'full-name',
+		display: 'Full Name',
+		rules: 'required'
+	}, {
+		name: 'email',
+		display: 'Email',
+		rules: 'required|valid_email'
+	}, {
+		name: 'password',
+		display: 'Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}, {
+		name: 'confirm-password',
+		display: 'Confirm Password',
+		rules: 'required|matches[password]'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	var validatorForgotPassword = new FormValidator('forgot-password', [{
+		name: 'email',
+		display: 'Email',
+		rules: 'required|valid_email'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	var validatorChangePassword = new FormValidator('change-password', [{
+		name: 'current-password',
+		display: 'Current Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}, {
+		name: 'new-password',
+		display: 'New Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}, {
+		name: 'verify-new-password',
+		display: 'Verify New Password',
+		rules: 'required|matches[new-password]'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	function validatorResult(errors, event) {
+		$(event.target).find('.error-message').remove();
+
+		if (errors.length > 0) {
+			$(errors[0].element).focus().closest('.form-group').append('<p class="error-message">' + errors[0].message + '</p>');
+		} else {
+			console.log('No Error');
+			event.preventDefault();
+		}
+	}
+
 
 
 	/*! Form Edit DOM Manipulations */
@@ -350,7 +417,6 @@
 			datePicker(dt);
 			dateFromThru(df, dt);
 		}
-
 	}
 
 	var didScroll;
