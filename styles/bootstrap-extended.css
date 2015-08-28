@@ -715,7 +715,7 @@ b, strong {
 .content-main .btn:last-child {
   margin-bottom: 40px;
 }
-.content-main .link-white {
+.content-main a {
   color: #ffffff;
   text-decoration: none;
 }
