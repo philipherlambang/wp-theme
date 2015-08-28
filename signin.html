@@ -52,18 +52,18 @@
 						<div class="col-sm-2 col-md-4"></div>
 						<div class="col-sm-8 col-md-4">
 							<div class="content-main">
-								<form class="form-simple form-validator">
+								<form class="form-simple" name="sign-in">
 									<div class="form-group form-group-lg">
 										<label for="email" class="sr-only">Email</label>
-										<input type="email" class="form-control" id="email" placeholder="Email" required>
+										<input type="email" class="form-control" id="email" name="email" placeholder="Email">
 									</div>
 									<div class="form-group form-group-lg">
 										<label for="password" class="sr-only">Password</label>
-										<input type="password" class="form-control" id="password" placeholder="Password" required>
+										<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 									</div>
 									<div class="form-group">
 										<label class="control checkbox">
-											<input type="checkbox" id="current" class="current" checked="checked">
+											<input type="checkbox" class="current" id="current" name="current" checked="checked">
 											<span class="control-indicator"></span> Keep me logged in
 										</label>
 									</div>
