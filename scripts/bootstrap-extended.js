@@ -2,6 +2,9 @@
 
 (function() {
 
+	// Auto Hide and Show Nav When Scroll
+	autoNavScroll('operate-fixed');
+
 	// Autosize Texarea
 	if (document.getElementsByClassName('auto-size').length) {
 		$('.auto-size').textareaAutoSize();
@@ -24,6 +27,44 @@
 	pswpInit('.pswp-gallery');
 
 	/*! Functions */
+	function autoNavScroll(className) {
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 5;
+		var navbarHeight = $('.' + className).outerHeight();
+
+		$(window).scroll(function(event){
+			didScroll = true;
+		});
+
+		setInterval(function() {
+			if (didScroll) {
+				// Has Scrolled
+				var st = $(this).scrollTop();
+
+				// Make sure they scroll more than delta
+				if (Math.abs(lastScrollTop - st) <= delta)
+					return;
+
+				// If they scrolled down and are past the navbar, add class .nav-up.
+				// This is necessary so you never see what is "behind" the navbar.
+				if (st > lastScrollTop && st > navbarHeight) {
+					// Scroll Down
+					$('.' + className).removeClass(className + '-down').addClass(className + '-up');
+				} else {
+					// Scroll Up
+					if(st + $(window).height() < $(document).height()) {
+						$('.' + className).removeClass(className + '-up').addClass(className + '-down');
+					}
+				}
+
+				lastScrollTop = st;
+
+				didScroll = false;
+			}
+		}, 250);
+	}
+
 	function datePicker(selector) {
 		$(selector).pickadate({
 			format: 'd mmmm yyyy',
@@ -36,8 +77,8 @@
 			max: true,
 			onRender: function() {
 				var hld = $(this.$holder),
-				    hdr = hld[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0],
-				    slc = $([hdr.childNodes[0], hdr.childNodes[1]]);
+						hdr = hld[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0],
+						slc = $([hdr.childNodes[0], hdr.childNodes[1]]);
 				slc.wrap('<label class="select"></label>');
 			}
 		});
@@ -45,10 +86,10 @@
 
 	function dateFromThru(dateFrom, dateThru) {
 		var fromPkdt = dateFrom.pickadate(),
-		    fromPckr = fromPkdt.pickadate('picker');
+				fromPckr = fromPkdt.pickadate('picker');
 
 		var thruPkdt = dateThru.pickadate(),
-		    thruPckr = thruPkdt.pickadate('picker');
+				thruPckr = thruPkdt.pickadate('picker');
 
 		if ( fromPckr.get('value') ) {
 			thruPckr.set('min', fromPckr.get('select'));
@@ -79,12 +120,12 @@
 		// (children of selector)
 		var parseThumbnailElements = function(el) {
 			var thumbElements = el.childNodes,
-			    numNodes = thumbElements.length,
-			    items = [],
-			    figureEl,
-			    linkEl,
-			    size,
-			    item;
+					numNodes = thumbElements.length,
+					items = [],
+					figureEl,
+					linkEl,
+					size,
+					item;
 
 			for (var i = 0; i < numNodes; i++) {
 
@@ -194,9 +235,9 @@
 
 		var openPhotoSwipe = function(index, galleryElement, fromURL) {
 			var pswpElement = document.querySelectorAll('.pswp')[0],
-			    gallery,
-			    options,
-			    items;
+					gallery,
+					options,
+					items;
 
 			items = parseThumbnailElements(galleryElement);
 
@@ -273,14 +314,83 @@
 
 
 
+	var validatorSignIn = new FormValidator('sign-in', [{
+		name: 'email',
+		display: 'Email',
+		rules: 'required|valid_email'
+	}, {
+		name: 'password',
+		display: 'Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	var validatorSignUp = new FormValidator('sign-up', [{
+		name: 'full-name',
+		display: 'Full Name',
+		rules: 'required'
+	}, {
+		name: 'email',
+		display: 'Email',
+		rules: 'required|valid_email'
+	}, {
+		name: 'password',
+		display: 'Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}, {
+		name: 'confirm-password',
+		display: 'Confirm Password',
+		rules: 'required|matches[password]'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	var validatorForgotPassword = new FormValidator('forgot-password', [{
+		name: 'email',
+		display: 'Email',
+		rules: 'required|valid_email'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	var validatorChangePassword = new FormValidator('change-password', [{
+		name: 'current-password',
+		display: 'Current Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}, {
+		name: 'new-password',
+		display: 'New Password',
+		rules: 'required|alpha_numeric|min_length[8]'
+	}, {
+		name: 'verify-new-password',
+		display: 'Verify New Password',
+		rules: 'required|matches[new-password]'
+	}], function(errors, event) {
+		validatorResult(errors, event);
+	});
+
+	function validatorResult(errors, event) {
+		$(event.target).find('.error-message').remove();
+
+		if (errors.length > 0) {
+			$(errors[0].element).focus().closest('.form-group').append('<p class="error-message">' + errors[0].message + '</p>');
+		} else {
+			console.log('Hooray No Error');
+			event.preventDefault();
+		}
+	}
+
+
+
 	/*! Form Edit DOM Manipulations */
 	$('.acts-mode').on('click', 'a', function() {
 
 		var that      = $(this),
 				modes     = that.closest('ul'),
-		    actsMode  = modes.find('.acts-mode'),
-		    baseMode  = modes.find('.base-mode'),
-		    editModes = modes.find('.edit-mode');
+				actsMode  = modes.find('.acts-mode'),
+				baseMode  = modes.find('.base-mode'),
+				editModes = modes.find('.edit-mode');
 
 		$.each(document.getElementsByClassName('check'), function() { if (this.hasAttribute('style')) { this.click(); } });
 
@@ -337,9 +447,9 @@
 
 	function reinitItem(selector) {
 		var slctr = $(selector),
-		    ta = slctr.find('.auto-size'),
-		    df = slctr.find('.date-from'),
-		    dt = slctr.find('.date-thru');
+				ta = slctr.find('.auto-size'),
+				df = slctr.find('.date-from'),
+				dt = slctr.find('.date-thru');
 
 		if (ta.length) {
 			$(ta).textareaAutoSize();
@@ -350,7 +460,6 @@
 			datePicker(dt);
 			dateFromThru(df, dt);
 		}
-
 	}
 
 })();

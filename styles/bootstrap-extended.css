@@ -444,7 +444,7 @@ b, strong {
 }
 .act-leaf {
   margin: 0;
-  padding: 6px 6.63px;
+  padding: 6px 9.5px;
   color: #1e88e5;
   font-size: 28px;
   line-height: 0;
@@ -591,23 +591,35 @@ b, strong {
 
 
 
-.operate {
-  background-color: rgba(255, 255, 255, 0.75);
-  border-bottom: 1px solid rgba(204, 204, 204, 0.75);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  max-height: 48px;
-  overflow: hidden;
-}
-.operate-fixed {
+.gap-operate {
   padding-bottom: 48px;
 }
-.operate-fixed .operate {
+
+.operate {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  transition: top 0.2s ease-in-out;
+  -webkit-transition: top 0.2s ease-in-out;
+  -moz-transition: top 0.2s ease-in-out;
+  -ms-transition: top 0.2s ease-in-out;
+  max-height: 48px;
+  z-index: 1030;
+  overflow: hidden;
+  text-align: center;
+}
+.operate-fixed {
   position: fixed;
   width: 100%;
-  z-index: 100;
+}
+.operate-fixed-down {
+  top: 0;
+}
+.operate-fixed-up {
+  top: -48px;
 }
 .operate [class^="col"] {
   padding-right: 0;
@@ -615,20 +627,19 @@ b, strong {
 }
 .operate a {
   display: block;
-  color: inherit;
-  text-align: center;
-  max-width: 48px;
+  color: #002154;
   cursor: pointer;
+  max-width: 48px;
 }
 .operate a .icon {
+  font-size: 24px;
   line-height: 48px;
-  font-size: 28px;
 }
 .operate .title {
   margin: 0;
-  font-weight: 300;
-  text-align: center;
-  line-height: 46px;
+  color: #002154;
+  font-weight: 500;
+  line-height: 48px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -649,6 +660,7 @@ b, strong {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
+  font-weight: 300;
 }
 .form-simple .form-group {
   margin-bottom: 0;
@@ -664,6 +676,7 @@ b, strong {
   top: inherit;
   width: 20px;
   height: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .form-simple .help-block {
   margin-top: 10px;
@@ -671,6 +684,13 @@ b, strong {
 .form-simple .btn {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.form-simple .error-message {
+  margin-bottom: 5px;
+  padding: 2.5px 15px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #EF5350;
 }
 
 .content-main {
@@ -748,8 +768,10 @@ b, strong {
   width: 100%;
   left: 0;
   bottom: -90px;
-  text-align: center;
   color: #616161;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .bg-white {
@@ -760,7 +782,7 @@ b, strong {
   margin-bottom: 30px;
   background-color: #ffffff;
   height: 320px;
-  border: 1px solid #424242;
+  border: 1px solid #e0e0e0;
 }
 
 /* Blue Pallete From Adobe Kuler */
