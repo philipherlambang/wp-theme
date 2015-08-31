@@ -831,7 +831,7 @@ b, strong {
   border-width: 0;
 }
 .navbar-id .navbar-default .navbar-brand {
-  padding: 7px;
+  padding: 5px;
   color: rgba(255, 255, 255, 0.87);
 }
 .navbar-id .navbar-default .navbar-brand:hover,
@@ -839,7 +839,7 @@ b, strong {
   color: #ffffff;
 }
 .navbar-id .navbar-brand > img {
-  max-height: 36px;
+  max-height: 40px;
   border-radius: 8px;
 }
 .navbar-id .navbar-default .navbar-text {
