@@ -470,10 +470,10 @@
 		}
 	}
 
-	$(document).on('click', 'main', function() {
-		var btn = $('.navbar').find('.navbar-toggle');
-		if (!btn.hasClass('collapsed')) {
-			btn.click();
+	$('body').on('click', 'main', function() {
+		var navbarToggle = $('.navbar').find('.navbar-toggle');
+		if (!navbarToggle.hasClass('collapsed')) {
+			navbarToggle.click();
 		}
 	});
 
