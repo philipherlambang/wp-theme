@@ -329,7 +329,7 @@
 	var validatorSignUp = new FormValidator('sign-up', [{
 		name: 'full-name',
 		display: 'Full Name',
-		rules: 'required'
+		rules: 'required|alpha'
 	}, {
 		name: 'email',
 		display: 'Email',
