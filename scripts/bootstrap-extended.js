@@ -470,4 +470,11 @@
 		}
 	}
 
+	$(document).on('click', 'main', function() {
+		var btn = $('.navbar').find('.navbar-toggle');
+		if (!btn.hasClass('collapsed')) {
+			btn.click();
+		}
+	});
+
 })();
