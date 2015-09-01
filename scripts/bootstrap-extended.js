@@ -329,7 +329,7 @@
 	var validatorSignUp = new FormValidator('sign-up', [{
 		name: 'full-name',
 		display: 'Full Name',
-		rules: 'required'
+		rules: 'required|callback_alpha_space'
 	}, {
 		name: 'email',
 		display: 'Email',
@@ -345,6 +345,14 @@
 	}], function(errors, event) {
 		validatorResult(errors, event);
 	});
+
+	validatorSignUp.registerCallback('alpha_space', function(value) {
+		console.log((/^[A-Za-z ]+$/).test(value));
+		if ((/^[A-Za-z ]+$/).test(value)) {
+			return true;
+		}
+		return false;
+	}).setMessage('alpha_space', 'The %s field must only contain alphabetical characters.');
 
 	var validatorForgotPassword = new FormValidator('forgot-password', [{
 		name: 'email',
@@ -461,5 +469,12 @@
 			dateFromThru(df, dt);
 		}
 	}
+
+	$('body').on('click', 'main', function() {
+		var navbarToggle = $('.navbar').find('.navbar-toggle');
+		if (!navbarToggle.hasClass('collapsed')) {
+			navbarToggle.click();
+		}
+	});
 
 })();
