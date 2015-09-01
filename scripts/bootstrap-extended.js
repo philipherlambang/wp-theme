@@ -337,7 +337,7 @@
 	}, {
 		name: 'password',
 		display: 'Password',
-		rules: 'required|alpha_numeric|min_length[8]'
+		rules: 'required|callback_alpha_numeric_strong|min_length[8]'
 	}, {
 		name: 'confirm-password',
 		display: 'Confirm Password',
@@ -353,6 +353,13 @@
 		}
 		return false;
 	}).setMessage('alpha_space', 'The %s field must only contain alphabetical characters.');
+
+	validatorSignUp.registerCallback('alpha_numeric_strong', function(value) {
+		if ((/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/).test(value)) {
+			return true;
+		}
+		return false;
+	}).setMessage('alpha_numeric_strong', 'The %s field must contain number, lowercase and uppercase letter.');
 
 	var validatorForgotPassword = new FormValidator('forgot-password', [{
 		name: 'email',
