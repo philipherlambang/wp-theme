@@ -966,7 +966,22 @@ b, strong {
   max-height: 360px;
 }
 .pswp {
-  /* z-index: 99; */
+  position: fixed;
+}
+@media (max-width: 768px) {
+  .pswp {
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 92.5%;
+    min-height: 320px;
+    z-index: 99;
+  }
+  .pswp__bg {
+    background: rgba(0, 0, 0, 0.8);
+  }
 }
 .picker {
   line-height: inherit;

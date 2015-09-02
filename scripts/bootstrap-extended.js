@@ -284,7 +284,6 @@
 
 			options.showAnimationDuration = 0;
 			options.hideAnimationDuration = 0;
-			options.bgOpacity = 0.7;
 			options.fullscreenEl = false;
 			options.zoomEl = false;
 			options.shareEl = false;
