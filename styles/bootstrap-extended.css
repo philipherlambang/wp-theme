@@ -400,13 +400,34 @@ b, strong {
   padding-bottom: 10px;
 }
 
+.imgs-block {
+  overflow: auto;
+  overflow-y: hidden;
+}
+.imgs-block .block-table {
+  display: table;
+  white-space: nowrap;
+}
+.imgs-block .block-cell {
+  display: table-cell;
+  position: relative;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+.imgs-block .block-cell:first-child {
+  padding-left: 0;
+}
+.imgs-block .block-cell:last-child {
+  padding-right: 0;
+}
 .imgs-block ul {
   list-style: none;
   margin: -2px;
   padding: 0;
+  width: 320px;
 }
 .imgs-block ul li {
-   padding: 2px;
+  padding: 2px;
 }
 .imgs-block a {
   display: block;
@@ -417,19 +438,6 @@ b, strong {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-}
-@media (min-width: 481px) {
-  .imgs-block ul li {
-    width: 20%;
-  }
-  .imgs-block .cover {
-    height: 80px;
-  }
-}
-@media (min-width: 992px) {
-  .imgs-block .cover {
-    height: 100px;
-  }
 }
 
 .group-card .edit-mode {
