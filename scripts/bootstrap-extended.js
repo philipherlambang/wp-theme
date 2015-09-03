@@ -440,7 +440,7 @@
 		currentDisplay(this);
 	});
 
-	$('.group-card').on('click', '.imgs-show .btn-minus', function(e) {
+	$('.group-card').on('click', '.imgs-inline .btn-minus', function(e) {
 		e.preventDefault();
 		e.stopImmediatePropagation();
 	});

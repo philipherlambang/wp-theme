@@ -333,44 +333,44 @@ b, strong {
   font-weight: 500;
 }
 
-.group-card .item .imgs-show {
+.group-card .item .imgs-inline {
   margin: -10px -5px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.imgs-show {
+.imgs-inline {
   overflow: auto;
   overflow-y: hidden;
 }
-.imgs-show ul {
+.imgs-inline ul {
   display: table;
   white-space: nowrap;
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
 }
-.imgs-show ul > li {
+.imgs-inline ul > li {
   display: table-cell;
   text-align: center;
-  padding-right: 4px;
-  padding-left: 4px;
+  padding-right: 2px;
+  padding-left: 2px;
   position: relative;
 }
-.imgs-show ul > li:first-child {
+.imgs-inline ul > li:first-child {
   padding-left: 0;
 }
-.imgs-show ul > li:last-child {
+.imgs-inline ul > li:last-child {
   padding-right: 0;
 }
-.imgs-show ul > li > a {
+.imgs-inline ul > li > a {
   margin: 0;
   display: block;
 }
-.imgs-show ul > li > a img {
+.imgs-inline ul > li > a img {
   width: 80px;
 }
-.imgs-show .cover {
+.imgs-inline .cover {
   width: 80px;
   height: 80px;
   background-size: cover;
@@ -378,10 +378,10 @@ b, strong {
   background-position: 50% 50%;
 }
 
-.imgs-show form {
+.imgs-inline form {
   margin: 0;
 }
-.imgs-show form .btn-minus {
+.imgs-inline form .btn-minus {
   padding: 0 11px;
   border-width: 0;
   border-radius: 0;
@@ -392,6 +392,44 @@ b, strong {
   top: 0;
   right: 4px;
   display: none;
+}
+
+.group-card .item .imgs-block {
+  margin: -10px -5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.imgs-block ul {
+  list-style: none;
+  margin: -2px;
+  padding: 0;
+}
+.imgs-block ul li {
+   padding: 2px;
+}
+.imgs-block a {
+  display: block;
+}
+.imgs-block .cover {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+@media (min-width: 481px) {
+  .imgs-block ul li {
+    width: 20%;
+  }
+  .imgs-block .cover {
+    height: 80px;
+  }
+}
+@media (min-width: 992px) {
+  .imgs-block .cover {
+    height: 100px;
+  }
 }
 
 .group-card .edit-mode {
@@ -780,7 +818,7 @@ b, strong {
 
 @media (min-width: 768px) {
   .group-gap {
-    margin-top: 40px;
+    margin-top: 25px;
   }
 }
 .unfilled-content {
@@ -976,7 +1014,7 @@ b, strong {
     right: 0;
     left: 0;
     width: 92.5%;
-    min-height: 320px;
+    height: 320px;
     z-index: 99;
   }
   .pswp__bg {
