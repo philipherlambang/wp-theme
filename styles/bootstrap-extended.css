@@ -1,5 +1,5 @@
 /* Bootstrap Extended */
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);*/
 
 html {
   height: 100%;
@@ -347,14 +347,13 @@ b, strong {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
+  display: inline-block;
 }
 .imgs-inline ul > li {
   float: left;
 }
 .imgs-inline ul > li > a {
-  display: block;
-  width: 80px;
-  height: 80px;
+  display: none;
 
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -366,8 +365,6 @@ b, strong {
   */
 }
 .imgs-inline ul > li > a img {
-  max-height: 100%;
-
     max-width: 100%;
     position: relative;
     top: 50%;
@@ -376,6 +373,7 @@ b, strong {
     transform: translateY(-50%);
 
   /*
+    max-height: 100%;
     position: absolute;
     top: -9999px;
     bottom: -9999px;
