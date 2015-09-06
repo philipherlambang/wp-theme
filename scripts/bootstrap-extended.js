@@ -451,14 +451,14 @@
 			return params;
 		}
 
-		function pswpReorder(gallerySelector) {
+		function pswpReorder(el) {
 
-			var li = gallerySelector.getElementsByTagName('li');
+			var li = el.getElementsByTagName('li');
+			var ulWidth = 0;
 
 			var arr = [];
 			for (i = 0; i < li.length; i++) {
 				arr.push(i);
-				// li[i].dataset.lid = i;
 			}
 			console.log('First', arr);
 
@@ -474,6 +474,7 @@
 
 				for (n = 0; n < arrs[i].length; n++) {
 					var num = arrs[i][n];
+
 					if (n == 3 || n == 4 || n == 5 || n == 6) {
 						li[num].firstElementChild.style.width = '150px';
 						li[num].firstElementChild.style.height = '100px';
@@ -486,14 +487,17 @@
 
 					if (n == 3 || n == 4 || n == 7 || n == 8 || n == 9) {
 						els.push(li[num]);
+					} else {
+						ulWidth = ulWidth + li[num].offsetWidth;
 					}
 				}
 			}
+			el.style.width = ulWidth + 'px';
 			console.log('Fourth', els);
 
 			$.each(els, function(i, v) {
 				$(v).remove();
-				$(gallerySelector).append($(v));
+				$(el).append($(v));
 			});
 		}
 	}
