@@ -295,9 +295,11 @@
 	function pswpInit(gallerySelector) {
 
 		var galleryElements = document.querySelectorAll(gallerySelector);
+		var galleriesItems = [];
 
 		for (i = 0; i < galleryElements.length; i++) {
 			galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+			galleriesItems[i + 1] = pswpItemParse(galleryElements[i]);
 			galleryElements[i].onclick = pswpItemClicked;
 			pswpReorder(galleryElements[i]);
 		}
@@ -305,6 +307,50 @@
 		var hashData = pswpParseHash();
 		if (hashData.pid && hashData.gid) {
 			pswpOpen(hashData.pid,  galleryElements[hashData.gid - 1], true);
+		}
+
+		function pswpItemParse(el) {
+			var thumbElements = el.childNodes,
+			    numNodes = thumbElements.length,
+			    index = 0,
+			    items = [],
+			    liEl,
+			    linkEl,
+			    size,
+			    item;
+
+			for (var i = 0; i < numNodes; i++) {
+
+				liEl = thumbElements[i];
+
+				if (liEl.nodeType !== 1) {
+					continue;
+				}
+
+				if (index + 1 !== i) {
+					index = index + 1;
+				}
+				liEl.dataset.lid = index;
+
+				linkEl = liEl.children[0];
+
+				size = linkEl.getAttribute('data-size').split('x');
+
+				item = {
+					src: linkEl.getAttribute('href'),
+					title: linkEl.getAttribute('data-title'),
+					w: parseInt(size[0], 10),
+					h: parseInt(size[1], 10)
+				};
+
+				if (linkEl.children.length > 0) {
+					item.msrc = linkEl.children[0].getAttribute('src');
+				}
+				item.el = liEl;
+				items.push(item);
+			}
+
+			return items;
 		}
 
 		function pswpItemClicked(e) {
@@ -322,22 +368,7 @@
 			}
 
 			var clickedGallery = clickedListItem.parentNode,
-			    childNodes = clickedListItem.parentNode.childNodes,
-			    numChildNodes = childNodes.length,
-			    nodeIndex = 0,
-			    index;
-
-			for (i = 0; i < numChildNodes; i++) {
-				if (childNodes[i].nodeType !== 1) {
-					continue;
-				}
-
-				if (childNodes[i] === clickedListItem) {
-					index = nodeIndex;
-					break;
-				}
-				nodeIndex++;
-			}
+			    index = clickedListItem.dataset.lid;
 
 			if (index >= 0) {
 				pswpOpen(index, clickedGallery);
@@ -356,7 +387,7 @@
 			    options,
 			    items;
 
-			items = pswpItemParse(galleryElement);
+			items = galleriesItems[galleryElement.dataset.pswpUid];
 
 			options = {
 				galleryUID: galleryElement.getAttribute('data-pswp-uid'),
@@ -393,44 +424,6 @@
 			gallery.init();
 		}
 
-		function pswpItemParse(el) {
-			var thumbElements = el.childNodes,
-			    numNodes = thumbElements.length,
-			    items = [],
-			    liEl,
-			    linkEl,
-			    size,
-			    item;
-
-			for (var i = 0; i < numNodes; i++) {
-
-				liEl = thumbElements[i];
-
-				if (liEl.nodeType !== 1) {
-					continue;
-				}
-
-				linkEl = liEl.children[0];
-
-				size = linkEl.getAttribute('data-size').split('x');
-
-				item = {
-					src: linkEl.getAttribute('href'),
-					title: linkEl.getAttribute('data-title'),
-					w: parseInt(size[0], 10),
-					h: parseInt(size[1], 10)
-				};
-
-				if (linkEl.children.length > 0) {
-					item.msrc = linkEl.children[0].getAttribute('src');
-				}
-				item.el = liEl;
-				items.push(item);
-			}
-
-			return items;
-		}
-
 		function pswpParseHash() {
 			var hash = window.location.hash.substring(1),
 			params = {};
@@ -461,11 +454,11 @@
 		function pswpReorder(gallerySelector) {
 
 			var li = gallerySelector.getElementsByTagName('li');
-			// galleryElements[0].style.width = (li.length / 2 * 100) + 'px';
 
 			var arr = [];
 			for (i = 0; i < li.length; i++) {
 				arr.push(i);
+				// li[i].dataset.lid = i;
 			}
 			console.log('First', arr);
 
@@ -491,19 +484,17 @@
 						li[num].firstElementChild.style.display = 'block';
 					}
 
-					if (n == 3 || n == 4 || n == 7 || n == 8 || n == 8) {
+					if (n == 3 || n == 4 || n == 7 || n == 8 || n == 9) {
 						els.push(li[num]);
 					}
 				}
 			}
 			console.log('Fourth', els);
 
-			/* setTimeout(function() {
-				$.each(els, function(i, v) {
-					$(v).remove();
-					$('.pswp-gallery').append($(v));
-				});
-			}, 3000); */
+			$.each(els, function(i, v) {
+				$(v).remove();
+				$(gallerySelector).append($(v));
+			});
 		}
 	}
 
