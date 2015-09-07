@@ -330,6 +330,7 @@
 				if (index + 1 !== i) {
 					index = index + 1;
 				}
+
 				liEl.dataset.lid = index;
 
 				linkEl = liEl.children[0];
@@ -454,7 +455,8 @@
 		function pswpReorder(el) {
 
 			var li = el.getElementsByTagName('li');
-			var ulWidth = 0;
+			var lis = [];
+			var ul = 0;
 
 			var arr = [];
 			for (i = 0; i < li.length; i++) {
@@ -468,34 +470,41 @@
 			}
 			console.log('Second', arrs);
 
-			var els = [];
 			for (i = 0; i < arrs.length; i++) {
 				console.log('Third', arrs[i]);
 
 				for (n = 0; n < arrs[i].length; n++) {
 					var num = arrs[i][n];
+					var a = li[num].children[0];
+					var img = a.children[0];
 
-					if (n == 3 || n == 4 || n == 5 || n == 6) {
-						li[num].firstElementChild.style.width = '150px';
-						li[num].firstElementChild.style.height = '100px';
-						li[num].firstElementChild.style.display = 'block';
+
+					if (img.width > img.height) {
+						img.style.height = '100%';
 					} else {
-						li[num].firstElementChild.style.width = '100px';
-						li[num].firstElementChild.style.height = '100px';
-						li[num].firstElementChild.style.display = 'block';
+						img.style.width = '100%';
 					}
 
-					if (n == 3 || n == 4 || n == 7 || n == 8 || n == 9) {
-						els.push(li[num]);
+					if (n == '0' || n == '1' || n == '8' || n =='9') {
+						a.style.width = '150px';
 					} else {
-						ulWidth = ulWidth + li[num].offsetWidth;
+						a.style.width = '100px';
+					}
+
+					a.style.height = '100px';
+					a.style.display = 'block';
+
+					if (n == '2' || n == '3' || n == '4' || n == '8' || n == '9') {
+						lis.push(li[num]);
+					} else {
+						ul = ul + li[num].offsetWidth;
 					}
 				}
 			}
-			el.style.width = ulWidth + 'px';
-			console.log('Fourth', els);
+			el.style.width = ul + 'px';
+			console.log('Fourth', lis);
 
-			$.each(els, function(i, v) {
+			$.each(lis, function(i, v) {
 				$(v).remove();
 				$(el).append($(v));
 			});

@@ -354,33 +354,40 @@ b, strong {
 }
 .imgs-inline ul > li > a {
   display: none;
-
+  overflow: hidden;
+/*
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
+*/
 
-  /*
-    overflow: hidden;
     position: relative;
-  */
+
 }
 .imgs-inline ul > li > a img {
+/*
     max-width: 100%;
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+*/
 
-  /*
-    max-height: 100%;
     position: absolute;
     top: -9999px;
     bottom: -9999px;
     left: -9999px;
     right: -9999px;
     margin: auto;
-  */
+
+}
+.imgs-inline .cover {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .imgs-inline form {
@@ -831,7 +838,7 @@ b, strong {
 
 @media (min-width: 768px) {
   .group-gap {
-    margin-top: 25px;
+    margin-top: 40px;
   }
 }
 .unfilled-content {
