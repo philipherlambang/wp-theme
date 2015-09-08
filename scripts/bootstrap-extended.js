@@ -457,12 +457,12 @@
 
 		function pswpReorder(el) {
 
-			var li = el.getElementsByTagName('li');
-			var lis = [];
-			var ul = 0;
+			var lis = el.getElementsByTagName('li');
+			var lisa = [];
+			var ulw = 0;
 
 			var arr = [];
-			for (i = 0; i < li.length; i++) {
+			for (i = 0; i < lis.length; i++) {
 				arr.push(i);
 			}
 			// console.log('First', arr);
@@ -478,7 +478,7 @@
 
 				for (n = 0; n < arrs[i].length; n++) {
 					var num = arrs[i][n];
-					var a = li[num].children[0];
+					var a = lis[num].children[0];
 					var img = a.children[0];
 
 					if (n == '0' || n == '1' || n == '8' || n =='9') {
@@ -488,14 +488,7 @@
 					}
 
 					a.style.height = '100px';
-					a.style.display = 'block';
 					a.style.margin = '2px';
-
-					if (n == '2' || n == '3' || n == '4' || n == '8' || n == '9') {
-						lis.push(li[num]);
-					} else {
-						ul = ul + li[num].offsetWidth;
-					}
 
 					if (img.width > img.height) {
 						img.style.height = a.offsetHeight + 'px';
@@ -506,12 +499,18 @@
 					} else {
 						img.style.width = '100%';
 					}
+
+					if (n == '2' || n == '3' || n == '4' || n == '8' || n == '9') {
+						lisa.push(lis[num]);
+					} else {
+						ulw = ulw + lis[num].offsetWidth;
+					}
 				}
 			}
-			el.style.width = ul + 'px';
-			// console.log('Fourth', lis);
+			el.style.width = ulw + 'px';
+			// console.log('Fourth', lisa);
 
-			$.each(lis, function(i, v) {
+			$.each(lisa, function(i, v) {
 				$(v).remove();
 				$(el).append($(v));
 			});
