@@ -465,16 +465,16 @@
 			for (i = 0; i < li.length; i++) {
 				arr.push(i);
 			}
-			console.log('First', arr);
+			// console.log('First', arr);
 
 			var arrs = [];
 			for (i = 0; i < arr.length; i+=10) {
 				arrs.push(arr.slice(i, i+10));
 			}
-			console.log('Second', arrs);
+			// console.log('Second', arrs);
 
 			for (i = 0; i < arrs.length; i++) {
-				console.log('Third', arrs[i]);
+				// console.log('Third', arrs[i]);
 
 				for (n = 0; n < arrs[i].length; n++) {
 					var num = arrs[i][n];
@@ -496,10 +496,20 @@
 					} else {
 						ul = ul + li[num].offsetWidth;
 					}
+
+					if (img.width > img.height) {
+						img.style.height = a.offsetHeight + 'px';
+						if (img.offsetWidth < a.offsetWidth) {
+							img.style.height = "";
+							img.style.width = a.offsetWidth + 'px';
+						}
+					} else {
+						img.style.width = '100%';
+					}
 				}
 			}
 			el.style.width = ul + 'px';
-			console.log('Fourth', lis);
+			// console.log('Fourth', lis);
 
 			$.each(lis, function(i, v) {
 				$(v).remove();

@@ -359,14 +359,13 @@ b, strong {
 }
 .imgs-inline ul > li > a img {
   display: block;
-  max-width: 100%;
-  height: auto;
 
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .imgs-inline .cover {
   width: 100%;
