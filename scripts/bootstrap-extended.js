@@ -490,16 +490,6 @@
 					a.style.height = '100px';
 					a.style.margin = '2px';
 
-					if (img.width > img.height) {
-						img.style.height = a.offsetHeight + 'px';
-						if (img.offsetWidth < a.offsetWidth) {
-							img.style.height = "";
-							img.style.width = a.offsetWidth + 'px';
-						}
-					} else {
-						img.style.width = '100%';
-					}
-
 					if (n == '2' || n == '3' || n == '4' || n == '8' || n == '9') {
 						lisa.push(lis[num]);
 					} else {
@@ -513,6 +503,21 @@
 			$.each(lisa, function(i, v) {
 				$(v).remove();
 				$(el).append($(v));
+			});
+
+			$(el).find('img').load(function() {
+				var img = this;
+				var a = this.parentElement;
+
+				if (img.width > img.height) {
+					img.style.height = a.offsetHeight + 'px';
+					if (img.offsetWidth < a.offsetWidth) {
+						img.style.height = "";
+						img.style.width = a.offsetWidth + 'px';
+					}
+				} else {
+					img.style.width = '100%';
+				}
 			});
 		}
 	}
