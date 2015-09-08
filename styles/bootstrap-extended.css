@@ -171,6 +171,7 @@ b, strong {
   padding: 10px 15px;
   border-bottom: 1px solid #e0e0e0;
   background-color: #ffffff;
+  position: relative;
 }
 .group-card h4 {
   margin-bottom: 15px;
@@ -1006,24 +1007,6 @@ b, strong {
   resize: none;
   max-height: 360px;
 }
-/* .pswp {
-  position: fixed;
-}
-@media (max-width: 768px) {
-  .pswp {
-    margin-right: auto;
-    margin-left: auto;
-    position: absolute;
-    right: 0;
-    left: 0;
-    width: 92.5%;
-    height: 320px;
-    z-index: 99;
-  }
-  .pswp__bg {
-    background: rgba(0, 0, 0, 0.8);
-  }
-} */
 
 .picker {
   line-height: inherit;

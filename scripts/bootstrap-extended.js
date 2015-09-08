@@ -421,6 +421,9 @@
 				return;
 			}
 
+			options.shareEl = false;
+			// options.modal = false;
+
 			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
 			gallery.init();
 		}
