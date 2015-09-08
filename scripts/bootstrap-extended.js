@@ -478,21 +478,15 @@
 					var a = li[num].children[0];
 					var img = a.children[0];
 
-
-					if (img.width > img.height) {
-						img.style.height = '100%';
-					} else {
-						img.style.width = '100%';
-					}
-
 					if (n == '0' || n == '1' || n == '8' || n =='9') {
-						a.style.width = '150px';
+						a.style.width = '152px';
 					} else {
 						a.style.width = '100px';
 					}
 
 					a.style.height = '100px';
 					a.style.display = 'block';
+					a.style.margin = '2px';
 
 					if (n == '2' || n == '3' || n == '4' || n == '8' || n == '9') {
 						lis.push(li[num]);

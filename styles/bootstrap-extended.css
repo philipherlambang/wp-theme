@@ -1,5 +1,5 @@
 /* Bootstrap Extended */
-/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 
 html {
   height: 100%;
@@ -123,7 +123,6 @@ b, strong {
 .card-potrait {
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 40px;
   max-width: 280px;
   border: 1px solid #e0e0e0;
 }
@@ -355,32 +354,18 @@ b, strong {
 .imgs-inline ul > li > a {
   display: none;
   overflow: hidden;
-/*
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-*/
-
-    position: relative;
-
+  position: relative;
 }
 .imgs-inline ul > li > a img {
-/*
-    max-width: 100%;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-*/
+  display: block;
+  max-width: 100%;
+  height: auto;
 
-    position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
-    margin: auto;
-
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .imgs-inline .cover {
   width: 100%;
@@ -835,12 +820,10 @@ b, strong {
 .bg-white {
   background-color: #ffffff;
 }
-
-@media (min-width: 768px) {
-  .group-gap {
-    margin-top: 40px;
-  }
+.groups-gap {
+  margin-top: 40px;
 }
+
 .unfilled-content {
   margin-bottom: 30px;
   background-color: #ffffff;
