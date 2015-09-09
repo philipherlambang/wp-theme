@@ -23,9 +23,6 @@
 		}
 	});
 
-	// Photoswipe
-	pswpInit('.pswp-gallery');
-
 	/*! Functions */
 	function autoNavScroll(className) {
 		var didScroll;
@@ -112,204 +109,6 @@
 				fromPckr.set('max', false);
 			}
 		});
-	}
-
-	function pswpInit(selector) {
-
-		// parse slide data (url, title, size ...) from DOM elements
-		// (children of selector)
-		var parseThumbnailElements = function(el) {
-			var thumbElements = el.childNodes,
-					numNodes = thumbElements.length,
-					items = [],
-					figureEl,
-					linkEl,
-					size,
-					item;
-
-			for (var i = 0; i < numNodes; i++) {
-
-				figureEl = thumbElements[i]; // <figure> element
-
-				// include only element nodes
-				if (figureEl.nodeType !== 1) {
-					continue;
-				}
-
-				linkEl = figureEl.children[0]; // <a> element
-
-				size = linkEl.getAttribute('data-size').split('x');
-
-				// create slide object
-				item = {
-					src   : linkEl.getAttribute('href'),
-					title : linkEl.getAttribute('data-title'),
-					msrc  : linkEl.style.backgroundImage.slice(4, -1),
-					w     : parseInt(size[0], 10),
-					h     : parseInt(size[1], 10)
-				};
-
-				item.el = figureEl; // save link to element for getThumbBoundsFn
-				items.push(item);
-			}
-
-			return items;
-		};
-
-		// find nearest parent element
-		var closest = function closest(el, fn) {
-			return el && ( fn(el) ? el : closest(el.parentNode, fn) );
-		};
-
-		// triggers when user clicks on thumbnail
-		var onThumbnailsClick = function(e) {
-			e = e || window.event;
-
-			var eTarget = e.target || e.srcElement;
-
-			// find root element of slide
-			var clickedListItem = closest(eTarget, function(el) {
-				return (el.tagName && el.tagName.toUpperCase() === 'LI');
-			});
-
-			if (!clickedListItem) {
-				return;
-			}
-
-			// find index of clicked item by looping through all child nodes
-			// alternatively, you may define index via data- attribute
-			var clickedGallery = clickedListItem.parentNode,
-				childNodes = clickedListItem.parentNode.childNodes,
-				numChildNodes = childNodes.length,
-				nodeIndex = 0,
-				index;
-
-			for (var i = 0; i < numChildNodes; i++) {
-				if (childNodes[i].nodeType !== 1) {
-					continue;
-				}
-
-				if (childNodes[i] === clickedListItem) {
-					index = nodeIndex;
-					break;
-				}
-				nodeIndex++;
-			}
-
-
-
-			if (index >= 0) {
-				// open PhotoSwipe if valid index found
-				openPhotoSwipe( index, clickedGallery );
-			}
-			return false;
-		};
-
-		// parse picture index and gallery index from URL (#&pid=1&gid=2)
-		var photoswipeParseHash = function() {
-			var hash = window.location.hash.substring(1),
-			params = {};
-
-			if (hash.length < 5) {
-				return params;
-			}
-
-			var vars = hash.split('&');
-			for (var i = 0; i < vars.length; i++) {
-				if(!vars[i]) {
-					continue;
-				}
-				var pair = vars[i].split('=');
-				if (pair.length < 2) {
-					continue;
-				}
-				params[pair[0]] = pair[1];
-			}
-
-			if (params.gid) {
-				params.gid = parseInt(params.gid, 10);
-			}
-
-			return params;
-		};
-
-		var openPhotoSwipe = function(index, galleryElement, fromURL) {
-			var pswpElement = document.querySelectorAll('.pswp')[0],
-					gallery,
-					options,
-					items;
-
-			items = parseThumbnailElements(galleryElement);
-
-			// define options (if needed)
-			options = {
-
-				// define gallery index (for URL)
-				galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-				getThumbBoundsFn: function(index) {
-					// See Options -> getThumbBoundsFn section of documentation for more info
-					var thumbnail = items[index].el.getElementsByTagName('a')[0], // find thumbnail
-						pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-						rect = thumbnail.getBoundingClientRect();
-
-					return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-				}
-
-			};
-
-			// PhotoSwipe opened from URL
-			if (fromURL) {
-				if (options.galleryPIDs) {
-					// parse real index when custom PIDs are used
-					// http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-					for (var j = 0; j < items.length; j++) {
-						if (items[j].pid == index) {
-							options.index = j;
-							break;
-						}
-					}
-				} else {
-					// in URL indexes start from 1
-					options.index = parseInt(index, 10) - 1;
-				}
-			} else {
-				options.index = parseInt(index, 10);
-			}
-
-			// exit if index not found
-			if ( isNaN(options.index) ) {
-				return;
-			}
-
-			options.showAnimationDuration = 0;
-			options.hideAnimationDuration = 0;
-			options.bgOpacity = 0.7;
-			options.fullscreenEl = false;
-			options.zoomEl = false;
-			options.shareEl = false;
-			options.arrowEl = false;
-			options.modal = false;
-			options.history = false;
-
-			// Pass data to PhotoSwipe and initialize it
-			gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-			gallery.init();
-		};
-
-		// loop through all gallery elements and bind events
-		var galleryElements = document.querySelectorAll( selector );
-
-		for(var i = 0, l = galleryElements.length; i < l; i++) {
-			galleryElements[i].setAttribute('data-pswp-uid', i+1);
-			galleryElements[i].onclick = onThumbnailsClick;
-		}
-
-		// Parse URL and open gallery if it contains #&pid=3&gid=1
-		var hashData = photoswipeParseHash();
-		if(hashData.pid && hashData.gid) {
-			openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true );
-		}
 	}
 
 
@@ -441,7 +240,7 @@
 		currentDisplay(this);
 	});
 
-	$('.group-card').on('click', '.imgs-show .btn-minus', function(e) {
+	$('.group-card').on('click', '.imgs-inline .btn-minus', function(e) {
 		e.preventDefault();
 		e.stopImmediatePropagation();
 	});
@@ -483,5 +282,244 @@
 			navbarToggle.click();
 		}
 	});
+
+	$.each(document.getElementsByClassName('rp'), function() {
+		this.innerHTML = 'Rp. ' + this.innerHTML.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+	});
+
+
+
+	// Photoswipe
+	pswpInit('.pswp-gallery');
+
+	function pswpInit(gallerySelector) {
+
+		var galleryElements = document.querySelectorAll(gallerySelector);
+		var galleriesItems = [];
+
+		for (i = 0; i < galleryElements.length; i++) {
+			galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+			galleriesItems[i + 1] = pswpItemParse(galleryElements[i]);
+			galleryElements[i].onclick = pswpItemClicked;
+			pswpReorder(galleryElements[i]);
+		}
+
+		var hashData = pswpParseHash();
+		if (hashData.pid && hashData.gid) {
+			pswpOpen(hashData.pid,  galleryElements[hashData.gid - 1], true);
+		}
+
+		function pswpItemParse(el) {
+			var thumbElements = el.childNodes,
+			    numNodes = thumbElements.length,
+			    index = 0,
+			    items = [],
+			    liEl,
+			    linkEl,
+			    size,
+			    item;
+
+			for (var i = 0; i < numNodes; i++) {
+
+				liEl = thumbElements[i];
+
+				if (liEl.nodeType !== 1) {
+					continue;
+				}
+
+				if (index + 1 !== i) {
+					index = index + 1;
+				}
+
+				liEl.dataset.lid = index;
+
+				linkEl = liEl.children[0];
+
+				size = linkEl.getAttribute('data-size').split('x');
+
+				item = {
+					src: linkEl.getAttribute('href'),
+					title: linkEl.getAttribute('data-title'),
+					w: parseInt(size[0], 10),
+					h: parseInt(size[1], 10)
+				};
+
+				if (linkEl.children.length > 0) {
+					item.msrc = linkEl.children[0].getAttribute('src');
+				}
+				item.el = liEl;
+				items.push(item);
+			}
+
+			return items;
+		}
+
+		function pswpItemClicked(e) {
+			e = e || window.event;
+			e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+			var eTarget = e.target || e.srcElement;
+
+			var clickedListItem = closest(eTarget, function(el) {
+				return (el.tagName && el.tagName.toUpperCase() === 'LI');
+			});
+
+			if (!clickedListItem) {
+				return;
+			}
+
+			var clickedGallery = clickedListItem.parentNode,
+			    index = clickedListItem.dataset.lid;
+
+			if (index >= 0) {
+				pswpOpen(index, clickedGallery);
+			}
+
+			return false;
+		}
+
+		function closest(el, fn) {
+			return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+		}
+
+		function pswpOpen(index, galleryElement, fromURL) {
+			var pswpElement = document.querySelectorAll('.pswp')[0],
+			    gallery,
+			    options,
+			    items;
+
+			items = galleriesItems[galleryElement.dataset.pswpUid];
+
+			options = {
+				galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+				getThumbBoundsFn: function(index) {
+					var thumbnail = items[index].el.getElementsByTagName('img')[0],
+					    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+					    rect = thumbnail.getBoundingClientRect();
+
+					return {x : rect.left, y : rect.top + pageYScroll, w : rect.width};
+				}
+			};
+
+			if (fromURL) {
+				if (options.galleryPIDs) {
+					for (i = 0; i < items.length; i++) {
+						if (items[i].pid == index) {
+							options.index = i;
+							break;
+						}
+					}
+				} else {
+					options.index = parseInt(index, 10) - 1;
+				  options.showAnimationDuration = 0;
+				}
+			} else {
+				options.index = parseInt(index, 10);
+			}
+
+			if (isNaN(options.index)) {
+				return;
+			}
+
+			options.shareEl = false;
+			// options.modal = false;
+
+			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+			gallery.init();
+		}
+
+		function pswpParseHash() {
+			var hash = window.location.hash.substring(1),
+			params = {};
+
+			if (hash.length < 5) {
+				return params;
+			}
+
+			var vars = hash.split('&');
+			for (var i = 0; i < vars.length; i++) {
+				if (!vars[i]) {
+					continue;
+				}
+				var pair = vars[i].split('=');
+				if (pair.length < 2) {
+					continue;
+				}
+				params[pair[0]] = pair[1];
+			}
+
+			if (params.gid) {
+				params.gid = parseInt(params.gid, 10);
+			}
+
+			return params;
+		}
+
+		function pswpReorder(el) {
+
+			var lis = el.getElementsByTagName('li');
+			var lisa = [];
+			var ulw = 0;
+
+			var arr = [];
+			for (i = 0; i < lis.length; i++) {
+				arr.push(i);
+			}
+			// console.log('First', arr);
+
+			var arrs = [];
+			for (i = 0; i < arr.length; i+=10) {
+				arrs.push(arr.slice(i, i+10));
+			}
+			// console.log('Second', arrs);
+
+			for (i = 0; i < arrs.length; i++) {
+				// console.log('Third', arrs[i]);
+
+				for (n = 0; n < arrs[i].length; n++) {
+					var num = arrs[i][n];
+					var a = lis[num].children[0];
+					var img = a.children[0];
+
+					if (n == '0' || n == '1' || n == '8' || n =='9') {
+						a.style.width = '152px';
+					} else {
+						a.style.width = '100px';
+					}
+
+					a.style.height = '100px';
+					a.style.margin = '2px';
+
+					if (n == '2' || n == '3' || n == '4' || n == '8' || n == '9') {
+						lisa.push(lis[num]);
+					} else {
+						ulw = ulw + lis[num].offsetWidth;
+					}
+				}
+			}
+			el.style.width = ulw + 'px';
+			// console.log('Fourth', lisa);
+
+			$.each(lisa, function(i, v) {
+				$(v).remove();
+				$(el).append($(v));
+			});
+
+			$(el).find('img').load(function() {
+				var img = this;
+				var a = this.parentElement;
+
+				if (img.width > img.height) {
+					img.style.height = a.offsetHeight + 'px';
+					if (img.offsetWidth < a.offsetWidth) {
+						img.style.height = "";
+						img.style.width = a.offsetWidth + 'px';
+					}
+				} else {
+					img.style.width = '100%';
+				}
+			});
+		}
+	}
 
 })();
