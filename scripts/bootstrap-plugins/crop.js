@@ -586,15 +586,15 @@ var CROP = (function () {
 
 // you may do multiple instances of the cropper on a single page
 // just be sure to give each a unique name
-var foo = new CROP();
+var cropper = new CROP();
 
-foo.init({
+cropper.init({
 
 	// element to load the cropper into
-	container: '.croper',
+	container: '.cropper',
 
 	// image to load, accepts base64 string
-	image: 'images/crop.jpg',
+	image: 'images/user/john_branch.jpg',
 
 	// aspect ratio
 	width: 300,
@@ -611,32 +611,20 @@ foo.init({
 
 		// minimum and maximum zoom
 		min: 1,
-		max: 5
+		max: 3
 
 	},
 
 	// optional preview. remove this object if you wish to hide it
-	//preview: {
+	// preview: {
 
-		// element to load the preview into
-	//	container: '.pre',
+	// 	element to load the preview into
+	// 	container: '.pre',
 
-		// aspect ratio
-	//	ratio: 0.5,
+	// 	aspect ratio
+	// 	ratio: 0.5,
 
-	//},
+	// },
 
-
-});
-
-
-//  toggle mask
-// --------------------------------------------------------------------------
-
-$('body').on("click", 'li.maskbg', function () {
-
-	$('.example').toggleClass('maskbg');
-	$('.croper').attr('data-mask', $('.croper').attr('data-mask') === 'true' ? 'false' : 'true');
-	$('li.maskbg').html($('li.maskbg').html() == 'Mask' ? 'Unmask' : 'Mask');
 
 });

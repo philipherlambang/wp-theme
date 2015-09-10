@@ -47,20 +47,14 @@
 				<div class="container container-full-xs">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="example">
-								<div class="croper"></div>
+							<div class="cropper-block">
+								<div class="cropper"></div>
 							</div>
-							<ul class="cmd">
-								<li onclick="foo.import();">Import</li>
-								<li onclick="foo.zoom('min');">Min</li>
-								<li onclick="foo.zoom('max');">Max</li>
-								<li onclick="foo.flip();">Flip</li>
-								<li onclick="foo.rotate();">Rotate</li>
-								<li class="maskbg">Mask</li>
-								<li><a id="unqiueID" onclick="foo.download(300, 300, 'test', 'png', this.id);" href="#">Download</a></li>
-								<li onclick="console.log(foo.crop(300,300,'png'))" data-tooltip="Prints object to console">Crop</li>
-								<li onclick="console.log(foo.original())" data-tooltip="Prints object to console">Original</li>
-							</ul>
+							<div class="cropper-command">
+								<button class="btn btn-lg btn-default btn-gloom" onclick="cropper.import();"><span class="icon ion-image"></span>Choose Image</button>
+								<button class="btn btn-lg btn-default btn-gloom" onclick="cropper.rotate();"><span class="icon ion-ios-loop-strong"></span>Rotate</button>
+								<button class="btn btn-lg btn-default btn-gloom" onclick="console.log('Original Image : ', cropper.original()); console.log('Cropped Image : ', cropper.crop(300,300,'png'))"><span class="icon ion-ios-crop-strong"></span>Crop</button>
+							</div>
 						</div>
 					</div>
 				</div>
