@@ -61,7 +61,11 @@ b, strong {
 }
 .bg-body {
   background-position: center center;
-  min-height: 100%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .bg-cover-md {
   background-color: #9e9e9e;
