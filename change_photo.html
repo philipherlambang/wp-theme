@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<meta name="author" content="">
-		<title>Crop</title>
+		<title>Change Photo</title>
 
 		<link href="styles/bootstrap.min.css" rel="stylesheet">
 		<link href="styles/bootstrap-plugins.min.css" rel="stylesheet">
@@ -29,12 +29,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<a onclick="window.history.back()">
+							<a class="left" onclick="window.history.back()">
 								<div class="icon ion-ios-arrow-back"></div>
 							</a>
 						</div>
 						<div class="col-xs-8">
-							<h4 class="title">Crop</h4>
+							<h4 class="title">Change Photo</h4>
 						</div>
 						<div class="col-xs-2"></div>
 					</div>
@@ -46,16 +46,18 @@
 			<div class="section">
 				<div class="container container-full-xs">
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-sm-2 col-md-3"></div>
+						<div class="col-sm-8 col-md-6">
 							<div class="cropper-block">
 								<div class="cropper"></div>
 							</div>
 							<div class="cropper-command">
 								<button class="btn btn-lg btn-default btn-gloom" onclick="cropper.import();"><span class="icon ion-image"></span>Choose Image</button>
 								<button class="btn btn-lg btn-default btn-gloom" onclick="cropper.rotate();"><span class="icon ion-ios-loop-strong"></span>Rotate</button>
-								<button class="btn btn-lg btn-default btn-gloom" onclick="console.log('Original Image : ', cropper.original()); console.log('Cropped Image : ', cropper.crop(300,300,'png'))"><span class="icon ion-ios-crop-strong"></span>Crop</button>
+								<button class="btn btn-lg btn-default btn-gloom" onclick="console.log('Original Image : ', cropper.original()); console.log('Cropped Image : ', cropper.crop(480,480,'png')); window.open(cropper.crop(480,480,'png').string, '_blank');"><span class="icon ion-ios-crop-strong"></span>Crop</button>
 							</div>
 						</div>
+						<div class="col-sm-2 col-md-3"></div>
 					</div>
 				</div>
 			</div>

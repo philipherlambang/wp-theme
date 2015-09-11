@@ -594,11 +594,11 @@ cropper.init({
 	container: '.cropper',
 
 	// image to load, accepts base64 string
-	image: 'images/user/john_branch.jpg',
+	image: 'images/default-user.png',
 
 	// aspect ratio
-	width: 300,
-	height: 300,
+	width: 270,
+	height: 270,
 
 	// prevent image from leaking outside of container. boolean
 	mask: false,
