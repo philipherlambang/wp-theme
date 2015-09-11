@@ -511,7 +511,7 @@ b, strong {
   position: absolute;
   top: 0;
   right: 0;
-  border-bottom-left-radius: 50%;
+  border-bottom-left-radius: 4px;
 }
 .plus {
   color: #1e88e5;
