@@ -1,12 +1,8 @@
-/*---------------------------------------------------------*/
-/*  cropper styling begins here...
-/*---------------------------------------------------------*/
-
+/*  Crop */
 div[data-imgcrop] {
 	position:relative;
 	display:inline-block
 }
-
 div[data-mask='true'] .crop-container {
 	overflow:hidden;
 	position:relative
@@ -42,16 +38,10 @@ div[data-mask='true'] .crop-container {
 	width:100%;
 	height:100%;
 	z-index:10;
-
-	/* this box shadow is the mask effect */
 	box-shadow:0 0 0 2000px rgba(255, 255, 255, .85);
 }
 
-
-/*---------------------------------------------------------*/
-/*  zoom slider: input[type="range"] styling
-/*---------------------------------------------------------*/
-
+/*  Zoom For Crop */
 div[data-imgcrop] input[type="range"] {
 	-webkit-appearance: none;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -60,7 +50,7 @@ div[data-imgcrop] input[type="range"] {
 	border: none;
 	padding: 0;
 	border-radius: 0;
-	outline: none; /* no focus outline */
+	outline: none;
 
 	width:100%;
 	height:4px;
@@ -85,13 +75,10 @@ div[data-imgcrop] input[type="range"]::-moz-range-track {
 
 div[data-imgcrop] input[type="range"]::-ms-track {
 	border: inherit;
-	color: transparent; /* don't drawn vertical reference line */
+	color: transparent;
 	background: transparent
 }
-/* removes dotted border in firefox */
 div[data-imgcrop] input[type=range]::-moz-focus-outer { border: 0 }
-
-
 div[data-imgcrop] input[type="range"]::-ms-fill-lower,
 div[data-imgcrop] input[type="range"]::-ms-fill-upper {
 	background: transparent
@@ -101,7 +88,6 @@ div[data-imgcrop] input[type="range"]::-ms-tooltip {
 	display: none
 }
 
-/* thumb */
 div[data-imgcrop] input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	width:15px;
@@ -126,9 +112,6 @@ div[data-imgcrop] input[type="range"]::-ms-thumb {
 	background:#fbc93d;
 	border:none
 }
-
-
-
 
 .cropper-block {
 	padding:40px 0;

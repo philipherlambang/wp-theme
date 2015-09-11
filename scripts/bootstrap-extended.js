@@ -522,4 +522,38 @@
 		}
 	}
 
+	/* Cropper */
+	cropInit('.cropper', 270, 270, 480, 480);
+
+	function cropInit(e, wv, hv, wr, hr) {
+		var cropper = new CROP();
+
+		cropper.init({
+			container: e,
+			image: 'images/default-user.png',
+			width: wv,
+			height: hv,
+			mask: false,
+			zoom: {
+				steps: 0.01,
+				min: 1,
+				max: 3
+			}
+		});
+
+		$('.cropper-command').on('click', '.cropper-import', function() {
+			cropper.import();
+		});
+
+		$('.cropper-command').on('click', '.cropper-rotate', function() {
+			cropper.rotate();
+		});
+
+		$('.cropper-command').on('click', '.cropper-crop', function() {
+			console.log('Original Image : ', cropper.original());
+			console.log('Cropped Image : ', cropper.crop(wr,hr,'png'));
+			window.open(cropper.crop(wr,hr,'png').string, '_blank');
+		});
+	}
+
 })();
