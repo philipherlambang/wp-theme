@@ -25,7 +25,9 @@
             greater_than: 'The %s field must contain a number greater than %s.',
             less_than: 'The %s field must contain a number less than %s.',
             alpha: 'The %s field must only contain alphabetical characters.',
+            alpha_space: 'The %s field must only contain alphabetical characters and spaces.',
             alpha_numeric: 'The %s field must only contain alpha-numeric characters.',
+            alpha_low_up_numeric: 'The %s field must contain number, lowercase and uppercase letter.',
             alpha_dash: 'The %s field must only contain alpha-numeric characters, underscores, and dashes.',
             numeric: 'The %s field must contain only numbers.',
             integer: 'The %s field must contain an integer.',
@@ -57,7 +59,9 @@
         decimalRegex = /^\-?[0-9]*\.?[0-9]+$/,
         emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
         alphaRegex = /^[a-z]+$/i,
+        alphaSpaceRegex = /^[A-Za-z ]+$/i,
         alphaNumericRegex = /^[a-z0-9]+$/i,
+        alphaLowUpNumericRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/i,
         alphaDashRegex = /^[a-z0-9_\-]+$/i,
         naturalRegex = /^[0-9]+$/i,
         naturalNoZeroRegex = /^[1-9][0-9]*$/i,
@@ -270,10 +274,6 @@
         return true;
     };
 
-    /*
-     * @private
-     * Looks at the fields value and evaluates it against the given rules
-     */
 
     FormValidator.prototype._validateField = function(field) {
         var rules = field.rules.split('|'),
@@ -475,8 +475,16 @@
             return (alphaRegex.test(field.value));
         },
 
+        alpha_space: function(field) {
+            return (alphaSpaceRegex.test(field.value));
+        },
+
         alpha_numeric: function(field) {
             return (alphaNumericRegex.test(field.value));
+        },
+
+        alpha_low_up_numeric: function(field) {
+            return (alphaLowUpNumericRegex.test(field.value));
         },
 
         alpha_dash: function(field) {

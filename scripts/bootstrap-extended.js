@@ -128,7 +128,7 @@
 	var validatorSignUp = new FormValidator('sign-up', [{
 		name: 'full-name',
 		display: 'Full Name',
-		rules: 'required|callback_alpha_space'
+		rules: 'required|alpha_space'
 	}, {
 		name: 'email',
 		display: 'Email',
@@ -136,7 +136,7 @@
 	}, {
 		name: 'password',
 		display: 'Password',
-		rules: 'required|callback_alpha_numeric_strong|min_length[8]'
+		rules: 'required|alpha_low_up_numeric|min_length[8]'
 	}, {
 		name: 'confirm-password',
 		display: 'Confirm Password',
@@ -144,21 +144,6 @@
 	}], function(errors, event) {
 		validatorResult(errors, event);
 	});
-
-	validatorSignUp.registerCallback('alpha_space', function(value) {
-		console.log((/^[A-Za-z ]+$/).test(value));
-		if ((/^[A-Za-z ]+$/).test(value)) {
-			return true;
-		}
-		return false;
-	}).setMessage('alpha_space', 'The %s field must only contain alphabetical characters.');
-
-	validatorSignUp.registerCallback('alpha_numeric_strong', function(value) {
-		if ((/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/).test(value)) {
-			return true;
-		}
-		return false;
-	}).setMessage('alpha_numeric_strong', 'The %s field must contain number, lowercase and uppercase letter.');
 
 	var validatorForgotPassword = new FormValidator('forgot-password', [{
 		name: 'email',
@@ -171,11 +156,11 @@
 	var validatorChangePassword = new FormValidator('change-password', [{
 		name: 'current-password',
 		display: 'Current Password',
-		rules: 'required|alpha_numeric|min_length[8]'
+		rules: 'required'
 	}, {
 		name: 'new-password',
 		display: 'New Password',
-		rules: 'required|alpha_numeric|min_length[8]'
+		rules: 'required|alpha_low_up_numeric|min_length[8]'
 	}, {
 		name: 'verify-new-password',
 		display: 'Verify New Password',
