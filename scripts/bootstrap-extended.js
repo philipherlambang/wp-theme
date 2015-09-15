@@ -235,6 +235,11 @@
 		$('.btn-apply').attr('disabled', 'disabled').text('Applied').prepend('<span class="icon ion-ios-checkmark-empty"></span>');
 	});
 
+	$('.group-media').on('click', '.minus', function(e) {
+		e.preventDefault();
+		$(this).closest('.item').remove();
+	});
+
 	function currentDisplay(selector) {
 		var thruDate = $(selector).closest('.edit-mode').find('.date-thru').closest('.form-group');
 		if (selector.checked) {
