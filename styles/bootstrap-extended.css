@@ -1028,11 +1028,17 @@ b, strong {
   .navbar-id .user-icon {
     padding: 8px 7px;
   }
+  .navbar-id .form-move {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .navbar-id .navbar-form {
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .navbar-id .form-base {
+    display: none;
   }
 }
 .navbar-id .user-icon .block-blue {
