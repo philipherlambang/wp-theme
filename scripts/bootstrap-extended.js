@@ -556,6 +556,7 @@
 		var srchNav = $(navDef).append(srch);
 
 		$('main').prepend(navId.append(srchNav));
+		scroll(0, 56);
 	}
 
 	/*
