@@ -268,7 +268,7 @@
 
 	$('body').on('click', 'main', function(e) {
 		var navbarToggle = $('.navbar').find('.navbar-toggle');
-		if (!navbarToggle.hasClass('collapsed')) {
+		if (navbarToggle.length && !navbarToggle.hasClass('collapsed')) {
 			navbarToggle.click();
 			e.preventDefault();
 		}
