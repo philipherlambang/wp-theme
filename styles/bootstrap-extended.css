@@ -58,6 +58,7 @@ b, strong {
   -moz-background-size: cover;
   -ms-background-size: cover;
   min-height: 100%;
+  position: relative;
 }
 .bg-body {
   background-position: center center;
@@ -173,6 +174,16 @@ b, strong {
 }
 .card-bump-bg-full {
   margin-top: -245px;
+}
+.card-bump-bg-abs {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .group-card {
