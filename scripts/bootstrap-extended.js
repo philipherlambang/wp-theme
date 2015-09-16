@@ -316,7 +316,7 @@
 		function pswpItemParse(el) {
 			var thumbElements = el.childNodes,
 			    numNodes = thumbElements.length,
-			    index = 0,
+			    index = -1,
 			    items = [],
 			    liEl,
 			    linkEl,
@@ -331,9 +331,7 @@
 					continue;
 				}
 
-				if (index + 1 !== i) {
-					index = index + 1;
-				}
+				index = index + 1;
 
 				liEl.dataset.lid = index;
 
