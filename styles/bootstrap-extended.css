@@ -776,6 +776,11 @@ b, strong {
 .form-simple .help-block {
   margin-top: 10px;
 }
+.form-simple .help-advanced {
+  display: block;
+  background-color: #E0E0E0;
+  padding: 10px 20px;
+}
 .form-simple .btn {
   margin-top: 20px;
   margin-bottom: 20px;
