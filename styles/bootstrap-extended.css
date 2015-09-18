@@ -203,6 +203,7 @@ b, strong {
 }
 .group-card .item p {
   margin-bottom: 0;
+  word-wrap: break-word;
 }
 .group-card .item .b {
   font-weight: 500;
