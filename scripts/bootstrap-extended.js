@@ -261,6 +261,29 @@
 		}
 	}
 
+	$('.group-card, .card-potrait').on('change', 'form', function() {
+		var form = $(this);
+		var action = form.attr('action');
+		var parameters = form.serializeArray();
+
+		if (action && parameters) {
+			var request = $.ajax({
+			    type: 'POST',
+			    url: action,
+			    data: parameters,
+			    dataType: 'json'
+			});
+
+			request.done(function(data, status, xhr) {
+				console.log('Done : ', data, status, xhr);
+			});
+
+			request.fail(function(xhr, status, error) {
+				console.log('Fail : ', xhr, status, error);
+			});
+		}
+	});
+
 	$('.group-media').on('click', '.minus', function(e) {
 		e.preventDefault();
 		$(this).closest('.item').remove();
