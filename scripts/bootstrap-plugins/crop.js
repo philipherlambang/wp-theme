@@ -537,13 +537,19 @@ var CROP = (function () {
 				imgInfo = self.imgInfo,
 				c = self.eles.container,
 				img = self.eles.img,
+				orient = 1,
 				name;
 
 			oFReader = new FileReader();
 
 			$('#choose-img').change(function() {
+
 				if(document.getElementById("choose-img").files.length === 0) return;
 				var oFile = document.getElementById("choose-img").files[0];
+				EXIF.getData(oFile, function() {
+					orient = EXIF.getTag(this, "Orientation");
+				});
+
 				if(!/^(image\/gif|image\/jpeg|image\/png)$/i.test(oFile.type)) return;
 				name = this.value.replace(/^.*[\\\/]/, ''); name = name.substr(0, name.lastIndexOf('.'));
 				oFReader.readAsDataURL(oFile);
@@ -566,6 +572,7 @@ var CROP = (function () {
 					height: original.naturalHeight,
 					name: name,
 					type: oFREvent.target.result.split(",")[0].split(":")[1].split(";")[0].split("/")[1],
+					orientation: orient,
 					string: oFREvent.target.result,
 				};
 
