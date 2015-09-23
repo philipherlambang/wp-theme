@@ -579,7 +579,7 @@
 		$('.cropper-command').on('click', '.cropper-crop', function() {
 			console.log('Original Image : ', cropper.original());
 			console.log('Cropped Image : ', cropper.crop(wr,hr,'png'));
-			// window.open(cropper.crop(wr,hr,'png').string, '_blank');
+			window.open(cropper.crop(wr,hr,'png').string, '_blank');
 		});
 	}
 
