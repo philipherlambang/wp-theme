@@ -112,63 +112,63 @@
 	}
 
 
+	if (typeof(FormValidator) == "function") {
+		var validatorSignIn = new FormValidator('sign-in', [{
+			name: 'email',
+			display: 'Email',
+			rules: 'required|valid_email'
+		}, {
+			name: 'password',
+			display: 'Password',
+			rules: 'required|alpha_numeric|min_length[8]'
+		}], function(errors, event) {
+			validatorResult(errors, event);
+		});
 
-	var validatorSignIn = new FormValidator('sign-in', [{
-		name: 'email',
-		display: 'Email',
-		rules: 'required|valid_email'
-	}, {
-		name: 'password',
-		display: 'Password',
-		rules: 'required|alpha_numeric|min_length[8]'
-	}], function(errors, event) {
-		validatorResult(errors, event);
-	});
+		var validatorSignUp = new FormValidator('sign-up', [{
+			name: 'full-name',
+			display: 'Full Name',
+			rules: 'required|alpha_space'
+		}, {
+			name: 'email',
+			display: 'Email',
+			rules: 'required|valid_email'
+		}, {
+			name: 'password',
+			display: 'Password',
+			rules: 'required|alpha_low_up_numeric|min_length[8]'
+		}, {
+			name: 'confirm-password',
+			display: 'Confirm Password',
+			rules: 'required|matches[password]'
+		}], function(errors, event) {
+			validatorResult(errors, event);
+		});
 
-	var validatorSignUp = new FormValidator('sign-up', [{
-		name: 'full-name',
-		display: 'Full Name',
-		rules: 'required|alpha_space'
-	}, {
-		name: 'email',
-		display: 'Email',
-		rules: 'required|valid_email'
-	}, {
-		name: 'password',
-		display: 'Password',
-		rules: 'required|alpha_low_up_numeric|min_length[8]'
-	}, {
-		name: 'confirm-password',
-		display: 'Confirm Password',
-		rules: 'required|matches[password]'
-	}], function(errors, event) {
-		validatorResult(errors, event);
-	});
+		var validatorForgotPassword = new FormValidator('forgot-password', [{
+			name: 'email',
+			display: 'Email',
+			rules: 'required|valid_email'
+		}], function(errors, event) {
+			validatorResult(errors, event);
+		});
 
-	var validatorForgotPassword = new FormValidator('forgot-password', [{
-		name: 'email',
-		display: 'Email',
-		rules: 'required|valid_email'
-	}], function(errors, event) {
-		validatorResult(errors, event);
-	});
-
-	var validatorChangePassword = new FormValidator('change-password', [{
-		name: 'current-password',
-		display: 'Current Password',
-		rules: 'required'
-	}, {
-		name: 'new-password',
-		display: 'New Password',
-		rules: 'required|alpha_low_up_numeric|min_length[8]'
-	}, {
-		name: 'verify-new-password',
-		display: 'Verify New Password',
-		rules: 'required|matches[new-password]'
-	}], function(errors, event) {
-		validatorResult(errors, event);
-	});
-
+		var validatorChangePassword = new FormValidator('change-password', [{
+			name: 'current-password',
+			display: 'Current Password',
+			rules: 'required'
+		}, {
+			name: 'new-password',
+			display: 'New Password',
+			rules: 'required|alpha_low_up_numeric|min_length[8]'
+		}, {
+			name: 'verify-new-password',
+			display: 'Verify New Password',
+			rules: 'required|matches[new-password]'
+		}], function(errors, event) {
+			validatorResult(errors, event);
+		});
+	}
 	function validatorResult(errors, event) {
 		$(event.target).find('.error-message').remove();
 
@@ -579,7 +579,7 @@
 		$('.cropper-command').on('click', '.cropper-crop', function() {
 			console.log('Original Image : ', cropper.original());
 			console.log('Cropped Image : ', cropper.crop(wr,hr,'png'));
-			window.open(cropper.crop(wr,hr,'png').string, '_blank');
+			// window.open(cropper.crop(wr,hr,'png').string, '_blank');
 		});
 	}
 

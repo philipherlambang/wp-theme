@@ -9464,15 +9464,16 @@ var CROP = (function () {
             var self = this,
                 imgInfo = self.imgInfo,
                 c = self.eles.container,
-                img = self.eles.img;
+                img = self.eles.img,
+                name;
 
             oFReader = new FileReader();
 
             $('#choose-img').change(function() {
-
                 if(document.getElementById("choose-img").files.length === 0) return;
                 var oFile = document.getElementById("choose-img").files[0];
                 if(!/^(image\/gif|image\/jpeg|image\/png)$/i.test(oFile.type)) return;
+                name = this.value.replace(/^.*[\\\/]/, ''); name = name.substr(0, name.lastIndexOf('.'));
                 oFReader.readAsDataURL(oFile);
 
                 $('#choose-img').remove();
@@ -9491,6 +9492,7 @@ var CROP = (function () {
                 that.originalImage = {
                     width: original.naturalWidth,
                     height: original.naturalHeight,
+                    name: name,
                     type: oFREvent.target.result.split(",")[0].split(":")[1].split(";")[0].split("/")[1],
                     string: oFREvent.target.result,
                 };
