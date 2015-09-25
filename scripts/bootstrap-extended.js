@@ -549,15 +549,32 @@
 
 	/* Cropper */
 	if (typeof CROP !== 'undefined') {
-		cropInit('.cropper', 270, 270, 480, 480);
+		var crop = document.getElementsByClassName('cropper')[0],
+		    bg = document.getElementsByClassName('bg-cover')[0];
+
+		if (crop) {
+			cropInit('.cropper', 270, 270, 480, 480, 'images/default-user.png');
+		}
+
+		if (bg) {
+			$(bg).on('click', '.act-cropper-bg', function(e) {
+				e.preventDefault();
+				$(bg).next().toggle().parent().next().toggle();
+				cropInit('.cropper-bg', 1366, 360, 1366, 360, bg.style.backgroundImage.slice(4, -1), function(crop) {
+					$(bg).next().toggle().parent().next().toggle();
+					$(bg).css('background-image', 'url(' + crop.string + ')');
+					cropReinit($(bg).next());
+				});
+			});
+		}
 	}
 
-	function cropInit(e, wv, hv, wr, hr) {
+	function cropInit(e, wv, hv, wr, hr, img, cb) {
 		var cropper = new CROP();
 
 		cropper.init({
 			container: e,
-			image: 'images/default-user.png',
+			image: img,
 			width: wv,
 			height: hv,
 			mask: false,
@@ -579,8 +596,15 @@
 		$('.cropper-command').on('click', '.cropper-crop', function() {
 			console.log('Original Image : ', cropper.original());
 			console.log('Cropped Image : ', cropper.crop(wr,hr,'png'));
-			window.open(cropper.crop(wr,hr,'png').string, '_blank');
+			// window.open(cropper.crop(wr,hr,'png').string, '_blank');
+			if (typeof(cb) == 'function') {
+				cb(cropper.crop(wr,hr,'png'));
+			}
 		});
+	}
+
+	function cropReinit(el) {
+		$(el).empty().append('<div class="cropper-block"><div class="cropper-bg"></div></div><div class="cropper-command"><button class="btn btn-lg btn-default btn-gloom cropper-import"><span class="icon ion-image"></span>Choose Image</button><button class="btn btn-lg btn-default btn-gloom cropper-rotate"><span class="icon ion-ios-loop-strong"></span>Rotate</button><button class="btn btn-lg btn-default btn-gloom cropper-crop"><span class="icon ion-ios-crop-strong"></span>Crop</button></div>');
 	}
 
 })();

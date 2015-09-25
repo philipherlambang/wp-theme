@@ -1066,6 +1066,25 @@ b, strong {
   text-align: center;
 }
 
+.cropper-bg-block {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: none;
+}
+.cropper-bg-block .cropper-block {
+  padding: 0;
+}
+.cropper-bg-block .cropper-command {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 6006;
+}
+.cropper-bg-block .cropper-command .btn {
+  float: left;
+  margin: 10px 2px;
+}
 
 /* Should Be Directly Rewrite Plugin Styles */
 .auto-size {
