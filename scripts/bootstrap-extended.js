@@ -587,15 +587,18 @@
 			}
 		});
 
-		$('.cropper-command').on('click', '.cropper-import', function() {
+		$('.cropper-command').on('click', '.cropper-import', function(e) {
+			e.preventDefault();
 			cropper.import();
 		});
 
-		$('.cropper-command').on('click', '.cropper-rotate', function() {
+		$('.cropper-command').on('click', '.cropper-rotate', function(e) {
+			e.preventDefault();
 			cropper.rotate();
 		});
 
-		$('.cropper-command').on('click', '.cropper-crop', function() {
+		$('.cropper-command').on('click', '.cropper-crop', function(e) {
+			e.preventDefault();
 			console.log('Original Image : ', cropper.original());
 			console.log('Cropped Image : ', cropper.crop(wr,hr,'png'));
 			if (typeof(cb) == 'function') {
