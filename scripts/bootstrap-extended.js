@@ -553,7 +553,9 @@
 		    bg = document.getElementsByClassName('bg-cover')[0];
 
 		if (crop) {
-			cropInit('.cropper', 270, 270, 480, 480, 'images/default-user.png');
+			cropInit('.cropper', 270, 270, 480, 480, 'images/default-user.png', function(crop) {
+				window.open(crop.string, '_blank');
+			});
 		}
 
 		if (bg) {
@@ -596,7 +598,6 @@
 		$('.cropper-command').on('click', '.cropper-crop', function() {
 			console.log('Original Image : ', cropper.original());
 			console.log('Cropped Image : ', cropper.crop(wr,hr,'png'));
-			// window.open(cropper.crop(wr,hr,'png').string, '_blank');
 			if (typeof(cb) == 'function') {
 				cb(cropper.crop(wr,hr,'png'));
 			}
