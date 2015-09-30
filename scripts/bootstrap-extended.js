@@ -221,8 +221,8 @@
 		currentDisplay(this);
 	});
 
-	$.each($('.edit-mode .current, .edit-mode .expire'), function() {
-		currentDisplay(this);
+	$.each($('.edit-mode .current-indicator, .edit-mode .expire-indicator'), function() {
+		stateIndicator(this);
 	});
 
 	$('.group-card').on('click', '.imgs-inline .btn-minus', function(e) {
@@ -238,9 +238,20 @@
 	function currentDisplay(selector) {
 		var thruDate = $(selector).closest('.edit-mode').find('.date-thru').closest('.form-group');
 		if (selector.checked) {
-			thruDate.css('display', 'none');
+			$(selector).next().val('Y');
+			thruDate.css('display', 'none').find('input:last-child').val('');
+			thruDate.find('.date-thru').pickadate().pickadate('picker').clear();
 		} else {
+			$(selector).next().val('N');
 			thruDate.css('display', 'block');
+		}
+	}
+
+	function stateIndicator(selector) {
+		var thruDate = $(selector).closest('.edit-mode').find('.date-thru').closest('.form-group');
+		if (selector.value == 'Y') {
+			$(selector).prev().attr('checked', 'checked');
+			thruDate.css('display', 'none');
 		}
 	}
 
