@@ -997,18 +997,6 @@ b, strong {
   -moz-box-shadow: none;
   -ms-box-shadow: none;
 }
-.navbar-id .navbar-form .form-control::-moz-placeholder {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.navbar-id .navbar-form .form-control:-ms-input-placeholder {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.navbar-id .navbar-form .form-control::-webkit-input-placeholder {
-  color: #ffffff;
-  opacity: 0.8;
-}
 .navbar-id .navbar-form .btn {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1021,6 +1009,21 @@ b, strong {
 .navbar-id .navbar-nav {
   margin-top: 0;
   margin-bottom: 0;
+}
+.navbar-id .navbar-form .form-control::-moz-placeholder {
+  color: #CCC;
+  opacity: 0.5;
+  font-weight: 300;
+}
+.navbar-id .navbar-form .form-control:-ms-input-placeholder {
+  color: #CCC;
+  opacity: 0.5;
+  font-weight: 300;
+}
+.navbar-id .navbar-form .form-control::-webkit-input-placeholder {
+  color: #CCC;
+  opacity: 0.5;
+  font-weight: 300;
 }
 /*
 .navbar-id .navbar-right {
@@ -1135,4 +1138,49 @@ b, strong {
 .picker__header .select {
   margin-top: -9px;
   font-size: 18px;
+}
+
+
+
+/* New Added */
+.navbar-id .navbar-form .form-control::-moz-placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+  font-weight: 300;
+}
+.navbar-id .navbar-form .form-control:-ms-input-placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+  font-weight: 300;
+}
+.navbar-id .navbar-form .form-control::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+  font-weight: 300;
+}
+.navbar-id .navbar-default .navbar-nav > li > a .ion {
+  color: #667A98;
+  margin-right: 12px;
+  font-size: 16px;
+}
+.navbar-id .navbar-default .navbar-nav > li > a .img-thumb {
+  margin: -8px 0;
+  height: 34px;
+}
+
+@media (max-width: 767px) {
+  .navbar-id .navbar-default .navbar-nav > li > a {
+    border-bottom: 1px solid #1a3765;
+  }
+}
+
+.result {
+  padding: 10px 12px;
+  background-color: #B1DCFB;
+  border-bottom: 1px solid #CCC;
+}
+.result > p {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 300;
 }
