@@ -339,7 +339,9 @@
 			galleryElements[i].setAttribute('data-pswp-uid', i + 1);
 			galleriesItems[i + 1] = pswpItemParse(galleryElements[i]);
 			galleryElements[i].onclick = pswpItemClicked;
-			pswpReorder(galleryElements[i]);
+			if (galleryElements[i].dataset.reorder === 'true') {
+				pswpReorder(galleryElements[i]);
+			}
 		}
 
 		var hashData = pswpParseHash();

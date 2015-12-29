@@ -40,24 +40,24 @@
 					<div id="navbar-theme" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<form class="navbar-form" role="search">
-									<div class="input-group">
-										<input type="text" class="form-control">
-										<span class="input-group-btn">
-											<button class="btn btn-default" type="button">
-												<span class="ion ion-ios-search"></span>
-											</button>
-										</span>
+								<a href="profile.html">
+									<div class="hidden-xs">
+										<img src="images/user/john_branch.jpg" alt="John Branch" class="img-thumb">
 									</div>
-								</form>
-							</li>
-							<li>
-								<a href="profile.html">My Profile</a>
+									<div class="visible-xs"><i class="ion ion-person"></i> Profil</div>
+								</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav">
-							<li><a href="professionals.html">Professional</a></li>
-							<li><a href="jobs.html">Job</a></li>
+							<li>
+								<a href="contacts.html"><i class="ion ion-ios-people"></i> Kontak</a>
+							</li>
+							<li>
+								<a href="messages.html"><i class="ion ion-ios-email"></i> Pesan</a>
+							</li>
+							<li>
+								<a href="professionals.html"><i class="ion ion-ios-briefcase"></i> Profesional</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -66,20 +66,10 @@
 
 		<main role="main">
 			<div class="section">
-				<div class="bg-cover bg-cover-md gloom-light" style="background-image: url(images/bg/bg-blur-2.jpg);">
-					<a href="" class="act act-leaf act-top-right act-cropper-bg">
+				<div class="bg-cover bg-cover-md gloom-light" style="background-image: url(images/bg/bg-blur-4.jpg);">
+					<a href="change_cover.html" class="act act-leaf act-top-right">
 						<span class="icon ion-ios-camera-outline"></span>
 					</a>
-				</div>
-				<div class="cropper-bg-block">
-					<div class="cropper-block">
-						<div class="cropper-bg"></div>
-					</div>
-					<div class="cropper-command">
-						<button class="btn btn-lg btn-default btn-gloom cropper-import"><span class="icon ion-image"></span>Choose Image</button>
-						<button class="btn btn-lg btn-default btn-gloom cropper-rotate"><span class="icon ion-ios-loop-strong"></span>Rotate</button>
-						<button class="btn btn-lg btn-default btn-gloom cropper-crop"><span class="icon ion-ios-crop-strong"></span>Crop</button>
-					</div>
 				</div>
 			</div>
 			<div class="section">
@@ -89,7 +79,13 @@
 							<div>
 								<div class="card card-potrait card-bump-bg">
 									<div class="card-img">
-										<img src="images/user/john_branch.jpg" alt="John Branch">
+										<ul class="pswp-gallery" data-reorder="false">
+											<li>
+												<a href="images/user/john_branch.jpg" data-size="480x480" data-title="John Branch">
+													<img class="img-responsive" src="images/user/john_branch.jpg" alt="John Branch">
+												</a>
+											</li>
+										</ul>
 										<a href="change_photo.html" class="act act-leaf act-top-right">
 											<span class="icon ion-ios-camera-outline"></span>
 										</a>
@@ -97,16 +93,16 @@
 									<div class="card-caption">
 										<form class="form-invisible" action="somewhere">
 											<div class="form-group">
-												<label for="name" class="sr-only">Name</label>
-												<input type="text" class="form-control h3" id="name" name="name" placeholder="Name" value="John Branch">
+												<label for="name" class="sr-only">Nama</label>
+												<input type="text" class="form-control h3" id="name" name="name" placeholder="Nama" value="John Branch">
 											</div>
 											<div class="form-group">
-												<label for="company" class="sr-only">Company</label>
-												<input type="text" class="form-control sub" id="company" name="company" placeholder="Company" value="Worked Profile">
+												<label for="position" class="sr-only">Jabatan</label>
+												<input type="text" class="form-control sub" id="position" name="position" placeholder="Jabatan" value="Sales Marketing">
 											</div>
 											<div class="form-group">
-												<label for="position" class="sr-only">Position</label>
-												<input type="text" class="form-control" id="position" name="position" placeholder="Position" value="Sales Marketing">
+												<label for="company" class="sr-only">Perusahaan</label>
+												<input type="text" class="form-control" id="company" name="company" placeholder="Perusahaan" value="Worked Profile">
 											</div>
 										</form>
 									</div>
@@ -116,21 +112,21 @@
 								<div class="group-btn">
 									<div class="row">
 										<div class="col-xs-12">
-											<a href="profile.html" type="button" class="btn btn-default btn-lg btn-block btn-gloom"><span class="icon ion-ios-checkmark-empty"></span>Done</a>
+											<a href="profile.html" type="button" class="btn btn-default btn-lg btn-block btn-gloom"><span class="icon ion-ios-checkmark-empty"></span>Simpan</a>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="groups-gap">
 								<div class="group-card">
-									<h4>Portfolios and Activities</h4>
+									<h4>Portfolio dan Aktivitas</h4>
 									<ul class="list-unstyled">
 										<li>
-											<h5>Photos</h5>
+											<h5>Foto</h5>
 											<ul class="list-unstyled">
 												<li class="item">
 													<div class="imgs-inline">
-														<ul class="pswp-gallery">
+														<ul class="pswp-gallery" data-reorder="true">
 															<li>
 																<a href="demo/images/ptf/john_branch/1_m.jpg" data-size="1024x768" data-title="Take A Shot">
 																	<img src="demo/images/ptf/john_branch/1_s.jpg">
@@ -185,25 +181,25 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Summary</h4>
+									<h4>Ringkasan</h4>
 									<div class="item edit-mode">
 										<form class="form-invisible">
 											<div class="form-group">
 												<label for="summary" class="sr-only">Summary</label>
-												<textarea class="form-control auto-size" id="summary" placeholder="Summary">I am a serious person and reliable.</textarea>
+												<textarea class="form-control auto-size" id="summary" placeholder="Ringkasan">I am a serious person and reliable.</textarea>
 											</div>
 										</form>
 									</div>
 								</div>
 								<div class="group-card">
-									<h4>Personal Details</h4>
+									<h4>Data Pribadi</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
-													<label for="birth-date" class="col-xs-5">Birth Date</label>
+													<label for="birth-date" class="col-xs-5">Tanggal Lahir</label>
 													<div class="col-xs-7">
-														<input type="text" class="form-control text-right date-picker" id="birth-date" placeholder="Birth Date" value="22 December 1987">
+														<input type="text" class="form-control text-right date-picker" id="birth-date" placeholder="Tanggal Lahir" value="22 December 1987">
 													</div>
 												</div>
 											</form>
@@ -211,12 +207,13 @@
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
-													<label for="marital-status" class="col-xs-7">Marital Status</label>
-													<div class="col-xs-5">
+													<label for="marital-status" class="col-xs-5">Status</label>
+													<div class="col-xs-7">
 														<label class="form-control select">
 															<select id="marital-status">
-																<option>Single</option>
-																<option>Married</option>
+																<option>Status</option>
+																<option selected="selected">Belum Menikah</option>
+																<option>Menikah</option>
 															</select>
 														</label>
 													</div>
@@ -226,12 +223,13 @@
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
-													<label for="gender" class="col-xs-7">Gender</label>
-													<div class="col-xs-5">
+													<label for="gender" class="col-xs-5">Jenis Kelamin</label>
+													<div class="col-xs-7">
 														<label class="form-control select">
 															<select id="gender">
-																<option>Male</option>
-																<option>Female</option>
+																<option>Jenis Kelamin</option>
+																<option selected="selected">Pria</option>
+																<option>Wanita</option>
 															</select>
 														</label>
 													</div>
@@ -241,7 +239,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Contact Info</h4>
+									<h4>Info Kontak</h4>
 									<ul class="list-unstyled">
 										<li>
 											<h5>Email</h5>
@@ -257,11 +255,13 @@
 																<input type="text" class="form-control" id="email" placeholder="Email" value="johnbranch@gmail.com">
 															</div>
 															<div class="col-xs-5">
-																<label for="email-type" class="sr-only">Email Type</label>
+																<label for="email-type" class="sr-only">Tipe Email</label>
 																<label class="form-control select">
 																	<select class="auxy" id="email-type">
-																		<option selected="selected">Personal</option>
-																		<option>Office</option>
+																		<option selected="selected">Pribadi</option>
+																		<option>Kantor</option>
+																		<option>Layanan Pelanggan</option>
+																		<option>Penjual</option>
 																	</select>
 																</label>
 															</div>
@@ -279,11 +279,13 @@
 																<input type="text" class="form-control" id="email" placeholder="Email">
 															</div>
 															<div class="col-xs-5">
-																<label for="email-type" class="sr-only">Email Type</label>
+																<label for="email-type" class="sr-only">Tipe Email</label>
 																<label class="form-control select">
 																	<select class="auxy" id="email-type">
-																		<option>Personal</option>
-																		<option>Office</option>
+																		<option>Pribadi</option>
+																		<option>Kantor</option>
+																		<option>Layanan Pelanggan</option>
+																		<option>Penjual</option>
 																	</select>
 																</label>
 															</div>
@@ -291,7 +293,7 @@
 													</form>
 												</li>
 												<li class="item acts-mode">
-													<p><b>Email Edit</b></p>
+													<p><b>Edit Email</b></p>
 													<div class="acts-wrapper acts-sm">
 														<a class="act act-round-sm minus"><span class="icon ion-ios-minus-empty"></span></a>
 														<a class="act act-round-sm plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -314,15 +316,16 @@
 																<input type="text" class="form-control" id="messenger" placeholder="Messenger" value="johnbranch@yahoo.com">
 															</div>
 															<div class="col-xs-5">
-																<label for="messenger-type" class="sr-only">Messenger Type</label>
+																<label for="messenger-type" class="sr-only">Tipe Messenger</label>
 																<label class="form-control select">
 																	<select class="auxy" id="messenger-type">
-																		<option>Whatsapp</option>
 																		<option>BBM</option>
-																		<option>Skype</option>
-																		<option selected="selected">YM</option>
-																		<option>Messages</option>
+																		<option selected="selected">Yahoo Messenger</option>
+																		<option>WhatsApp</option>
+																		<option>Line</option>
 																		<option>Telegram</option>
+																		<option>Skype</option>
+																		<option>Apple</option>
 																	</select>
 																</label>
 															</div>
@@ -340,15 +343,16 @@
 																<input type="text" class="form-control" id="messenger" placeholder="Messenger">
 															</div>
 															<div class="col-xs-5">
-																<label for="messenger-type" class="sr-only">Messenger Type</label>
+																<label for="messenger-type" class="sr-only">Tipe Messenger</label>
 																<label class="form-control select">
 																	<select class="auxy" id="messenger-type">
-																		<option>Whatsapp</option>
 																		<option>BBM</option>
-																		<option>Skype</option>
-																		<option>YM</option>
-																		<option>Messages</option>
+																		<option>Yahoo Messenger</option>
+																		<option>WhatsApp</option>
+																		<option>Line</option>
 																		<option>Telegram</option>
+																		<option>Skype</option>
+																		<option>Apple</option>
 																	</select>
 																</label>
 															</div>
@@ -356,7 +360,7 @@
 													</form>
 												</li>
 												<li class="item acts-mode">
-													<p><b>Messenger Edit</b></p>
+													<p><b>Edit Messenger</b></p>
 													<div class="acts-wrapper">
 														<a class="act act-round-sm minus"><span class="icon ion-ios-minus-empty"></span></a>
 														<a class="act act-round-sm plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -366,7 +370,7 @@
 											</ul>
 										</li>
 										<li>
-											<h5>Phone</h5>
+											<h5>Telepon</h5>
 											<ul class="list-unstyled">
 												<li class="item edit-mode">
 													<form class="form-horizontal form-invisible">
@@ -374,17 +378,18 @@
 															<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 														</div>
 														<div class="form-group">
-															<label for="phone" class="sr-only">Phone</label>
+															<label for="phone" class="sr-only">Telepon</label>
 															<div class="col-xs-7">
-																<input type="text" class="form-control" id="phone" placeholder="Phone" value="08111336030">
+																<input type="text" class="form-control" id="phone" placeholder="Telepon" value="08111336030">
 															</div>
 															<div class="col-xs-5">
-																<label for="phone-type" class="sr-only">Phone Type</label>
+																<label for="phone-type" class="sr-only">Tipe Telepon</label>
 																<label class="form-control select">
 																	<select class="auxy" id="phone-type">
-																		<option selected="selected">Mobile</option>
-																		<option>Office</option>
-																		<option>Home</option>
+																		<option selected="selected">Telepon Genggam</option>
+																		<option>Telepon Rumah</option>
+																		<option>Telepon Kantor</option>
+																		<option>Fax Kantor</option>
 																	</select>
 																</label>
 															</div>
@@ -397,17 +402,18 @@
 															<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 														</div>
 														<div class="form-group">
-															<label for="phone" class="sr-only">Phone</label>
+															<label for="phone" class="sr-only">Telepon</label>
 															<div class="col-xs-7">
-																<input type="text" class="form-control" id="phone" placeholder="Phone">
+																<input type="text" class="form-control" id="phone" placeholder="Telepon">
 															</div>
 															<div class="col-xs-5">
-																<label for="phone-type" class="sr-only">Phone Type</label>
+																<label for="phone-type" class="sr-only">Tipe Telepon</label>
 																<label class="form-control select">
 																	<select class="auxy" id="phone-type">
-																		<option>Mobile</option>
-																		<option>Office</option>
-																		<option>Home</option>
+																		<option>Telepon Genggam</option>
+																		<option>Telepon Rumah</option>
+																		<option>Telepon Kantor</option>
+																		<option>Fax Kantor</option>
 																	</select>
 																</label>
 															</div>
@@ -415,7 +421,7 @@
 													</form>
 												</li>
 												<li class="item acts-mode">
-													<p><b>Phone Edit</b></p>
+													<p><b>Edit Telepon</b></p>
 													<div class="acts-wrapper">
 														<a class="act act-round-sm minus"><span class="icon ion-ios-minus-empty"></span></a>
 														<a class="act act-round-sm plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -425,7 +431,7 @@
 											</ul>
 										</li>
 										<li>
-											<h5>Address</h5>
+											<h5>Alamat</h5>
 											<ul class="list-unstyled">
 												<li class="item edit-mode">
 													<form class="form-horizontal form-invisible">
@@ -433,16 +439,16 @@
 															<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 														</div>
 														<div class="form-group">
-															<label for="address" class="sr-only">Address</label>
+															<label for="address" class="sr-only">Alamat</label>
 															<div class="col-xs-12">
-																<textarea class="form-control auto-size" id="address" placeholder="Address">Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto</textarea>
+																<textarea class="form-control auto-size" id="address" placeholder="Alamat">Menara Mulia. [Jal] Kav. 9-11 Jalan Jendral Gatot Subroto. Kelurahan Karet Semanggi, Setiabudi. Jakarta Selatan 12930. Kav. 9-11 Jalan Jendral Gatot Subroto</textarea>
 															</div>
 															<div class="col-xs-12">
-																<label for="address-type" class="sr-only">Address Type</label>
+																<label for="address-type" class="sr-only">Tipe Alamat</label>
 																<label class="form-control select">
 																	<select class="auxy" id="address-type">
-																		<option>Personal</option>
-																		<option selected="selected">Office</option>
+																		<option>Pribadi</option>
+																		<option selected="selected">Kantor</option>
 																	</select>
 																</label>
 															</div>
@@ -455,16 +461,16 @@
 															<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 														</div>
 														<div class="form-group">
-															<label for="address" class="sr-only">Address</label>
+															<label for="address" class="sr-only">Alamat</label>
 															<div class="col-xs-12">
-																<textarea class="form-control auto-size" id="address" placeholder="Address"></textarea>
+																<textarea class="form-control auto-size" id="address" placeholder="Alamat"></textarea>
 															</div>
 															<div class="col-xs-12">
-																<label for="address-type" class="sr-only">Address Type</label>
+																<label for="address-type" class="sr-only">Tipe Alamat</label>
 																<label class="form-control select">
 																	<select class="auxy" id="address-type">
-																		<option>Personal</option>
-																		<option>Office</option>
+																		<option>Pribadi</option>
+																		<option>Kantor</option>
 																	</select>
 																</label>
 															</div>
@@ -472,7 +478,7 @@
 													</form>
 												</li>
 												<li class="item acts-mode">
-													<p><b>Address Edit</b></p>
+													<p><b>Edit Alamat</b></p>
 													<div class="acts-wrapper">
 														<a class="act act-round-sm minus"><span class="icon ion-ios-minus-empty"></span></a>
 														<a class="act act-round-sm plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -484,7 +490,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Links</h4>
+									<h4>Link</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
@@ -497,7 +503,7 @@
 														<input type="text" class="form-control" id="link" placeholder="Link" value="plus.google.com/johnbranch">
 													</div>
 													<div class="col-xs-5">
-														<label for="link-type" class="sr-only">Link Type</label>
+														<label for="link-type" class="sr-only">Tipe Link</label>
 														<label class="form-control select">
 															<select class="auxy" id="link-type">
 																<option selected="selected">Google Plus</option>
@@ -505,13 +511,14 @@
 																<option>Twitter</option>
 																<option>Instagram</option>
 																<option>Website</option>
-																<option>Yahoo</option>
 																<option>Blog</option>
 																<option>Youtube</option>
 																<option>LinkedIn</option>
 																<option>Deviantart</option>
 																<option>Dribbble</option>
 																<option>Behance</option>
+																<option>YAHOO</option>
+																<option>Github</option>
 															</select>
 														</label>
 													</div>
@@ -529,7 +536,7 @@
 														<input type="text" class="form-control" id="link" placeholder="Link" value="facebook.com/johnbranch">
 													</div>
 													<div class="col-xs-5">
-														<label for="link-type" class="sr-only">Link Type</label>
+														<label for="link-type" class="sr-only">Tipe Link</label>
 														<label class="form-control select">
 															<select class="auxy" id="link-type">
 																<option>Google Plus</option>
@@ -537,13 +544,14 @@
 																<option>Twitter</option>
 																<option>Instagram</option>
 																<option>Website</option>
-																<option>Yahoo</option>
 																<option>Blog</option>
 																<option>Youtube</option>
 																<option>LinkedIn</option>
 																<option>Deviantart</option>
 																<option>Dribbble</option>
 																<option>Behance</option>
+																<option>YAHOO</option>
+																<option>Github</option>
 															</select>
 														</label>
 													</div>
@@ -561,7 +569,7 @@
 														<input type="text" class="form-control" id="link" placeholder="Link" value="twitter.com/johnbranch">
 													</div>
 													<div class="col-xs-5">
-														<label for="link-type" class="sr-only">Link Type</label>
+														<label for="link-type" class="sr-only">Tipe Link</label>
 														<label class="form-control select">
 															<select class="auxy" id="link-type">
 																<option>Google Plus</option>
@@ -569,13 +577,14 @@
 																<option selected="selected">Twitter</option>
 																<option>Instagram</option>
 																<option>Website</option>
-																<option>Yahoo</option>
 																<option>Blog</option>
 																<option>Youtube</option>
 																<option>LinkedIn</option>
 																<option>Deviantart</option>
 																<option>Dribbble</option>
 																<option>Behance</option>
+																<option>YAHOO</option>
+																<option>Github</option>
 															</select>
 														</label>
 													</div>
@@ -593,7 +602,7 @@
 														<input type="text" class="form-control" id="link" placeholder="Link">
 													</div>
 													<div class="col-xs-5">
-														<label for="link-type" class="sr-only">Link Type</label>
+														<label for="link-type" class="sr-only">Tipe Link</label>
 														<label class="form-control select">
 															<select class="auxy" id="link-type">
 																<option>Google Plus</option>
@@ -601,13 +610,14 @@
 																<option>Twitter</option>
 																<option>Instagram</option>
 																<option>Website</option>
-																<option>Yahoo</option>
 																<option>Blog</option>
 																<option>Youtube</option>
 																<option>LinkedIn</option>
 																<option>Deviantart</option>
 																<option>Dribbble</option>
 																<option>Behance</option>
+																<option>YAHOO</option>
+																<option>Github</option>
 															</select>
 														</label>
 													</div>
@@ -615,7 +625,7 @@
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Links Edit</b></p>
+											<p><b>Edit Link</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -629,7 +639,7 @@
 						<div class="col-sm-7 col-md-8">
 							<div class="groups-gap">
 								<div class="group-card">
-									<h4>Profession Category</h4>
+									<h4>Kategori Profesi</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-invisible">
@@ -637,7 +647,7 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="profession-category" class="sr-only">Profession Category</label>
+													<label for="profession-category" class="sr-only">Kategori Profesi</label>
 													<label class="form-control select">
 														<select id="profession-category">
 															<option>Administrasi</option>
@@ -692,7 +702,7 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="profession-category" class="sr-only">Profession Category</label>
+													<label for="profession-category" class="sr-only">Kategori Profesi</label>
 													<label class="form-control select">
 														<select id="profession-category">
 															<option>Administrasi</option>
@@ -742,7 +752,7 @@
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Profession Category Edit</b></p>
+											<p><b>Edit Kategori Profesi</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -751,43 +761,8 @@
 										</li>
 									</ul>
 								</div>
-								<!-- <div class="group-card">
-									<h4>Industry</h4>
-									<ul class="list-unstyled">
-										<li class="item edit-mode">
-											<form class="form-invisible">
-												<div class="form-group form-delete">
-													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
-												</div>
-												<div class="form-group">
-													<label for="industry" class="sr-only">Industry</label>
-													<input type="text" class="form-control" id="industry" placeholder="Industry" value="Sales">
-												</div>
-											</form>
-										</li>
-										<li class="item base-mode">
-											<form class="form-invisible">
-												<div class="form-group form-delete">
-													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
-												</div>
-												<div class="form-group">
-													<label for="industry" class="sr-only">Industry</label>
-													<input type="text" class="form-control" id="industry" placeholder="Industry">
-												</div>
-											</form>
-										</li>
-										<li class="item acts-mode">
-											<p><b>Industry Edit</b></p>
-											<div class="acts-wrapper">
-												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
-												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
-												<a class="act act-round check"><span class="icon ion-ios-checkmark-empty"></span></a>
-											</div>
-										</li>
-									</ul>
-								</div> -->
 								<div class="group-card">
-									<h4>Work Experience</h4>
+									<h4>Pengalaman Kerja</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
@@ -795,16 +770,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="company" class="sr-only">Company</label>
-													<input type="text" class="form-control arch" id="company" placeholder="Company" value="Worked Profile">
+													<label for="company" class="sr-only">Perusahaan</label>
+													<input type="text" class="form-control arch" id="company" placeholder="Perusahaan" value="Worked Profile">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position" value="Sales Manager">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi" value="Sales Manager">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="Y">
@@ -813,24 +788,24 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 November 2013">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 November 2013">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location" value="Jakarta, Indonesia">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description">Creating the productive network platform</textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi">Creating the productive network platform</textarea>
 												</div>
 											</form>
 										</li>
@@ -840,16 +815,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="company" class="sr-only">Company</label>
-													<input type="text" class="form-control arch" id="company" placeholder="Company" value="PT Infinys System Indonesia">
+													<label for="company" class="sr-only">Perusahaan</label>
+													<input type="text" class="form-control arch" id="company" placeholder="Perusahaan" value="PT Infinys System Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position" value="Sales Manager">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi" value="Sales Manager">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -858,24 +833,24 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 March 2008">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 March 2008">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 November 2013">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 November 2013">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location" value="Jakarta, Indonesia">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
@@ -885,16 +860,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="company" class="sr-only">Company</label>
-													<input type="text" class="form-control arch" id="company" placeholder="Company" value="PT Generasi Indonesia Digital">
+													<label for="company" class="sr-only">Perusahaan</label>
+													<input type="text" class="form-control arch" id="company" placeholder="Perusahaan" value="PT Generasi Indonesia Digital">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position" value="Sales Manager">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi" value="Sales Manager">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -903,24 +878,24 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 August 2002">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 August 2002">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 March 2008">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 March 2008">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location" value="Jakarta, Indonesia">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
@@ -930,16 +905,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="company" class="sr-only">Company</label>
-													<input type="text" class="form-control arch" id="company" placeholder="Company" value="Indonesian Internet Service Provider Association (APJII)">
+													<label for="company" class="sr-only">Perusahaan</label>
+													<input type="text" class="form-control arch" id="company" placeholder="Perusahaan" value="Indonesian Internet Service Provider Association (APJII)">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position" value="Sales Manager">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi" value="Sales Manager">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -948,24 +923,24 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 August 2001">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 August 2001">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 July 2002">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 July 2002">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location" value="Jakarta, Indonesia">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
@@ -975,16 +950,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="company" class="sr-only">Company</label>
-													<input type="text" class="form-control arch" id="company" placeholder="Company">
+													<label for="company" class="sr-only">Perusahaan</label>
+													<input type="text" class="form-control arch" id="company" placeholder="Perusahaan">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -993,29 +968,29 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Work Experience Edit</b></p>
+											<p><b>Edit Pengalaman Kerja</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -1025,7 +1000,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Project Experience</h4>
+									<h4>Pengalaman Proyek</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
@@ -1033,16 +1008,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="project" class="sr-only">Project</label>
-													<input type="text" class="form-control arch" id="project" placeholder="Project" value="Parcel Lebaran 2014">
+													<label for="project" class="sr-only">Proyek</label>
+													<input type="text" class="form-control arch" id="project" placeholder="Proyek" value="Parcel Lebaran 2014">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position" value="Sales Leader">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi" value="Sales Leader">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -1051,24 +1026,24 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 July 2014">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 July 2014">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 August 2014">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 August 2014">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location" value="Jakarta, Indonesia">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
@@ -1078,16 +1053,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="project" class="sr-only">Project</label>
-													<input type="text" class="form-control arch" id="project" placeholder="Project">
+													<label for="project" class="sr-only">Proyek</label>
+													<input type="text" class="form-control arch" id="project" placeholder="Proyek">
 												</div>
 												<div class="form-group">
-													<label for="position" class="sr-only">Position</label>
-													<input type="text" class="form-control b" id="position" placeholder="Position">
+													<label for="position" class="sr-only">Posisi</label>
+													<input type="text" class="form-control b" id="position" placeholder="Posisi">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -1096,29 +1071,29 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Project Experience Edit</b></p>
+											<p><b>Edit Pengalaman Proyek</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -1128,7 +1103,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Education</h4>
+									<h4>Pendidikan</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
@@ -1136,16 +1111,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="institute" class="sr-only">Institute</label>
-													<input type="text" class="form-control arch" id="institute" placeholder="Institute" value="Institute Bisnis Nusantara (IBN)">
+													<label for="institute" class="sr-only">Universitas</label>
+													<input type="text" class="form-control arch" id="institute" placeholder="Universitas" value="Institute Bisnis Nusantara (IBN)">
 												</div>
 												<div class="form-group">
-													<label for="field-of-study" class="sr-only">Field of Study</label>
-													<input type="text" class="form-control b" id="field-of-study" placeholder="Field of Study" value="Bisnis">
+													<label for="field-of-study" class="sr-only">Jurusan</label>
+													<input type="text" class="form-control b" id="field-of-study" placeholder="Jurusan" value="Bisnis">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -1154,24 +1129,24 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 September 2001">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 September 2001">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 July 2005">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-4 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 July 2005">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location" value="Jakarta, Indonesia">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
@@ -1181,16 +1156,16 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="institute" class="sr-only">Institute</label>
-													<input type="text" class="form-control arch" id="institute" placeholder="Institute">
+													<label for="institute" class="sr-only">Universitas</label>
+													<input type="text" class="form-control arch" id="institute" placeholder="Universitas">
 												</div>
 												<div class="form-group">
-													<label for="field-of-study" class="sr-only">Field of Study</label>
-													<input type="text" class="form-control b" id="field-of-study" placeholder="Field of Study">
+													<label for="field-of-study" class="sr-only">Jurusan</label>
+													<input type="text" class="form-control b" id="field-of-study" placeholder="Jurusan">
 												</div>
 												<div class="form-group">
-													<label for="current" class="col-xs-4">Current</label>
-													<div class="col-xs-8">
+													<label for="current" class="col-xs-6 col-sm-4">Saat Ini</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="current" class="current">
 															<input type="checkbox" class="current-indicator" value="N">
@@ -1199,29 +1174,29 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-4 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="location" class="sr-only">Location</label>
-													<input type="text" class="form-control" id="location" placeholder="Location">
+													<label for="location" class="sr-only">Lokasi</label>
+													<input type="text" class="form-control" id="location" placeholder="Lokasi">
 												</div>
 												<div class="form-group">
-													<label for="description" class="sr-only">Description</label>
-													<textarea class="form-control auto-size" id="description" placeholder="Description"></textarea>
+													<label for="description" class="sr-only">Deskripsi</label>
+													<textarea class="form-control auto-size" id="description" placeholder="Deskripsi"></textarea>
 												</div>
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Education Edit</b></p>
+											<p><b>Edit Pendidikan</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -1231,7 +1206,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Certifications</h4>
+									<h4>Sertifikat</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible form-vary">
@@ -1239,32 +1214,32 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="certificate" class="sr-only">Certificate</label>
-													<input type="text" class="form-control arch" id="certificate" placeholder="Certificate" value="Sertifikat Workshop Marketing">
+													<label for="certificate" class="sr-only">Nama Sertifikat</label>
+													<input type="text" class="form-control arch" id="certificate" placeholder="Nama Sertifikat" value="Sertifikat Workshop Marketing">
 												</div>
 												<div class="form-group">
-													<label for="number" class="sr-only">Number</label>
-													<input type="text" class="form-control b" id="number" placeholder="Number" value="18723681726234">
+													<label for="number" class="sr-only">Nomor Sertifikat</label>
+													<input type="text" class="form-control b" id="number" placeholder="Nomor Sertifikat" value="18723681726234">
 												</div>
 												<div class="form-group">
-													<label for="author" class="sr-only">Author</label>
-													<input type="text" class="form-control b" id="author" placeholder="Author" value="Aldena Maudi">
+													<label for="author" class="sr-only">Penerbit</label>
+													<input type="text" class="form-control b" id="author" placeholder="Penerbit" value="Aldena Maudi">
 												</div>
 												<div class="form-group">
-													<label for="type-certificate" class="col-xs-4">Type</label>
-													<div class="col-xs-8">
+													<label for="type-certificate" class="col-xs-6 col-sm-4">Tipe Sertifikat</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="select">
 															<select class="auxy" id="type-certificate">
-																<option selected="selected">Education</option>
-																<option>Vendor</option>
-																<option>Standard</option>
+																<option selected="selected">Pendidikan</option>
+																<option>Penjual</option>
+																<option>Standar</option>
 															</select>
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="expire" class="col-xs-5 col-sm-4 ex">Doesn't Expire</label>
-													<div class="col-xs-7 col-sm-8">
+													<label for="expire" class="col-xs-6 col-sm-4">Tidak Kadaluarsa</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="expire" class="expire">
 															<input type="checkbox" class="expire-indicator" value="N">
@@ -1273,15 +1248,15 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="12 December 2005">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="12 December 2005">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="30 December 2005">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="30 December 2005">
 													</div>
 												</div>
 											</form>
@@ -1292,32 +1267,32 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="certificate" class="sr-only">Certificate</label>
-													<input type="text" class="form-control arch" id="certificate" placeholder="Certificate" value="Sertifikat TOEFL">
+													<label for="certificate" class="sr-only">Nama Sertifikat</label>
+													<input type="text" class="form-control arch" id="certificate" placeholder="Nama Sertifikat" value="Sertifikat TOEFL">
 												</div>
 												<div class="form-group">
-													<label for="number" class="sr-only">Number</label>
-													<input type="text" class="form-control b" id="number" placeholder="Number" value="18734532342234">
+													<label for="number" class="sr-only">Nomor Sertifikat</label>
+													<input type="text" class="form-control b" id="number" placeholder="Nomor Sertifikat" value="18734532342234">
 												</div>
 												<div class="form-group">
-													<label for="author" class="sr-only">Author</label>
-													<input type="text" class="form-control b" id="author" placeholder="Author" value="Natasha Raya">
+													<label for="author" class="sr-only">Penerbit</label>
+													<input type="text" class="form-control b" id="author" placeholder="Penerbit" value="Natasha Raya">
 												</div>
 												<div class="form-group">
-													<label for="type-certificate" class="col-xs-4">Type</label>
-													<div class="col-xs-8">
+													<label for="type-certificate" class="col-xs-6 col-sm-4">Tipe Sertifikat</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="select">
 															<select class="auxy" id="type-certificate">
-																<option>Education</option>
-																<option selected="selected">Vendor</option>
-																<option>Standard</option>
+																<option>Pendidikan</option>
+																<option selected="selected">Penjual</option>
+																<option>Standar</option>
 															</select>
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="expire" class="col-xs-5 col-sm-4 ex">Doesn't Expire</label>
-													<div class="col-xs-7 col-sm-8">
+													<label for="expire" class="col-xs-6 col-sm-4">Tidak Kadaluarsa</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="expire" class="expire">
 															<input type="checkbox" class="expire-indicator" value="N">
@@ -1326,15 +1301,15 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="12 August 2007">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="12 August 2007">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 December 2007">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 December 2007">
 													</div>
 												</div>
 											</form>
@@ -1345,32 +1320,32 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="certificate" class="sr-only">Certificate</label>
-													<input type="text" class="form-control arch" id="certificate" placeholder="Certificate" value="Sertifikat Workshop Marketing Online">
+													<label for="certificate" class="sr-only">Nama Sertifikat</label>
+													<input type="text" class="form-control arch" id="certificate" placeholder="Nama Sertifikat" value="Sertifikat Workshop Marketing Online">
 												</div>
 												<div class="form-group">
-													<label for="number" class="sr-only">Number</label>
-													<input type="text" class="form-control b" id="number" placeholder="Number" value="187236817263123">
+													<label for="number" class="sr-only">Nomor Sertifikat</label>
+													<input type="text" class="form-control b" id="number" placeholder="Nomor Sertifikat" value="187236817263123">
 												</div>
 												<div class="form-group">
-													<label for="author" class="sr-only">Author</label>
-													<input type="text" class="form-control b" id="author" placeholder="Author" value="Ayu Maudi">
+													<label for="author" class="sr-only">Penerbit</label>
+													<input type="text" class="form-control b" id="author" placeholder="Penerbit" value="Ayu Maudi">
 												</div>
 												<div class="form-group">
-													<label for="type-certificate" class="col-xs-4">Type</label>
-													<div class="col-xs-8">
+													<label for="type-certificate" class="col-xs-6 col-sm-4">Tipe Sertifikat</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="select">
 															<select class="auxy" id="type-certificate">
-																<option>Education</option>
-																<option>Vendor</option>
-																<option selected="selected">Standard</option>
+																<option>Pendidikan</option>
+																<option>Penjual</option>
+																<option selected="selected">Standar</option>
 															</select>
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="expire" class="col-xs-5 col-sm-4 ex">Doesn't Expire</label>
-													<div class="col-xs-7 col-sm-8">
+													<label for="expire" class="col-xs-6 col-sm-4">Tidak Kadaluarsa</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="expire" class="expire">
 															<input type="checkbox" class="expire-indicator" value="N">
@@ -1379,15 +1354,15 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date" value="1 June 2008">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-from" id="from-date" placeholder="Dari Tanggal" value="1 June 2008">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date" value="1 August 2008">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal" value="1 August 2008">
 													</div>
 												</div>
 											</form>
@@ -1398,32 +1373,32 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="certificate" class="sr-only">Certificate</label>
-													<input type="text" class="form-control arch" id="certificate" placeholder="Certificate">
+													<label for="certificate" class="sr-only">Nama Sertifikat</label>
+													<input type="text" class="form-control arch" id="certificate" placeholder="Nama Sertifikat">
 												</div>
 												<div class="form-group">
-													<label for="number" class="sr-only">Number</label>
-													<input type="text" class="form-control b" id="number" placeholder="Number">
+													<label for="number" class="sr-only">Nomor Sertifikat</label>
+													<input type="text" class="form-control b" id="number" placeholder="Nomor Sertifikat">
 												</div>
 												<div class="form-group">
-													<label for="author" class="sr-only">Author</label>
-													<input type="text" class="form-control b" id="author" placeholder="Author">
+													<label for="author" class="sr-only">Penerbit</label>
+													<input type="text" class="form-control b" id="author" placeholder="Penerbit">
 												</div>
 												<div class="form-group">
-													<label for="type-certificate" class="col-xs-4">Type</label>
-													<div class="col-xs-8">
+													<label for="type-certificate" class="col-xs-6 col-sm-4">Tipe Sertifikat</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="select">
 															<select class="auxy" id="type-certificate">
-																<option>Education</option>
-																<option>Vendor</option>
-																<option>Standard</option>
+																<option>Pendidikan</option>
+																<option>Penjual</option>
+																<option>Standar</option>
 															</select>
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="expire" class="col-xs-5 col-sm-4 ex">Doesn't Expire</label>
-													<div class="col-xs-7 col-sm-8">
+													<label for="expire" class="col-xs-6 col-sm-4">Tidak Kadaluarsa</label>
+													<div class="col-xs-6 col-sm-8">
 														<label class="control checkbox">
 															<input type="checkbox" id="expire" class="expire">
 															<input type="checkbox" class="expire-indicator" value="N">
@@ -1432,21 +1407,21 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="from-date" class="col-xs-4">From Date</label>
-													<div class="col-xs-8">
+													<label for="from-date" class="col-xs-6 col-sm-4">Dari Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
 														<input type="text" class="form-control date-from" id="from-date" placeholder="From Date">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="thru-date" class="col-xs-4">Thru Date</label>
-													<div class="col-xs-8">
-														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Thru Date">
+													<label for="thru-date" class="col-xs-6 col-sm-4">Sampai Tanggal</label>
+													<div class="col-xs-6 col-sm-8">
+														<input type="text" class="form-control date-thru" id="thru-date" placeholder="Sampai Tanggal">
 													</div>
 												</div>
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Certifications Edit</b></p>
+											<p><b>Edit Sertifikat</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -1456,7 +1431,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Language</h4>
+									<h4>Bahasa</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
@@ -1465,18 +1440,18 @@
 												</div>
 												<div class="form-group">
 													<div class="col-xs-7">
-														<label for="language" class="sr-only">Language</label>
-														<input type="text" class="form-control" id="language" placeholder="Language" value="Bahasa Indonesia">
+														<label for="language" class="sr-only">Bahasa</label>
+														<input type="text" class="form-control" id="language" placeholder="Bahasa" value="Bahasa Indonesia">
 													</div>
 													<div class="col-xs-5">
-														<label for="language-type" class="sr-only">Language Type</label>
+														<label for="language-type" class="sr-only">Tipe Bahasa</label>
 														<label class="form-control select">
 															<select class="auxy" id="language-type">
-																<option>Beginner</option>
-																<option>Passive</option>
-																<option selected="selected">Active</option>
-																<option>Professional</option>
-																<option>Native</option>
+																<option>Pemula</option>
+																<option>Pasif</option>
+																<option selected="selected">Aktif</option>
+																<option>Profesional</option>
+																<option>Natif</option>
 															</select>
 														</label>
 													</div>
@@ -1490,18 +1465,18 @@
 												</div>
 												<div class="form-group">
 													<div class="col-xs-7">
-														<label for="language" class="sr-only">Language</label>
-														<input type="text" class="form-control" id="language" placeholder="Language" value="Inggris">
+														<label for="language" class="sr-only">Bahasa</label>
+														<input type="text" class="form-control" id="language" placeholder="Bahasa" value="Inggris">
 													</div>
 													<div class="col-xs-5">
-														<label for="language-type" class="sr-only">Language Type</label>
+														<label for="language-type" class="sr-only">Tipe Bahasa</label>
 														<label class="form-control select">
 															<select class="auxy" id="language-type">
-																<option>Beginner</option>
-																<option>Passive</option>
-																<option selected="selected">Active</option>
-																<option>Professional</option>
-																<option>Native</option>
+																<option>Pemula</option>
+																<option>Pasif</option>
+																<option selected="selected">Aktif</option>
+																<option>Profesional</option>
+																<option>Natif</option>
 															</select>
 														</label>
 													</div>
@@ -1515,18 +1490,18 @@
 												</div>
 												<div class="form-group">
 													<div class="col-xs-7">
-														<label for="language" class="sr-only">Language</label>
-														<input type="text" class="form-control" id="language" placeholder="Language">
+														<label for="language" class="sr-only">Bahasa</label>
+														<input type="text" class="form-control" id="language" placeholder="Bahasa">
 													</div>
 													<div class="col-xs-5">
-														<label for="language-type" class="sr-only">Language Type</label>
+														<label for="language-type" class="sr-only">Tipe Bahasa</label>
 														<label class="form-control select">
 															<select class="auxy" id="language-type">
-																<option>Beginner</option>
-																<option>Passive</option>
-																<option>Active</option>
-																<option>Professional</option>
-																<option>Native</option>
+																<option>Pemula</option>
+																<option>Pasif</option>
+																<option>Aktif</option>
+																<option>Profesional</option>
+																<option>Natif</option>
 															</select>
 														</label>
 													</div>
@@ -1534,7 +1509,7 @@
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Language Edit</b></p>
+											<p><b>Edit Bahasa</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
@@ -1544,7 +1519,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Skills</h4>
+									<h4>Keahlian</h4>
 									<ul class="list-unstyled">
 										<li class="item edit-mode">
 											<form class="form-invisible">
@@ -1552,8 +1527,8 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="skill" class="sr-only">Skill</label>
-													<input type="text" class="form-control" id="skill" placeholder="Skill" value="Management">
+													<label for="skill" class="sr-only">Keahlian</label>
+													<input type="text" class="form-control" id="skill" placeholder="Keahlian" value="Management">
 												</div>
 											</form>
 										</li>
@@ -1563,8 +1538,8 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="skill" class="sr-only">Skill</label>
-													<input type="text" class="form-control" id="skill" placeholder="Skill" value="Speaking">
+													<label for="skill" class="sr-only">Keahlian</label>
+													<input type="text" class="form-control" id="skill" placeholder="Keahlian" value="Speaking">
 												</div>
 											</form>
 										</li>
@@ -1574,13 +1549,13 @@
 													<a class="act act-round act-round-sm act-center minus"><div class="icon ion-ios-minus-empty"></div></a>
 												</div>
 												<div class="form-group">
-													<label for="skill" class="sr-only">Skill</label>
-													<input type="text" class="form-control" id="skill" placeholder="Skill">
+													<label for="skill" class="sr-only">Keahlian</label>
+													<input type="text" class="form-control" id="skill" placeholder="Keahlian">
 												</div>
 											</form>
 										</li>
 										<li class="item acts-mode">
-											<p><b>Skills Edit</b></p>
+											<p><b>Edit Keahlian</b></p>
 											<div class="acts-wrapper">
 												<a class="act act-round minus"><span class="icon ion-ios-minus-empty"></span></a>
 												<a class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
