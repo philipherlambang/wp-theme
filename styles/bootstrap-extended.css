@@ -1244,11 +1244,11 @@ b, strong {
   }
 }
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .btn-lg .icon {
     display: none;
   }
-}
+} */
 
 .group-view {
   padding-right: 15px;
