@@ -402,6 +402,9 @@ b, strong {
 .form-vary .control {
   padding-top: 0;
   padding-bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 15px;
 }
 .form-vary .control .control-indicator {
   margin: 2px 0;
@@ -933,10 +936,8 @@ b, strong {
 }
 
 .copyright {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: -90px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   color: #616161;
   font-size: 16px;
   font-weight: 500;
@@ -1276,7 +1277,11 @@ b, strong {
 }
 .group-card-link .item .form-simple {
   margin-top: 0;
-  padding: 0 15px;
+  margin-bottom: 0;
+}
+.group-card-link .item .form-simple .form-group {
+  margin-right: 0;
+  margin-left: 0;
 }
 .group-card-link .item .form-simple label {
   margin-bottom: 0;
@@ -1285,9 +1290,12 @@ b, strong {
 .group-card-link .item .form-simple .checkbox {
   padding-top: 0;
   min-height: auto;
+  float: right;
+  position: absolute;
+  right: 18px;
 }
 .group-card-link .item .form-simple .control .control-indicator {
-  margin-bottom: -4px;
+  margin-right: 0;
 }
 
 .result {
