@@ -1244,17 +1244,19 @@ b, strong {
   }
 }
 
-/* @media (max-width: 360px) {
-  .btn-lg .icon {
+@media (max-width: 360px) {
+  .btn-lg .icon-xx {
     display: none;
   }
-} */
+}
 
 .group-view {
   padding-right: 15px;
   padding-left: 15px;
 }
 .group-view [class^="col"] {
+  padding-right: 10px;
+  padding-left: 10px;
   background-color: #ffffff;
   border: 1px solid #eeeeee;
 }
@@ -1285,6 +1287,8 @@ b, strong {
 }
 .group-card-link .item .form-simple label {
   margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
   font-weight: 400;
 }
 .group-card-link .item .form-simple .checkbox {
@@ -1312,4 +1316,7 @@ b, strong {
 .pswp-gallery {
   padding-left: 0;
   list-style: none;
+}
+.pswp-gallery .img-responsive {
+  width: 100%;
 }
