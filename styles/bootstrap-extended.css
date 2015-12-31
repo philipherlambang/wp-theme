@@ -1390,6 +1390,57 @@ b, strong {
   position: relative;
 }
 
+.chat-input {
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFF;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.10);
+}
+.chat-input .form-simple {
+  margin-top: 0;
+}
+.chat-input .form-simple .form-group {
+  margin-right: 48px;
+}
+.chat-input .form-simple .form-control {
+  border: 1px solid #E0E0E0;
+}
+.chat-input .form-simple .btn {
+  margin: 10px 5px;
+  padding: 5px 8px;
+  border: 1px solid #E0E0E0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 40px;
+  width: 46px;
+  height: 46px;
+}
+.chat-input .form-simple .icon {
+  text-align: center;
+  font-size: 32px;
+  margin-right: 0;
+}
+.chat-input .form-control {
+  font-weight: 300;
+}
+.chat-input .form-control::-moz-placeholder {
+  font-weight: 300;
+}
+.chat-input .form-control:-ms-input-placeholder {
+  font-weight: 300;
+}
+.chat-input .form-control::-webkit-input-placeholder {
+  font-weight: 300;
+}
+
 .pswp-gallery {
   padding-left: 0;
   list-style: none;
