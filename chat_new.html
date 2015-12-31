@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<meta name="author" content="">
-		<title>Daftar Kontak</title>
+		<title>Chat Baru</title>
 
 		<link href="styles/bootstrap.min.css" rel="stylesheet">
 		<link href="styles/bootstrap-plugins.min.css" rel="stylesheet">
@@ -23,179 +23,191 @@
 	</head>
 	<body>
 
-		<nav class="navbar-id">
-			<div class="navbar navbar-default navbar-fixed-top">
+		<nav class="gap-operate">
+			<div class="operate operate-fixed operate-fixed-down">
 				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-theme" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="hub.html">
-							<img alt="Brand" src="images/brand-join.png">
-						</a>
-					</div>
-					<div id="navbar-theme" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<form class="navbar-form form-base" role="search">
-									<div class="input-group">
-										<input type="text" class="form-control" placeholder="Cari Kontak">
-										<span class="input-group-btn">
-											<button class="btn btn-default" type="button">
-												<span class="ion ion-ios-search"></span>
-											</button>
-										</span>
-									</div>
-								</form>
-							</li>
-							<li>
-								<a href="profile.html">
-									<div class="hidden-xs">
-										<img src="images/user/john_branch.jpg" alt="John Branch" class="img-thumb">
-									</div>
-									<div class="visible-xs"><i class="ion ion-person"></i> Profil</div>
-								</a>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav">
-							<li>
-								<a href="contacts.html"><i class="ion ion-ios-people"></i> Kontak</a>
-							</li>
-							<li>
-								<a href="chats.html"><i class="ion ion-ios-email"></i> Pesan</a>
-							</li>
-							<li>
-								<a href="professionals.html"><i class="ion ion-ios-briefcase"></i> Profesional</a>
-							</li>
-						</ul>
+					<div class="row">
+						<div class="col-xs-2">
+							<a class="left" onclick="window.history.back()">
+								<div class="icon ion-ios-arrow-back"></div>
+							</a>
+						</div>
+						<div class="col-xs-8">
+							<h4 class="title">Chat Baru</h4>
+						</div>
+						<div class="col-xs-2">
+							<a class="right" href="chat.html">
+								<p>Buat</p>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</nav>
 
-		<main class="fixed-nav-content">
-			<div class="section">
-				<div class="result">
-					<p class="text-center">Jumlah data ditemukan ada <b>8</b> orang.</p>
-				</div>
-			</div>
+		<main>
 			<div class="section">
 				<div class="container container-full-xs">
 					<div class="row">
-						<div class="col-sm-8">
+						<div class="col-xs-12">
 							<div class="group-media">
 								<ul class="list-unstyled">
 									<li class="item">
-										<a href="demo/profile/tri_dewi_putri_lestari.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/tri_dewi_putri_lestari.jpg" alt="Tri Dewi Putri Lestari">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Business Partnership</p>
 													<h4 class="media-heading">Tri Dewi Putri Lestari</h4>
 													<p>Telkom Indonesia</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/michelle_anestasya_lopita.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/michelle_anestasya_lopita.jpg" alt="Michelle Anestasya Lopita">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Graphic Designer</p>
 													<h4 class="media-heading">Michelle Anestasya Lopita</h4>
 													<p>Vodafone</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/aldella_diah_kusumawardhani.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/aldella_diah_kusumawardhani.jpg" alt="Aldella Diah Kusumawardhani">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Graphic Designer Executive</p>
 													<h4 class="media-heading">Aldella Diah Kusumawardhani</h4>
 													<p>AirAsia</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/utari_purwanti.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/utari_purwanti.jpg" alt="Utari Purwanti">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Marketing Communication & PR </p>
 													<h4 class="media-heading">Utari Purwanti</h4>
 													<p>PT Peak Multi Dinamika</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/rizky_martha_aditya.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/rizky_martha_aditya.jpg" alt="Rizky Martha Aditya">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Marketing Executive</p>
 													<h4 class="media-heading">Rizky Martha Aditya</h4>
 													<p>AIG LIPPO Insurance</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/la_vega_corane.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/la_vega_corane.jpg" alt="La Vega Corane">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Merchandise Manager HUGO BOSS</p>
 													<h4 class="media-heading">La Vega Corane</h4>
 													<p>PT Trans Fashion Indonesia</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/ibrahim_sugardo.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/ibrahim_sugardo.jpg" alt="Ibrahim Sugardo">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Pilot</p>
 													<h4 class="media-heading">Ibrahim Sugardo</h4>
 													<p>AirAsia</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
 									</li>
 									<li class="item">
-										<a href="demo/profile/canidiya_alifiana.html">
+										<a>
 											<div class="media">
 												<div class="media-left media-middle">
 													<img class="media-object" src="images/user/canidiya_alifiana.jpg" alt="Canidya Alifiana">
 												</div>
-												<div class="media-body">
+												<div class="media-body media-body-item">
 													<p class="sub">Public Educator</p>
 													<h4 class="media-heading">Canidya Alifiana</h4>
 													<p>Museum of Asian African Conference</p>
+													<form class="badge-check">
+														<label class="control checkbox">
+															<input type="checkbox">
+															<span class="control-indicator"></span>
+														</label>
+													</form>
 												</div>
 											</div>
 										</a>
@@ -205,11 +217,6 @@
 									<img src="images/default.gif">
 								</div>
 							</div>
-						</div>
-						<div class="col-sm-4 hidden-xs">
-							<div class="unfilled-content"></div>
-							<div class="unfilled-content"></div>
-							<div class="unfilled-content"></div>
 						</div>
 					</div>
 				</div>

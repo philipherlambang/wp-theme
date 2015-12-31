@@ -684,9 +684,9 @@ b, strong {
   -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
   position: relative;
 }
-.container-lill-xs .item:last-child {
+/* .container-lill-xs .item:last-child {
   margin-bottom: 15px;
-}
+} */
 .container-lill-xs .item .sub {
   font-size: 12px;
   color: #757575;
@@ -803,13 +803,25 @@ b, strong {
   line-height: 48px;
 }
 .operate .title {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   color: #002154;
   font-weight: 500;
   line-height: 48px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.operate a p {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 48px;
+}
+.operate a.left p {
+  text-align: right;
+}
+.operate a.right p {
+  text-align: left;
 }
 
 .form-simple {
@@ -1250,6 +1262,29 @@ b, strong {
   }
 }
 
+.group-media .media-object {
+  width: 60px;
+  height: 60px;
+}
+.group-media .media-body-item {
+  position: relative;
+  padding-right: 20px;
+}
+.group-media .media-body .time {
+  margin-left: 18px;
+  font-size: 12px;
+  color: #777;
+  font-weight: 300;
+}
+.group-media .media-body .time .icon {
+  margin-right: 4px;
+  font-size: 16px;
+  color: #333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .group-view {
   padding-right: 15px;
   padding-left: 15px;
@@ -1311,6 +1346,48 @@ b, strong {
   margin-bottom: 0;
   font-size: 12px;
   font-weight: 300;
+}
+
+.loading {
+  background-color: #FFF;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+.loading img {
+  width: 36px;
+}
+
+.badge-dot {
+  border-radius: 50%;
+  background-color: rgba(0, 33, 84, 0.8);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right:0;
+  margin: auto;
+}
+
+.badge-check {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right:0;
+  margin: auto;
+}
+.badge-check .checkbox,
+.badge-check .radio {
+  margin-top: 0;
+  padding-left: 2px;
+}
+.badge-check .control-indicator {
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
 .pswp-gallery {
