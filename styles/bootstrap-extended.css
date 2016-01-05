@@ -1537,6 +1537,9 @@ b, strong {
   margin-bottom: 8px;
   font-weight: 500;
 }
+.chat-bubble .person {
+  font-weight: 500;
+}
 .chat-bubble p {
   margin-bottom: 0;
 }
