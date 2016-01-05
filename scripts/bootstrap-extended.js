@@ -141,7 +141,7 @@
 			rules: 'required|valid_email'
 		}, {
 			name: 'password',
-			display: 'Password',
+			display: 'Sandi',
 			rules: 'required|alpha_numeric|min_length[8]'
 		}], function(errors, event) {
 			validatorResult(errors, event);
@@ -149,7 +149,7 @@
 
 		var validatorSignUp = new FormValidator('sign-up', [{
 			name: 'full-name',
-			display: 'Full Name',
+			display: 'Nama Lengkap',
 			rules: 'required|alpha_space'
 		}, {
 			name: 'email',
@@ -157,11 +157,11 @@
 			rules: 'required|valid_email'
 		}, {
 			name: 'password',
-			display: 'Password',
+			display: 'Sandi',
 			rules: 'required|alpha_low_up_numeric|min_length[8]'
 		}, {
 			name: 'confirm-password',
-			display: 'Confirm Password',
+			display: 'Konfirmasi Sandi',
 			rules: 'required|matches[password]'
 		}], function(errors, event) {
 			validatorResult(errors, event);
@@ -177,15 +177,15 @@
 
 		var validatorChangePassword = new FormValidator('change-password', [{
 			name: 'current-password',
-			display: 'Current Password',
+			display: 'Sandi Saat Ini',
 			rules: 'required'
 		}, {
 			name: 'new-password',
-			display: 'New Password',
+			display: 'Sandi Baru',
 			rules: 'required|alpha_low_up_numeric|min_length[8]'
 		}, {
-			name: 'verify-new-password',
-			display: 'Verify New Password',
+			name: 'confirm-new-password',
+			display: 'Konfirmasi Sandi Baru',
 			rules: 'required|matches[new-password]'
 		}], function(errors, event) {
 			validatorResult(errors, event);
@@ -197,7 +197,6 @@
 		if (errors.length > 0) {
 			$(errors[0].element).focus().closest('.form-group').append('<p class="error-message">' + errors[0].message + '</p>');
 		} else {
-			console.log('Hooray No Error');
 			event.preventDefault();
 		}
 	}
