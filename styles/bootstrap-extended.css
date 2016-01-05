@@ -1557,3 +1557,7 @@ b, strong {
 .pswp-gallery .img-responsive {
   width: 100%;
 }
+
+.bg-body-img {
+  background-image: url(../images/bg/bg.jpg);
+}
