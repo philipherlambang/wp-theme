@@ -10,6 +10,12 @@
 		chatAddGap();
 	}
 
+	// Modal Reposition and Center
+  $('.modal').on('show.bs.modal', modalReposition);
+  $(window).on('resize', function() {
+    $('.modal:visible').each(modalReposition);
+  });
+
 	// Autosize Texarea
 	if (document.getElementsByClassName('auto-size').length) {
 		$('.auto-size').textareaAutoSize();
@@ -83,6 +89,12 @@
 		}
 	}
 
+	function modalReposition() {
+    var modal = $(this),
+        dialog = modal.find('.modal-dialog');
+    modal.css('display', 'block');
+    dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+  }
 
 	function datePicker(selector) {
 		$(selector).pickadate({

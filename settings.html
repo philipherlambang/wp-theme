@@ -97,10 +97,10 @@
 										<a class="item" href="change_password.html">Ganti Sandi</a>
 									</li>
 									<li>
-										<a class="item" href="verify_account.html">Verifikasi Akun</a>
+										<a class="item" href="account_verify.html">Verifikasi Akun</a>
 									</li>
 									<li>
-										<a class="item" href="deactivate_account.html">Tutup Akun</a>
+										<a class="item" href="account_deactivate.html">Tutup Akun</a>
 									</li>
 									<li>
 										<a class="item" href="invite_friend.html">Undang Teman</a>
@@ -120,9 +120,33 @@
 								</ul>
 							</div>
 							<div class="col-xs-12 full-xs-esc">
-								<a href="index.html" class="btn btn-lg btn-block btn-default btn-gloom">Keluar</a>
-								<!-- <button type="submit" class="btn btn-lg btn-block btn-default btn-gloom">Sign Out</button> -->
+								<!-- <a href="index.html" class="btn btn-lg btn-block btn-default btn-gloom">Keluar</a> -->
+								<button type="button" class="btn btn-lg btn-block btn-default btn-gloom" data-toggle="modal" data-target=".simple-modal">Keluar</button>
 								<p class="copyright">© 2015 Workedprofile Corp.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal simple-modal" tabindex="-1" role="dialog" aria-labelledby="simple-modal">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="icon ion-ios-close-empty" aria-hidden="true"></span></button>
+							<h4 class="modal-title" id="simple-modal">Konfirmasi Keluar</h4>
+						</div>
+						<div class="modal-body">
+							<p class="text-center">Apakah anda yakin ingin keluar ?</p>
+						</div>
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-xs-6">
+									<button type="button" class="btn btn-block btn-default btn-gloom" data-dismiss="modal">Batal</button>
+								</div>
+								<div class="col-xs-6">
+									<a href="index.html" type="button" class="btn btn-block btn-default btn-gloom">Keluar</a>
+								</div>
 							</div>
 						</div>
 					</div>
