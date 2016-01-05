@@ -5,6 +5,11 @@
 	// Auto Hide and Show Nav When Scroll
 	autoNavScroll('operate-fixed');
 
+	// Add Chat Gap
+	if (document.getElementsByClassName('group-chat-bubbles').length) {
+		chatAddGap();
+	}
+
 	// Autosize Texarea
 	if (document.getElementsByClassName('auto-size').length) {
 		$('.auto-size').textareaAutoSize();
@@ -61,6 +66,23 @@
 			}
 		}, 250);
 	}
+
+	function chatAddGap() {
+		var bubbles = document.querySelectorAll('ul > li');
+		var bubble, bubblePost, bubbleLastPost;
+		for (var i = 0; i < bubbles.length; i++) {
+			bubble = bubbles[i].children[0];
+			bubblePost = bubble.classList[1];
+			if (bubblePost == 'title') {
+				continue;
+			}
+			if (bubblePost != bubbleLastPost) {
+				bubble.className = bubble.className + ' gap';
+				bubbleLastPost = bubblePost;
+			}
+		}
+	}
+
 
 	function datePicker(selector) {
 		$(selector).pickadate({
