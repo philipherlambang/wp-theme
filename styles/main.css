@@ -934,6 +934,7 @@ b, strong {
   border-radius: 0;
   border-bottom: 1px solid #E0E0E0;
   box-shadow: none;
+  -webkit-appearance: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
@@ -1454,6 +1455,19 @@ b, strong {
 .cropper-sample .crop-img {
   top: 0px;
   left: 0px;
+}
+.crop-form {
+  margin-top: 0;
+}
+.crop-form .form-group {
+  margin-top: 0;
+  padding: 10px 10px 0;
+}
+.crop-form .form-control {
+  border: 1px solid #e0e0e0;
+}
+.crop-form textarea {
+  resize: none;
 }
 
 /* Just Added */
