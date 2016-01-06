@@ -1595,3 +1595,25 @@ b, strong {
 .pswp-gallery .img-responsive {
   width: 100%;
 }
+.pswp-gallery .act-leaf {
+  border: 1px solid #EEEEEE;
+  line-height: 90px;
+  font-size: 90px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+}
+
+.imgs-inline ul > li {
+  position: relative;
+}
+.imgs-inline ul > li > .btn {
+  margin: 2px;
+  border: 1px solid rgba(238, 238, 238, 0.7);
+  border-radius: 0;
+  border-bottom-right-radius: 4px;
+  position: absolute;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}

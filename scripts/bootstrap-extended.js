@@ -115,6 +115,7 @@
   }
 
 	function datePicker(selector) {
+  	var lastScrollPos;
 		$(selector).pickadate({
 			format: 'd mmmm yyyy',
 			formatSubmit: 'yyyy-mm-dd',
@@ -129,6 +130,14 @@
 						hdr = hld[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0],
 						slc = $([hdr.childNodes[0], hdr.childNodes[1]]);
 				slc.wrap('<label class="select"></label>');
+			},
+			onOpen: function() {
+				lastScrollPos = $(window).scrollTop();
+				$(selector).blur();
+			},
+			onClose: function() {
+				$(window).scrollTop(lastScrollPos);
+				$(selector).blur();
 			}
 		});
 	}
@@ -351,6 +360,7 @@
 		$(this).closest('.item').remove();
 	});
 
+	// Other Manipulation
 	$('body').on('click', 'main', function(e) {
 		var navbarToggle = $('.navbar').find('.navbar-toggle');
 		if (navbarToggle.length && !navbarToggle.hasClass('collapsed')) {
@@ -380,7 +390,6 @@
 
 	// Photoswipe
 	pswpInit('.pswp-gallery');
-
 	function pswpInit(gallerySelector) {
 
 		var galleryElements = document.querySelectorAll(gallerySelector);
@@ -424,6 +433,11 @@
 
 				linkEl = liEl.children[0];
 
+				if (linkEl.dataset.pswp) {
+					index = index - 1;
+					continue;
+				}
+
 				size = linkEl.getAttribute('data-size').split('x');
 
 				item = {
@@ -436,6 +450,11 @@
 				if (linkEl.children.length > 0) {
 					item.msrc = linkEl.children[0].getAttribute('src');
 				}
+
+				if (linkEl.children.length > 1 && linkEl.children[1].tagName == 'FIGURE') {
+					item.description = linkEl.children[1].innerHTML;
+				}
+
 				item.el = liEl;
 				items.push(item);
 			}
@@ -460,8 +479,20 @@
 			var clickedGallery = clickedListItem.parentNode,
 			    index = clickedListItem.dataset.lid;
 
-			if (index >= 0) {
-				pswpOpen(index, clickedGallery);
+			var target = closest(eTarget, function(el) {
+				if (el.dataset) {
+					return (el.dataset.pswp);
+				}
+			});
+
+			if (target) {
+				if (target.dataset.pswp) {
+					window.location.href = target.href;
+				}
+			} else {
+				if (index >= 0) {
+					pswpOpen(index, clickedGallery);
+				}
 			}
 
 			return false;
@@ -487,6 +518,14 @@
 					    rect = thumbnail.getBoundingClientRect();
 
 					return {x : rect.left, y : rect.top + pageYScroll, w : rect.width};
+				},
+				addCaptionHTMLFn: function(item, captionEl, isFake) {
+					if (!item.description) {
+						captionEl.children[0].innerText = item.title;
+						return false;
+					}
+					captionEl.children[0].innerHTML = item.title +  '<br/><small> ' + item.description + '</small>';
+					return true;
 				}
 			};
 
