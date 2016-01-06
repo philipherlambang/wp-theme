@@ -1,7 +1,7 @@
 /*! PhotoSwipe - v4.1.0 - 2015-07-23
 * http://photoswipe.com
 * Copyright (c) 2015 Dmitry Semenov; */
-(function (root, factory) { 
+(function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		define(factory);
 	} else if (typeof exports === 'object') {
@@ -18,9 +18,9 @@
 /**
  *
  * Set of generic functions used by gallery.
- * 
+ *
  * You're free to modify anything here as long as functionality is kept.
- * 
+ *
  */
 var framework = {
 	features: null,
@@ -52,7 +52,7 @@ var framework = {
 	},
 	removeClass: function(el, className) {
 		var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-		el.className = el.className.replace(reg, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, ''); 
+		el.className = el.className.replace(reg, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 	},
 	addClass: function(el, className) {
 		if( !framework.hasClass(el,className) ) {
@@ -76,7 +76,7 @@ var framework = {
 		while(i--) {
 			if(array[i][key] === value) {
 				return i;
-			} 
+			}
 		}
 		return -1;
 	},
@@ -127,16 +127,16 @@ var framework = {
 	},
 
 	/**
-	 * 
+	 *
 	 * @return {object}
-	 * 
+	 *
 	 * {
 	 *  raf : request animation frame function
 	 *  caf : cancel animation frame function
 	 *  transfrom : transform property key (with vendor), or null if not supported
 	 *  oldIE : IE8 or below
 	 * }
-	 * 
+	 *
 	 */
 	detectFeatures: function() {
 		if(framework.features) {
@@ -161,14 +161,14 @@ var framework = {
 
 		// fix false-positive detection of old Android in new IE
 		// (IE11 ua string contains "Android 4.0")
-		
-		if(!features.pointerEvent) { 
+
+		if(!features.pointerEvent) {
 
 			var ua = navigator.userAgent;
 
 			// Detect if device is iPhone or iPod and if it's older than iOS 8
 			// http://stackoverflow.com/a/14223920
-			// 
+			//
 			// This detection is made because of buggy top/bottom toolbars
 			// that don't trigger window.resize event.
 			// For more info refer to _isFixedPosition variable in core.js
@@ -186,7 +186,7 @@ var framework = {
 			// Detect old Android (before KitKat)
 			// due to bugs related to position:fixed
 			// http://stackoverflow.com/questions/7184573/pick-up-the-android-version-in-the-browser-by-javascript
-			
+
 			var match = ua.match(/Android\s([0-9\.]*)/);
 			var androidversion =  match ? match[1] : 0;
 			androidversion = parseFloat(androidversion);
@@ -195,12 +195,12 @@ var framework = {
 					features.isOldAndroid = true; // for fixed position bug & performance
 				}
 				features.androidVersion = androidversion; // for touchend bug
-			}	
+			}
 			features.isMobileOpera = /opera mini|opera mobi/i.test(ua);
 
 			// p.s. yes, yes, UA sniffing is bad, propose your solution for above bugs.
 		}
-		
+
 		var styleChecks = ['transform', 'perspective', 'animationName'],
 			vendors = ['', 'webkit','Moz','ms','O'],
 			styleCheckItem,
@@ -213,10 +213,10 @@ var framework = {
 				styleCheckItem = styleChecks[a];
 
 				// uppercase first letter of property name, if vendor is present
-				styleName = vendor + (vendor ? 
-										styleCheckItem.charAt(0).toUpperCase() + styleCheckItem.slice(1) : 
+				styleName = vendor + (vendor ?
+										styleCheckItem.charAt(0).toUpperCase() + styleCheckItem.slice(1) :
 										styleCheckItem);
-			
+
 				if(!features[styleCheckItem] && styleName in helperStyle ) {
 					features[styleCheckItem] = styleName;
 				}
@@ -226,12 +226,12 @@ var framework = {
 				vendor = vendor.toLowerCase();
 				features.raf = window[vendor+'RequestAnimationFrame'];
 				if(features.raf) {
-					features.caf = window[vendor+'CancelAnimationFrame'] || 
+					features.caf = window[vendor+'CancelAnimationFrame'] ||
 									window[vendor+'CancelRequestAnimationFrame'];
 				}
 			}
 		}
-			
+
 		if(!features.raf) {
 			var lastTime = 0;
 			features.raf = function(fn) {
@@ -245,7 +245,7 @@ var framework = {
 		}
 
 		// Detect SVG support
-		features.svg = !!document.createElementNS && 
+		features.svg = !!document.createElementNS &&
 						!!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
 
 		framework.features = features;
@@ -260,7 +260,7 @@ framework.detectFeatures();
 if(framework.features.oldIE) {
 
 	framework.bind = function(target, type, listener, unbind) {
-		
+
 		type = type.split(' ');
 
 		var methodName = (unbind ? 'detach' : 'attach') + 'Event',
@@ -290,7 +290,7 @@ if(framework.features.oldIE) {
 			}
 		}
 	};
-	
+
 }
 
 /*>>framework-bridge*/
@@ -303,7 +303,7 @@ var self = this;
 /**
  * Static vars, don't change unless you know what you're doing.
  */
-var DOUBLE_TAP_RADIUS = 25, 
+var DOUBLE_TAP_RADIUS = 25,
 	NUM_HOLDERS = 3;
 
 /**
@@ -350,8 +350,8 @@ framework.extend(_options, options);
  * Private helper variables & functions
  */
 
-var _getEmptyPoint = function() { 
-		return {x:0,y:0}; 
+var _getEmptyPoint = function() {
+		return {x:0,y:0};
 	};
 
 var _isOpen,
@@ -413,7 +413,7 @@ var _isOpen,
 		}
 		return index;
 	},
-	
+
 	// Micro bind/trigger
 	_listeners = {},
 	_listen = function(name, fn) {
@@ -445,9 +445,9 @@ var _isOpen,
 
 	_applyZoomTransform = function(styleObj,x,y,zoom,item) {
 		if(!_renderMaxResolution || (item && item !== self.currItem) ) {
-			zoom = zoom / (item ? item.fitRatio : self.currItem.fitRatio);	
+			zoom = zoom / (item ? item.fitRatio : self.currItem.fitRatio);
 		}
-			
+
 		styleObj[_transformKey] = _translatePrefix + x + 'px, ' + y + 'px' + _translateSufix + ' scale(' + zoom + ')';
 	},
 	_applyCurrentZoomPan = function( allowRenderResolution ) {
@@ -466,7 +466,7 @@ var _isOpen,
 					}
 				}
 			}
-			
+
 
 			_applyZoomTransform(_currZoomElementStyle, _panOffset.x, _panOffset.y, _currZoomLevel);
 		}
@@ -474,9 +474,9 @@ var _isOpen,
 	_applyZoomPanToItem = function(item) {
 		if(item.container) {
 
-			_applyZoomTransform(item.container.style, 
-								item.initialPosition.x, 
-								item.initialPosition.y, 
+			_applyZoomTransform(item.container.style,
+								item.initialPosition.x,
+								item.initialPosition.y,
 								item.initialZoomLevel,
 								item);
 		}
@@ -490,12 +490,12 @@ var _isOpen,
 			var newSlideIndexOffset = _currentItemIndex + (_slideSize.x * _currPositionIndex - x) / _slideSize.x,
 				delta = Math.round(x - _mainScrollPos.x);
 
-			if( (newSlideIndexOffset < 0 && delta > 0) || 
+			if( (newSlideIndexOffset < 0 && delta > 0) ||
 				(newSlideIndexOffset >= _getNumItems() - 1 && delta < 0) ) {
 				x = _mainScrollPos.x + delta * _options.mainScrollEndFriction;
-			} 
+			}
 		}
-		
+
 		_mainScrollPos.x = x;
 		_setTranslateX(x, _containerStyle);
 	},
@@ -503,7 +503,7 @@ var _isOpen,
 		var m = _midZoomPoint[axis] - _offset[axis];
 		return _startPanOffset[axis] + _currPanDist[axis] + m - m * ( zoomLevel / _startZoomLevel );
 	},
-	
+
 	_equalizePoints = function(p1, p2) {
 		p1.x = p2.x;
 		p1.y = p2.y;
@@ -520,7 +520,7 @@ var _isOpen,
 	_onFirstMouseMove = function() {
 		// Wait until mouse move event is fired at least twice during 100ms
 		// We do this, because some mobile browsers trigger it on touchstart
-		if(_mouseMoveTimeout ) { 
+		if(_mouseMoveTimeout ) {
 			framework.unbind(document, 'mousemove', _onFirstMouseMove);
 			framework.addClass(template, 'pswp--has_mouse');
 			_options.mouseUsed = true;
@@ -538,7 +538,7 @@ var _isOpen,
 			// don't bind click event in browsers that don't support transform (mostly IE8)
 			framework.bind(self.scrollWrap, 'click', self);
 		}
-		
+
 
 		if(!_options.mouseUsed) {
 			framework.bind(document, 'mousemove', _onFirstMouseMove);
@@ -565,7 +565,7 @@ var _isOpen,
 
 		_shout('unbindEvents');
 	},
-	
+
 	_calculatePanBounds = function(zoomLevel, update) {
 		var bounds = _calculateItemSize( self.currItem, _viewportSize, zoomLevel );
 		if(update) {
@@ -573,7 +573,7 @@ var _isOpen,
 		}
 		return bounds;
 	},
-	
+
 	_getMinZoomLevel = function(item) {
 		if(!item) {
 			item = self.currItem;
@@ -593,7 +593,7 @@ var _isOpen,
 			destPanOffset[axis] = self.currItem.initialPosition[axis];
 			return true;
 		} else {
-			destPanOffset[axis] = _calculatePanOffset(axis, destZoomLevel); 
+			destPanOffset[axis] = _calculatePanOffset(axis, destZoomLevel);
 
 			if(destPanOffset[axis] > destPanBounds.min[axis]) {
 				destPanOffset[axis] = destPanBounds.min[axis];
@@ -612,13 +612,13 @@ var _isOpen,
 			// setup 3d transforms
 			var allow3dTransform = _features.perspective && !_likelyTouchDevice;
 			_translatePrefix = 'translate' + (allow3dTransform ? '3d(' : '(');
-			_translateSufix = _features.perspective ? ', 0px)' : ')';	
+			_translateSufix = _features.perspective ? ', 0px)' : ')';
 			return;
 		}
 
 		// Override zoom/pan/move functions in case old browser is used (most likely IE)
 		// (so they use left/top/width/height, instead of CSS transform)
-	
+
 		_transformKey = 'left';
 		framework.addClass(template, 'pswp--ie');
 
@@ -654,18 +654,18 @@ var _isOpen,
 				s.left = _panOffset.x + 'px';
 				s.top = _panOffset.y + 'px';
 			}
-			
+
 		};
 	},
 
 	_onKeyDown = function(e) {
 		var keydownAction = '';
-		if(_options.escKey && e.keyCode === 27) { 
+		if(_options.escKey && e.keyCode === 27) {
 			keydownAction = 'close';
 		} else if(_options.arrowKeys) {
 			if(e.keyCode === 37) {
 				keydownAction = 'prev';
-			} else if(e.keyCode === 39) { 
+			} else if(e.keyCode === 39) {
 				keydownAction = 'next';
 			}
 		}
@@ -678,7 +678,7 @@ var _isOpen,
 					e.preventDefault();
 				} else {
 					e.returnValue = false;
-				} 
+				}
 				self[keydownAction]();
 			}
 		}
@@ -697,12 +697,12 @@ var _isOpen,
 	},
 
 	_updatePageScrollOffset = function() {
-		self.setScrollOffset(0, framework.getScrollY());		
+		self.setScrollOffset(0, framework.getScrollY());
 	};
-	
 
 
-	
+
+
 
 
 
@@ -732,8 +732,8 @@ var _animations = {},
 
 			if( _animations.hasOwnProperty( prop ) ) {
 				_stopAnimation(prop);
-			} 
-			
+			}
+
 		}
 	},
 	_animateProp = function(name, b, endProp, d, easingFn, onUpdate, onComplete) {
@@ -742,7 +742,7 @@ var _animations = {},
 
 		var animloop = function(){
 			if ( _animations[name] ) {
-				
+
 				t = _getCurrentTime() - startAnimTime; // time diff
 				//b - beginning (start prop)
 				//d - anim duration
@@ -762,7 +762,7 @@ var _animations = {},
 		};
 		animloop();
 	};
-	
+
 
 
 var publicMethods = {
@@ -784,7 +784,7 @@ var publicMethods = {
 	},
 	isDragging: function() {
 		return _isDragging;
-	},	
+	},
 	isZooming: function() {
 		return _isZooming;
 	},
@@ -814,13 +814,13 @@ var publicMethods = {
 
 		_initalClassName = template.className;
 		_isOpen = true;
-				
+
 		_features = framework.detectFeatures();
 		_requestAF = _features.raf;
 		_cancelAF = _features.caf;
 		_transformKey = _features.transform;
 		_oldIE = _features.oldIE;
-		
+
 		self.scrollWrap = framework.getChildByClass(template, 'pswp__scroll-wrap');
 		self.container = framework.getChildByClass(self.scrollWrap, 'pswp__container');
 
@@ -846,7 +846,7 @@ var publicMethods = {
 			click: _onGlobalClick
 		};
 
-		// disable show/hide effects on old browsers that don't support CSS animations or transforms, 
+		// disable show/hide effects on old browsers that don't support CSS animations or transforms,
 		// old IOS, Android and Opera mobile. Blackberry seems to work fine, even older models.
 		var oldPhone = _features.isOldIOSPhone || _features.isOldAndroid || _features.isMobileOpera;
 		if(!_features.animationName || !_features.transform || oldPhone) {
@@ -857,7 +857,7 @@ var publicMethods = {
 		for(i = 0; i < _modules.length; i++) {
 			self['init' + _modules[i]]();
 		}
-		
+
 		// init
 		if(UiClass) {
 			var ui = self.ui = new UiClass(self, framework);
@@ -872,11 +872,11 @@ var publicMethods = {
 		}
 		self.currItem = _getItemAt( _currentItemIndex );
 
-		
+
 		if(_features.isOldIOSPhone || _features.isOldAndroid) {
 			_isFixedPosition = false;
 		}
-		
+
 		template.setAttribute('aria-hidden', 'false');
 		if(_options.modal) {
 			if(!_isFixedPosition) {
@@ -891,7 +891,7 @@ var publicMethods = {
 			_shout('initialLayout');
 			_currentWindowScrollY = _initalWindowScrollY = framework.getScrollY();
 		}
-		
+
 		// add classes to root element of PhotoSwipe
 		var rootClasses = 'pswp--open ';
 		if(_options.mainClass) {
@@ -916,7 +916,7 @@ var publicMethods = {
 
 		if(!_oldIE) {
 			framework.bind(self.scrollWrap, _downEvents, self); // no dragging for old IE
-		}	
+		}
 
 		_listen('initialZoomInEnd', function() {
 			self.setContent(_itemHolders[0], _currentItemIndex-1);
@@ -925,19 +925,19 @@ var publicMethods = {
 			_itemHolders[0].el.style.display = _itemHolders[2].el.style.display = 'block';
 
 			if(_options.focus) {
-				// focus causes layout, 
-				// which causes lag during the animation, 
+				// focus causes layout,
+				// which causes lag during the animation,
 				// that's why we delay it untill the initial zoom transition ends
 				template.focus();
 			}
-			 
+
 
 			_bindEvents();
 		});
 
 		// set content for center slide (first time)
 		self.setContent(_itemHolders[1], _currentItemIndex);
-		
+
 		self.updateCurrItem();
 
 		_shout('afterInit');
@@ -945,14 +945,14 @@ var publicMethods = {
 		if(!_isFixedPosition) {
 
 			// On all versions of iOS lower than 8.0, we check size of viewport every second.
-			// 
-			// This is done to detect when Safari top & bottom bars appear, 
-			// as this action doesn't trigger any events (like resize). 
-			// 
+			//
+			// This is done to detect when Safari top & bottom bars appear,
+			// as this action doesn't trigger any events (like resize).
+			//
 			// On iOS8 they fixed this.
-			// 
+			//
 			// 10 Nov 2014: iOS 7 usage ~40%. iOS 8 usage 56%.
-			
+
 			_updateSizeInterval = setInterval(function() {
 				if(!_numAnimations && !_isDragging && !_isZooming && (_currZoomLevel === self.currItem.initialZoomLevel)  ) {
 					self.updateSize();
@@ -984,7 +984,7 @@ var publicMethods = {
 		if(_showOrHideTimeout) {
 			clearTimeout(_showOrHideTimeout);
 		}
-		
+
 		template.setAttribute('aria-hidden', 'true');
 		template.className = _initalClassName;
 
@@ -1006,8 +1006,8 @@ var publicMethods = {
 
 	/**
 	 * Pan image to position
-	 * @param {Number} x     
-	 * @param {Number} y     
+	 * @param {Number} x
+	 * @param {Number} y
 	 * @param {Boolean} force Will ignore bounds if set to true.
 	 */
 	panTo: function(x,y,force) {
@@ -1024,12 +1024,12 @@ var publicMethods = {
 				y = _currPanBounds.max.y;
 			}
 		}
-		
+
 		_panOffset.x = x;
 		_panOffset.y = y;
 		_applyCurrentZoomPan();
 	},
-	
+
 	handleEvent: function (e) {
 		e = e || window.event;
 		if(_globalEventHandlers[e.type]) {
@@ -1048,9 +1048,9 @@ var publicMethods = {
 		_currentItemIndex = index;
 		self.currItem = _getItemAt( _currentItemIndex );
 		_currPositionIndex -= diff;
-		
+
 		_moveMainScroll(_slideSize.x * _currPositionIndex);
-		
+
 
 		_stopAllAnimations();
 		_mainScrollAnimating = false;
@@ -1081,8 +1081,8 @@ var publicMethods = {
 		} else {
 			_currZoomElementStyle = null;
 		}
-		
-		_currPanBounds = self.currItem.bounds;	
+
+		_currPanBounds = self.currItem.bounds;
 		_startZoomLevel = _currZoomLevel = self.currItem.initialZoomLevel;
 
 		_panOffset.x = _currPanBounds.center.x;
@@ -1119,7 +1119,7 @@ var publicMethods = {
 
 		self.currItem = _getItemAt( _currentItemIndex );
 		_renderMaxResolution = false;
-		
+
 		_shout('beforeChange', _indexDiff);
 
 		if(diffAbs >= NUM_HOLDERS) {
@@ -1142,7 +1142,7 @@ var publicMethods = {
 				_setTranslateX( _containerShiftIndex * _slideSize.x, tempHolder.el.style);
 				self.setContent(tempHolder, _currentItemIndex + diffAbs - i - 1 - 1);
 			}
-			
+
 		}
 
 		// reset zoom/pan on previous item
@@ -1152,7 +1152,7 @@ var publicMethods = {
 			if(prevItem.initialZoomLevel !== _currZoomLevel) {
 				_calculateItemSize(prevItem , _viewportSize );
 				_setImageSize(prevItem);
-				_applyZoomPanToItem( prevItem ); 				
+				_applyZoomPanToItem( prevItem );
 			}
 
 		}
@@ -1165,13 +1165,13 @@ var publicMethods = {
 		_prevItemIndex = _currentItemIndex;
 
 		_shout('afterChange');
-		
+
 	},
 
 
 
 	updateSize: function(force) {
-		
+
 		if(!_isFixedPosition && _options.modal) {
 			var windowScrollY = framework.getScrollY();
 			if(_currentWindowScrollY !== windowScrollY) {
@@ -1228,7 +1228,7 @@ var publicMethods = {
 				if( item && (_itemsNeedUpdate || item.needsUpdate || !item.bounds) ) {
 
 					self.cleanSlide( item );
-					
+
 					self.setContent( holder, hIndex );
 
 					// if "center" slide
@@ -1248,10 +1248,10 @@ var publicMethods = {
 					_setImageSize(item);
 					_applyZoomPanToItem( item );
 				}
-				
+
 			}
 			_itemsNeedUpdate = false;
-		}	
+		}
 
 		_startZoomLevel = _currZoomLevel = self.currItem.initialZoomLevel;
 		_currPanBounds = self.currItem.bounds;
@@ -1261,10 +1261,10 @@ var publicMethods = {
 			_panOffset.y = _currPanBounds.center.y;
 			_applyCurrentZoomPan( true );
 		}
-		
+
 		_shout('resize');
 	},
-	
+
 	// Zoom current item to
 	zoomTo: function(destZoomLevel, centerPoint, speed, easingFn, updateFn) {
 		/*
@@ -1330,7 +1330,7 @@ var publicMethods = {
 /*>>gestures*/
 /**
  * Mouse/touch/pointer event handlers.
- * 
+ *
  * separated from @core.js for readability
  */
 
@@ -1406,7 +1406,7 @@ var _gestureStartTime,
 	_canPan = function() {
 		return !(_options.scaleMode === 'fit' && _currZoomLevel ===  self.currItem.initialZoomLevel);
 	},
-	
+
 	// find the closest parent DOM element
 	_closestElement = function(el, fn) {
 	  	if(!el) {
@@ -1447,7 +1447,7 @@ var _gestureStartTime,
 		if(time - _gestureCheckSpeedTime > 50) {
 			var o = _posPoints.length > 2 ? _posPoints.shift() : {};
 			o.x = x;
-			o.y = y; 
+			o.y = y;
 			_posPoints.push(o);
 			_gestureCheckSpeedTime = time;
 		}
@@ -1458,7 +1458,7 @@ var _gestureStartTime,
 		return 1 -  Math.abs( yOffset / (_viewportSize.y / 2)  );
 	},
 
-	
+
 	// points pool, reused during touch events
 	_ePoint1 = {},
 	_ePoint2 = {},
@@ -1479,7 +1479,7 @@ var _gestureStartTime,
 						_tempPointsArr[1] = _convertTouchToPoint(e.touches[1], _ePoint2);
 					}
 				}
-				
+
 			} else {
 				_ePoint1.x = e.pageX;
 				_ePoint1.y = e.pageY;
@@ -1517,13 +1517,13 @@ var _gestureStartTime,
 		// calculate fdistance over the bounds and friction
 		if(newOffset > _currPanBounds.min[axis] || newOffset < _currPanBounds.max[axis]) {
 			panFriction = _options.panEndFriction;
-			// Linear increasing of friction, so at 1/4 of viewport it's at max value. 
+			// Linear increasing of friction, so at 1/4 of viewport it's at max value.
 			// Looks not as nice as was expected. Left for history.
 			// panFriction = (1 - (_panOffset[axis] + delta[axis] + panBounds.min[axis]) / (_viewportSize[axis] / 4) );
 		} else {
 			panFriction = 1;
 		}
-		
+
 		newOffset = _panOffset[axis] + delta[axis] * panFriction;
 
 		// move main scroll or start panning
@@ -1531,18 +1531,18 @@ var _gestureStartTime,
 
 
 			if(!_currZoomElementStyle) {
-				
+
 				newMainScrollPos = newMainScrollPosition;
 
 			} else if(_direction === 'h' && axis === 'x' && !_zoomStarted ) {
-				
+
 				if(dir) {
 					if(newOffset > _currPanBounds.min[axis]) {
 						panFriction = _options.panEndFriction;
 						overDiff = _currPanBounds.min[axis] - newOffset;
 						startOverDiff = _currPanBounds.min[axis] - _startPanOffset[axis];
 					}
-					
+
 					// drag right
 					if( (startOverDiff <= 0 || mainScrollDiff < 0) && _getNumItems() > 1 ) {
 						newMainScrollPos = newMainScrollPosition;
@@ -1553,7 +1553,7 @@ var _gestureStartTime,
 						if(_currPanBounds.min.x !== _currPanBounds.max.x) {
 							newPanPos = newOffset;
 						}
-						
+
 					}
 
 				} else {
@@ -1608,17 +1608,17 @@ var _gestureStartTime,
 		}
 
 		if(!_mainScrollAnimating) {
-			
+
 			if(!_mainScrollShifted) {
 				if(_currZoomLevel > self.currItem.fitRatio) {
 					_panOffset[axis] += delta[axis] * panFriction;
-				
+
 				}
 			}
 
-			
+
 		}
-		
+
 	},
 
 	// Pointerdown/touchstart/mousedown handler
@@ -1626,7 +1626,7 @@ var _gestureStartTime,
 
 		// Allow dragging only via left mouse button.
 		// As this handler is not added in IE8 - we ignore e.which
-		// 
+		//
 		// http://www.quirksmode.org/js/events_properties.html
 		// https://developer.mozilla.org/en-US/docs/Web/API/event.button
 		if(e.type === 'mousedown' && e.button > 0  ) {
@@ -1657,7 +1657,7 @@ var _gestureStartTime,
 			}
 			_currPointers[pointerIndex] = {x:e.pageX, y:e.pageY, id: e.pointerId};
 		}
-		
+
 
 
 		var startPointsList = _getTouchPoints(e),
@@ -1670,18 +1670,18 @@ var _gestureStartTime,
 		// init drag
 		if(!_isDragging || numPoints === 1) {
 
-			
+
 
 			_isDragging = _isFirstMove = true;
 			framework.bind(window, _upMoveEvents, self);
 
-			_isZoomingIn = 
-				_wasOverInitialZoom = 
-				_opacityChanged = 
-				_verticalDragInitiated = 
-				_mainScrollShifted = 
-				_moved = 
-				_isMultitouch = 
+			_isZoomingIn =
+				_wasOverInitialZoom =
+				_opacityChanged =
+				_verticalDragInitiated =
+				_mainScrollShifted =
+				_moved =
+				_isMultitouch =
 				_zoomStarted = false;
 
 			_direction = null;
@@ -1706,11 +1706,11 @@ var _gestureStartTime,
 
 			//_mainScrollAnimationEnd(true);
 			_calculatePanBounds( _currZoomLevel, true );
-			
+
 			// Start rendering
 			_stopDragUpdateLoop();
 			_dragUpdateLoop();
-			
+
 		}
 
 		// init zoom
@@ -1746,7 +1746,7 @@ var _gestureStartTime,
 			if(pointerIndex > -1) {
 				var p = _currPointers[pointerIndex];
 				p.x = e.pageX;
-				p.y = e.pageY; 
+				p.y = e.pageY;
 			}
 		}
 
@@ -1765,13 +1765,13 @@ var _gestureStartTime,
 						_currentPoints = touchesList;
 					}
 				}
-				
+
 			} else {
 				_currentPoints = touchesList;
 			}
-		}	
+		}
 	},
-	// 
+	//
 	_renderMovement =  function() {
 
 		if(!_currentPoints) {
@@ -1794,7 +1794,7 @@ var _gestureStartTime,
 
 			_currPoint.x = p.x;
 			_currPoint.y = p.y;
-		
+
 			// check if one of two points changed
 			if( !delta.x && !delta.y && _isEqualPoints(_currentPoints[1], p2) ) {
 				return;
@@ -1807,7 +1807,7 @@ var _gestureStartTime,
 				_zoomStarted = true;
 				_shout('zoomGestureStarted');
 			}
-			
+
 			// Distance between two points
 			var pointsDistance = _calculatePointsDistance(p,p2);
 
@@ -1824,7 +1824,7 @@ var _gestureStartTime,
 				maxZoomLevel = _getMaxZoomLevel();
 
 			if ( zoomLevel < minZoomLevel ) {
-				
+
 				if(_options.pinchToClose && !_wasOverInitialZoom && _startZoomLevel <= self.currItem.initialZoomLevel) {
 					// fade out background if zooming out
 					var minusDiff = minZoomLevel - zoomLevel;
@@ -1840,7 +1840,7 @@ var _gestureStartTime,
 					}
 					zoomLevel = minZoomLevel - zoomFriction * (minZoomLevel / 3);
 				}
-				
+
 			} else if ( zoomLevel > maxZoomLevel ) {
 				// 1.5 - extra zoom level above the max. E.g. if max is x6, real max 6 + 1.5 = 7.5
 				zoomFriction = (zoomLevel - maxZoomLevel) / ( minZoomLevel * 6 );
@@ -1859,7 +1859,7 @@ var _gestureStartTime,
 
 			// _centerPoint - The point in the middle of two pointers
 			_findCenterOfPoints(p, p2, _centerPoint);
-		
+
 			// paning with two pointers pressed
 			_currPanDist.x += _centerPoint.x - _currCenterPoint.x;
 			_currPanDist.y += _centerPoint.y - _currCenterPoint.y;
@@ -1883,12 +1883,12 @@ var _gestureStartTime,
 			if(_isFirstMove) {
 				_isFirstMove = false;
 
-				// subtract drag distance that was used during the detection direction  
+				// subtract drag distance that was used during the detection direction
 
 				if( Math.abs(delta.x) >= DIRECTION_CHECK_OFFSET) {
 					delta.x -= _currentPoints[0].x - _startPoint.x;
 				}
-				
+
 				if( Math.abs(delta.y) >= DIRECTION_CHECK_OFFSET) {
 					delta.y -= _currentPoints[0].y - _startPoint.y;
 				}
@@ -1922,7 +1922,7 @@ var _gestureStartTime,
 
 			_moved = true;
 			_currPanBounds = self.currItem.bounds;
-			
+
 			var mainScrollChanged = _panOrMoveMainScroll('x', delta);
 			if(!mainScrollChanged) {
 				_panOrMoveMainScroll('y', delta);
@@ -1934,7 +1934,7 @@ var _gestureStartTime,
 		}
 
 	},
-	
+
 	// Pointerup/pointercancel/touchend/touchcancel/mouseup event handler
 	_onDragRelease = function(e) {
 
@@ -1944,7 +1944,7 @@ var _gestureStartTime,
 				return;
 			}
 
-			// on Android (v4.1, 4.2, 4.3 & possibly older) 
+			// on Android (v4.1, 4.2, 4.3 & possibly older)
 			// ghost mousedown/up event isn't preventable via e.preventDefault,
 			// which causes fake mousedown event
 			// so we block mousedown/up for 600ms
@@ -1954,7 +1954,7 @@ var _gestureStartTime,
 					_oldAndroidTouchEndTimeout = 0;
 				}, 600);
 			}
-			
+
 		}
 
 		_shout('pointerUp');
@@ -1967,7 +1967,7 @@ var _gestureStartTime,
 
 		if(_pointerEventEnabled) {
 			var pointerIndex = framework.arraySearch(_currPointers, e.pointerId, 'id');
-			
+
 			if(pointerIndex > -1) {
 				releasePoint = _currPointers.splice(pointerIndex, 1)[0];
 
@@ -1976,7 +1976,7 @@ var _gestureStartTime,
 				} else {
 					var MSPOINTER_TYPES = {
 						4: 'mouse', // event.MSPOINTER_TYPE_MOUSE
-						2: 'touch', // event.MSPOINTER_TYPE_TOUCH 
+						2: 'touch', // event.MSPOINTER_TYPE_TOUCH
 						3: 'pen' // event.MSPOINTER_TYPE_PEN
 					};
 					releasePoint.type = MSPOINTER_TYPES[e.pointerType];
@@ -2006,7 +2006,7 @@ var _gestureStartTime,
 		// if second pointer released
 		if(numPoints === 1) {
 			_equalizePoints(_startPoint, touchList[0]);
-		}				
+		}
 
 
 		// pointer hasn't moved, send "tap release" point
@@ -2016,7 +2016,7 @@ var _gestureStartTime,
 					releasePoint = {x: e.pageX, y: e.pageY, type:'mouse'};
 				} else if(e.changedTouches && e.changedTouches[0]) {
 					releasePoint = {x: e.changedTouches[0].pageX, y: e.changedTouches[0].pageY, type:'touch'};
-				}		
+				}
 			}
 
 			_shout('touchRelease', e, releasePoint);
@@ -2040,7 +2040,7 @@ var _gestureStartTime,
 			}
 		}
 		_lastReleaseTime = numPoints === 1 ? _getCurrentTime() : -1;
-		
+
 		if(releaseTimeDiff !== -1 && releaseTimeDiff < 150) {
 			gestureType = 'zoom';
 		} else {
@@ -2062,14 +2062,14 @@ var _gestureStartTime,
 			// nothing to animate
 			return;
 		}
-	
+
 		_stopAllAnimations();
 
-		
+
 		if(!_releaseAnimData) {
 			_releaseAnimData = _initDragReleaseAnimationData();
 		}
-		
+
 		_releaseAnimData.calculateSwipeSpeed('x');
 
 
@@ -2084,7 +2084,7 @@ var _gestureStartTime,
 					initialBgOpacity = _bgOpacity;
 
 				_animateProp('verticalDrag', 0, 1, 300, framework.easing.cubic.out, function(now) {
-					
+
 					_panOffset.y = (self.currItem.initialPosition.y - initalPanY) * now + initalPanY;
 
 					_applyBgOpacity(  (1 - initialBgOpacity) * now + initialBgOpacity );
@@ -2098,7 +2098,7 @@ var _gestureStartTime,
 		}
 
 
-		// main scroll 
+		// main scroll
 		if(  (_mainScrollShifted || _mainScrollAnimating) && numPoints === 0) {
 			var itemChanged = _finishSwipeMainScrollGesture(gestureType, _releaseAnimData);
 			if(itemChanged) {
@@ -2111,13 +2111,13 @@ var _gestureStartTime,
 		if(_mainScrollAnimating) {
 			return;
 		}
-		
-		// Complete simple zoom gesture (reset zoom level if it's out of the bounds)  
+
+		// Complete simple zoom gesture (reset zoom level if it's out of the bounds)
 		if(gestureType !== 'swipe') {
 			_completeZoomGesture();
 			return;
 		}
-	
+
 		// Complete pan gesture if main scroll is not shifted, and it's possible to pan current image
 		if(!_mainScrollShifted && _currZoomLevel > self.currItem.fitRatio) {
 			_completePanGesture(_releaseAnimData);
@@ -2145,7 +2145,7 @@ var _gestureStartTime,
 			backAnimDestination: {},
 			backAnimStarted: {},
 			calculateSwipeSpeed: function(axis) {
-				
+
 
 				if( _posPoints.length > 1) {
 					lastFlickDuration = _getCurrentTime() - _gestureCheckSpeedTime + 50;
@@ -2164,7 +2164,7 @@ var _gestureStartTime,
 				if( Math.abs(s.lastFlickSpeed[axis]) < 0.1 ) {
 					s.lastFlickSpeed[axis] = 0;
 				}
-				
+
 				s.slowDownRatio[axis] = 0.95;
 				s.slowDownRatioReverse[axis] = 1 - s.slowDownRatio[axis];
 				s.speedDecelerationRatio[axis] = 1;
@@ -2175,7 +2175,7 @@ var _gestureStartTime,
 
 					if(_panOffset[axis] > _currPanBounds.min[axis]) {
 						s.backAnimDestination[axis] = _currPanBounds.min[axis];
-						
+
 					} else if(_panOffset[axis] < _currPanBounds.max[axis]) {
 						s.backAnimDestination[axis] = _currPanBounds.max[axis];
 					}
@@ -2188,10 +2188,10 @@ var _gestureStartTime,
 							s.lastFlickSpeed[axis] = 0;
 							s.backAnimStarted[axis] = true;
 
-							_animateProp('bounceZoomPan'+axis,_panOffset[axis], 
-								s.backAnimDestination[axis], 
-								speed || 300, 
-								framework.easing.sine.out, 
+							_animateProp('bounceZoomPan'+axis,_panOffset[axis],
+								s.backAnimDestination[axis],
+								speed || 300,
+								framework.easing.sine.out,
 								function(pos) {
 									_panOffset[axis] = pos;
 									_applyCurrentZoomPan();
@@ -2206,8 +2206,8 @@ var _gestureStartTime,
 			// Reduces the speed by slowDownRatio (per 10ms)
 			calculateAnimOffset: function(axis) {
 				if(!s.backAnimStarted[axis]) {
-					s.speedDecelerationRatio[axis] = s.speedDecelerationRatio[axis] * (s.slowDownRatio[axis] + 
-												s.slowDownRatioReverse[axis] - 
+					s.speedDecelerationRatio[axis] = s.speedDecelerationRatio[axis] * (s.slowDownRatio[axis] +
+												s.slowDownRatioReverse[axis] -
 												s.slowDownRatioReverse[axis] * s.timeDiff / 10);
 
 					s.speedDecelerationRatioAbs[axis] = Math.abs(s.lastFlickSpeed[axis] * s.speedDecelerationRatio[axis]);
@@ -2224,12 +2224,12 @@ var _gestureStartTime,
 					s.now = _getCurrentTime();
 					s.timeDiff = s.now - s.lastNow;
 					s.lastNow = s.now;
-					
+
 					s.calculateAnimOffset('x');
 					s.calculateAnimOffset('y');
 
 					_applyCurrentZoomPan();
-					
+
 					s.calculateOverBoundsAnimOffset('x');
 					s.calculateOverBoundsAnimOffset('y');
 
@@ -2240,7 +2240,7 @@ var _gestureStartTime,
 						_panOffset.x = Math.round(_panOffset.x);
 						_panOffset.y = Math.round(_panOffset.y);
 						_applyCurrentZoomPan();
-						
+
 						_stopAnimation('zoomPan');
 						return;
 					}
@@ -2256,7 +2256,7 @@ var _gestureStartTime,
 		animData.calculateSwipeSpeed('y');
 
 		_currPanBounds = self.currItem.bounds;
-		
+
 		animData.backAnimDestination = {};
 		animData.backAnimStarted = {};
 
@@ -2284,20 +2284,20 @@ var _gestureStartTime,
 		}
 
 
-		
+
 		var itemsDiff;
 
 		if(gestureType === 'swipe') {
 			var totalShiftDist = _currPoint.x - _startPoint.x,
 				isFastLastFlick = _releaseAnimData.lastFlickDist.x < 10;
 
-			// if container is shifted for more than MIN_SWIPE_DISTANCE, 
+			// if container is shifted for more than MIN_SWIPE_DISTANCE,
 			// and last flick gesture was in right direction
-			if(totalShiftDist > MIN_SWIPE_DISTANCE && 
+			if(totalShiftDist > MIN_SWIPE_DISTANCE &&
 				(isFastLastFlick || _releaseAnimData.lastFlickOffset.x > 20) ) {
 				// go to prev item
 				itemsDiff = -1;
-			} else if(totalShiftDist < -MIN_SWIPE_DISTANCE && 
+			} else if(totalShiftDist < -MIN_SWIPE_DISTANCE &&
 				(isFastLastFlick || _releaseAnimData.lastFlickOffset.x < -20) ) {
 				// go to next item
 				itemsDiff = 1;
@@ -2307,7 +2307,7 @@ var _gestureStartTime,
 		var nextCircle;
 
 		if(itemsDiff) {
-			
+
 			_currentItemIndex += itemsDiff;
 
 			if(_currentItemIndex < 0) {
@@ -2323,9 +2323,9 @@ var _gestureStartTime,
 				_currPositionIndex -= itemsDiff;
 				itemChanged = true;
 			}
-			
 
-			
+
+
 		}
 
 		var animateToX = _slideSize.x * _currPositionIndex;
@@ -2335,10 +2335,10 @@ var _gestureStartTime,
 
 		if(!itemChanged && animateToX > _mainScrollPos.x !== _releaseAnimData.lastFlickSpeed.x > 0) {
 			// "return to current" duration, e.g. when dragging from slide 0 to -1
-			finishAnimDuration = 333; 
+			finishAnimDuration = 333;
 		} else {
-			finishAnimDuration = Math.abs(_releaseAnimData.lastFlickSpeed.x) > 0 ? 
-									animateToDist / Math.abs(_releaseAnimData.lastFlickSpeed.x) : 
+			finishAnimDuration = Math.abs(_releaseAnimData.lastFlickSpeed.x) > 0 ?
+									animateToDist / Math.abs(_releaseAnimData.lastFlickSpeed.x) :
 									333;
 
 			finishAnimDuration = Math.min(finishAnimDuration, 400);
@@ -2348,22 +2348,22 @@ var _gestureStartTime,
 		if(_currZoomedItemIndex === _currentItemIndex) {
 			itemChanged = false;
 		}
-		
+
 		_mainScrollAnimating = true;
-		
+
 		_shout('mainScrollAnimStart');
 
-		_animateProp('mainScroll', _mainScrollPos.x, animateToX, finishAnimDuration, framework.easing.cubic.out, 
+		_animateProp('mainScroll', _mainScrollPos.x, animateToX, finishAnimDuration, framework.easing.cubic.out,
 			_moveMainScroll,
 			function() {
 				_stopAllAnimations();
 				_mainScrollAnimating = false;
 				_currZoomedItemIndex = -1;
-				
+
 				if(itemChanged || _currZoomedItemIndex !== _currentItemIndex) {
 					self.updateCurrItem();
 				}
-				
+
 				_shout('mainScrollAnimComplete');
 			}
 		);
@@ -2446,7 +2446,7 @@ _registerModule('Gestures', {
 				addEventNames('touch', 'start', 'move', 'end', 'cancel');
 				_likelyTouchDevice = true;
 			} else {
-				addEventNames('mouse', 'down', 'move', 'up');	
+				addEventNames('mouse', 'down', 'move', 'up');
 			}
 
 			_upMoveEvents = _dragMoveEvent + ' ' + _dragEndEvent  + ' ' +  _dragCancelEvent;
@@ -2456,8 +2456,8 @@ _registerModule('Gestures', {
 				_likelyTouchDevice = (navigator.maxTouchPoints > 1) || (navigator.msMaxTouchPoints > 1);
 			}
 			// make variable public
-			self.likelyTouchDevice = _likelyTouchDevice; 
-			
+			self.likelyTouchDevice = _likelyTouchDevice;
+
 			_globalEventHandlers[_dragStartEvent] = _onDragStart;
 			_globalEventHandlers[_dragMoveEvent] = _onDragMove;
 			_globalEventHandlers[_dragEndEvent] = _onDragRelease; // the Kraken
@@ -2496,7 +2496,7 @@ _registerModule('Gestures', {
  * If you're not planning to use transition for gallery at all,
  * you may set options hideAnimationDuration and showAnimationDuration to 0,
  * and just delete startAnimation function.
- * 
+ *
  */
 
 
@@ -2509,10 +2509,10 @@ var _showOrHideTimeout,
 
 		_initialZoomRunning = true;
 		_initialContentSet = true;
-		
+
 		// dimensions of small thumbnail {x:,y:,w:}.
 		// Height is optional, as calculated based on large image.
-		var thumbBounds; 
+		var thumbBounds;
 		if(item.initialLayout) {
 			thumbBounds = item.initialLayout;
 			item.initialLayout = null;
@@ -2568,7 +2568,7 @@ var _showOrHideTimeout,
 		var startAnimation = function() {
 			var closeWithRaf = _closedByScroll,
 				fadeEverything = !self.currItem.src || self.currItem.loadError || _options.showHideOpacity;
-			
+
 			// apply hw-acceleration to image
 			if(item.miniImg) {
 				item.miniImg.style.webkitBackfaceVisibility = 'hidden';
@@ -2584,7 +2584,7 @@ var _showOrHideTimeout,
 			}
 
 			_registerStartAnimation('initialZoom');
-			
+
 			if(out && !closeWithRaf) {
 				framework.removeClass(template, 'pswp--animated-in');
 			}
@@ -2602,15 +2602,15 @@ var _showOrHideTimeout,
 			_showOrHideTimeout = setTimeout(function() {
 
 				_shout('initialZoom' + (out ? 'Out' : 'In') );
-				
+
 
 				if(!out) {
 
 					// "in" animation always uses CSS transitions (instead of rAF).
-					// CSS transition work faster here, 
-					// as developer may also want to animate other things, 
+					// CSS transition work faster here,
+					// as developer may also want to animate other things,
 					// like ui on top of sliding area, which can be animated just via CSS
-					
+
 					_currZoomLevel = item.initialZoomLevel;
 					_equalizePoints(_panOffset,  item.initialPosition );
 					_applyCurrentZoomPan();
@@ -2634,7 +2634,7 @@ var _showOrHideTimeout,
 						initialZoomLevel = _currZoomLevel,
 						initalBgOpacity = _bgOpacity,
 						onUpdate = function(now) {
-							
+
 							if(now === 1) {
 								_currZoomLevel = destZoomLevel;
 								_panOffset.x = thumbBounds.x;
@@ -2644,7 +2644,7 @@ var _showOrHideTimeout,
 								_panOffset.x = (thumbBounds.x - initialPanOffset.x) * now + initialPanOffset.x;
 								_panOffset.y = (thumbBounds.y - _currentWindowScrollY - initialPanOffset.y) * now + initialPanOffset.y;
 							}
-							
+
 							_applyCurrentZoomPan();
 							if(fadeEverything) {
 								template.style.opacity = 1 - now;
@@ -2660,14 +2660,14 @@ var _showOrHideTimeout,
 						_showOrHideTimeout = setTimeout(onComplete, duration + 20);
 					}
 				}
-			
+
 			}, out ? 25 : 90); // Main purpose of this delay is to give browser time to paint and
 					// create composite layers of PhotoSwipe UI parts (background, controls, caption, arrows).
 					// Which avoids lag at the beginning of scale transition.
 		};
 		startAnimation();
 
-		
+
 	};
 
 /*>>show-hide-transition*/
@@ -2676,7 +2676,7 @@ var _showOrHideTimeout,
 /**
 *
 * Controller manages gallery items, their dimensions, and their content.
-* 
+*
 */
 
 var _items,
@@ -2700,8 +2700,8 @@ var _getItemAt,
 	_initialIsLoop,
 	_getZeroBounds = function() {
 		return {
-			center:{x:0,y:0}, 
-			max:{x:0,y:0}, 
+			center:{x:0,y:0},
+			max:{x:0,y:0},
 			min:{x:0,y:0}
 		};
 	},
@@ -2713,14 +2713,14 @@ var _getItemAt,
 		bounds.center.y = Math.round((_tempPanAreaSize.y - realPanElementH) / 2) + item.vGap.top;
 
 		// maximum pan position
-		bounds.max.x = (realPanElementW > _tempPanAreaSize.x) ? 
-							Math.round(_tempPanAreaSize.x - realPanElementW) : 
+		bounds.max.x = (realPanElementW > _tempPanAreaSize.x) ?
+							Math.round(_tempPanAreaSize.x - realPanElementW) :
 							bounds.center.x;
-		
-		bounds.max.y = (realPanElementH > _tempPanAreaSize.y) ? 
-							Math.round(_tempPanAreaSize.y - realPanElementH) + item.vGap.top : 
+
+		bounds.max.y = (realPanElementH > _tempPanAreaSize.y) ?
+							Math.round(_tempPanAreaSize.y - realPanElementH) + item.vGap.top :
 							bounds.center.y;
-		
+
 		// minimum pan position
 		bounds.min.x = (realPanElementW > _tempPanAreaSize.x) ? 0 : bounds.center.x;
 		bounds.min.y = (realPanElementH > _tempPanAreaSize.y) ? item.vGap.top : bounds.center.y;
@@ -2729,7 +2729,7 @@ var _getItemAt,
 
 		if (item.src && !item.loadError) {
 			var isInitial = !zoomLevel;
-			
+
 			if(isInitial) {
 				if(!item.vGap) {
 					item.vGap = {top:0,bottom:0};
@@ -2762,10 +2762,10 @@ var _getItemAt,
 				}
 
 				item.initialZoomLevel = zoomLevel;
-				
+
 				if(!item.bounds) {
 					// reuse bounds object
-					item.bounds = _getZeroBounds(); 
+					item.bounds = _getZeroBounds();
 				}
 			}
 
@@ -2792,11 +2792,11 @@ var _getItemAt,
 		return false;
 	},
 
-	
+
 
 
 	_appendImage = function(index, item, baseDiv, img, preventAnimation, keepPlaceholder) {
-		
+
 
 		if(item.loadError) {
 			return;
@@ -2806,7 +2806,7 @@ var _getItemAt,
 
 			item.imageAppended = true;
 			_setImageSize(item, img);
-			
+
 			baseDiv.appendChild(img);
 
 			if(keepPlaceholder) {
@@ -2819,7 +2819,7 @@ var _getItemAt,
 			}
 		}
 	},
-	
+
 
 
 	_preloadImage = function(item) {
@@ -2842,7 +2842,7 @@ var _getItemAt,
 		img.onerror = function() {
 			item.loadError = true;
 			onComplete();
-		};		
+		};
 
 		img.src = item.src;// + '?a=' + Math.random();
 
@@ -2857,7 +2857,7 @@ var _getItemAt,
 
 			item.container.innerHTML = _options.errorMsg.replace('%url%',  item.src );
 			return true;
-			
+
 		}
 	},
 	_setImageSize = function(item, img, maxRes) {
@@ -2871,7 +2871,7 @@ var _getItemAt,
 
 		var w = maxRes ? item.w : Math.round(item.w * item.fitRatio),
 			h = maxRes ? item.h : Math.round(item.h * item.fitRatio);
-		
+
 		if(item.placeholder && !item.loaded) {
 			item.placeholder.style.width = w + 'px';
 			item.placeholder.style.height = h + 'px';
@@ -2894,7 +2894,7 @@ var _getItemAt,
 			_imagesToAppendPool = [];
 		}
 	};
-	
+
 
 
 _registerModule('Controller', {
@@ -2962,7 +2962,7 @@ _registerModule('Controller', {
 					item = _items[i];
 					// remove reference to DOM elements, for GC
 					if(item.container) {
-						item.container = null; 
+						item.container = null;
 					}
 					if(item.placeholder) {
 						item.placeholder = null;
@@ -2990,17 +2990,17 @@ _registerModule('Controller', {
 		},
 
 		allowProgressiveImg: function() {
-			// 1. Progressive image loading isn't working on webkit/blink 
+			// 1. Progressive image loading isn't working on webkit/blink
 			//    when hw-acceleration (e.g. translateZ) is applied to IMG element.
 			//    That's why in PhotoSwipe parent element gets zoom transform, not image itself.
-			//    
+			//
 			// 2. Progressive image loading sometimes blinks in webkit/blink when applying animation to parent element.
 			//    That's why it's disabled on touch devices (mainly because of swipe transition)
-			//    
+			//
 			// 3. Progressive image loading sometimes doesn't work in IE (up to 11).
 
 			// Don't allow progressive loading on non-large touch devices
-			return _options.forceProgressiveLoading || !_likelyTouchDevice || _options.mouseUsed || screen.width > 1200; 
+			return _options.forceProgressiveLoading || !_likelyTouchDevice || _options.mouseUsed || screen.width > 1200;
 			// 1200 - to eliminate touch devices with large screen (like Chromebook Pixel)
 		},
 
@@ -3014,10 +3014,10 @@ _registerModule('Controller', {
 			if(prevItem) {
 				prevItem.container = null;
 			}
-	
+
 			var item = self.getItemAt(index),
 				img;
-			
+
 			if(!item) {
 				holder.el.innerHTML = '';
 				return;
@@ -3030,9 +3030,9 @@ _registerModule('Controller', {
 			holder.item = item;
 
 			// base container DIV is created only once for each of 3 holders
-			var baseDiv = item.container = framework.createEl('pswp__zoom-wrap'); 
+			var baseDiv = item.container = framework.createEl('pswp__zoom-wrap');
 
-			
+
 
 			if(!item.src && item.html) {
 				if(item.html.tagName) {
@@ -3045,7 +3045,7 @@ _registerModule('Controller', {
 			_checkForError(item);
 
 			_calculateItemSize(item, _viewportSize);
-			
+
 			if(item.src && !item.loadError && !item.loaded) {
 
 				item.loadComplete = function(item) {
@@ -3097,24 +3097,24 @@ _registerModule('Controller', {
 				};
 
 				if(framework.features.transform) {
-					
-					var placeholderClassName = 'pswp__img pswp__img--placeholder'; 
+
+					var placeholderClassName = 'pswp__img pswp__img--placeholder';
 					placeholderClassName += (item.msrc ? '' : ' pswp__img--placeholder--blank');
 
 					var placeholder = framework.createEl(placeholderClassName, item.msrc ? 'img' : '');
 					if(item.msrc) {
 						placeholder.src = item.msrc;
 					}
-					
+
 					_setImageSize(item, placeholder);
 
 					baseDiv.appendChild(placeholder);
 					item.placeholder = placeholder;
 
 				}
-				
 
-				
+
+
 
 				if(!item.loading) {
 					_preloadImage(item);
@@ -3125,17 +3125,17 @@ _registerModule('Controller', {
 					// just append image
 					if(!_initialContentSet && _features.transform) {
 						_imagesToAppendPool.push({
-							item:item, 
-							baseDiv:baseDiv, 
-							img:item.img, 
-							index:index, 
+							item:item,
+							baseDiv:baseDiv,
+							img:item.img,
+							index:index,
 							holder:holder
 						});
 					} else {
 						_appendImage(index, item, baseDiv, item.img, true, true);
 					}
 				}
-				
+
 			} else if(item.src && !item.loadError) {
 				// image object is created every time, due to bugs of image loading & delay when switching images
 				img = framework.createEl('pswp__img', 'img');
@@ -3144,7 +3144,7 @@ _registerModule('Controller', {
 				_setImageSize(item, img);
 				_appendImage(index, item, baseDiv, img, true);
 			}
-			
+
 
 			if(!_initialContentSet && index === _currentItemIndex) {
 				_currZoomElementStyle = baseDiv.style;
@@ -3174,17 +3174,17 @@ _registerModule('Controller', {
  * tap.js:
  *
  * Displatches tap and double-tap events.
- * 
+ *
  */
 
 var tapTimer,
 	tapReleasePoint = {},
-	_dispatchTapEvent = function(origEvent, releasePoint, pointerType) {		
+	_dispatchTapEvent = function(origEvent, releasePoint, pointerType) {
 		var e = document.createEvent( 'CustomEvent' ),
 			eDetail = {
-				origEvent:origEvent, 
-				target:origEvent.target, 
-				releasePoint: releasePoint, 
+				origEvent:origEvent,
+				target:origEvent.target,
+				releasePoint: releasePoint,
 				pointerType:pointerType || 'touch'
 			};
 
@@ -3260,11 +3260,11 @@ _registerModule('Tap', {
  * - Manages "dragging", "zoomed-in", "zoom-out" classes.
  *   (which are used for cursors and zoom icon)
  * - Adds toggleDesktopZoom function.
- * 
+ *
  */
 
 var _wheelDelta;
-	
+
 _registerModule('DesktopZoom', {
 
 	publicMethods: {
@@ -3293,7 +3293,7 @@ _registerModule('DesktopZoom', {
 			_wheelDelta = {};
 
 			var events = 'wheel mousewheel DOMMouseScroll';
-			
+
 			_listen('bindEvents', function() {
 				framework.bind(template, events,  self.handleMouseWheel);
 			});
@@ -3339,7 +3339,7 @@ _registerModule('DesktopZoom', {
 			if(!onInit) {
 				updateZoomable();
 			}
-			
+
 		},
 
 		handleMouseWheel: function(e) {
@@ -3413,7 +3413,7 @@ _registerModule('DesktopZoom', {
 
 			var doubleTapZoomLevel = _options.getDoubleTapZoom(true, self.currItem);
 			var zoomOut = _currZoomLevel === doubleTapZoomLevel;
-			
+
 			self.mouseZoomedIn = !zoomOut;
 
 			self.zoomTo(zoomOut ? self.currItem.initialZoomLevel : doubleTapZoomLevel, centerPoint, 333);
@@ -3432,12 +3432,12 @@ _registerModule('DesktopZoom', {
  * history.js:
  *
  * - Back button to close gallery.
- * 
+ *
  * - Unique URL for each slide: example.com/&pid=1&gid=3
  *   (where PID is picture index, and GID and gallery index)
- *   
+ *
  * - Switch URL when slides change.
- * 
+ *
  */
 
 
@@ -3489,7 +3489,7 @@ var _historyUpdateTimeout,
 			if(!vars[i]) {
 				continue;
 			}
-			var pair = vars[i].split('=');	
+			var pair = vars[i].split('=');
 			if(pair.length < 2) {
 				continue;
 			}
@@ -3526,7 +3526,7 @@ var _historyUpdateTimeout,
 			_hashAnimCheckTimeout = setTimeout(_updateHash, 500);
 			return;
 		}
-		
+
 		if(_hashChangedByScript) {
 			clearTimeout(_hashChangeTimeout);
 		} else {
@@ -3564,8 +3564,8 @@ var _historyUpdateTimeout,
 				_windowLoc.hash = newHash;
 			}
 		}
-		
-		
+
+
 
 		_historyChanged = true;
 		_hashChangeTimeout = setTimeout(function() {
@@ -3575,11 +3575,11 @@ var _historyUpdateTimeout,
 
 
 
-	
+
 
 _registerModule('History', {
 
-	
+
 
 	publicMethods: {
 		initHistory: function() {
@@ -3603,7 +3603,7 @@ _registerModule('History', {
 				_initialHash = _initialHash.split('&gid=')[0];
 				_initialHash = _initialHash.split('?gid=')[0];
 			}
-			
+
 
 			_listen('afterChange', self.updateURL);
 			_listen('unbindEvents', function() {
@@ -3631,7 +3631,7 @@ _registerModule('History', {
 							}
 						}
 					}
-					
+
 				}
 
 				_cleanHistoryTimeouts();
@@ -3654,9 +3654,9 @@ _registerModule('History', {
 				_currentItemIndex = _parseItemIndexFromURL().pid;
 			});
 
-			
 
-			
+
+
 			var index = _initialHash.indexOf('pid=');
 			if(index > -1) {
 				_initialHash = _initialHash.substring(0, index);
@@ -3664,14 +3664,14 @@ _registerModule('History', {
 					_initialHash = _initialHash.slice(0, -1);
 				}
 			}
-			
+
 
 			setTimeout(function() {
 				if(_isOpen) { // hasn't destroyed yet
 					framework.bind(window, 'hashchange', self.onHashChange);
 				}
 			}, 40);
-			
+
 		},
 		onHashChange: function() {
 
@@ -3687,15 +3687,15 @@ _registerModule('History', {
 				self.goTo( _parseItemIndexFromURL().pid );
 				_hashChangedByHistory = false;
 			}
-			
+
 		},
 		updateURL: function() {
 
-			// Delay the update of URL, to avoid lag during transition, 
+			// Delay the update of URL, to avoid lag during transition,
 			// and to not to trigger actions like "refresh page sound" or "blinking favicon" to often
-			
+
 			_cleanHistoryTimeouts();
-			
+
 
 			if(_hashChangedByHistory) {
 				return;
@@ -3707,7 +3707,7 @@ _registerModule('History', {
 				_historyUpdateTimeout = setTimeout(_updateHash, 800);
 			}
 		}
-	
+
 	}
 });
 
@@ -3715,4 +3715,867 @@ _registerModule('History', {
 /*>>history*/
 	framework.extend(self, publicMethods); };
 	return PhotoSwipe;
+});
+
+
+
+/*! PhotoSwipe Default UI - 4.1.0 - 2015-07-11
+* http://photoswipe.com
+* Copyright (c) 2015 Dmitry Semenov; */
+/**
+*
+* UI on top of main sliding area (caption, arrows, close button, etc.).
+* Built just using public methods/properties of PhotoSwipe.
+*
+*/
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(factory);
+	} else if (typeof exports === 'object') {
+		module.exports = factory();
+	} else {
+		root.PhotoSwipeUI_Default = factory();
+	}
+})(this, function () {
+
+	'use strict';
+
+
+
+var PhotoSwipeUI_Default =
+ function(pswp, framework) {
+
+	var ui = this;
+	var _overlayUIUpdated = false,
+		_controlsVisible = true,
+		_fullscrenAPI,
+		_controls,
+		_captionContainer,
+		_fakeCaptionContainer,
+		_indexIndicator,
+		_shareButton,
+		_shareModal,
+		_shareModalHidden = true,
+		_initalCloseOnScrollValue,
+		_isIdle,
+		_listen,
+
+		_loadingIndicator,
+		_loadingIndicatorHidden,
+		_loadingIndicatorTimeout,
+
+		_galleryHasOneSlide,
+
+		_options,
+		_defaultUIOptions = {
+			barsSize: {top:44, bottom:'auto'},
+			closeElClasses: ['item', 'caption', 'zoom-wrap', 'ui', 'top-bar'],
+			timeToIdle: 4000,
+			timeToIdleOutside: 1000,
+			loadingIndicatorDelay: 1000, // 2s
+
+			addCaptionHTMLFn: function(item, captionEl /*, isFake */) {
+				if(!item.title) {
+					captionEl.children[0].innerHTML = '';
+					return false;
+				}
+				captionEl.children[0].innerHTML = item.title;
+				return true;
+			},
+
+			closeEl:true,
+			captionEl: true,
+			fullscreenEl: true,
+			zoomEl: true,
+			shareEl: true,
+			counterEl: true,
+			arrowEl: true,
+			preloaderEl: true,
+
+			tapToClose: false,
+			tapToToggleControls: true,
+
+			clickToCloseNonZoomable: true,
+
+			shareButtons: [
+				{id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+				{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+				{id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/'+
+													'?url={{url}}&media={{image_url}}&description={{text}}'},
+				{id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
+			],
+			getImageURLForShare: function( /* shareButtonData */ ) {
+				return pswp.currItem.src || '';
+			},
+			getPageURLForShare: function( /* shareButtonData */ ) {
+				return window.location.href;
+			},
+			getTextForShare: function( /* shareButtonData */ ) {
+				return pswp.currItem.title || '';
+			},
+
+			indexIndicatorSep: ' / '
+
+		},
+		_blockControlsTap,
+		_blockControlsTapTimeout;
+
+
+
+	var _onControlsTap = function(e) {
+			if(_blockControlsTap) {
+				return true;
+			}
+
+
+			e = e || window.event;
+
+			if(_options.timeToIdle && _options.mouseUsed && !_isIdle) {
+				// reset idle timer
+				_onIdleMouseMove();
+			}
+
+
+			var target = e.target || e.srcElement,
+				uiElement,
+				clickedClass = target.className,
+				found;
+
+			for(var i = 0; i < _uiElements.length; i++) {
+				uiElement = _uiElements[i];
+				if(uiElement.onTap && clickedClass.indexOf('pswp__' + uiElement.name ) > -1 ) {
+					uiElement.onTap();
+					found = true;
+
+				}
+			}
+
+			if(found) {
+				if(e.stopPropagation) {
+					e.stopPropagation();
+				}
+				_blockControlsTap = true;
+
+				// Some versions of Android don't prevent ghost click event
+				// when preventDefault() was called on touchstart and/or touchend.
+				//
+				// This happens on v4.3, 4.2, 4.1,
+				// older versions strangely work correctly,
+				// but just in case we add delay on all of them)
+				var tapDelay = framework.features.isOldAndroid ? 600 : 30;
+				_blockControlsTapTimeout = setTimeout(function() {
+					_blockControlsTap = false;
+				}, tapDelay);
+			}
+
+		},
+		_fitControlsInViewport = function() {
+			return !pswp.likelyTouchDevice || _options.mouseUsed || screen.width > 1200;
+		},
+		_togglePswpClass = function(el, cName, add) {
+			framework[ (add ? 'add' : 'remove') + 'Class' ](el, 'pswp__' + cName);
+		},
+
+		// add class when there is just one item in the gallery
+		// (by default it hides left/right arrows and 1ofX counter)
+		_countNumItems = function() {
+			var hasOneSlide = (_options.getNumItemsFn() === 1);
+
+			if(hasOneSlide !== _galleryHasOneSlide) {
+				_togglePswpClass(_controls, 'ui--one-slide', hasOneSlide);
+				_galleryHasOneSlide = hasOneSlide;
+			}
+		},
+		_toggleShareModalClass = function() {
+			_togglePswpClass(_shareModal, 'share-modal--hidden', _shareModalHidden);
+		},
+		_toggleShareModal = function() {
+
+			_shareModalHidden = !_shareModalHidden;
+
+
+			if(!_shareModalHidden) {
+				_toggleShareModalClass();
+				setTimeout(function() {
+					if(!_shareModalHidden) {
+						framework.addClass(_shareModal, 'pswp__share-modal--fade-in');
+					}
+				}, 30);
+			} else {
+				framework.removeClass(_shareModal, 'pswp__share-modal--fade-in');
+				setTimeout(function() {
+					if(_shareModalHidden) {
+						_toggleShareModalClass();
+					}
+				}, 300);
+			}
+
+			if(!_shareModalHidden) {
+				_updateShareURLs();
+			}
+			return false;
+		},
+
+		_openWindowPopup = function(e) {
+			e = e || window.event;
+			var target = e.target || e.srcElement;
+
+			pswp.shout('shareLinkClick', e, target);
+
+			if(!target.href) {
+				return false;
+			}
+
+			if( target.hasAttribute('download') ) {
+				return true;
+			}
+
+			window.open(target.href, 'pswp_share', 'scrollbars=yes,resizable=yes,toolbar=no,'+
+										'location=yes,width=550,height=420,top=100,left=' +
+										(window.screen ? Math.round(screen.width / 2 - 275) : 100)  );
+
+			if(!_shareModalHidden) {
+				_toggleShareModal();
+			}
+
+			return false;
+		},
+		_updateShareURLs = function() {
+			var shareButtonOut = '',
+				shareButtonData,
+				shareURL,
+				image_url,
+				page_url,
+				share_text;
+
+			for(var i = 0; i < _options.shareButtons.length; i++) {
+				shareButtonData = _options.shareButtons[i];
+
+				image_url = _options.getImageURLForShare(shareButtonData);
+				page_url = _options.getPageURLForShare(shareButtonData);
+				share_text = _options.getTextForShare(shareButtonData);
+
+				shareURL = shareButtonData.url.replace('{{url}}', encodeURIComponent(page_url) )
+									.replace('{{image_url}}', encodeURIComponent(image_url) )
+									.replace('{{raw_image_url}}', image_url )
+									.replace('{{text}}', encodeURIComponent(share_text) );
+
+				shareButtonOut += '<a href="' + shareURL + '" target="_blank" '+
+									'class="pswp__share--' + shareButtonData.id + '"' +
+									(shareButtonData.download ? 'download' : '') + '>' +
+									shareButtonData.label + '</a>';
+
+				if(_options.parseShareButtonOut) {
+					shareButtonOut = _options.parseShareButtonOut(shareButtonData, shareButtonOut);
+				}
+			}
+			_shareModal.children[0].innerHTML = shareButtonOut;
+			_shareModal.children[0].onclick = _openWindowPopup;
+
+		},
+		_hasCloseClass = function(target) {
+			for(var  i = 0; i < _options.closeElClasses.length; i++) {
+				if( framework.hasClass(target, 'pswp__' + _options.closeElClasses[i]) ) {
+					return true;
+				}
+			}
+		},
+		_idleInterval,
+		_idleTimer,
+		_idleIncrement = 0,
+		_onIdleMouseMove = function() {
+			clearTimeout(_idleTimer);
+			_idleIncrement = 0;
+			if(_isIdle) {
+				ui.setIdle(false);
+			}
+		},
+		_onMouseLeaveWindow = function(e) {
+			e = e ? e : window.event;
+			var from = e.relatedTarget || e.toElement;
+			if (!from || from.nodeName === 'HTML') {
+				clearTimeout(_idleTimer);
+				_idleTimer = setTimeout(function() {
+					ui.setIdle(true);
+				}, _options.timeToIdleOutside);
+			}
+		},
+		_setupFullscreenAPI = function() {
+			if(_options.fullscreenEl) {
+				if(!_fullscrenAPI) {
+					_fullscrenAPI = ui.getFullscreenAPI();
+				}
+				if(_fullscrenAPI) {
+					framework.bind(document, _fullscrenAPI.eventK, ui.updateFullscreen);
+					ui.updateFullscreen();
+					framework.addClass(pswp.template, 'pswp--supports-fs');
+				} else {
+					framework.removeClass(pswp.template, 'pswp--supports-fs');
+				}
+			}
+		},
+		_setupLoadingIndicator = function() {
+			// Setup loading indicator
+			if(_options.preloaderEl) {
+
+				_toggleLoadingIndicator(true);
+
+				_listen('beforeChange', function() {
+
+					clearTimeout(_loadingIndicatorTimeout);
+
+					// display loading indicator with delay
+					_loadingIndicatorTimeout = setTimeout(function() {
+
+						if(pswp.currItem && pswp.currItem.loading) {
+
+							if( !pswp.allowProgressiveImg() || (pswp.currItem.img && !pswp.currItem.img.naturalWidth)  ) {
+								// show preloader if progressive loading is not enabled,
+								// or image width is not defined yet (because of slow connection)
+								_toggleLoadingIndicator(false);
+								// items-controller.js function allowProgressiveImg
+							}
+
+						} else {
+							_toggleLoadingIndicator(true); // hide preloader
+						}
+
+					}, _options.loadingIndicatorDelay);
+
+				});
+				_listen('imageLoadComplete', function(index, item) {
+					if(pswp.currItem === item) {
+						_toggleLoadingIndicator(true);
+					}
+				});
+
+			}
+		},
+		_toggleLoadingIndicator = function(hide) {
+			if( _loadingIndicatorHidden !== hide ) {
+				_togglePswpClass(_loadingIndicator, 'preloader--active', !hide);
+				_loadingIndicatorHidden = hide;
+			}
+		},
+		_applyNavBarGaps = function(item) {
+			var gap = item.vGap;
+
+			if( _fitControlsInViewport() ) {
+
+				var bars = _options.barsSize;
+				if(_options.captionEl && bars.bottom === 'auto') {
+					if(!_fakeCaptionContainer) {
+						_fakeCaptionContainer = framework.createEl('pswp__caption pswp__caption--fake');
+						_fakeCaptionContainer.appendChild( framework.createEl('pswp__caption__center') );
+						_controls.insertBefore(_fakeCaptionContainer, _captionContainer);
+						framework.addClass(_controls, 'pswp__ui--fit');
+					}
+					if( _options.addCaptionHTMLFn(item, _fakeCaptionContainer, true) ) {
+
+						var captionSize = _fakeCaptionContainer.clientHeight;
+						gap.bottom = parseInt(captionSize,10) || 44;
+					} else {
+						gap.bottom = bars.top; // if no caption, set size of bottom gap to size of top
+					}
+				} else {
+					gap.bottom = bars.bottom === 'auto' ? 0 : bars.bottom;
+				}
+
+				// height of top bar is static, no need to calculate it
+				gap.top = bars.top;
+			} else {
+				gap.top = gap.bottom = 0;
+			}
+		},
+		_setupIdle = function() {
+			// Hide controls when mouse is used
+			if(_options.timeToIdle) {
+				_listen('mouseUsed', function() {
+
+					framework.bind(document, 'mousemove', _onIdleMouseMove);
+					framework.bind(document, 'mouseout', _onMouseLeaveWindow);
+
+					_idleInterval = setInterval(function() {
+						_idleIncrement++;
+						if(_idleIncrement === 2) {
+							ui.setIdle(true);
+						}
+					}, _options.timeToIdle / 2);
+				});
+			}
+		},
+		_setupHidingControlsDuringGestures = function() {
+
+			// Hide controls on vertical drag
+			_listen('onVerticalDrag', function(now) {
+				if(_controlsVisible && now < 0.95) {
+					ui.hideControls();
+				} else if(!_controlsVisible && now >= 0.95) {
+					ui.showControls();
+				}
+			});
+
+			// Hide controls when pinching to close
+			var pinchControlsHidden;
+			_listen('onPinchClose' , function(now) {
+				if(_controlsVisible && now < 0.9) {
+					ui.hideControls();
+					pinchControlsHidden = true;
+				} else if(pinchControlsHidden && !_controlsVisible && now > 0.9) {
+					ui.showControls();
+				}
+			});
+
+			_listen('zoomGestureEnded', function() {
+				pinchControlsHidden = false;
+				if(pinchControlsHidden && !_controlsVisible) {
+					ui.showControls();
+				}
+			});
+
+		};
+
+
+
+	var _uiElements = [
+		{
+			name: 'caption',
+			option: 'captionEl',
+			onInit: function(el) {
+				_captionContainer = el;
+			}
+		},
+		{
+			name: 'share-modal',
+			option: 'shareEl',
+			onInit: function(el) {
+				_shareModal = el;
+			},
+			onTap: function() {
+				_toggleShareModal();
+			}
+		},
+		{
+			name: 'button--share',
+			option: 'shareEl',
+			onInit: function(el) {
+				_shareButton = el;
+			},
+			onTap: function() {
+				_toggleShareModal();
+			}
+		},
+		{
+			name: 'button--zoom',
+			option: 'zoomEl',
+			onTap: pswp.toggleDesktopZoom
+		},
+		{
+			name: 'counter',
+			option: 'counterEl',
+			onInit: function(el) {
+				_indexIndicator = el;
+			}
+		},
+		{
+			name: 'button--close',
+			option: 'closeEl',
+			onTap: pswp.close
+		},
+		{
+			name: 'button--arrow--left',
+			option: 'arrowEl',
+			onTap: pswp.prev
+		},
+		{
+			name: 'button--arrow--right',
+			option: 'arrowEl',
+			onTap: pswp.next
+		},
+		{
+			name: 'button--fs',
+			option: 'fullscreenEl',
+			onTap: function() {
+				if(_fullscrenAPI.isFullscreen()) {
+					_fullscrenAPI.exit();
+				} else {
+					_fullscrenAPI.enter();
+				}
+			}
+		},
+		{
+			name: 'preloader',
+			option: 'preloaderEl',
+			onInit: function(el) {
+				_loadingIndicator = el;
+			}
+		}
+
+	];
+
+	var _setupUIElements = function() {
+		var item,
+			classAttr,
+			uiElement;
+
+		var loopThroughChildElements = function(sChildren) {
+			if(!sChildren) {
+				return;
+			}
+
+			var l = sChildren.length;
+			for(var i = 0; i < l; i++) {
+				item = sChildren[i];
+				classAttr = item.className;
+
+				for(var a = 0; a < _uiElements.length; a++) {
+					uiElement = _uiElements[a];
+
+					if(classAttr.indexOf('pswp__' + uiElement.name) > -1  ) {
+
+						if( _options[uiElement.option] ) { // if element is not disabled from options
+
+							framework.removeClass(item, 'pswp__element--disabled');
+							if(uiElement.onInit) {
+								uiElement.onInit(item);
+							}
+
+							//item.style.display = 'block';
+						} else {
+							framework.addClass(item, 'pswp__element--disabled');
+							//item.style.display = 'none';
+						}
+					}
+				}
+			}
+		};
+		loopThroughChildElements(_controls.children);
+
+		var topBar =  framework.getChildByClass(_controls, 'pswp__top-bar');
+		if(topBar) {
+			loopThroughChildElements( topBar.children );
+		}
+	};
+
+
+
+
+	ui.init = function() {
+
+		// extend options
+		framework.extend(pswp.options, _defaultUIOptions, true);
+
+		// create local link for fast access
+		_options = pswp.options;
+
+		// find pswp__ui element
+		_controls = framework.getChildByClass(pswp.scrollWrap, 'pswp__ui');
+
+		// create local link
+		_listen = pswp.listen;
+
+
+		_setupHidingControlsDuringGestures();
+
+		// update controls when slides change
+		_listen('beforeChange', ui.update);
+
+		// toggle zoom on double-tap
+		_listen('doubleTap', function(point) {
+			var initialZoomLevel = pswp.currItem.initialZoomLevel;
+			if(pswp.getZoomLevel() !== initialZoomLevel) {
+				pswp.zoomTo(initialZoomLevel, point, 333);
+			} else {
+				pswp.zoomTo(_options.getDoubleTapZoom(false, pswp.currItem), point, 333);
+			}
+		});
+
+		// Allow text selection in caption
+		_listen('preventDragEvent', function(e, isDown, preventObj) {
+			var t = e.target || e.srcElement;
+			if(
+				t &&
+				t.className && e.type.indexOf('mouse') > -1 &&
+				( t.className.indexOf('__caption') > 0 || (/(SMALL|STRONG|EM)/i).test(t.tagName) )
+			) {
+				preventObj.prevent = false;
+			}
+		});
+
+		// bind events for UI
+		_listen('bindEvents', function() {
+			framework.bind(_controls, 'pswpTap click', _onControlsTap);
+			framework.bind(pswp.scrollWrap, 'pswpTap', ui.onGlobalTap);
+
+			if(!pswp.likelyTouchDevice) {
+				framework.bind(pswp.scrollWrap, 'mouseover', ui.onMouseOver);
+			}
+		});
+
+		// unbind events for UI
+		_listen('unbindEvents', function() {
+			if(!_shareModalHidden) {
+				_toggleShareModal();
+			}
+
+			if(_idleInterval) {
+				clearInterval(_idleInterval);
+			}
+			framework.unbind(document, 'mouseout', _onMouseLeaveWindow);
+			framework.unbind(document, 'mousemove', _onIdleMouseMove);
+			framework.unbind(_controls, 'pswpTap click', _onControlsTap);
+			framework.unbind(pswp.scrollWrap, 'pswpTap', ui.onGlobalTap);
+			framework.unbind(pswp.scrollWrap, 'mouseover', ui.onMouseOver);
+
+			if(_fullscrenAPI) {
+				framework.unbind(document, _fullscrenAPI.eventK, ui.updateFullscreen);
+				if(_fullscrenAPI.isFullscreen()) {
+					_options.hideAnimationDuration = 0;
+					_fullscrenAPI.exit();
+				}
+				_fullscrenAPI = null;
+			}
+		});
+
+
+		// clean up things when gallery is destroyed
+		_listen('destroy', function() {
+			if(_options.captionEl) {
+				if(_fakeCaptionContainer) {
+					_controls.removeChild(_fakeCaptionContainer);
+				}
+				framework.removeClass(_captionContainer, 'pswp__caption--empty');
+			}
+
+			if(_shareModal) {
+				_shareModal.children[0].onclick = null;
+			}
+			framework.removeClass(_controls, 'pswp__ui--over-close');
+			framework.addClass( _controls, 'pswp__ui--hidden');
+			ui.setIdle(false);
+		});
+
+
+		if(!_options.showAnimationDuration) {
+			framework.removeClass( _controls, 'pswp__ui--hidden');
+		}
+		_listen('initialZoomIn', function() {
+			if(_options.showAnimationDuration) {
+				framework.removeClass( _controls, 'pswp__ui--hidden');
+			}
+		});
+		_listen('initialZoomOut', function() {
+			framework.addClass( _controls, 'pswp__ui--hidden');
+		});
+
+		_listen('parseVerticalMargin', _applyNavBarGaps);
+
+		_setupUIElements();
+
+		if(_options.shareEl && _shareButton && _shareModal) {
+			_shareModalHidden = true;
+		}
+
+		_countNumItems();
+
+		_setupIdle();
+
+		_setupFullscreenAPI();
+
+		_setupLoadingIndicator();
+	};
+
+	ui.setIdle = function(isIdle) {
+		_isIdle = isIdle;
+		_togglePswpClass(_controls, 'ui--idle', isIdle);
+	};
+
+	ui.update = function() {
+		// Don't update UI if it's hidden
+		if(_controlsVisible && pswp.currItem) {
+
+			ui.updateIndexIndicator();
+
+			if(_options.captionEl) {
+				_options.addCaptionHTMLFn(pswp.currItem, _captionContainer);
+
+				_togglePswpClass(_captionContainer, 'caption--empty', !pswp.currItem.title);
+			}
+
+			_overlayUIUpdated = true;
+
+		} else {
+			_overlayUIUpdated = false;
+		}
+
+		if(!_shareModalHidden) {
+			_toggleShareModal();
+		}
+
+		_countNumItems();
+	};
+
+	ui.updateFullscreen = function(e) {
+
+		if(e) {
+			// some browsers change window scroll position during the fullscreen
+			// so PhotoSwipe updates it just in case
+			setTimeout(function() {
+				pswp.setScrollOffset( 0, framework.getScrollY() );
+			}, 50);
+		}
+
+		// toogle pswp--fs class on root element
+		framework[ (_fullscrenAPI.isFullscreen() ? 'add' : 'remove') + 'Class' ](pswp.template, 'pswp--fs');
+	};
+
+	ui.updateIndexIndicator = function() {
+		if(_options.counterEl) {
+			_indexIndicator.innerHTML = (pswp.getCurrentIndex()+1) +
+										_options.indexIndicatorSep +
+										_options.getNumItemsFn();
+		}
+	};
+
+	ui.onGlobalTap = function(e) {
+		e = e || window.event;
+		var target = e.target || e.srcElement;
+
+		if(_blockControlsTap) {
+			return;
+		}
+
+		if(e.detail && e.detail.pointerType === 'mouse') {
+
+			// close gallery if clicked outside of the image
+			if(_hasCloseClass(target)) {
+				pswp.close();
+				return;
+			}
+
+			if(framework.hasClass(target, 'pswp__img')) {
+				if(pswp.getZoomLevel() === 1 && pswp.getZoomLevel() <= pswp.currItem.fitRatio) {
+					if(_options.clickToCloseNonZoomable) {
+						pswp.close();
+					}
+				} else {
+					pswp.toggleDesktopZoom(e.detail.releasePoint);
+				}
+			}
+
+		} else {
+
+			// tap anywhere (except buttons) to toggle visibility of controls
+			if(_options.tapToToggleControls) {
+				if(_controlsVisible) {
+					ui.hideControls();
+				} else {
+					ui.showControls();
+				}
+			}
+
+			// tap to close gallery
+			if(_options.tapToClose && (framework.hasClass(target, 'pswp__img') || _hasCloseClass(target)) ) {
+				pswp.close();
+				return;
+			}
+
+		}
+	};
+	ui.onMouseOver = function(e) {
+		e = e || window.event;
+		var target = e.target || e.srcElement;
+
+		// add class when mouse is over an element that should close the gallery
+		_togglePswpClass(_controls, 'ui--over-close', _hasCloseClass(target));
+	};
+
+	ui.hideControls = function() {
+		framework.addClass(_controls,'pswp__ui--hidden');
+		_controlsVisible = false;
+	};
+
+	ui.showControls = function() {
+		_controlsVisible = true;
+		if(!_overlayUIUpdated) {
+			ui.update();
+		}
+		framework.removeClass(_controls,'pswp__ui--hidden');
+	};
+
+	ui.supportsFullscreen = function() {
+		var d = document;
+		return !!(d.exitFullscreen || d.mozCancelFullScreen || d.webkitExitFullscreen || d.msExitFullscreen);
+	};
+
+	ui.getFullscreenAPI = function() {
+		var dE = document.documentElement,
+			api,
+			tF = 'fullscreenchange';
+
+		if (dE.requestFullscreen) {
+			api = {
+				enterK: 'requestFullscreen',
+				exitK: 'exitFullscreen',
+				elementK: 'fullscreenElement',
+				eventK: tF
+			};
+
+		} else if(dE.mozRequestFullScreen ) {
+			api = {
+				enterK: 'mozRequestFullScreen',
+				exitK: 'mozCancelFullScreen',
+				elementK: 'mozFullScreenElement',
+				eventK: 'moz' + tF
+			};
+
+
+
+		} else if(dE.webkitRequestFullscreen) {
+			api = {
+				enterK: 'webkitRequestFullscreen',
+				exitK: 'webkitExitFullscreen',
+				elementK: 'webkitFullscreenElement',
+				eventK: 'webkit' + tF
+			};
+
+		} else if(dE.msRequestFullscreen) {
+			api = {
+				enterK: 'msRequestFullscreen',
+				exitK: 'msExitFullscreen',
+				elementK: 'msFullscreenElement',
+				eventK: 'MSFullscreenChange'
+			};
+		}
+
+		if(api) {
+			api.enter = function() {
+				// disable close-on-scroll in fullscreen
+				_initalCloseOnScrollValue = _options.closeOnScroll;
+				_options.closeOnScroll = false;
+
+				if(this.enterK === 'webkitRequestFullscreen') {
+					pswp.template[this.enterK]( Element.ALLOW_KEYBOARD_INPUT );
+				} else {
+					return pswp.template[this.enterK]();
+				}
+			};
+			api.exit = function() {
+				_options.closeOnScroll = _initalCloseOnScrollValue;
+
+				return document[this.exitK]();
+
+			};
+			api.isFullscreen = function() { return document[this.elementK]; };
+		}
+
+		return api;
+	};
+
+
+
+};
+return PhotoSwipeUI_Default;
+
+
 });
