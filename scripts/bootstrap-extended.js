@@ -74,8 +74,9 @@
 	}
 
 	function chatAddGap() {
-		var bubbles = document.querySelectorAll('ul > li');
-		var bubble, bubblePost, bubbleLastPost;
+		var chat = document.querySelector('ul');
+		var bubbles = chat.querySelectorAll('li');
+		var bubble, bubblePost, bubbleLastPost, bubblePerson, bubbleLastPerson, bubblePersonEl;
 		for (var i = 0; i < bubbles.length; i++) {
 			bubble = bubbles[i].children[0];
 			bubblePost = bubble.classList[1];
@@ -85,8 +86,25 @@
 			if (bubblePost != bubbleLastPost) {
 				bubble.className = bubble.className + ' gap';
 				bubbleLastPost = bubblePost;
+				bubblePerson = bubble.querySelector('.person');
+				if (bubblePerson) {
+					bubbleLastPerson = bubblePerson.innerText;
+				}
+			} else {
+				if (bubbleLastPerson && bubblePost == 'left') {
+					bubblePerson = bubble.querySelector('.person').innerText;
+					if (bubblePerson != bubbleLastPerson) {
+						bubble.className = bubble.className + ' gap';
+					}
+					if (bubblePerson == bubbleLastPerson) {
+						bubblePersonEl = bubble.querySelector('.person');
+						bubblePersonEl.className = bubblePersonEl.className + ' hide';
+						// Delete Element
+					}
+				}
 			}
 		}
+		window.scrollTo(0, document.body.scrollHeight);
 	}
 
 	function modalReposition() {
