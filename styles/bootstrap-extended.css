@@ -1651,3 +1651,56 @@ b, strong {
     /* top: 50px; */
   }
 }
+
+.crop-acts {
+  padding: 10px;
+  text-align: center;
+}
+.crop-acts .btn {
+  margin-bottom: 10px;
+}
+.crop-acts .btn-none {
+  display: none;
+}
+
+.cropper-sample {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 40px 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  background-image: none;
+}
+.cropper-sample .crop-bind {
+  position: relative;
+  display: inline-block;
+}
+.cropper-sample .crop-container,
+.cropper-sample .crop-img {
+  width: 270px;
+  height: 270px;
+}
+.cropper-sample .crop-img {
+  top: 0px;
+  left: 0px;
+}
+
+.form-crop {
+  margin-top: 0;
+}
+.form-crop .form-group {
+  margin-top: 0;
+  padding: 10px 10px 0;
+}
+.form-crop .form-control {
+  border: 1px solid #e0e0e0;
+  -webkit-appearance: none;
+}
+.form-crop textarea {
+  resize: none;
+}

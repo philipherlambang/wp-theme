@@ -13,6 +13,8 @@
 		<link href="styles/bootstrap-plugins.min.css" rel="stylesheet">
 		<link href="styles/bootstrap-extended.css" rel="stylesheet">
 
+		<link href="styles/bootstrap-plugins/cropper.min.css" rel="stylesheet">
+
 		<!-- [if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -45,18 +47,24 @@
 			<div class="section">
 				<div class="container container-full-xs">
 					<div class="row">
-						<div class="col-sm-2 col-md-3"></div>
-						<div class="col-sm-8 col-md-6">
-							<div class="cropper-block">
-								<div class="cropper"></div>
-							</div>
-							<div class="cropper-command">
-								<button class="btn btn-lg btn-default btn-gloom cropper-import"><span class="icon ion-image"></span>Pilih Gambar</button>
-								<button class="btn btn-lg btn-default btn-gloom cropper-rotate"><span class="icon ion-ios-loop-strong"></span>Putar</button>
-								<button class="btn btn-lg btn-default btn-gloom cropper-crop"><span class="icon ion-ios-crop-strong"></span>Unggah</button>
+						<div class="col-xs-12">
+							<div class="img-container">
+								<img id="image" src="images/default-user.png" alt="Picture" width="100%" data-aspect-ratio="1/1">
 							</div>
 						</div>
-						<div class="col-sm-2 col-md-3"></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="crop-acts">
+								<label class="btn btn-lg btn-default btn-gloom btn-upload" for="inputImage">
+									<input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+									<span class="icon ion-image"></span> Pilih Gambar
+								</label>
+								<button type="button" class="btn btn-lg btn-default btn-gloom btn-rotate" data-method="rotate" data-option="90"><span class="icon ion-ios-loop-strong"></span> Putar</button>
+								<button type="button" class="btn btn-lg btn-default btn-gloom btn-crop" data-method="getCroppedCanvas" data-option="{ &quot;width&quot;: 320, &quot;height&quot;: 320, &quot;imgType&quot;: &quot;profile&quot; }"><span class="icon icon ion-ios-upload-outline"></span> Unggah</button>
+								<button type="button" class="btn btn-default btn-gloom btn-none btn-disable" data-method="disable">Disable</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -64,9 +72,11 @@
 
 		<script src="scripts/jquery-2.1.4.min.js"></script>
 		<script src="scripts/bootstrap.min.js"></script>
-		<!-- <script src="scripts/bootstrap-plugins.min.js"></script> -->
-		<script src="scripts/bootstrap-plugins/exif.js"></script>
-		<script src="scripts/bootstrap-plugins/crop.js"></script>
+		<script src="scripts/bootstrap-plugins.min.js"></script>
 		<script src="scripts/bootstrap-extended.js"></script>
+
+		<script src="scripts/bootstrap-plugins/load-image.all.min.js"></script>
+		<script src="scripts/bootstrap-plugins/cropper.min.js"></script>
+		<script src="scripts/crop.js"></script>
 	</body>
 </html>

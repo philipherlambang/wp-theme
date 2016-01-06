@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<meta name="author" content="">
-		<title>Ganti Sampul</title>
+		<title>Edit Portfolio</title>
 
 		<link href="styles/bootstrap.min.css" rel="stylesheet">
 		<link href="styles/bootstrap-plugins.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 							</a>
 						</div>
 						<div class="col-xs-8">
-							<h4 class="title">Ganti Sampul</h4>
+							<h4 class="title">Edit Portfolio</h4>
 						</div>
 						<div class="col-xs-2"></div>
 					</div>
@@ -48,21 +48,36 @@
 				<div class="container container-full-xs">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="img-container">
-								<img id="image" src="images/default_image_1366px.png" alt="Picture" width="100%" data-aspect-ratio="2/1">
+							<div class="cropper-sample">
+								<div class="crop-bind">
+									<div class="crop-main">
+										<div class="crop-container">
+											<img class="crop-img" src="images/default-portfolio.png" alt="Picture">
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-12">
+							<form class="form-simple form-crop">
+								<div class="form-group form-group-lg">
+									<label class="sr-only" for="caption">Caption</label>
+									<input type="text" class="form-control" id="caption" placeholder="Caption" value="Take A Shot">
+								</div>
+								<div class="form-group form-group-lg">
+									<label class="sr-only" for="caption">Description</label>
+									<textarea class="form-control" id="description" placeholder="Description" rows="3" maxlength="100">Click Click Click</textarea>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
 							<div class="crop-acts">
-								<label class="btn btn-lg btn-default btn-gloom btn-upload" for="inputImage">
-									<input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-									<span class="icon ion-image"></span> Pilih Gambar
-								</label>
-								<button type="button" class="btn btn-lg btn-default btn-gloom btn-rotate" data-method="rotate" data-option="90"><span class="icon ion-ios-loop-strong"></span> Putar</button>
-								<button type="button" class="btn btn-lg btn-default btn-gloom btn-crop" data-method="getCroppedCanvas" data-option="{ &quot;width&quot;: 960, &quot;height&quot;: 480, &quot;imgType&quot;: &quot;background&quot; }"><span class="icon icon ion-ios-upload-outline"></span> Unggah</button>
-								<button type="button" class="btn btn-default btn-gloom btn-none btn-disable" data-method="disable">Disable</button>
+								<button class="btn btn-lg btn-default btn-gloom cropper-delete"><span class="icon ion-ios-minus-empty"></span>Delete</button>
+								<button class="btn btn-lg btn-default btn-gloom cropper-update"><span class="icon ion-ios-checkmark-empty"></span>Update</button
 							</div>
 						</div>
 					</div>
