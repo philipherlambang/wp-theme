@@ -1064,6 +1064,22 @@ b, strong {
 .groups-gap {
   margin-top: 40px;
 }
+.groups-view {
+  margin-top: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.groups-view [class^="col"] {
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+}
+.groups-view h2,
+.groups-view p {
+  font-weight: 300;
+  text-align: center;
+}
 
 .unfilled-content {
   margin-bottom: 30px;
@@ -1471,22 +1487,6 @@ b, strong {
 }
 
 /* Just Added */
-.group-view {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.group-view [class^="col"] {
-  padding-right: 10px;
-  padding-left: 10px;
-  background-color: #ffffff;
-  border: 1px solid #eeeeee;
-}
-.group-view h2,
-.group-view p {
-  font-weight: 300;
-  text-align: center;
-}
-
 .result {
   padding: 10px 12px;
   background-color: #B1DCFB;
