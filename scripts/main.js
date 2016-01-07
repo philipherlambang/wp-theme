@@ -319,7 +319,7 @@
 		}
 	});
 
-	$('.group-media').on('click', '.minus', function(e) {
+	$('.group-media-space').on('click', '.title .btn', function(e) {
 		e.preventDefault();
 		$(this).closest('.item').remove();
 	});
