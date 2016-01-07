@@ -724,35 +724,6 @@ b, strong {
     padding-left: 15px;
   }
 }
-.container-lill-xs .item {
-  margin-top: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
-  position: relative;
-}
-/* .container-lill-xs .item:last-child {
-  margin-bottom: 15px;
-} */
-.container-lill-xs .item .sub {
-  font-size: 12px;
-  color: #757575;
-}
-.container-lill-xs .item .minus {
-  padding: 4px 10px;
-  color: #e53935;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: #eeeeee;
-}
-@media (max-width: 767px) {
-  .container-lill-xs [class^="col"] {
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-}
 @media (min-width: 768px) {
   .table-row {
     display: table;
@@ -802,6 +773,11 @@ b, strong {
   position: relative;
   padding-right: 20px;
 }
+.group-media .media-body-item .auxy {
+  font-size: 12px;
+  color: #777;
+  font-weight: 300;
+}
 .group-media .media-body-item .time {
   margin-left: 18px;
   font-size: 12px;
@@ -814,6 +790,42 @@ b, strong {
   position: absolute;
   bottom: 0;
   left: 1px;
+}
+.group-media-space .item {
+  margin: 4px;
+  border: 1px solid #eeeeee; /*
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10); */
+}
+.group-media-space .item .title {
+  padding: 6px 10px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  overflow: hidden;
+}
+.group-media-space .item .title p {
+  margin-bottom: 0;
+  margin-right: 32px;
+  font-weight: 500;
+}
+.group-media-space .item .title .time {
+  margin: 1px 4px;
+  font-size: 12px;
+  font-weight: 300;
+  float: right;
+}
+.group-media-space .item .title .btn {
+  padding: 0 12px;
+  border-radius: 0;
+  border-color: #eeeeee;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
 }
 
 .gap-operate {
