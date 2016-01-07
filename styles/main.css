@@ -20,7 +20,7 @@ b, strong {
   display: block;
 }
 .main-cover {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   color: #ffffff;
   position: absolute;
   right: 0;
