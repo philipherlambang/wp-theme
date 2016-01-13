@@ -464,6 +464,10 @@ b, strong {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.imgs-inline ul > li > a figure,
+.imgs-inline ul > li > a .a {
+  display: none;
+}
 .imgs-inline ul > li > .btn {
   margin: 2px;
   border: 1px solid rgba(238, 238, 238, 0.7);
@@ -1651,6 +1655,19 @@ b, strong {
 .picker__header .select {
   margin-top: -9px;
   font-size: 18px;
+}
+
+.pswp__top-bar,
+.pswp__caption {
+  background-color: #000;
+}
+.pswp__caption h5 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.pswp__caption p {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .pswp-gallery {

@@ -1,5 +1,5 @@
 /* Bootstrap Extended */
-(function() {
+// (function() {
 
 	// Auto Hide and Show Nav When Scroll
 	autoNavScroll('operate-fixed');
@@ -409,6 +409,8 @@
 			    items = [],
 			    liEl,
 			    linkEl,
+			    linkElChild,
+			    linkElChildLen,
 			    size,
 			    item;
 
@@ -440,13 +442,27 @@
 					h: parseInt(size[1], 10)
 				};
 
-				if (linkEl.children.length > 0) {
-					item.msrc = linkEl.children[0].getAttribute('src');
+				linkElChild = linkEl.children;
+				linkElChildLen = linkEl.children.length;
+
+				if (linkElChildLen > 0 && linkElChild[0].tagName == 'IMG') {
+					item.msrc = linkElChild[0].getAttribute('src');
 				}
 
-				if (linkEl.children.length > 1 && linkEl.children[1].tagName == 'FIGURE') {
-					item.description = linkEl.children[1].innerHTML;
+				if (linkElChildLen > 1 && linkElChild[1].tagName == 'FIGURE') {
+					item.description = linkElChild[1].innerHTML;
 				}
+
+				// if (linkElChildLen > 2) {
+				// 	var data; item.actions = {};
+				// 	for (var i = 2; i < linkElChildLen; i++) {
+				// 		if (linkElChild[i].tagName == 'SPAN') {
+				// 			data = linkElChild[i].dataset;
+				// 			item.actions[i - 2] = { [data.href] : [data.title] };
+				// 		}
+				// 	}
+				// }
+				// console.log(item);
 
 				item.el = liEl;
 				items.push(item);
@@ -514,10 +530,10 @@
 				},
 				addCaptionHTMLFn: function(item, captionEl, isFake) {
 					if (!item.description) {
-						captionEl.children[0].innerText = item.title;
+						captionEl.children[0].innerHTML = '<h5>' + item.title + '</h5>';
 						return false;
 					}
-					captionEl.children[0].innerHTML = item.title +  '<br/><small> ' + item.description + '</small>';
+					captionEl.children[0].innerHTML = '<h5>' + item.title +  '</h5><p> ' + item.description + '</p>';
 					return true;
 				}
 			};
@@ -542,6 +558,8 @@
 				return;
 			}
 
+			// options.bgOpacity = 0.92;
+			options.timeToIdle = 0;
 			options.shareEl = false;
 			// options.modal = false;
 
@@ -854,4 +872,4 @@
 		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 	}
 
-})();
+// })();
