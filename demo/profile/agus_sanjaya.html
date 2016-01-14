@@ -9,9 +9,13 @@
 		<meta name="author" content="">
 		<title>Agus Sanjaya</title>
 
-		<link href="../../styles/bootstrap.min.css" rel="stylesheet">
-		<link href="../../styles/bootstrap-plugins.min.css" rel="stylesheet">
-		<link href="../../styles/bootstrap-extended.css" rel="stylesheet">
+		<link href="../../styles/bootstrap.css" rel="stylesheet">
+		<link href="../../styles/plugins/cropper.css" rel="stylesheet">
+		<link href="../../styles/plugins/ionicons.css" rel="stylesheet">
+		<link href="../../styles/plugins/photoswipe.css" rel="stylesheet">
+		<link href="../../styles/plugins/pickadate.css" rel="stylesheet">
+		<link href="../../styles/plugins/wtf-forms.css" rel="stylesheet">
+		<link href="../../styles/main.css" rel="stylesheet">
 
 		<!-- [if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,31 +37,31 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">
+						<a class="navbar-brand" href="../../hub.html">
 							<img alt="Brand" src="../../images/brand-join.png">
 						</a>
 					</div>
 					<div id="navbar-theme" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<form class="navbar-form" role="search">
-									<div class="input-group">
-										<input type="text" class="form-control">
-										<span class="input-group-btn">
-											<button class="btn btn-default" type="button">
-												<span class="ion ion-ios-search"></span>
-											</button>
-										</span>
+								<a href="../../profile.html">
+									<div class="hidden-xs">
+										<img src="../../images/user/john_branch.jpg" alt="John Branch" class="img-thumb">
 									</div>
-								</form>
-							</li>
-							<li>
-								<a href="../../profile.html">My Profile</a>
+									<div class="visible-xs"><i class="ion ion-person"></i> Profil</div>
+								</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav">
-							<li><a href="../../professionals.html">Professional</a></li>
-							<li><a href="../../jobs.html">Job</a></li>
+							<li>
+								<a href="../../contacts.html"><i class="ion ion-ios-people"></i> Kontak</a>
+							</li>
+							<li>
+								<a href="../../chats.html"><i class="ion ion-ios-email"></i> Chat</a>
+							</li>
+							<li>
+								<a href="../../professionals.html"><i class="ion ion-ios-briefcase"></i> Profesional</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -75,7 +79,13 @@
 							<div>
 								<div class="card card-potrait card-bump-bg">
 									<div class="card-img">
-										<img src="../../images/user/agus_sanjaya.jpg" alt="Agus Sanjaya">
+										<ul class="pswp-gallery" data-reorder="false">
+											<li>
+												<a href="../../images/user/agus_sanjaya.jpg" data-size="480x480" data-title="Agus Sanjaya">
+													<img class="img-responsive" src="../../images/user/agus_sanjaya.jpg" alt="Agus Sanjaya">
+												</a>
+											</li>
+										</ul>
 									</div>
 									<div class="card-caption">
 										<h3>Agus Sanjaya</h3>
@@ -85,15 +95,39 @@
 								</div>
 							</div>
 							<div class="groups-gap">
+								<div class="group-btn">
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="" type="button" class="btn btn-default btn-lg btn-block btn-gloom disabled"><span class="icon ion-person-add"></span>Terkirim</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="../../chat.html" type="button" class="btn btn-default btn-lg btn-block btn-gloom"><span class="icon ion-ios-compose"></span>Chat</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="groups-view">
+								<div class="row">
+									<div class="col-xs-6">
+										<h2>12</h2>
+										<p>Dilihat Profesional</p>
+									</div>
+									<div class="col-xs-6">
+										<h2>3</h2>
+										<p>Diminta Pertemanan</p>
+									</div>
+								</div>
+							</div>
+							<div class="groups-gap">
 								<div class="group-card">
-									<h4>Portfolios and Activities</h4>
+									<h4>Portfolio dan Aktivitas</h4>
 									<ul class="list-unstyled">
 										<li>
-											<h5>Photos</h5>
+											<h5>Foto</h5>
 											<ul class="list-unstyled">
 												<li class="item">
 													<div class="imgs-inline">
-														<ul class="pswp-gallery">
+														<ul class="pswp-gallery" data-reorder="true">
 															<li>
 																<a href="../images/ptf/agus_sanjaya/1_m.jpg" data-size="1024x683" data-title="Pertandingan Basket">
 																	<img src="../images/ptf/agus_sanjaya/1_s.jpg">
@@ -158,33 +192,33 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Summary</h4>
+									<h4>Ringkasan</h4>
 									<div class="item">
 										<p>A skilled communicator, able to maintain cultural sensitivity, establish rapport with members of diverse groups, and promote team cohesiveness.</p>
 									</div>
 								</div>
 								<div class="group-card">
-									<h4>Personal Details</h4>
+									<h4>Data Pribadi</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p><b>Birth Date</b> <span class="pull-right">22 August 1987</span></p>
+											<p><b>Tanggal Lahir</b> <span class="pull-right">22 Agustus 1987</span></p>
 										</li>
 										<li class="item">
-											<p><b>Marital Status</b> <span class="pull-right">Single</span></p>
+											<p><b>Status</b> <span class="pull-right">Belum Menikah</span></p>
 										</li>
 										<li class="item">
-											<p><b>Gender</b> <span class="pull-right">Female</span></p>
+											<p><b>Jenis Kelamin</b> <span class="pull-right">Wanita</span></p>
 										</li>
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Contact Info</h4>
+									<h4>Info Kontak</h4>
 									<ul class="list-unstyled">
 										<li>
 											<h5>Email</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>tridewiputrilestari@gmail.com <span class="auxy">(Personal)</span></p>
+													<p>tridewiputrilestari@gmail.com <span class="auxy">(Email Pribadi)</span></p>
 												</li>
 											</ul>
 										</li>
@@ -192,30 +226,30 @@
 											<h5>Messenger</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>tridewiputrilestari@yahoo.com <span class="auxy">(YM)</span></p>
+													<p>tridewiputrilestari@yahoo.com <span class="auxy">(Yahoo Messenger)</span></p>
 												</li>
 											</ul>
 										</li>
 										<li>
-											<h5>Phone</h5>
+											<h5>Telepon</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>0813657499 <span class="auxy">(Mobile)</span></p>
+													<p>0813657499 <span class="auxy">(Telepon Genggam)</span></p>
 												</li>
 											</ul>
 										</li>
 										<li>
-											<h5>Address</h5>
+											<h5>Alamat</h5>
 											<ul class="list-unstyled">
 												<li class="item">
-													<p>Jl. Japati No. 1, Bandung 40133 <span class="auxy">(Office)</span></p>
+													<p>Jl. Japati No. 1, Bandung 40133 <span class="auxy">(Kantor)</span></p>
 												</li>
 											</ul>
 										</li>
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Links</h4>
+									<h4>Link</h4>
 									<ul class="list-unstyled">
 										<li class="item">
 											<p><span class="icon ion-social-googleplus-outline"></span> <a href="">plus.google.com/tridewiputrilestari</a></p>
@@ -233,7 +267,7 @@
 						<div class="col-sm-7 col-md-8">
 							<div class="groups-gap">
 								<div class="group-card">
-									<h4>Profession Category</h4>
+									<h4>Kategori Profesi</h4>
 									<ul class="list-unstyled">
 										<li class="item">
 											<p>Accounting</p>
@@ -241,18 +275,7 @@
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Industry</h4>
-									<ul class="list-unstyled">
-										<li class="item">
-											<p>Finance</p>
-										</li>
-										<li class="item">
-											<p>Management</p>
-										</li>
-									</ul>
-								</div>
-								<div class="group-card">
-									<h4>Work Experience</h4>
+									<h4>Pengalaman Kerja</h4>
 									<ul class="list-unstyled">
 										<li class="item">
 											<p class="arch">PT. Intan Chemical</p>
@@ -264,33 +287,33 @@
 										<li class="item">
 											<p class="arch">PT Infimedia Pratama</p>
 											<p><b>Accountant</b></p>
-											<p>1 March 2008 - 1 October 2013</p>
+											<p>1 Maret 2008 - 1 Oktober 2013</p>
 											<p>Jakarta, Indonesia</p>
 											<p>Communicate clearly the progress of monthly/quarterly initiatives to internal and external stakeholders</p>
 										</li>
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Education</h4>
+									<h4>Pendidikan</h4>
 									<ul class="list-unstyled">
 										<li class="item">
 											<p class="arch">Yayasan Administrasi Indonesia (YAI)</p>
 											<p><b>Accounting</b></p>
-											<p>1 September 2005 - 1 July 2008</p>
+											<p>1 September 2005 - 1 Juli 2008</p>
 											<p>Jakarta, Indonesia</p>
 										</li>
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Language</h4>
+									<h4>Bahasa</h4>
 									<ul class="list-unstyled">
 										<li class="item">
-											<p>Bahasa Indonesia <span class="auxy">(Active)</span></p>
+											<p>Bahasa Indonesia <span class="auxy">(Aktif)</span></p>
 										</li>
 									</ul>
 								</div>
 								<div class="group-card">
-									<h4>Skills</h4>
+									<h4>Keahlian</h4>
 									<ul class="list-unstyled">
 										<li class="item">
 											<p>Accounting</p>
@@ -313,9 +336,14 @@
 			</div>
 		</main>
 
-		<script src="../../scripts/jquery-2.1.4.min.js"></script>
-		<script src="../../scripts/bootstrap.min.js"></script>
-		<script src="../../scripts/bootstrap-plugins.min.js"></script>
-		<script src="../../scripts/bootstrap-extended.js"></script>
+		<script src="../../scripts/jquery-2.1.4.js"></script>
+		<script src="../../scripts/bootstrap.js"></script>
+		<script src="../../scripts/plugins/autosize.js"></script>
+		<script src="../../scripts/plugins/cropper.js"></script>
+		<script src="../../scripts/plugins/load-image.js"></script>
+		<script src="../../scripts/plugins/photoswipe.js"></script>
+		<script src="../../scripts/plugins/pickadate.js"></script>
+		<script src="../../scripts/plugins/validate.js"></script>
+		<script src="../../scripts/main.js"></script>
 	</body>
 </html>

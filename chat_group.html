@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<title>Chat Group</title>
+
+		<link href="styles/bootstrap.css" rel="stylesheet">
+		<link href="styles/plugins/cropper.css" rel="stylesheet">
+		<link href="styles/plugins/ionicons.css" rel="stylesheet">
+		<link href="styles/plugins/photoswipe.css" rel="stylesheet">
+		<link href="styles/plugins/pickadate.css" rel="stylesheet">
+		<link href="styles/plugins/wtf-forms.css" rel="stylesheet">
+		<link href="styles/main.css" rel="stylesheet">
+
+		<!-- [if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif] -->
+
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="icon" href="images/favicon.ico">
+	</head>
+	<body class="white">
+
+		<nav class="gap-operate">
+			<div class="operate operate-fixed operate-fixed-down">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2">
+							<a class="left" onclick="window.history.back()">
+								<div class="icon ion-ios-arrow-back"></div>
+							</a>
+						</div>
+						<div class="col-xs-8">
+							<h4 class="title">Chat Group</h4>
+						</div>
+						<div class="col-xs-2">
+							<a href="chat_new.html" class="right">
+								<div class="icon icon-md ion-ios-plus-empty"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<div class="section">
+				<div class="container container-full-xs">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="group-chat-bubbles">
+								<div class="loading loading-sm">
+									<img src="images/default.gif">
+								</div>
+								<ul class="list-unstyled">
+									<li><div class="chat-bubble title"><p>Selasa, 13 September</p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Hai Team <span>18:00</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Besok kita meeting jam 10 <span>18:02</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Jangan sampai telat ya <span>18:02</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Tri Dewi Putri Lestari</p><p>Baik Mas Rizky <span>18:04</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Michelle Anestasya Lopita</p><p>Oke Rizky <span>18:07</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Oke Mas Rizky <span>19:00</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Utari Purwanti</p><p>Oke Rizky <span>19:07</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Canidya Alifiana</p><p>Oke Mas Rizky <span>19:08</span></p></div></li>
+									<li><div class="chat-bubble title"><p>Rabu</p></div></li>
+									<li><div class="chat-bubble right"><p>Jangan lupa nanti meeting jam 10 Team <span>08:00</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Ayo ayo ayooo <span>08:01</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Canidya Alifiana</p><p>John dan Saya sudah sampai dikantor <span>08:05</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Utari Purwanti</p><p>OTW Team <span>08:05</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Anggota Team semuanya sudah sampai Mas Rizky  <span>09:30</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Bagus, sebentar lagi saya kesana <span>09:40</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Terima Kasih untuk semuanya yang hadir <span>12:00</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Tolong di kejar deadline yang kita bicarakan tadi <span>12:01</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Masing-masing mempunyai tasknya masing masing yang harus diselesaikan <span>12:02</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Rizky Martha Aditya</p><p>Saya percaya dengan kemampuan kalian semua <span>12:04</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Baik Mas Rizky  <span>12:04</span></p></div></li>
+									<li><div class="chat-bubble left"><p class="person">Utari Purwanti</p><p>Baik Mas Rizky  <span>12:07</span></p></div></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="chat-input">
+								<form class="form-simple">
+									<div class="form-group">
+										<label for="chat-input" class="sr-only">Chat Input</label>
+										<input type="text" class="form-control" id="chat-input" placeholder="Ketik sesuatu ..." autofocus>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-lg btn-default">
+											<i class="icon ion-ios-paperplane-outline"></i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="scripts/jquery-2.1.4.js"></script>
+		<script src="scripts/bootstrap.js"></script>
+		<script src="scripts/plugins/autosize.js"></script>
+		<script src="scripts/plugins/cropper.js"></script>
+		<script src="scripts/plugins/load-image.js"></script>
+		<script src="scripts/plugins/photoswipe.js"></script>
+		<script src="scripts/plugins/pickadate.js"></script>
+		<script src="scripts/plugins/validate.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

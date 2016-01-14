@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<title>Chat</title>
+
+		<link href="styles/bootstrap.css" rel="stylesheet">
+		<link href="styles/plugins/cropper.css" rel="stylesheet">
+		<link href="styles/plugins/ionicons.css" rel="stylesheet">
+		<link href="styles/plugins/photoswipe.css" rel="stylesheet">
+		<link href="styles/plugins/pickadate.css" rel="stylesheet">
+		<link href="styles/plugins/wtf-forms.css" rel="stylesheet">
+		<link href="styles/main.css" rel="stylesheet">
+
+		<!-- [if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif] -->
+
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="icon" href="images/favicon.ico">
+	</head>
+	<body class="white">
+
+		<nav class="gap-operate">
+			<div class="operate operate-fixed operate-fixed-down">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2">
+							<a class="left" onclick="window.history.back()">
+								<div class="icon ion-ios-arrow-back"></div>
+							</a>
+						</div>
+						<div class="col-xs-8">
+							<h4 class="title">Chat</h4>
+						</div>
+						<div class="col-xs-2">
+							<a href="chat_new.html" class="right">
+								<div class="icon icon-md ion-ios-plus-empty"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<div class="section">
+				<div class="container container-full-xs">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="group-chat-bubbles">
+								<div class="loading loading-sm">
+									<img src="images/default.gif">
+								</div>
+								<ul class="list-unstyled">
+									<li><div class="chat-bubble title"><p>Selasa, 13 September</p></div></li>
+									<li><div class="chat-bubble left"><p>Hai <span>18:00</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Apa kabar ? <span>20:00</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Baik, bagaimana dengan anda ? <span>20:01</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Alhamdulillah, saya baik baik saja <span>21:23</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Sudah lama sekali kita tak bertemu <span>21:25</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Bagaimana jika kita bertemu <span>21:25</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Ide bagus, kapan waktunya ? <span>21:27</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Bagaimana jika minggu depan ? <span>21:28</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Hari Selasa, Tanggal 20, Jam 6 Malam ? <span>21:28</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Oke, gimana jika kita bertemu di Starbucks GI ? <span>21:30</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Baik, sudah lama saya tidak kesana <span>21:31</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Jadi, sampai bertemu minggu depan <span>21:30</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Oke, see you <span>21:31</span></p></div></li>
+									<li><div class="chat-bubble title"><p>Kamis </p></div></li>
+									<li><div class="chat-bubble right"><p>Bagaimana jika kita ajak teman teman yang lainnya ? <span>19:30</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Saya akan mengajak Andi dan Budi <span>19:30</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Wah, pasti seru <span>19:35</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Baik, saya ajak Chika dan Desy <span>19:36</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Yeah, tidak sabar untuk bertemu <span>19:38</span></p></div></li>
+									<li><div class="chat-bubble left"><p>Begitu juga saya <span>19:41</span></p></div></li>
+									<li><div class="chat-bubble title"><p>Kemarin</p></div></li>
+									<li><div class="chat-bubble left"><p>Jangan lupa kita bertemu besok ya <span>20:00</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Tentu saya tidak lupa <span>20:22</span></p></div></li>
+									<li><div class="chat-bubble left"><p>See you <span>20:24</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Oke, see you tomorrow <span>20:41</span></p></div></li>
+									<li><div class="chat-bubble title"><p>Hari Ini</p></div></li>
+									<li><div class="chat-bubble right"><p>Such great time, bertemu dengan anda <span>22:22</span></p></div></li>
+									<li><div class="chat-bubble left"><p>So do I, dengan teman teman yang lainnya <span>22:23</span></p></div></li>
+									<li><div class="chat-bubble right"><p>Ya, semoga sukses untuk semuanya <span>22:25</span></p></div></li>
+									<li><div class="chat-bubble right"><p>See you next time <span>22:26</span></p></div></li>
+									<li><div class="chat-bubble left"><p>See you <span>22:30</span></p></div></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="chat-input">
+								<form class="form-simple">
+									<div class="form-group">
+										<label for="chat-input" class="sr-only">Chat Input</label>
+										<input type="text" class="form-control" id="chat-input" placeholder="Ketik sesuatu ..." autofocus>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-lg btn-default">
+											<i class="icon ion-ios-paperplane-outline"></i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="scripts/jquery-2.1.4.js"></script>
+		<script src="scripts/bootstrap.js"></script>
+		<script src="scripts/plugins/autosize.js"></script>
+		<script src="scripts/plugins/cropper.js"></script>
+		<script src="scripts/plugins/load-image.js"></script>
+		<script src="scripts/plugins/photoswipe.js"></script>
+		<script src="scripts/plugins/pickadate.js"></script>
+		<script src="scripts/plugins/validate.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

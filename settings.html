@@ -7,11 +7,15 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<meta name="author" content="">
-		<title>Settings</title>
+		<title>Pengaturan</title>
 
-		<link href="styles/bootstrap.min.css" rel="stylesheet">
-		<link href="styles/bootstrap-plugins.min.css" rel="stylesheet">
-		<link href="styles/bootstrap-extended.css" rel="stylesheet">
+		<link href="styles/bootstrap.css" rel="stylesheet">
+		<link href="styles/plugins/cropper.css" rel="stylesheet">
+		<link href="styles/plugins/ionicons.css" rel="stylesheet">
+		<link href="styles/plugins/photoswipe.css" rel="stylesheet">
+		<link href="styles/plugins/pickadate.css" rel="stylesheet">
+		<link href="styles/plugins/wtf-forms.css" rel="stylesheet">
+		<link href="styles/main.css" rel="stylesheet">
 
 		<!-- [if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -28,12 +32,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<a onclick="window.history.back()">
+							<a class="left" onclick="window.history.back()">
 								<div class="icon ion-ios-arrow-back"></div>
 							</a>
 						</div>
 						<div class="col-xs-8">
-							<h4 class="title">Settings</h4>
+							<h4 class="title">Pengaturan</h4>
 						</div>
 						<div class="col-xs-2"></div>
 					</div>
@@ -49,29 +53,104 @@
 							<div class="group-card-link">
 								<ul class="list-unstyled">
 									<li>
-										<a class="item" href="change_password.html">Change Password</a>
+										<a href="profile.html" class="item">
+											<div class="media">
+												<div class="media-left media-middle">
+													<div>
+														<img class="media-object" src="images/user/john_branch.jpg" alt="John Branch">
+													</div>
+												</div>
+												<div class="media-body media-middle">
+													<h4 class="media-heading">John Branch</h4>
+													<p>johnbranch@gmail.com</p>
+												</div>
+											</div>
+										</a>
 									</li>
 									<li>
-										<a class="item" href="deactivate_account.html">Deactivate Account</a>
+										<div class="item">
+											<form class="form-horizontal form-simple" name="invite-friend">
+												<div class="form-group form-group-lg">
+													<label for="show-contact-only" class="col-xs-11">Profil Hanya Dapat Dilihat Oleh Kontak</label>
+													<div class="col-xs-1">
+														<label class="control checkbox">
+															<input type="checkbox" id="show-contact-only">
+															<span class="control-indicator"></span>
+														</label>
+													</div>
+												</div>
+											</form>
+										</div>
 									</li>
 									<li>
-										<a class="item" href="report_problem.html">Report a Problem</a>
+										<div class="item">
+											<form class="form-horizontal form-simple" name="invite-friend">
+												<div class="form-group form-group-lg">
+													<label for="hide-professional" class="col-xs-11">Sembunyikan Profil Dari Daftar Profesional</label>
+													<div class="col-xs-1">
+														<label class="control checkbox">
+															<input type="checkbox" id="hide-professional">
+															<span class="control-indicator"></span>
+														</label>
+													</div>
+												</div>
+											</form>
+										</div>
 									</li>
 									<li>
-										<a class="item" href="terms_conditions.html">Terms and Conditions</a>
+										<a class="item" href="change_password.html">Ganti Sandi</a>
 									</li>
 									<li>
-										<a class="item" href="privacy_policy.html">Privacy Policy</a>
+										<a class="item" href="account_verify.html">Verifikasi Akun</a>
 									</li>
 									<li>
-										<p class="item auxy"><span>Version</span> <span class="pull-right">Development</span></p>
+										<a class="item" href="account_deactivate.html">Tutup Akun</a>
+									</li>
+									<li>
+										<a class="item" href="invite_friend.html">Undang Teman</a>
+									</li>
+									<li>
+										<a class="item" href="report_problem.html">Laporkan Masalah</a>
+									</li>
+									<li>
+										<a class="item" href="terms_conditions.html">Syarat dan Ketentuan</a>
+									</li>
+									<li>
+										<a class="item" href="privacy_policy.html">Kebijakan Kerahasiaan</a>
+									</li>
+									<li>
+										<p class="item auxy"><span>Versi</span> <span class="pull-right">1.0</span></p>
 									</li>
 								</ul>
 							</div>
 							<div class="col-xs-12 full-xs-esc">
-								<a href="index.html" class="btn btn-lg btn-block btn-default btn-gloom">Sign Out</a>
-								<!-- <button type="submit" class="btn btn-lg btn-block btn-default btn-gloom">Sign Out</button> -->
+								<!-- <a href="index.html" class="btn btn-lg btn-block btn-default btn-gloom">Keluar</a> -->
+								<button type="button" class="btn btn-lg btn-block btn-default btn-gloom" data-toggle="modal" data-target=".simple-modal">Keluar</button>
 								<p class="copyright">© 2015 Workedprofile Corp.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal simple-modal" tabindex="-1" role="dialog" aria-labelledby="simple-modal">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="icon ion-ios-close-empty" aria-hidden="true"></span></button>
+							<h4 class="modal-title" id="simple-modal">Konfirmasi Keluar</h4>
+						</div>
+						<div class="modal-body">
+							<p class="text-center">Apakah anda yakin ingin keluar ?</p>
+						</div>
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-xs-6">
+									<button type="button" class="btn btn-block btn-default btn-gloom" data-dismiss="modal">Batal</button>
+								</div>
+								<div class="col-xs-6">
+									<a href="index.html" type="button" class="btn btn-block btn-default btn-gloom">Keluar</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -79,9 +158,14 @@
 			</div>
 		</main>
 
-		<script src="scripts/jquery-2.1.4.min.js"></script>
-		<script src="scripts/bootstrap.min.js"></script>
-		<script src="scripts/bootstrap-plugins.min.js"></script>
-		<script src="scripts/bootstrap-extended.js"></script>
+		<script src="scripts/jquery-2.1.4.js"></script>
+		<script src="scripts/bootstrap.js"></script>
+		<script src="scripts/plugins/autosize.js"></script>
+		<script src="scripts/plugins/cropper.js"></script>
+		<script src="scripts/plugins/load-image.js"></script>
+		<script src="scripts/plugins/photoswipe.js"></script>
+		<script src="scripts/plugins/pickadate.js"></script>
+		<script src="scripts/plugins/validate.js"></script>
+		<script src="scripts/main.js"></script>
 	</body>
 </html>
