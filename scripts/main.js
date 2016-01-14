@@ -882,7 +882,7 @@
 	if (document.getElementsByClassName('grid').length) {
 		$('.grid').masonry({
 			itemSelector: '.grid-item',
-			gutter: 5
+			gutter: 0
 		});
 	}
 

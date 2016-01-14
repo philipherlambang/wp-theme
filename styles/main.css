@@ -1710,7 +1710,7 @@ b, strong {
   border-radius: 0;
   border-color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
-  background-color: #F56400;
+  background-color: #FF5722;
   color: #FFFFFF;
 }
 .btn-orange.active,
@@ -1723,40 +1723,63 @@ b, strong {
 .btn-orange:hover,
 .btn-orange:active:hover {
   color: rgba(255, 255, 255, 0.5);
-  background-color: #F56400;
+  background-color: #FF5722;
 }
 
 /* Masonry */
-.grid-item {
-  margin-bottom: 5px;
-  padding: 10px;
-  background-color: #FFF;
-  float: left;
-}
-.grid-item a img {
-  width: 100%;
-}
-.grid-item a:hover {
-  text-decoration: none;
-}
-.grid-item h3, .grid-item p, .grid-item h4 {
-  color: #424242;
-}
 .grid:after {
   content: '';
   clear: both;
   display: block;
 }
-.grid-sizer,
 .grid-item {
-	width: 49%;
+  padding: 2px;
+  float: left;
 }
-.text-thin {
+.grid-item a {
+  padding: 8px;
+  border: 1px solid #E0E0E0;
+  background-color: #FFF;
+	display: block;
+}
+.grid-item a img {
+  width: 100%;
+}
+.grid-item a:hover,
+.grid-item a:focus {
+  text-decoration: none;
+}
+.grid-item h3,
+.grid-item h4,
+.grid-item p {
+  color: #424242;
+}
+.grid-item h3 {
+	margin-top: 10px;
+	font-size: 20px;
 	font-weight: 300;
 }
-@media (min-width: 768px) {
+.grid-item h4 {
+	margin-bottom: 0;
+}
+.grid-sizer,
+.grid-item {
+	width: 50%;
+}
+.grid-item .content {
+	padding: 8px;
+}
+
+@media (min-width: 992px) {
+	.grid-item {
+	  padding: 4px;
+	  float: left;
+	}
 	.grid-sizer,
 	.grid-item {
-		width: 32%;
+		width: 33.33333333%;
+	}
+	.grid-item h3 {
+		font-size: 24px;
 	}
 }
