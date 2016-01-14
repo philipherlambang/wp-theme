@@ -1704,3 +1704,47 @@ b, strong {
   -moz-box-shadow: none;
   -ms-box-shadow: none;
 }
+
+/* background colors for button */
+.background-orange {
+  background: #f56400;
+  color: #fff;
+}
+.background-ivory {
+  background: #f2f0e4;
+}
+
+/* Masonry */
+.grid-item {
+  margin-bottom: 5px;
+  float: left;
+  background: #fff;
+  padding: 10px;
+}
+.grid-item a img {
+  width: 100%;
+}
+.grid-item a:hover {
+  text-decoration: none;
+}
+.grid-item h3, .grid-item p, .grid-item h4 {
+  color: #424242;
+}
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.grid-sizer,
+.grid-item {
+	width: 49%;
+}
+.text-thin {
+	font-weight: 300;
+}
+@media (min-width: 768px) {
+	.grid-sizer,
+	.grid-item {
+		width: 32%;
+	}
+}

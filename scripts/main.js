@@ -878,4 +878,12 @@
 		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 	}
 
+	// Masonry
+	if (document.getElementsByClassName('grid').length) {
+		$('.grid').masonry({
+			itemSelector: '.grid-item',
+			gutter: 5
+		});
+	}
+
 // })();
