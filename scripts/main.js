@@ -453,16 +453,15 @@
 					item.description = linkElChild[1].innerHTML;
 				}
 
-				// if (linkElChildLen > 2) {
-				// 	var data; item.actions = {};
-				// 	for (var i = 2; i < linkElChildLen; i++) {
-				// 		if (linkElChild[i].tagName == 'SPAN') {
-				// 			data = linkElChild[i].dataset;
-				// 			item.actions[i - 2] = { [data.href] : [data.title] };
-				// 		}
-				// 	}
-				// }
-				// console.log(item);
+				if (linkElChildLen > 2) {
+					var data; item.actions = [];
+					for (var l = 2; l < linkElChildLen; l++) {
+						if (linkElChild[l].tagName == 'SPAN') {
+							data = linkElChild[l].dataset;
+							item.actions.push({ href: data.href, title: data.title });
+						}
+					}
+				}
 
 				item.el = liEl;
 				items.push(item);
@@ -529,11 +528,18 @@
 					return {x : rect.left, y : rect.top + pageYScroll, w : rect.width};
 				},
 				addCaptionHTMLFn: function(item, captionEl, isFake) {
-					if (!item.description) {
-						captionEl.children[0].innerHTML = '<h5>' + item.title + '</h5>';
+					var captionContent = captionEl.children[0];
+					if (item.description) {
+						captionContent.innerHTML = '<h5>' + item.title +  '</h5><p> ' + item.description + '</p>';
+						if (item.actions.length) {
+							captionContent.innerHTML = captionContent.innerHTML + '<div class="row"></div>';
+							for (var i = 0; i < item.actions.length; i++) {
+								captionContent.querySelector('.row').innerHTML = captionContent.querySelector('.row').innerHTML + '<a href="' + item.actions[i].href + '" class="col-xs-' + 12 / item.actions.length + '">' + item.actions[i].title + '</a>';
+							}
+						}
 						return false;
 					}
-					captionEl.children[0].innerHTML = '<h5>' + item.title +  '</h5><p> ' + item.description + '</p>';
+					captionContent.innerHTML = '<h5>' + item.title + '</h5>';
 					return true;
 				}
 			};
