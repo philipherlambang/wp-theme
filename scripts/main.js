@@ -531,7 +531,7 @@
 					var captionContent = captionEl.children[0];
 					if (item.description) {
 						captionContent.innerHTML = '<h5>' + item.title +  '</h5><p> ' + item.description + '</p>';
-						if (item.actions.length) {
+						if (item.actions && item.actions.length) {
 							captionContent.innerHTML = captionContent.innerHTML + '<div class="row"></div>';
 							for (var i = 0; i < item.actions.length; i++) {
 								captionContent.querySelector('.row').innerHTML = captionContent.querySelector('.row').innerHTML + '<a href="' + item.actions[i].href + '" class="col-xs-' + 12 / item.actions.length + '">' + item.actions[i].title + '</a>';
