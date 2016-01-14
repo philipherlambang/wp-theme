@@ -1705,21 +1705,33 @@ b, strong {
   -ms-box-shadow: none;
 }
 
-/* background colors for button */
-.background-orange {
-  background: #f56400;
-  color: #fff;
+/* Button Bookmark For Store */
+.btn-orange {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  background-color: #F56400;
+  color: #FFFFFF;
 }
-.background-ivory {
-  background: #f2f0e4;
+.btn-orange.active,
+.btn-orange:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-orange.focus,
+.btn-orange:focus,
+.btn-orange:hover,
+.btn-orange:active:hover {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #F56400;
 }
 
 /* Masonry */
 .grid-item {
   margin-bottom: 5px;
-  float: left;
-  background: #fff;
   padding: 10px;
+  background-color: #FFF;
+  float: left;
 }
 .grid-item a img {
   width: 100%;
@@ -1732,8 +1744,8 @@ b, strong {
 }
 .grid:after {
   content: '';
-  display: block;
   clear: both;
+  display: block;
 }
 .grid-sizer,
 .grid-item {
