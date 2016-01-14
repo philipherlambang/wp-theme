@@ -880,9 +880,13 @@
 
 	// Masonry
 	if (document.getElementsByClassName('grid').length) {
-		$('.grid').masonry({
+		var grid = $('.grid').masonry({
 			itemSelector: '.grid-item',
-			gutter: 5
+			gutter: 0
+		});
+
+		grid.imagesLoaded().progress( function() {
+			grid.masonry('layout');
 		});
 	}
 

@@ -1705,46 +1705,84 @@ b, strong {
   -ms-box-shadow: none;
 }
 
-/* background colors for button */
-.background-orange {
-  background: #f56400;
-  color: #fff;
+/* Button Bookmark For Store */
+.btn-orange {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  background-color: #FF5722;
+  color: #FFFFFF;
 }
-.background-ivory {
-  background: #f2f0e4;
+.btn-orange.active,
+.btn-orange:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-orange.focus,
+.btn-orange:focus,
+.btn-orange:hover,
+.btn-orange:active:hover {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #FF5722;
 }
 
 /* Masonry */
+.grid:after {
+  content: '';
+  clear: both;
+  display: block;
+}
 .grid-item {
-  margin-bottom: 5px;
+  padding: 2px;
   float: left;
-  background: #fff;
-  padding: 10px;
+}
+.grid-item a {
+  padding: 8px;
+  border: 1px solid #EEEEEE;
+  background-color: #FFF;
+	display: block;
 }
 .grid-item a img {
   width: 100%;
 }
-.grid-item a:hover {
+.grid-item a:hover,
+.grid-item a:focus {
   text-decoration: none;
 }
-.grid-item h3, .grid-item p, .grid-item h4 {
+.grid-item h3,
+.grid-item h4,
+.grid-item p {
   color: #424242;
 }
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
+.grid-item h3 {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: 300;
+}
+.grid-item h4 {
+	margin-bottom: 0;
 }
 .grid-sizer,
 .grid-item {
-	width: 49%;
+	width: 50%;
 }
-.text-thin {
-	font-weight: 300;
+.grid-item .content {
+	padding: 4px;
 }
-@media (min-width: 768px) {
+
+@media (min-width: 992px) {
+	.grid-item {
+	  padding: 4px;
+	  float: left;
+	}
 	.grid-sizer,
 	.grid-item {
-		width: 32%;
+		width: 33.33333333%;
+	}
+	.grid-item h3 {
+		font-size: 24px;
+	}
+	.grid-item .content {
+		padding: 8px;
 	}
 }
