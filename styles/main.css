@@ -1738,7 +1738,7 @@ b, strong {
 }
 .grid-item a {
   padding: 8px;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #EEEEEE;
   background-color: #FFF;
 	display: block;
 }
@@ -1767,7 +1767,7 @@ b, strong {
 	width: 50%;
 }
 .grid-item .content {
-	padding: 8px;
+	padding: 4px;
 }
 
 @media (min-width: 992px) {
@@ -1781,5 +1781,8 @@ b, strong {
 	}
 	.grid-item h3 {
 		font-size: 24px;
+	}
+	.grid-item .content {
+		padding: 8px;
 	}
 }
