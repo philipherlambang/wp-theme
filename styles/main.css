@@ -1727,6 +1727,10 @@ b, strong {
 }
 
 /* Masonry */
+.grid {
+	margin-right: -2px;
+	margin-left: -2px;
+}
 .grid:after {
   content: '';
   clear: both;
@@ -1771,6 +1775,10 @@ b, strong {
 }
 
 @media (min-width: 992px) {
+	.grid {
+		margin-right: -4px;
+		margin-left: -4px;
+	}
 	.grid-item {
 	  padding: 4px;
 	  float: left;
