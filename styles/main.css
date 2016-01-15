@@ -1868,6 +1868,14 @@ b, strong {
 .grid-item .act-leaf:focus {
   color: #23527c;
 }
+.grid-add {
+  position: relative;
+}
+.grid-add a {
+  position: absolute;
+  top: -46px;
+  right: 0;
+}
 
 @media (min-width: 992px) {
   .grid {
