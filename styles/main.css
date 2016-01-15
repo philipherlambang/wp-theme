@@ -1713,6 +1713,15 @@ b, strong {
   background-color: #FF5722;
   color: #FFFFFF;
 }
+
+.btn-green {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  background-color: #09d261;
+  color: #FFFFFF;
+}
+
 .btn-orange.active,
 .btn-orange:active {
   -webkit-box-shadow: none;
@@ -1735,15 +1744,24 @@ b, strong {
 .grid-item {
   padding: 2px;
   float: left;
+    position: relative;
 }
-.grid-item a {
+.grid-item a, .grid-item .object-container {
   padding: 8px;
   border: 1px solid #EEEEEE;
   background-color: #FFF;
-	display: block;
+  display: block;
 }
-.grid-item a img {
+.grid-item a img, .grid-item .object-container img{
   width: 100%;
+}
+.grid-item a img, .grid-item .act-leaf{
+    font-size: 28px;
+    line-height: 28px;
+    top:5px;
+    right: 5px;
+    border-top: none;
+    border-right: none;
 }
 .grid-item a:hover,
 .grid-item a:focus {
@@ -1767,7 +1785,7 @@ b, strong {
 	width: 50%;
 }
 .grid-item .content {
-	padding: 4px;
+	padding: 8px;
 }
 
 @media (min-width: 992px) {
@@ -1788,4 +1806,8 @@ b, strong {
 	.grid-item .content {
 		padding: 8px;
 	}
+}
+
+.background-transparent{
+    background: transparent;
 }
