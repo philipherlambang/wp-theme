@@ -831,6 +831,18 @@ b, strong {
   height: 36px;
   font-size: 24px;
 }
+.group-media .list-group .item a {
+  border: 0;
+  border-radius: 0;
+  padding: 8px 12px;
+}
+.group-media .list-group .item a.list-group-item:hover,
+.group-media .list-group .item a.list-group-item:focus {
+  background-color: transparent;
+}
+.group-media .list-group .item  a .ion {
+  line-height: 20px;
+}
 
 .gap-operate {
   padding-bottom: 48px;

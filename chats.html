@@ -27,31 +27,65 @@
 	</head>
 	<body>
 
-		<nav class="gap-operate">
-			<div class="operate operate-fixed operate-fixed-down">
+		<nav class="navbar-id">
+			<div class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
-					<div class="row">
-						<div class="col-xs-2">
-							<a class="left" onclick="window.history.back()">
-								<div class="icon ion-ios-arrow-back"></div>
-							</a>
-						</div>
-						<div class="col-xs-8">
-							<h4 class="title">Daftar Chat</h4>
-						</div>
-						<div class="col-xs-2">
-							<a class="right" href="chat_new.html">
-								<div class="icon ion-ios-compose-outline"></div>
-							</a>
-						</div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-theme" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="hub.html">
+							<img alt="Brand" src="images/brand-join.png">
+						</a>
+					</div>
+					<div id="navbar-theme" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<form class="navbar-form form-base" role="search">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Cari Chat">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button">
+												<span class="ion ion-ios-search"></span>
+											</button>
+										</span>
+									</div>
+								</form>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									<div class="hidden-xs">
+										<img src="images/user/john_branch.jpg" alt="John Branch" class="img-thumb">
+									</div>
+									<div class="visible-xs"><i class="ion ion-person"></i> Toko</div>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="store.html">Pillow Dream</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="categories.html"><i class="ion ion-ios-people"></i> Kategori</a>
+							</li>
+							<li>
+								<a href="stores.html"><i class="ion ion-ios-briefcase"></i> Toko</a>
+							</li>
+							<li>
+								<a href="chats.html"><i class="ion ion-ios-email"></i> Chat</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</nav>
 
-		<main>
+		<main class="fixed-nav-content fixed-search fixed-result">
 			<div class="section">
-				<div class="result">
+				<div class="result result-fixed result-fixed-down">
 					<p class="text-center">Jumlah data ditemukan ada <b>6</b> chat.</p>
 				</div>
 			</div>
