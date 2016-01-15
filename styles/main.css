@@ -1815,6 +1815,7 @@ b, strong {
   padding: 2px;
   float: left;
   position: relative;
+  overflow: hidden;
 }
 .grid-item a, .grid-item .object-container {
   padding: 8px;
