@@ -1715,6 +1715,7 @@ b, strong {
 .pswp__caption {
   background-color: #000;
 }
+.pswp__caption h4,
 .pswp__caption h5 {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -1726,7 +1727,7 @@ b, strong {
 .pswp__caption a {
   padding: 8px;
   border: 1px solid #000000;
-  border-top: 0;
+  border-top-width: 2px;
   border-bottom: 0;
   background-color: #212121;
   color: #CCC;
@@ -1740,6 +1741,7 @@ b, strong {
 }
 .pswp__caption__center {
   line-height: 1.42857143;
+  font-size: 14px;
 }
 
 .pswp-gallery {
@@ -1845,6 +1847,9 @@ b, strong {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
+}
+.grid-item .description {
+  display: none;
 }
 .grid-sizer,
 .grid-item {
