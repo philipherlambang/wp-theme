@@ -54,13 +54,13 @@
 						</ul>
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="contacts.html"><i class="ion ion-ios-people"></i> Kontak</a>
+								<a href="categories.html"><i class="ion ion-ios-list"></i> Kategori</a>
+							</li>
+							<li>
+								<a href="stores.html"><i class="ion ion-ios-briefcase"></i> Toko</a>
 							</li>
 							<li>
 								<a href="chats.html"><i class="ion ion-ios-email"></i> Chat</a>
-							</li>
-							<li>
-								<a href="professionals.html"><i class="ion ion-ios-briefcase"></i> Profesional</a>
 							</li>
 						</ul>
 					</div>
@@ -85,31 +85,28 @@
 									<div class="card-img">
 										<ul class="pswp-gallery" data-reorder="false">
 											<li>
-												<a href="images/store/pillow-dream.jpg" data-size="480x480" data-title="John Branch">
-													<img class="img-responsive" src="images/store/pillow-dream.jpg" alt="John Branch">
+												<a href="images/store/pillow_dream.jpg" data-size="480x480" data-title="Pillow Dream">
+													<img class="img-responsive" src="images/store/pillow_dream.jpg" alt="Pillow Dream">
 												</a>
 											</li>
 										</ul>
-                                        <a href="change_photo.html" class="act act-leaf act-top-right">
+										<a href="change_photo.html" class="act act-leaf act-top-right">
 											<span class="icon ion-ios-camera-outline"></span>
 										</a>
-										
 									</div>
 									<div class="card-caption">
 										<form class="form-invisible" action="somewhere">
 											<div class="form-group">
-												<label for="name" class="sr-only">Nama</label>
-												<input type="text" class="form-control h3" id="name" name="name" placeholder="Nama" value="Pillow Dream">
+												<label for="name" class="sr-only">Nama Toko</label>
+												<input type="text" class="form-control h3" id="name" name="name" placeholder="Nama Toko" value="Pillow Dream">
 											</div>
 											<div class="form-group">
-												<label for="position" class="sr-only">Jabatan</label>
-                                                <textarea type="text" class="form-control sub" id="position" name="position" placeholder="Jabatan">Pillow Covers, Paper Mobiles, Pillow Rings, Made in Italy
-                                                </textarea>
+												<label for="position" class="sr-only">Headline Toko</label>
+												<textarea type="text" class="form-control sub auto-size" id="position" name="position" placeholder="Headline Toko">Pillow Covers, Paper Mobiles, Pillow Rings, Made in Italy</textarea>
 											</div>
 											<div class="form-group">
-												<label for="company" class="sr-only">Perusahaan</label>
-                                                <textarea type="text" class="form-control" id="company" name="company" placeholder="Perusahaan" value="">All pillow covers and paper mobile are designed and handmade by me
-                                                </textarea>
+												<label for="company" class="sr-only">Deskripsi Toko</label>
+												<textarea type="text" class="form-control auto-size" id="company" name="company" placeholder="Deskripsi Toko" value="">All pillow covers and paper mobile are designed and handmade by me</textarea>
 											</div>
 										</form>
 									</div>
@@ -119,13 +116,12 @@
 								<div class="group-btn">
 									<div class="row">
 										<div class="col-xs-12">
-											<a href="profile.html" type="button" class="btn btn-default btn-lg btn-block btn-gloom btn-green"><span class="icon ion-ios-checkmark-empty"></span>Simpan</a>
+											<a href="store.html" type="button" class="btn btn-default btn-lg btn-block btn-gloom btn-green"><span class="icon ion-ios-checkmark-empty"></span>Simpan</a>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="groups-gap">
-								
 								<div class="group-card">
 									<h4>Ringkasan</h4>
 									<div class="item edit-mode">
@@ -145,7 +141,7 @@
 												<div class="form-group">
 													<label for="birth-date" class="col-xs-5">Bergabung Sejak</label>
 													<div class="col-xs-7">
-														<input type="text" disabled class="form-control text-right date-picker" id="birth-date" placeholder="Tanggal Lahir" value="22 December 2015">
+														<input type="text" class="form-control text-right" id="birth-date" value="22 Desember 2015" disabled>
 													</div>
 												</div>
 											</form>
@@ -153,9 +149,9 @@
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
-													<label for="birth-date" class="col-xs-5">Pemilik</label>
+													<label for="owner" class="col-xs-5">Pemilik</label>
 													<div class="col-xs-7">
-														<input type="text" disabled class="form-control text-right date-picker" id="birth-date" placeholder="Tanggal Lahir" value="Nina Dorbev">
+														<input type="text" class="form-control text-right" id="owner" value="John Branch" disabled>
 													</div>
 												</div>
 											</form>
@@ -163,9 +159,9 @@
 										<li class="item edit-mode">
 											<form class="form-horizontal form-invisible">
 												<div class="form-group">
-													<label for="birth-date" class="col-xs-5">Lokasi</label>
+													<label for="location" class="col-xs-5">Lokasi</label>
 													<div class="col-xs-7">
-														<input type="text" class="form-control text-right date-picker" id="birth-date" placeholder="Tanggal Lahir" value="Bintaro">
+														<input type="text" class="form-control text-right" id="location" placeholder="Lokasi" value="Jakarta, Indonesia">
 													</div>
 												</div>
 											</form>
@@ -421,8 +417,7 @@
 												</li>
 											</ul>
 										</li>
-                                        
-                                        <li>
+										<li>
 											<h5>Kategori</h5>
 											<ul class="list-unstyled">
 												<li class="item edit-mode">
@@ -636,68 +631,458 @@
 							<div class="groups-gap">
 								<div class="group-card">
 									<h4>Produk Utama</h4>
-									<ul class="pswp-gallery grid">
-										<li class="grid-item">
-											
-                                            <div class="object-container">
-                                                <img src="images/store/product/pillow-1.jpg">
-                                                <div class="content">
-                                                    <form class="form-invisible">
-                                                        <input type="text" class="form-control h3" id="" name="" placeholder="Nama Produk" value="Regular Pink Pillow">
-                                                        <textarea type="text" class="form-control sub" id="" name="" placeholder="Deskripsi Produk">How to keep baby occupied all day long - some days this is a challenge to keep baby engaged and out of trouble.</textarea>
-                                                        <input type="text" class="form-control h3" id="" name="" placeholder="Harga Produk" value="99.000">
-                                                    </form>
-                                                </div>
-                                            </div>
-                                                
-                                            <a href="change_photo.html" class="act act-leaf act-top-right">
-                                                <i class="ion-ios-camera-outline"></i>
-                                            </a>
+									<ul class="list-unstyled">
+										<li class="item acts-mode">
+											<p><b>Tambah Produk</b></p>
+											<div class="acts-wrapper">
+												<a href="product_add.html" class="act act-round plus"><span class="icon ion-ios-plus-empty"></span></a>
+											</div>
 										</li>
-                                	</ul>
+									</ul>
+									<ul class="grid">
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-1.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Regular Pink Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="99.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-2.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Pink Pillow with Heart Shape for your Babies">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-3.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Bold Bright Color Block Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="129.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-4.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Boho Chic Pillows">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="142.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-1.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Regular Pink Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="99.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-2.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Pink Pillow with Heart Shape for your Babies">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-3.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Bold Bright Color Block Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="129.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-4.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Boho Chic Pillows">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="142.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-1.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Regular Pink Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="99.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-2.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Pink Pillow with Heart Shape for your Babies">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-3.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Bold Bright Color Block Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="129.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-4.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Boho Chic Pillows">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="142.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-1.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Regular Pink Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="99.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-2.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Pink Pillow with Heart Shape for your Babies">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-3.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Bold Bright Color Block Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="129.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-4.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Boho Chic Pillows">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="142.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-1.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Regular Pink Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="99.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-2.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Pink Pillow with Heart Shape for your Babies">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-3.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Bold Bright Color Block Pillow">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="129.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+										<li class="grid-item">
+											<div class="item">
+												<img src="images/product/pillow_dream/pillow-4.jpg">
+												<div class="content">
+													<form class="form-horizontal form-invisible form-vary">
+														<div class="form-group">
+															<label for="product" class="sr-only">Nama Produk</label>
+															<input type="text" class="form-control h3" id="product" placeholder="Nama Produk" value="Boho Chic Pillows">
+														</div>
+														<div class="form-group">
+															<label for="price" class="sr-only">Harga Produk</label>
+															<input type="text" class="form-control h4" id="price" placeholder="Harga Produk" value="142.000">
+														</div>
+													</form>
+													<a href="change_photo.html" class="act act-leaf act-top-right">
+														<span class="ion-ios-camera-outline"></span>
+													</a>
+												</div>
+											</div>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-            
-            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="pswp__bg"></div>
-                <div class="pswp__scroll-wrap">
-                    <div class="pswp__container">
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
-                    </div>
-                    <div class="pswp__ui pswp__ui--hidden">
-                        <div class="pswp__top-bar">
-                            <div class="pswp__counter"></div>
-                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                            <button class="pswp__button pswp__button--share" title="Share"></button>
-                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                            <div class="pswp__preloader">
-                                <div class="pswp__preloader__icn">
-                                    <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                            <div class="pswp__share-tooltip"></div>
-                        </div>
-                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                        </button>
-                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                        </button>
-                        <div class="pswp__caption">
-                            <div class="pswp__caption__center"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="pswp__bg"></div>
+				<div class="pswp__scroll-wrap">
+					<div class="pswp__container">
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+					</div>
+					<div class="pswp__ui pswp__ui--hidden">
+						<div class="pswp__top-bar">
+							<div class="pswp__counter"></div>
+							<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+							<button class="pswp__button pswp__button--share" title="Share"></button>
+							<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+							<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+							<div class="pswp__preloader">
+								<div class="pswp__preloader__icn">
+									<div class="pswp__preloader__cut">
+										<div class="pswp__preloader__donut"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+							<div class="pswp__share-tooltip"></div>
+						</div>
+						<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+						</button>
+						<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+						</button>
+						<div class="pswp__caption">
+							<div class="pswp__caption__center"></div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<script src="scripts/jquery-2.1.4.js"></script>
@@ -708,6 +1093,8 @@
 		<script src="scripts/plugins/photoswipe.js"></script>
 		<script src="scripts/plugins/pickadate.js"></script>
 		<script src="scripts/plugins/validate.js"></script>
+		<script src="scripts/plugins/masonry.js"></script>
+		<script src="scripts/plugins/imagesloaded.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>
