@@ -410,7 +410,8 @@
 			    liEl,
 			    linkEl,
 			    linkElChild,
-			    linkElChildLen,
+			    descEl,
+			    actsEl,
 			    size,
 			    item;
 
@@ -443,23 +444,22 @@
 				};
 
 				linkElChild = linkEl.children;
-				linkElChildLen = linkEl.children.length;
+				descEl = linkEl.querySelector('.description');
+				actsEl = linkEl.querySelectorAll('span');
 
-				if (linkElChildLen > 0 && linkElChild[0].tagName == 'IMG') {
+				if (linkEl.children.length > 0 && linkElChild[0].tagName == 'IMG') {
 					item.msrc = linkElChild[0].getAttribute('src');
 				}
 
-				if (linkElChildLen > 1 && linkElChild[1].tagName == 'FIGURE') {
-					item.description = linkElChild[1].innerHTML;
+				if (descEl) {
+					item.description = descEl.innerText;
 				}
 
-				if (linkElChildLen > 2) {
+				if (actsEl.length) {
 					var data; item.actions = [];
-					for (var l = 2; l < linkElChildLen; l++) {
-						if (linkElChild[l].tagName == 'SPAN') {
-							data = linkElChild[l].dataset;
-							item.actions.push({ href: data.href, title: data.title });
-						}
+					for (var l = 0; l < actsEl.length; l++) {
+						data = actsEl[l].dataset;
+						item.actions.push({ href: data.href, title: data.title });
 					}
 				}
 
@@ -530,7 +530,7 @@
 				addCaptionHTMLFn: function(item, captionEl, isFake) {
 					var captionContent = captionEl.children[0];
 					if (item.description) {
-						captionContent.innerHTML = '<h5>' + item.title +  '</h5><p> ' + item.description + '</p>';
+						captionContent.innerHTML = '<h4>' + item.title +  '</h4><p> ' + item.description + '</p>';
 						if (item.actions && item.actions.length) {
 							captionContent.innerHTML = captionContent.innerHTML + '<div class="row"></div>';
 							for (var i = 0; i < item.actions.length; i++) {
@@ -539,7 +539,7 @@
 						}
 						return false;
 					}
-					captionContent.innerHTML = '<h5>' + item.title + '</h5>';
+					captionContent.innerHTML = '<h4>' + item.title + '</h4>';
 					return true;
 				}
 			};
